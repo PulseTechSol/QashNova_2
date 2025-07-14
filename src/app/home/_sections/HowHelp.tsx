@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+// import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import pngs from "@/_assets/pngs";
@@ -12,7 +12,7 @@ import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HowHelp() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  // const containerRef = useRef<HTMLDivElement>(null);
 
   const websiteServices = [
     {
@@ -80,81 +80,39 @@ export default function HowHelp() {
     },
   ];
 
-  useEffect(() => {
-    if (!containerRef.current) return;
-    const cards = containerRef.current.querySelectorAll(".gsap-card");
-    cards.forEach((card, i) => {
-      const nextCard = cards[i + 1];
-      gsap.set(card, { zIndex: cards.length - i });
-      if (nextCard) gsap.set(nextCard, { zIndex: cards.length - i - 1 });
+  // useEffect(() => {
+  //   if (!containerRef.current) return;
+  //   const cards = containerRef.current.querySelectorAll(".gsap-card");
+  //   cards.forEach((card, i) => {
+  //     const nextCard = cards[i + 1];
+  //     gsap.set(card, { zIndex: cards.length - i });
+  //     if (nextCard) gsap.set(nextCard, { zIndex: cards.length - i - 1 });
 
-      ScrollTrigger.create({
-        trigger: card,
-        start: "top",
-        end: "bottom",
-        scrub: true,
-        onUpdate: (self) => {
-          gsap.to(card, {
-            scale: 1 - self.progress * 0.15,
-            opacity: 1 - self.progress,
-          });
-          if (nextCard) {
-            gsap.to(nextCard, {
-              opacity: self.progress,
-              zIndex: cards.length - i + 1,
-            });
-          }
-        },
-      });
-    });
-  }, []);
-
-  useEffect(() => {
-    if (!containerRef.current) return;
-    const cards = containerRef.current.querySelectorAll(".gsap-card");
-
-    cards.forEach((card, i) => {
-      const isLast = i === cards.length - 1;
-      const nextCard = cards[i + 1];
-      gsap.set(card, { zIndex: cards.length - i });
-
-      if (nextCard) {
-        gsap.set(nextCard, { zIndex: cards.length - i - 1 });
-      }
-
-      if (isLast) {
-        // Manually remove opacity and scale effects for the last card
-        gsap.set(card, { scale: 1, opacity: 1 });
-        return; // Skip ScrollTrigger creation for last card
-      }
-
-      ScrollTrigger.create({
-        trigger: card,
-        start: "top",
-        end: "bottom",
-        scrub: true,
-        onUpdate: (self) => {
-          gsap.to(card, {
-            scale: 1 - self.progress * 0.15,
-            opacity: 1 - self.progress,
-          });
-          if (nextCard) {
-            gsap.to(nextCard, {
-              opacity: self.progress,
-              zIndex: cards.length - i + 1,
-            });
-          }
-        },
-      });
-    });
-  }, []);
+  //     ScrollTrigger.create({
+  //       trigger: card,
+  //       start: "top",
+  //       end: "bottom",
+  //       scrub: true,
+  //       onUpdate: (self) => {
+  //         gsap.to(card, {
+  //           scale: 1 - self.progress,
+  //           opacity: 1 - self.progress,
+  //         });
+  //         if (nextCard) {
+  //           gsap.to(nextCard, {
+  //             opacity: self.progress,
+  //             zIndex: cards.length - i + 1,
+  //           });
+  //         }
+  //       },
+  //     });
+  //   });
+  // }, []);
 
   return (
     <Box
       sx={{
         position: "relative",
-        // background: "#000",
-        // zIndex: "100",
         background: "radial-gradient(circle, #08289be3 0%, #000 25%)",
         backgroundAttachment: "fixed",
         backgroundPosition: "center center",
@@ -166,7 +124,6 @@ export default function HowHelp() {
           height: "633px",
           display: { xs: "none", lg: "block" },
           position: "absolute",
-          // top: -9,
           left: -13,
         }}
       >
@@ -179,7 +136,6 @@ export default function HowHelp() {
 
       <Box
         sx={{
-          // m: "auto",
           width: "790px",
           height: "790px",
           display: { xs: "none", lg: "block" },
@@ -195,24 +151,10 @@ export default function HowHelp() {
         />
       </Box>
 
-      {/* <Box
-        sx={{
-          position: "absolute",
-          background:
-            "linear-gradient(150deg, #5841D480, #0a0a0a0a , #1213121c)",
-          width: "390px",
-          height: "390px",
-          left: 0,
-          zIndex: -10,
-        }}
-      />*/}
       <Box
-        ref={containerRef}
+        // ref={containerRef}
         sx={{
           maxWidth: "1440px",
-          // zIndex: "10",
-          // height: "1440px",
-          // position: "absolute",
           width: "100%",
           padding: sectionPadding,
           margin: "auto",
@@ -289,8 +231,6 @@ export default function HowHelp() {
           </Typography>
         </Box>
 
-        {/*  */}
-
         {websiteServices.map((service, index) => {
           const isFirst = index === 0;
           const isLast = index === websiteServices.length - 1;
@@ -313,7 +253,6 @@ export default function HowHelp() {
                 borderBottomRightRadius: isLast ? 0 : "80px",
               }}
             >
-              {/* text */}
               <Box
                 sx={{
                   maxWidth: "555px",
@@ -323,7 +262,6 @@ export default function HowHelp() {
               >
                 <Typography
                   sx={{
-                    // maxWidth: "490px",
                     width: "100%",
                     fontSize: localFontSize.h4,
                     fontWeight: 500,
@@ -359,7 +297,6 @@ export default function HowHelp() {
                 </Box>
                 <Typography
                   sx={{
-                    // maxWidth: "490px",
                     mt: { xs: "40px", md: "60px" },
                     width: "100%",
                     fontSize: localFontSize.p2,
@@ -371,7 +308,6 @@ export default function HowHelp() {
                   {service.description}
                 </Typography>
               </Box>
-              {/* image */}
               <Box
                 sx={{
                   maxWidth: { width: "100%", md: "445px" },

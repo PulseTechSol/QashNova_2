@@ -2,8 +2,8 @@ import Navbar from "@/_components/Navbar";
 import HeroHome from "./_sections/HeroHome";
 import Partness from "./_sections/Partness";
 import HowHelp from "./_sections/HowHelp";
-import CraftingWebsites from "./_sections/CraftingWebsites";
-import OurWork from "./_sections/OurWork";
+// import CraftingWebsites from "./_sections/CraftingWebsites";
+// import OurWork from "./_sections/OurWork";
 // import Partness from "./_sections/partness";
 
 export default function HomePage() {
@@ -13,8 +13,8 @@ export default function HomePage() {
       <HeroHome />
       <Partness />
       <HowHelp />
-      <CraftingWebsites />
-      <OurWork />
+      {/* <CraftingWebsites /> */}
+      {/* <OurWork /> */}
     </>
   );
 }
