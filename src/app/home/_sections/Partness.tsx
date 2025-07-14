@@ -31,8 +31,6 @@ export default function LogoMarquee() {
           <Box
             key={index}
             sx={{
-              // background: "linear-gradient(20deg, #DDDDDD, #ffffffff)",
-
               mx: { xs: 2, sm: 4 },
               width: { xs: "100px", sm: "120px", md: "150px" },
               height: { xs: "100px", md: "150px" },
