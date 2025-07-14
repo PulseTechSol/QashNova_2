@@ -12,12 +12,19 @@ export default function LogoMarquee() {
     svgs.logo5,
     svgs.logos6,
     svgs.logos7,
+    svgs.logo1,
+    svgs.logos2,
+    svgs.logo3,
+    svgs.logo4,
+    svgs.logo5,
+    svgs.logos6,
+    svgs.logos7,
   ];
 
   return (
     <Box
       sx={{
-        background: "linear-gradient(50deg,, #DDDDDD, #ffffff)",
+        background: "linear-gradient(180deg, #DDDDDD, #ffffff)",
         p: {
           xs: "60px 0px",
           sm: "60px 0px",

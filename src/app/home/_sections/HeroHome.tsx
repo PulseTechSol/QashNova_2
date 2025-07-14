@@ -176,16 +176,21 @@ export default function HeroHome() {
         </Box>
         <Box
           sx={{
-            width: "121px",
-            height: "121px",
+            width: "1400px",
+            height: "500px",
             display: { xs: "none", lg: "block" },
             position: "absolute",
-            top: 79,
-            left: 13,
+            top: 5,
+            left: -600,
+            overflow: "hidden",
             // bgcolor: "red",
           }}
         >
-          <Image src={pngs.heroHome} alt="star" />
+          <Image
+            src={pngs.heroHome}
+            alt="star"
+            style={{ width: "100%", height: "100%" }}
+          />
         </Box>
       </Box>
     </Box>

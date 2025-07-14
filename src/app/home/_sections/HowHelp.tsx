@@ -78,6 +78,7 @@ export default function HowHelp() {
       sx={{
         position: "relative",
         // background: "#000",
+        // zIndex: "100",
         background: "radial-gradient(circle, #08289be3 0%, #000 25%)",
       }}
     >
@@ -100,12 +101,13 @@ export default function HowHelp() {
 
       <Box
         sx={{
+          // m: "auto",
           width: "790px",
-          // height: "790px",
+          height: "790px",
           display: { xs: "none", lg: "block" },
           position: "absolute",
           // top: 89,
-          left: 670,
+          right: 0,
         }}
       >
         <Image
@@ -115,9 +117,23 @@ export default function HowHelp() {
         />
       </Box>
 
+      {/* <Box
+        sx={{
+          position: "absolute",
+          background:
+            "linear-gradient(150deg, #5841D480, #0a0a0a0a , #1213121c)",
+          width: "390px",
+          height: "390px",
+          left: 0,
+          zIndex: -10,
+        }}
+      />*/}
       <Box
         sx={{
           maxWidth: "1440px",
+          // zIndex: "10",
+          // height: "1440px",
+          // position: "absolute",
           width: "100%",
           padding: sectionPadding,
           margin: "auto",
