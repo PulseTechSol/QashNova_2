@@ -1,16 +1,24 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import pngs from "@/_assets/pngs";
 import ButtonComponent from "@/_components/ButtonComponent";
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function HowHelp() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const websiteServices = [
     {
       title: "Website Development",
       description:
         "We craft high-performing, bespoke websites engineered to convert visitors into customers.",
-
       buttons: [
         "Custom Websites",
         "Responsive Design",
@@ -23,7 +31,6 @@ export default function HowHelp() {
       title: "Creative Web Designing",
       description:
         "We go beyond pretty pixels, crafting visually stunning and strategically designed websites that capture attention and convert.",
-
       buttons: [
         "Web Experiences",
         "Engaging Design",
@@ -73,15 +80,100 @@ export default function HowHelp() {
     },
   ];
 
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const cards = containerRef.current.querySelectorAll(".gsap-card");
+    cards.forEach((card, i) => {
+      const nextCard = cards[i + 1];
+      gsap.set(card, { zIndex: cards.length - i });
+      if (nextCard) gsap.set(nextCard, { zIndex: cards.length - i - 1 });
+
+      ScrollTrigger.create({
+        trigger: card,
+        start: "top",
+        end: "bottom",
+        scrub: true,
+        onUpdate: (self) => {
+          gsap.to(card, {
+            scale: 1 - self.progress * 0.15,
+            opacity: 1 - self.progress,
+          });
+          if (nextCard) {
+            gsap.to(nextCard, {
+              opacity: self.progress,
+              zIndex: cards.length - i + 1,
+            });
+          }
+        },
+      });
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const cards = containerRef.current.querySelectorAll(".gsap-card");
+
+    cards.forEach((card, i) => {
+      const isLast = i === cards.length - 1;
+      const nextCard = cards[i + 1];
+      gsap.set(card, { zIndex: cards.length - i });
+
+      if (nextCard) {
+        gsap.set(nextCard, { zIndex: cards.length - i - 1 });
+      }
+
+      if (isLast) {
+        // Manually remove opacity and scale effects for the last card
+        gsap.set(card, { scale: 1, opacity: 1 });
+        return; // Skip ScrollTrigger creation for last card
+      }
+
+      ScrollTrigger.create({
+        trigger: card,
+        start: "top",
+        end: "bottom",
+        scrub: true,
+        onUpdate: (self) => {
+          gsap.to(card, {
+            scale: 1 - self.progress * 0.15,
+            opacity: 1 - self.progress,
+          });
+          if (nextCard) {
+            gsap.to(nextCard, {
+              opacity: self.progress,
+              zIndex: cards.length - i + 1,
+            });
+          }
+        },
+      });
+    });
+  }, []);
+
   return (
     <Box
       sx={{
         position: "relative",
-        // background: "#000",
-        // zIndex: "100",
         background: "radial-gradient(circle, #08289be3 0%, #000 25%)",
+        backgroundAttachment: "fixed",
+        backgroundPosition: "top center",
       }}
     >
+      <Box
+        sx={{
+          width: "633px",
+          height: "633px",
+          display: { xs: "none", lg: "block" },
+          position: "absolute",
+          left: -13,
+        }}
+      >
+        <Image
+          src={pngs.howHeplLG}
+          alt="star"
+          style={{ height: "100%", width: "100%" }}
+        />
+      </Box>
+
       <Box
         sx={{
           width: "633px",
@@ -99,24 +191,6 @@ export default function HowHelp() {
         />
       </Box>
 
-      <Box
-        sx={{
-          // m: "auto",
-          width: "790px",
-          height: "790px",
-          display: { xs: "none", lg: "block" },
-          position: "absolute",
-          // top: 89,
-          right: 0,
-        }}
-      >
-        <Image
-          src={pngs.howHeplLGcolor}
-          alt="star"
-          style={{ height: "100%", width: "100%" }}
-        />
-      </Box>
-
       {/* <Box
         sx={{
           position: "absolute",
@@ -129,6 +203,7 @@ export default function HowHelp() {
         }}
       />*/}
       <Box
+        ref={containerRef}
         sx={{
           maxWidth: "1440px",
           // zIndex: "10",
@@ -160,7 +235,6 @@ export default function HowHelp() {
             sx={{
               maxWidth: "477px",
               width: "100%",
-
               textTransform: "capitalize",
             }}
           >
@@ -205,13 +279,11 @@ export default function HowHelp() {
               textAlign: { xs: "center", sm: "start" },
             }}
           >
-            Discover our full range of digital marketing services. From strategy
-            to execution, we&apos;re here to deliver effective solutions that
-            help your brand succeed in today&apos;s competitive landscape.
+            {`Discover our full range of digital marketing services. From strategy
+            to execution, we're here to deliver effective solutions that help
+            your brand succeed in today's competitive landscape.`}
           </Typography>
         </Box>
-
-        {/*  */}
 
         {websiteServices.map((service, index) => {
           const isFirst = index === 0;
@@ -219,6 +291,7 @@ export default function HowHelp() {
           return (
             <Box
               key={index}
+              className="gsap-card"
               sx={{
                 width: "100%",
                 padding: "40px",
@@ -234,7 +307,6 @@ export default function HowHelp() {
                 borderBottomRightRadius: isLast ? 0 : "80px",
               }}
             >
-              {/* text */}
               <Box
                 sx={{
                   maxWidth: "555px",
@@ -244,7 +316,6 @@ export default function HowHelp() {
               >
                 <Typography
                   sx={{
-                    // maxWidth: "490px",
                     width: "100%",
                     fontSize: localFontSize.h4,
                     fontWeight: 500,
@@ -280,7 +351,6 @@ export default function HowHelp() {
                 </Box>
                 <Typography
                   sx={{
-                    // maxWidth: "490px",
                     mt: { xs: "40px", md: "60px" },
                     width: "100%",
                     fontSize: localFontSize.p2,
@@ -292,7 +362,7 @@ export default function HowHelp() {
                   {service.description}
                 </Typography>
               </Box>
-              {/* image */}
+
               <Box
                 sx={{
                   maxWidth: { width: "100%", md: "445px" },
