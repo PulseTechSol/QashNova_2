@@ -1,3 +1,4 @@
+import pngs from "@/_assets/pngs";
 import svgs from "@/_assets/svgs";
 import ButtonComponent from "@/_components/ButtonComponent";
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
@@ -6,7 +7,7 @@ import Image from "next/image";
 
 export default function HeroHome() {
   return (
-    <Box sx={{ bgcolor: "#fff" }}>
+    <Box sx={{ background: "linear-gradient(-10deg, #DDDDDD, #ffffffff)" }}>
       <Box
         sx={{
           position: "relative",
@@ -14,69 +15,130 @@ export default function HeroHome() {
           width: "100%",
           padding: sectionPadding,
           margin: "auto",
-          display: { xs: "flex", lg: "block" },
-          justifyContent: "space-between",
-          alignItems: "flex-end",
-          flexWrap: { xs: "wrap", lg: "nowrap" },
-          gap: 4,
+          gap: { xs: "0" },
         }}
       >
         {/* LEFT SIDE - Heading */}
         <Typography
           sx={{
-            mt: { xs: "0", lg: "80px" },
-            // maxWidth: "1440px",
-            // bgcolor: "green",
+            maxWidth: "1440px",
             width: "100%",
-            fontSize: localFontSize.h1,
-            fontWeight: 600,
+            textAlign: { xs: "center", sm: "start" },
             background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             display: "inline-block",
             textTransform: "uppercase",
+            mt: { xs: "0", lg: "80px" },
+            fontSize: localFontSize.h1,
+            fontWeight: 600,
           }}
         >
-          Ignite Your Digital Impact
+          Ignite Your
         </Typography>
 
-        {/* RIGHT SIDE - Paragraph + Button */}
         <Box
           sx={{
-            position: { xs: "static", lg: "absolute" },
-            right: 140,
-            top: 442,
-            // bottom: ,
-            maxWidth: "457px",
             width: "100%",
+            maxWidth: "1440px",
+
+            textAlign: { xs: "center", sm: "start" },
+
+            margin: "auto",
+            display: { xs: "flex" },
+            justifyContent: { xs: "center", sm: "space-between" },
+            alignItems: "center",
+            flexWrap: { xs: "wrap", lg: "nowrap" },
+            gap: 4,
           }}
         >
-          <Typography
+          <Box
             sx={{
               width: "100%",
-              fontSize: localFontSize.p1,
-              color: "#1B1B1B",
-              mb: "40px",
-              // lineHeight: 1.6,
+              background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              display: "inline-block",
+              textTransform: "uppercase",
             }}
           >
-            Dull campaigns? Not on our watch. We specialize in dynamic digital
-            marketing that sparks engagement, accelerates growth, and ensures
-            your brand captivates every scroll.
-          </Typography>
-          <Box sx={{}}>
-            <ButtonComponent
+            <Typography
               sx={{
-                // bgcolor: " linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
-                bgcolor: "#fff",
-                border: "4px solid #8A38F5 ",
-                color: "#3C65FF",
+                // mt: { xs: "0", lg: "80px" },
+                width: "100%",
+                fontSize: localFontSize.h1,
+                fontWeight: 600,
               }}
-              label="Let’s Chat"
-              imgSrc={svgs.siarrowright}
-            />
+            >
+              Digital
+            </Typography>
+            <Typography
+              sx={{
+                // mt: { xs: "0", lg: "80px" },
+                width: "100%",
+                fontSize: localFontSize.h1,
+                fontWeight: 600,
+              }}
+            >
+              Impact
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              // position: { xs: "static", lg: "absolute" },
+              right: 140,
+              top: 442,
+              maxWidth: "457px",
+              width: "100%",
+            }}
+          >
+            <Typography
+              sx={{
+                width: "100%",
+                fontSize: localFontSize.p1,
+                color: "#1B1B1B",
+                mb: "40px",
+                // lineHeight: 1.6,
+              }}
+            >
+              Dull campaigns? Not on our watch. We specialize in dynamic digital
+              marketing that sparks engagement, accelerates growth, and ensures
+              your brand captivates every scroll.
+            </Typography>
+
+            <Box
+              sx={{
+                width: "100%",
+                display: { xs: "flex", sm: "block" },
+                alignItems: { xs: "center", sm: "start" },
+                justifyContent: "center",
+                // bgcolor: "#ccc",
+              }}
+            >
+              <ButtonComponent
+                sx={{
+                  border: "3px solid transparent",
+                  // borderRadius: "16px",
+                  backgroundImage: `linear-gradient(#fff, #fff),
+      linear-gradient(90deg, #3C65FF, #8A38F5, #2617B1)
+    `,
+                  backgroundOrigin: "border-box",
+                  backgroundClip: "content-box, border-box",
+                  padding: "1px",
+                  // px: 23,
+                  width: "194px",
+                  textAlign: { xs: "center", sm: "start" },
+                  bgcolor: "#fff",
+                  // border: "3px solid #8A38F5 ",
+                  color: "#3C65FF",
+                }}
+                label="Let’s Chat"
+                imgSrc={svgs.siarrowright}
+              />
+            </Box>
           </Box>
         </Box>
+
         <Box
           sx={{
             width: "121px",
@@ -107,11 +169,24 @@ export default function HeroHome() {
             height: "121px",
             display: { xs: "none", lg: "block" },
             position: "absolute",
-            top: 759,
+            top: 709,
             right: 213,
           }}
         >
           <Image src={svgs.stars2} alt="star" />
+        </Box>
+        <Box
+          sx={{
+            width: "121px",
+            height: "121px",
+            display: { xs: "none", lg: "block" },
+            position: "absolute",
+            top: 79,
+            left: 13,
+            // bgcolor: "red",
+          }}
+        >
+          <Image src={pngs.heroHome} alt="star" />
         </Box>
       </Box>
     </Box>

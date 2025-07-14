@@ -11,10 +11,12 @@ import logos7 from "./logosPartness/logos7.svg";
 import startDark1 from "./startDark1.svg";
 import stars2 from "./stars2.svg";
 import siarrowright from "./siarrowright.svg";
+import line from "./line.svg";
 
 const svgs = {
   logo1,
   logos2,
+  line,
   logo3,
   logo4,
   logo5,

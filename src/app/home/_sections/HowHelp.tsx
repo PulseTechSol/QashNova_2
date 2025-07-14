@@ -5,13 +5,116 @@ import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
 export default function HowHelp() {
+  const websiteServices = [
+    {
+      title: "Website Development",
+      description:
+        "We craft high-performing, bespoke websites engineered to convert visitors into customers.",
+
+      buttons: [
+        "Custom Websites",
+        "Responsive Design",
+        "E-commerce",
+        "E-commerce",
+      ],
+      image: pngs.image1,
+    },
+    {
+      title: "Creative Web Designing",
+      description:
+        "We go beyond pretty pixels, crafting visually stunning and strategically designed websites that capture attention and convert.",
+
+      buttons: [
+        "Web Experiences",
+        "Engaging Design",
+        "Digital Artistry",
+        "Digital Artistry",
+        "User-Centric Aesthetics",
+      ],
+      image: pngs.image2,
+    },
+    {
+      title: "SEO & SEM Optimization",
+      description:
+        "We implement sophisticated SEO techniques and precision-targeted SEM campaigns to ensure your brand is seen by the right audience at the right time",
+      buttons: [
+        "Growth Strategy",
+        "Paid Search Performance",
+        "Digital Artistry",
+        "Ranking Mastery",
+        "Traffic & Conversions",
+      ],
+      image: pngs.image3,
+    },
+    {
+      title: "Social Media Management",
+      description:
+        "From compelling content creation to community nurturing and performance analytics, our comprehensive social media management ensures your brand thrives.",
+      buttons: [
+        "Community Growth",
+        "Platform Performance Optimization",
+        "Content Curation",
+        "Audience Connection",
+      ],
+      image: pngs.image4,
+    },
+    {
+      title: "Creative Branding",
+      description:
+        "Forge an unforgettable identity that resonates. We craft distinctive, strategic branding solutions that go beyond logos, building a powerful narrative and visual language.",
+      buttons: [
+        "Brand Identity",
+        "Storytelling",
+        "Market Differentiation",
+        "Visual Language Design",
+        "Strategic Brand Positioning",
+      ],
+      image: pngs.image5,
+    },
+  ];
+
   return (
     <Box
       sx={{
-        background:
-          "linear-gradient(90deg, #1f1580ff, #090425ff,  #090425ff, #1b2755ff)",
+        position: "relative",
+        // background: "#000",
+        background: "radial-gradient(circle, #08289be3 0%, #000 25%)",
       }}
     >
+      <Box
+        sx={{
+          width: "633px",
+          height: "633px",
+          display: { xs: "none", lg: "block" },
+          position: "absolute",
+          // top: -9,
+          left: -13,
+        }}
+      >
+        <Image
+          src={pngs.howHeplLG}
+          alt="star"
+          style={{ height: "100%", width: "100%" }}
+        />
+      </Box>
+
+      <Box
+        sx={{
+          width: "790px",
+          // height: "790px",
+          display: { xs: "none", lg: "block" },
+          position: "absolute",
+          // top: 89,
+          left: 670,
+        }}
+      >
+        <Image
+          src={pngs.howHeplLGcolor}
+          alt="star"
+          style={{ height: "100%", width: "100%" }}
+        />
+      </Box>
+
       <Box
         sx={{
           maxWidth: "1440px",
@@ -23,7 +126,7 @@ export default function HowHelp() {
           justifyContent: "space-between",
           alignItems: "center",
           flexWrap: { xs: "wrap", lg: "nowrap" },
-          gap: "80px",
+          gap: { xs: "40px", md: "80px" },
         }}
       >
         <Box
@@ -41,10 +144,7 @@ export default function HowHelp() {
             sx={{
               maxWidth: "477px",
               width: "100%",
-              background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              display: "inline-block",
+
               textTransform: "capitalize",
             }}
           >
@@ -95,112 +195,110 @@ export default function HowHelp() {
           </Typography>
         </Box>
 
-        <Box
-          sx={{
-            width: "100%",
-            padding: "40px",
-            display: "flex",
-            flexWrap: { xs: "wrap", md: "nowrap" },
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-            gap: { xs: "40px", md: "60px" },
-            bgcolor: "#fff",
-            borderRadius: "80px",
-          }}
-        >
-          {/* text */}
-          <Box
-            sx={{
-              maxWidth: "555px",
-              width: "100%",
-              padding: { xs: "0px", md: "40px 0" },
-            }}
-          >
-            <Typography
-              sx={{
-                // maxWidth: "490px",
-                width: "100%",
-                fontSize: localFontSize.h4,
-                fontWeight: 600,
-                color: "#3C65FF",
-                lineHeight: "70px",
-                textAlign: { xs: "center", sm: "start" },
-              }}
-            >
-              Website Development
-            </Typography>
+        {/*  */}
 
+        {websiteServices.map((service, index) => {
+          const isFirst = index === 0;
+          const isLast = index === websiteServices.length - 1;
+          return (
             <Box
+              key={index}
               sx={{
-                mt: { xs: "10px", md: "30px" },
-                height: "auto",
                 width: "100%",
-                fontSize: localFontSize.p3,
+                padding: "40px",
                 display: "flex",
-                flexWrap: "wrap",
-                gap: { xs: "5px", md: "10px" },
+                flexWrap: { xs: "wrap", md: "nowrap" },
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+                gap: { xs: "40px", md: "60px" },
+                bgcolor: "#fff",
+                borderRadius: "80px",
+                borderTopLeftRadius: isFirst ? 0 : "80px",
+                borderBottomRightRadius: isLast ? 0 : "80px",
               }}
             >
-              <ButtonComponent
-                label="Custom Websites"
+              {/* text */}
+              <Box
                 sx={{
-                  padding: { xs: "5px 15px", md: "10px 20px" },
-                  height: { xs: "30px", md: "44px" },
+                  maxWidth: "555px",
+                  width: "100%",
+                  padding: { xs: "0px", md: "40px 0" },
                 }}
-              />
-              <ButtonComponent
-                label="Responsive Design "
+              >
+                <Typography
+                  sx={{
+                    // maxWidth: "490px",
+                    width: "100%",
+                    fontSize: localFontSize.h4,
+                    fontWeight: 500,
+                    color: "#3C65FF",
+                    lineHeight: { md: "70px" },
+                    textAlign: { xs: "center", sm: "start" },
+                  }}
+                >
+                  {service.title}
+                </Typography>
+
+                <Box
+                  sx={{
+                    mt: { xs: "20px", md: "30px" },
+                    height: "auto",
+                    width: "100%",
+                    fontSize: localFontSize.p3,
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: { xs: "5px", md: "10px" },
+                  }}
+                >
+                  {service.buttons.map((label, i) => (
+                    <ButtonComponent
+                      key={i}
+                      label={label}
+                      sx={{
+                        padding: { xs: "5px 15px", md: "10px 20px" },
+                        height: { xs: "30px", md: "44px" },
+                      }}
+                    />
+                  ))}
+                </Box>
+                <Typography
+                  sx={{
+                    // maxWidth: "490px",
+                    mt: { xs: "40px", md: "60px" },
+                    width: "100%",
+                    fontSize: localFontSize.p2,
+                    fontWeight: 400,
+                    color: "#00000080",
+                    textAlign: { xs: "center", sm: "start" },
+                  }}
+                >
+                  {service.description}
+                </Typography>
+              </Box>
+              {/* image */}
+              <Box
                 sx={{
-                  padding: { xs: "5px 15px", md: "10px 20px" },
-                  height: { xs: "30px", md: "44px" },
+                  maxWidth: { width: "100%", md: "445px" },
+                  width: "100%",
+                  height: "auto",
                 }}
-              />
-              <ButtonComponent
-                label="E-commerce"
-                sx={{
-                  padding: { xs: "5px 15px", md: "10px 20px" },
-                  height: { xs: "30px", md: "44px" },
-                }}
-              />
-              <ButtonComponent
-                label="E-commerce"
-                sx={{
-                  padding: { xs: "5px 15px", md: "10px 20px" },
-                  height: { xs: "30px", md: "44px" },
-                }}
-              />
+              >
+                <Image
+                  src={service.image}
+                  alt={`service-${index}`}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    borderRadius: "80px",
+                    borderTopLeftRadius: isFirst ? 0 : "80px",
+                    borderBottomRightRadius: isLast ? 0 : "80px",
+                  }}
+                />
+              </Box>
             </Box>
-            <Typography
-              sx={{
-                // maxWidth: "490px",
-                mt: { xs: "40px", md: "60px" },
-                width: "100%",
-                fontSize: localFontSize.p2,
-                fontWeight: 400,
-                color: "#00000080",
-                textAlign: { xs: "center", sm: "start" },
-              }}
-            >
-              We craft high-performing, bespoke websites engineered to convert
-              visitors into customers.
-            </Typography>
-          </Box>
-          {/* image */}
-          <Box
-            sx={{
-              maxWidth: { width: "100%", md: "445px" },
-              width: "100%",
-              height: "auto",
-            }}
-          >
-            <Image
-              src={pngs.image1}
-              alt="image1"
-              style={{ width: "100%", height: "100%", borderRadius: "80px" }}
-            />
-          </Box>
-        </Box>
+          );
+        })}
       </Box>
     </Box>
   );

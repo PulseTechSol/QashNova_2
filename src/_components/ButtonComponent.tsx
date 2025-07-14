@@ -37,7 +37,7 @@ export default function ButtonComponent({
         padding: { xs: "15px 25px", md: "15px 40px" },
         gap: { xs: "6px", md: "10px" },
         fontSize: localFontSize.p3,
-        fontWeight: 400,
+        fontWeight: 300,
         borderRadius: "50px",
         // outline: "none",
         textTransform: "capitalize",
