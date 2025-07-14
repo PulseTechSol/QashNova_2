@@ -153,27 +153,13 @@ export default function HowHelp() {
     <Box
       sx={{
         position: "relative",
+        // background: "#000",
+        // zIndex: "100",
         background: "radial-gradient(circle, #08289be3 0%, #000 25%)",
         backgroundAttachment: "fixed",
-        backgroundPosition: "top center",
+        backgroundPosition: "center center",
       }}
     >
-      <Box
-        sx={{
-          width: "633px",
-          height: "633px",
-          display: { xs: "none", lg: "block" },
-          position: "absolute",
-          left: -13,
-        }}
-      >
-        <Image
-          src={pngs.howHeplLG}
-          alt="star"
-          style={{ height: "100%", width: "100%" }}
-        />
-      </Box>
-
       <Box
         sx={{
           width: "633px",
@@ -186,6 +172,24 @@ export default function HowHelp() {
       >
         <Image
           src={pngs.howHeplLG}
+          alt="star"
+          style={{ height: "100%", width: "100%" }}
+        />
+      </Box>
+
+      <Box
+        sx={{
+          // m: "auto",
+          width: "790px",
+          height: "790px",
+          display: { xs: "none", lg: "block" },
+          position: "absolute",
+          // top: 89,
+          right: 0,
+        }}
+      >
+        <Image
+          src={pngs.howHeplLGcolor}
           alt="star"
           style={{ height: "100%", width: "100%" }}
         />
@@ -279,11 +283,13 @@ export default function HowHelp() {
               textAlign: { xs: "center", sm: "start" },
             }}
           >
-            {`Discover our full range of digital marketing services. From strategy
-            to execution, we're here to deliver effective solutions that help
-            your brand succeed in today's competitive landscape.`}
+            Discover our full range of digital marketing services. From strategy
+            to execution, we&apos;re here to deliver effective solutions that
+            help your brand succeed in today&apos;s competitive landscape.
           </Typography>
         </Box>
+
+        {/*  */}
 
         {websiteServices.map((service, index) => {
           const isFirst = index === 0;
@@ -307,6 +313,7 @@ export default function HowHelp() {
                 borderBottomRightRadius: isLast ? 0 : "80px",
               }}
             >
+              {/* text */}
               <Box
                 sx={{
                   maxWidth: "555px",
@@ -316,6 +323,7 @@ export default function HowHelp() {
               >
                 <Typography
                   sx={{
+                    // maxWidth: "490px",
                     width: "100%",
                     fontSize: localFontSize.h4,
                     fontWeight: 500,
@@ -351,6 +359,7 @@ export default function HowHelp() {
                 </Box>
                 <Typography
                   sx={{
+                    // maxWidth: "490px",
                     mt: { xs: "40px", md: "60px" },
                     width: "100%",
                     fontSize: localFontSize.p2,
@@ -362,7 +371,7 @@ export default function HowHelp() {
                   {service.description}
                 </Typography>
               </Box>
-
+              {/* image */}
               <Box
                 sx={{
                   maxWidth: { width: "100%", md: "445px" },
