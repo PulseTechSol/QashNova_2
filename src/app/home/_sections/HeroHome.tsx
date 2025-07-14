@@ -18,7 +18,6 @@ export default function HeroHome() {
           gap: { xs: "0" },
         }}
       >
-        {/* LEFT SIDE - Heading */}
         <Typography
           sx={{
             maxWidth: "1440px",
