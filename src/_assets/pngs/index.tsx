@@ -6,13 +6,21 @@ import image5 from "./heroHelp/image5.png";
 import heroHome from "./heroHome.png";
 import howHeplLG from "./heroHelp/howHeplLG.png";
 import howHeplLGcolor from "./heroHelp/howHeplLGcolor.png";
+import workimage1 from "./ourwork/workimage11.png";
+import workimage2 from "./ourwork/workimage2.png";
+import workimag4 from "./ourwork/workimag4.png";
+import workimage3 from "./ourwork/workimage3.png";
 
 const pngs = {
   image1,
   heroHome,
+  workimage1,
   howHeplLGcolor,
+  workimage2,
   howHeplLG,
+  workimag4,
   image2,
+  workimage3,
   image3,
   image4,
   image5,

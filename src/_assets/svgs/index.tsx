@@ -7,7 +7,7 @@ import logo3 from "./logosPartness/logos3.svg";
 import logo4 from "./logosPartness/logos4.svg";
 import logo5 from "./logosPartness/logos5.svg";
 import logos6 from "./logosPartness/logos6.svg";
-import logos7 from "./logosPartness/logos7.svg";
+import logos7 from "./logosPartness/logo7.svg";
 import startDark1 from "./startDark1.svg";
 import stars2 from "./stars2.svg";
 import siarrowright from "./siarrowright.svg";
