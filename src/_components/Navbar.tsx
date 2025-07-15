@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import svgs from "@/_assets/svgs";
 import ButtonComponent from "./ButtonComponent";
-import { localFontSize } from "@/app/_utils/themes";
+// import { localFontSize } from "@/app/_utils/themes";
 
 export default function Navbar() {
   const [menu, setMenu] = React.useState(false);
@@ -27,15 +27,13 @@ export default function Navbar() {
     { text: "Branding", route: "" },
     { text: "case study", route: "" },
     { text: "plans", route: "" },
+    { text: "contact", route: "" },
   ];
 
   return (
     <Box
       sx={{
-        // bgcolor: { xs: "#000" },
         bgcolor: "#fff",
-        // boxShadow:
-        //   "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
         top: "0",
         left: "0",
         right: "0",
@@ -48,7 +46,7 @@ export default function Navbar() {
         sx={{
           display: "flex",
           alignItems: "center",
-          flexDirection: { xs: "row", md: "row" },
+          flexDirection: { xs: "row-reverse", md: "row" },
           justifyContent: "space-between",
           gap: { md: "10px", lg: "18px" },
           padding: {
@@ -63,9 +61,28 @@ export default function Navbar() {
       >
         <Box
           sx={{
+            maxWidth: "43px",
+            height: "44px",
+            display: { xs: "block", md: "none" },
+          }}
+        >
+          <Image
+            // width={287}
+            style={{
+              height: "100% !important",
+              width: "100% !important",
+              cursor: "pointer",
+              // objectFit: "cover",
+            }}
+            src={svgs.mobileLogo}
+            alt="logo"
+          />
+        </Box>
+        {/* logo for md */}
+        <Box
+          sx={{
             maxWidth: "287px",
-            // height: "40px",
-            display: { xs: "block" },
+            display: { xs: "none", md: "block" },
           }}
         >
           <Image
@@ -87,7 +104,7 @@ export default function Navbar() {
             width: "100%",
             display: "flex",
             // flexDirection:{xs:"row"}
-            justifyContent: { xs: "end", md: "space-between" },
+            justifyContent: { xs: "start", md: "space-between" },
             alignItems: "center",
             gap: "30px",
           }}
@@ -141,24 +158,27 @@ export default function Navbar() {
       ></Box>
       <Box
         sx={{
-          height: { xs: "100vh", sm: "700px" },
-          width: { xs: "100vw", sm: "540px" },
+          height: { xs: "100vh", md: "700px", lg: "760px" },
+          width: { xs: "100vw", sm: "50vw", md: "540px" },
           position: "fixed",
           top: "0px",
           right: "0px",
           transition: "all 0.4s ease-in-out",
           transform: menu ? "translateX(0%)" : "translateX(100%)",
           // transform: menu ? "translateX(100%)" : "translateX(-100%)",
-          borderRadius: "40px 0 0 40px",
+          borderRadius: { xs: "0px 40px 0 40px", md: " 40px 0 0 40px" },
           zIndex: "1000",
-          backgroundColor: "#FFFFFF",
+          background: {
+            xs: `linear-gradient(180deg, #FFFFFF, #C5C5C5, #999999)`,
+            md: "#fff",
+          },
         }}
       >
         <Box
           sx={{
-            margin: { xs: "20px ", sm: "20px " },
+            margin: { xs: "10px 20px ", lg: "20px " },
 
-            textAlign: "right",
+            textAlign: { xs: "left", md: "right" },
           }}
         >
           <Image
@@ -170,7 +190,14 @@ export default function Navbar() {
             width={50}
           />
         </Box>
-        <Box sx={{ height: "1px", bgcolor: "#00000080", width: "100%" }}></Box>
+        <Box
+          sx={{
+            display: { xs: "none", md: "block" },
+            height: "1px",
+            bgcolor: "#00000080",
+            width: "100%",
+          }}
+        ></Box>
         <Box
           sx={{
             // height: "566px",
@@ -179,8 +206,8 @@ export default function Navbar() {
             justifyContent: "center",
             flexDirection: "column",
             // bgcolor: "#ccc",
-            gap: "20px",
-            padding: { xs: "50px 30px" },
+            gap: { xs: "5px", md: "10px", lg: "20px" },
+            padding: { xs: "10px  30px 0", lg: "50px 30px" },
           }}
         >
           {navLinks.map((link, i) => (
@@ -202,7 +229,7 @@ export default function Navbar() {
                   (link.route.startsWith("./")
                     ? link.route.substring(1)
                     : link.route)
-                    ? "#FFFFFF"
+                    ? ""
                     : "",
                 // padding: { xs: "20px" },
                 cursor: "pointer",
@@ -224,8 +251,8 @@ export default function Navbar() {
                     (link.route.startsWith("./")
                       ? link.route.substring(1)
                       : link.route)
-                      ? localFontSize.h4
-                      : localFontSize.h5,
+                      ? "64px"
+                      : { xs: "36px", md: "30px", lg: "36px" },
                   background:
                     pathname ===
                     (link.route.startsWith("./")

@@ -12,9 +12,11 @@ import startDark1 from "./startDark1.svg";
 import stars2 from "./stars2.svg";
 import siarrowright from "./siarrowright.svg";
 import line from "./line.svg";
+import mobileLogo from "./mobileLogo.svg";
 
 const svgs = {
   logo1,
+  mobileLogo,
   logos2,
   line,
   logo3,
