@@ -1,5 +1,6 @@
 import hamburger from "./humbarger.svg";
 import logo from "./logo.svg";
+import logoFooter from "./logoFooter.svg";
 import whiteArrow from "./whiteArrow.svg";
 import logo1 from "./logosPartness/logo1.svg";
 import logos2 from "./logosPartness/logos2.svg";
@@ -12,8 +13,14 @@ import startDark1 from "./startDark1.svg";
 import stars2 from "./stars2.svg";
 import siarrowright from "./siarrowright.svg";
 import line from "./line.svg";
+import facebook from "./facebook.svg";
+import instagram from "./instagram.svg";
+import whatsapp from "./whatsapp.svg";
+import phone from "./phone.svg";
+import email from "./email.svg";
 
 const svgs = {
+  logoFooter,
   logo1,
   logos2,
   line,
@@ -28,5 +35,11 @@ const svgs = {
   hamburger,
   whiteArrow,
   logo,
+  facebook,
+  instagram,
+  whatsapp,
+  phone,
+  email,
 };
+
 export default svgs;
