@@ -4,6 +4,7 @@ import HowHelp from "./_sections/HowHelp";
 import CraftingWebsites from "./_sections/CraftingWebsites";
 import OurWork from "./_sections/OurWork";
 import Casestudies from "./_sections/Casestudies";
+import ContactUs from "@/_components/ContactUs";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <CraftingWebsites />
       <OurWork />
       <Casestudies />
+      <ContactUs />
     </>
   );
 }
