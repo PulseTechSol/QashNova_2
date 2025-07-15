@@ -33,14 +33,15 @@ export default function ButtonComponent({
         justifyContent: "center",
         // maxWidth: "170px",
         width: "max-content",
-        height: { xs: "40px", md: "60px" },
-        padding: { xs: "15px 25px", md: "15px 40px" },
+        height: { xs: "60px", md: "60px" },
+        padding: { xs: "15px 40px", md: "15px 40px" },
         gap: { xs: "6px", md: "10px" },
         fontSize: localFontSize.p3,
         fontWeight: 300,
         borderRadius: "50px",
         // outline: "none",
         textTransform: "capitalize",
+        // bgcolor:"#DDDDD"
         bgcolor: "#3C65FF80",
         ...sx,
       }}
