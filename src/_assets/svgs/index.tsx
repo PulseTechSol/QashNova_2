@@ -18,10 +18,12 @@ import instagram from "./instagram.svg";
 import whatsapp from "./whatsapp.svg";
 import phone from "./phone.svg";
 import email from "./email.svg";
+import mobileLogo from "./mobileLogo.svg";
 
 const svgs = {
   logoFooter,
   logo1,
+  mobileLogo,
   logos2,
   line,
   logo3,

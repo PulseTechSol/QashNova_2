@@ -119,8 +119,7 @@ export default function HeroHome() {
                   border: "3px solid transparent",
                   // borderRadius: "16px",
                   backgroundImage: `linear-gradient(#fff, #fff),
-      linear-gradient(90deg, #3C65FF, #8A38F5, #2617B1)
-    `,
+                      linear-gradient(90deg, #3C65FF, #8A38F5, #2617B1)`,
                   backgroundOrigin: "border-box",
                   backgroundClip: "content-box, border-box",
                   padding: "1px",
