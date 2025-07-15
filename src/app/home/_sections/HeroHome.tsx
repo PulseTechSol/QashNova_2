@@ -7,7 +7,15 @@ import Image from "next/image";
 
 export default function HeroHome() {
   return (
-    <Box sx={{ background: "linear-gradient(-10deg, #DDDDDD, #ffffffff)" }}>
+    <Box
+      sx={{
+        // bgcolor: "green",
+        display: "flex",
+        justifyContent: "center",
+        minHeight: { xs: "calc(100vh - 97px)", md: "calc(100vh - 101px)" },
+        background: "linear-gradient(-10deg, #DDDDDD, #ffffffff)",
+      }}
+    >
       <Box
         sx={{
           position: "relative",
@@ -22,13 +30,13 @@ export default function HeroHome() {
           sx={{
             maxWidth: "1440px",
             width: "100%",
-            textAlign: { xs: "center", sm: "start" },
+            textAlign: { xs: "start" },
             background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             display: "inline-block",
             textTransform: "uppercase",
-            mt: { xs: "0", lg: "80px" },
+            mt: { xs: "60px", lg: "80px" },
             fontSize: localFontSize.h1,
             fontWeight: 600,
           }}
@@ -40,14 +48,14 @@ export default function HeroHome() {
           sx={{
             width: "100%",
             maxWidth: "1440px",
-
-            textAlign: { xs: "center", sm: "start" },
-
+            textAlign: { xs: "start" },
             margin: "auto",
             display: { xs: "flex" },
-            justifyContent: { xs: "center", sm: "space-between" },
+            justifyContent: { xs: "space-between" },
             alignItems: "center",
             flexWrap: { xs: "wrap", lg: "nowrap" },
+            mb: { xs: "30%", md: "0", lg: "100px" },
+
             gap: 4,
           }}
         >
@@ -108,10 +116,10 @@ export default function HeroHome() {
             <Box
               sx={{
                 width: "100%",
-                display: { xs: "flex", sm: "block" },
+                display: { xs: "block" },
                 alignItems: { xs: "center", sm: "start" },
                 justifyContent: "center",
-                // bgcolor: "#ccc",
+                // bgcolor: "#fa2323ff",
               }}
             >
               <ButtonComponent
@@ -124,9 +132,9 @@ export default function HeroHome() {
                   backgroundClip: "content-box, border-box",
                   padding: "1px",
                   // px: 23,
-                  width: "194px",
+                  width: { xs: "184px", md: "194px" },
                   textAlign: { xs: "center", sm: "start" },
-                  bgcolor: "#fff",
+
                   // border: "3px solid #8A38F5 ",
                   color: "#3C65FF",
                 }}
@@ -136,42 +144,73 @@ export default function HeroHome() {
             </Box>
           </Box>
         </Box>
-
+        {/* top */}
         <Box
           sx={{
-            width: "121px",
-            height: "121px",
-            display: { xs: "none", lg: "block" },
+            width: { xs: "89px", lg: "121px" },
+            height: { xs: "89px", lg: "121px" },
+            display: { xs: "block", md: "none", lg: "block" },
             position: "absolute",
-            top: 73,
-            left: 213,
+            top: { xs: 16, lg: 73 },
+            left: { xs: 36, lg: 213 },
           }}
         >
-          <Image src={svgs.startDark1} alt="star" />
+          <Image
+            src={svgs.startDark1}
+            alt="star"
+            style={{ width: "100%", height: "100%" }}
+          />
         </Box>
+        {/* left */}
         <Box
           sx={{
-            width: "121px",
-            height: "121px",
-            display: { xs: "none", lg: "block" },
+            width: { xs: "89px", lg: "121px" },
+            height: { xs: "89px", lg: "121px" },
+            display: { xs: "block", md: "none", lg: "block" },
             position: "absolute",
-            top: 523,
-            left: -53,
+            top: { xs: "85%", lg: 523 },
+            left: { xs: 3, lg: -53 },
           }}
         >
-          <Image src={svgs.startDark1} alt="star" />
+          <Image
+            src={svgs.startDark1}
+            alt="star"
+            style={{ width: "100%", height: "100%" }}
+          />
         </Box>
+        {/*center  */}
         <Box
           sx={{
-            width: "121px",
-            height: "121px",
-            display: { xs: "none", lg: "block" },
+            width: { xs: "89px", lg: "121px" },
+            height: { xs: "89px", lg: "121px" },
+            display: { xs: "block", md: "none", lg: "block" },
             position: "absolute",
-            top: 709,
-            right: 213,
+            top: { xs: "75%", lg: 700, xl: 823 },
+            right: { xs: -20, lg: 453 },
           }}
         >
-          <Image src={svgs.stars2} alt="star" />
+          <Image
+            src={svgs.startDark1}
+            alt="star"
+            style={{ width: "100%", height: "100%" }}
+          />
+        </Box>
+        {/*short  */}
+        <Box
+          sx={{
+            width: { xs: "58px", lg: "84px" },
+            height: { xs: "58px", lg: "84px" },
+            display: { xs: "block", md: "none", lg: "block" },
+            position: "absolute",
+            top: { xs: 294, lg: 590, xl: 690 },
+            right: { xs: 53, lg: 290 },
+          }}
+        >
+          <Image
+            src={svgs.stars2}
+            alt="star"
+            style={{ width: "100%", height: "100%" }}
+          />
         </Box>
         <Box
           sx={{

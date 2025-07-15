@@ -20,6 +20,19 @@ export default function Navbar() {
     console.log(menu);
   }
 
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (menu) {
+        setMenu(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup jab component unmount ho
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [menu]);
   const navLinks = [
     { text: "home", route: "/" },
     { text: "about", route: "" },
@@ -142,6 +155,22 @@ export default function Navbar() {
           </Box>
         </Box>
       </Box>
+      {menu && (
+        <Box
+          sx={{
+            display: { xs: "block", md: "none" },
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            zIndex: 1000, // 👈 Menu ke niche
+            backdropFilter: "blur(8px)",
+            WebkitBackdropFilter: "blur(8px)",
+            backgroundColor: "rgba(0, 0, 0, 0.2)", // optional dark effect
+          }}
+        />
+      )}
 
       <Box
         onClick={sidebar}
@@ -153,12 +182,12 @@ export default function Navbar() {
           position: "fixed",
           top: "0px",
           left: "0px",
-          zIndex: "1000",
+          zIndex: 1000,
         }}
       ></Box>
       <Box
         sx={{
-          height: { xs: "100vh", md: "700px", lg: "760px" },
+          height: { xs: "auto", md: "650px", lg: "760px" },
           width: { xs: "100vw", sm: "50vw", md: "540px" },
           position: "fixed",
           top: "0px",
@@ -166,17 +195,29 @@ export default function Navbar() {
           transition: "all 0.4s ease-in-out",
           transform: menu ? "translateX(0%)" : "translateX(100%)",
           // transform: menu ? "translateX(100%)" : "translateX(-100%)",
-          borderRadius: { xs: "0px 40px 0 40px", md: " 40px 0 0 40px" },
-          zIndex: "1000",
+          borderRadius: { xs: "0 40px 0 40px", md: " 40px 0 0 40px" },
+          zIndex: 1000,
           background: {
             xs: `linear-gradient(180deg, #FFFFFF, #C5C5C5, #999999)`,
             md: "#fff",
+          },
+          overflowY: "auto",
+          scrollbarWidth: "thin",
+          "&::-webkit-scrollbar": {
+            width: "6px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: "#888",
+            borderRadius: "6px",
+          },
+          "&::-webkit-scrollbar-track": {
+            backgroundColor: "#f1f1f1",
           },
         }}
       >
         <Box
           sx={{
-            margin: { xs: "10px 20px ", lg: "20px " },
+            margin: { xs: "10px 20px ", md: "20px " },
 
             textAlign: { xs: "left", md: "right" },
           }}
@@ -206,8 +247,8 @@ export default function Navbar() {
             justifyContent: "center",
             flexDirection: "column",
             // bgcolor: "#ccc",
-            gap: { xs: "5px", md: "10px", lg: "20px" },
-            padding: { xs: "10px  30px 0", lg: "50px 30px" },
+            gap: { xs: "10px", md: "20px", lg: "20px" },
+            padding: { xs: "20px  30px", md: "50px 30px" },
           }}
         >
           {navLinks.map((link, i) => (
@@ -281,6 +322,24 @@ export default function Navbar() {
               </Typography>
             </Box>
           ))}
+          <Box
+            sx={{
+              // display: { xs: "none", sm: "block" },
+              flexGrow: 1,
+              overflowY: "scroll",
+
+              "&::-webkit-scrollbar": {
+                width: "6px",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                backgroundColor: "#888",
+                borderRadius: "6px",
+              },
+              "&::-webkit-scrollbar-track": {
+                backgroundColor: "#f1f1f1ff",
+              },
+            }}
+          ></Box>
         </Box>
       </Box>
     </Box>

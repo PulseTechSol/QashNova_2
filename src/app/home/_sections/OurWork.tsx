@@ -17,11 +17,10 @@ export default function OurWork() {
     >
       <Box
         sx={{
-          width: "633px",
-          height: "633px",
-          display: { xs: "none", lg: "block" },
+          width: { xs: "355px", md: "633px" },
+          height: { xs: "355px", md: "633px" },
+          display: { xs: "block", lg: "block" },
           position: "absolute",
-          // top: -9,
           left: -13,
         }}
       >
@@ -84,14 +83,14 @@ export default function OurWork() {
             width: "100%",
             display: "flex",
             justifyContent: "space-between",
-            alignItems: "center",
+            alignItems: { xs: "start", sm: "center" },
             flexDirection: { xs: "column", sm: "row" },
             gap: "40px",
           }}
         >
           <Box
             sx={{
-              maxWidth: "477px",
+              maxWidth: { xs: "300px", sm: "477px" },
               width: "100%",
 
               textTransform: "capitalize",
@@ -103,7 +102,7 @@ export default function OurWork() {
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
                 color: "#3C65FF",
-                textAlign: { xs: "center", sm: "start" },
+                textAlign: { xs: "start" },
               }}
             >
               our
@@ -114,7 +113,8 @@ export default function OurWork() {
                 color: "#3C65FF",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
-                textAlign: "center",
+                // ml: { xs: "10px", sm: "0" },
+                textAlign: { xs: "center", sm: "center" },
               }}
             >
               work
@@ -132,10 +132,10 @@ export default function OurWork() {
             sx={{
               maxWidth: "490px",
               width: "100%",
-              fontSize: localFontSize.p1,
+              fontSize: "18px",
               fontWeight: 400,
               color: "#FFFFFF80",
-              textAlign: { xs: "center", sm: "start" },
+              textAlign: { xs: "end", sm: "start" },
             }}
           >
             See the passion and precision in every project. Our featured work
@@ -165,7 +165,7 @@ export default function OurWork() {
             image={pngs.workimage1}
             sx={{
               maxWidth: "1440px",
-              height: { xs: "350px", sm: "450px", md: "700px" },
+              height: { xs: "300px", sm: "450px", md: "620px", lg: "700px" },
             }}
           />
 
@@ -183,26 +183,33 @@ export default function OurWork() {
               title="sofa & rattan"
               year="2025"
               image={pngs.workimage2}
-              sx={{ maxWidth: { xs: "100%", md: "555px" }, height: "auto" }}
+              sx={{
+                maxWidth: { xs: "100%", md: "555px" },
+                // height: {"auto"},
+              }}
             />
             <WorkShowcase
               title="a class travel"
               year="2025"
               image={pngs.workimage3}
-              sx={{ maxWidth: { xs: "100%", md: "555px" }, height: "auto" }}
+              sx={{
+                maxWidth: { xs: "100%", md: "555px" },
+                //  height: "auto"
+              }}
             />
           </Box>
           <WorkShowcase
             title="Isfahan & Kashan"
             year="2025"
-            isboolean={true}
+            // isboolean={true}
             image={pngs.workimag4}
             sx={{
               maxWidth: "1440px",
               height: {
-                xs: "350px",
+                xs: "300px",
                 sm: "450px",
-                md: "700px",
+                md: "600px",
+                lg: "700px",
               },
             }}
           />
@@ -242,7 +249,8 @@ export function WorkShowcase({
         sx={{
           width: "100%",
           bgcolor: "rgba(0, 0, 0, 0.3)",
-          borderRadius: image === pngs.workimage1 ? "80px 80px 0 0" : "0",
+          borderRadius:
+            image === pngs.workimage1 ? { xs: "0", md: "80px 80px 0 0" } : "0",
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
         }}
@@ -262,7 +270,7 @@ export function WorkShowcase({
         >
           <Typography
             sx={{
-              maxWidth: "316px",
+              maxWidth: { xs: "316px", md: "400px" },
               width: "100%",
               fontSize: localFontSize.h5,
               fontWeight: 400,
@@ -285,14 +293,30 @@ export function WorkShowcase({
             {year}
           </Typography>
         </Box>
-        <Box sx={{ width: "100%", height: "auto", ...sx }}>
+        <Box
+          sx={{
+            width: "100%",
+            height: { xs: "300px", sm: "450px", md: "350px", lg: "458px" },
+            ...(image === pngs.workimag4
+              ? {
+                  borderBottomLeftRadius: { xs: "0", md: "80px" },
+                  borderBottomRightRadius: { xs: "0", md: "80px" },
+                  overflow: "hidden",
+                }
+              : {
+                  borderRadius: "0",
+                  overflow: "hidden",
+                }),
+            ...sx,
+            backgroundColor: "#fff",
+          }}
+        >
           <Image
             src={image as StaticImageData}
             alt="workimage1"
             style={{
               width: "100%",
               height: "100%",
-              borderRadius: image === pngs.workimag4 ? "0 0 80px 80px" : "0",
               objectFit: isboolean ? "cover" : "contain",
             }}
           />

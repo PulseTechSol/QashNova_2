@@ -34,7 +34,7 @@ export default function CraftingWebsites() {
               display: "inline-block",
               textTransform: "uppercase",
               mb: { xs: "40px", lg: "80px" },
-              fontSize: localFontSize.h1,
+              fontSize: localFontSize.h2,
               fontWeight: 600,
             }}
           >
@@ -105,15 +105,15 @@ export default function CraftingWebsites() {
 
           <Box
             sx={{
-              width: "391px",
-              height: "41px",
+              width: { xs: "124px", lg: "391px" },
+              height: { xs: "13px", lg: "41px" },
               display: "block",
-              "@media (min-width:0px) and (max-width:1300px)": {
+              "@media (min-width:600px) and (max-width:1300px)": {
                 display: "none",
               },
               position: "absolute",
-              top: { lg: 610, xl: 970 },
-              left: 750,
+              top: { xs: "53%", lg: 610, xl: 970 },
+              left: { xs: "35%", lg: 750 },
             }}
           >
             <Image

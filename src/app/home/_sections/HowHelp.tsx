@@ -120,9 +120,9 @@ export default function HowHelp() {
     >
       <Box
         sx={{
-          width: "633px",
-          height: "633px",
-          display: { xs: "none", lg: "block" },
+          width: { xs: "355px", md: "633px" },
+          height: { xs: "355px", md: "633px" },
+          display: { xs: "block", lg: "block" },
           position: "absolute",
           left: -13,
         }}
@@ -136,8 +136,8 @@ export default function HowHelp() {
 
       <Box
         sx={{
-          width: "790px",
-          height: "790px",
+          width: { xs: "300px", md: "790px" },
+          height: { xs: "300px", md: "790px" },
           display: { xs: "none", lg: "block" },
           position: "absolute",
           // top: 89,
@@ -172,14 +172,14 @@ export default function HowHelp() {
             width: "100%",
             display: "flex",
             justifyContent: "space-between",
-            alignItems: "center",
+            alignItems: { xs: "start", sm: "center" },
             flexDirection: { xs: "column", sm: "row" },
-            gap: "40px",
+            gap: { xs: "30px", sm: "40px" },
           }}
         >
           <Box
             sx={{
-              maxWidth: "477px",
+              maxWidth: { xs: "300px", sm: "477px" },
               width: "100%",
               textTransform: "capitalize",
             }}
@@ -190,7 +190,7 @@ export default function HowHelp() {
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
                 color: "#3C65FF",
-                textAlign: { xs: "center", sm: "start" },
+                textAlign: { xs: "start" },
               }}
             >
               How
@@ -201,7 +201,8 @@ export default function HowHelp() {
                 color: "#3C65FF",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
-                textAlign: "center",
+                // ml:{xs:"10px",}
+                textAlign: { xs: "center" },
               }}
             >
               we Help
@@ -219,10 +220,10 @@ export default function HowHelp() {
             sx={{
               maxWidth: "490px",
               width: "100%",
-              fontSize: localFontSize.p1,
+              fontSize: "18px",
               fontWeight: 400,
               color: "#FFFFFF80",
-              textAlign: { xs: "center", sm: "start" },
+              textAlign: { xs: "end", sm: "start" },
             }}
           >
             Discover our full range of digital marketing services. From strategy
@@ -267,7 +268,7 @@ export default function HowHelp() {
                     fontWeight: 500,
                     color: "#3C65FF",
                     lineHeight: { md: "70px" },
-                    textAlign: { xs: "center", sm: "start" },
+                    textAlign: { xs: "start" },
                   }}
                 >
                   {service.title}
@@ -297,12 +298,12 @@ export default function HowHelp() {
                 </Box>
                 <Typography
                   sx={{
-                    mt: { xs: "40px", md: "60px" },
+                    mt: { xs: "30px", md: "60px" },
                     width: "100%",
                     fontSize: localFontSize.p2,
                     fontWeight: 400,
                     color: "#00000080",
-                    textAlign: { xs: "center", sm: "start" },
+                    textAlign: { xs: "start" },
                   }}
                 >
                   {service.description}
