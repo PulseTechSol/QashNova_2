@@ -209,7 +209,7 @@ export default function HowHelp() {
               className="gsap-card"
               sx={{
                 width: "100%",
-                padding: "40px",
+                padding: { xs: "40px 20px ", sm: "40px" },
                 display: "flex",
                 flexWrap: { xs: "wrap", md: "nowrap" },
                 justifyContent: "center",
@@ -246,7 +246,10 @@ export default function HowHelp() {
                     mt: { xs: "20px", md: "30px" },
                     height: "auto",
                     width: "100%",
-                    fontSize: localFontSize.p3,
+                    fontSize: {
+                      xs: "12px",
+                      md: "16px",
+                    },
                     display: "flex",
                     flexWrap: "wrap",
                     gap: { xs: "5px", md: "10px" },
