@@ -39,6 +39,7 @@ export default function Casestudies() {
       sx={{
         position: "relative",
         bgcolor: "#fff",
+        overflow: "hidden",
         // background: {
         //   xs: "linear-gradient(-90deg, #f9f9faff, #ffffff28, #2b14f827)",
         //   md: "#fff",

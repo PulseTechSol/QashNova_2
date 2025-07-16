@@ -15,7 +15,13 @@ export default function Footer() {
 
   return (
     <>
-      <Box sx={{ backgroundColor: "#fff", position: "relative" }}>
+      <Box
+        sx={{
+          backgroundColor: "#fff",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
         <Box
           sx={{
             width: { xs: "355px", md: "633px" },

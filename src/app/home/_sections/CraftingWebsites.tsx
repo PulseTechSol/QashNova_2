@@ -11,6 +11,7 @@ export default function CraftingWebsites() {
       <Box
         sx={{
           background: "linear-gradient(20deg, #5841D466, #ffffffff,#ffffffff)",
+          overflow: "hidden",
         }}
       >
         <Box

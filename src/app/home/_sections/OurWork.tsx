@@ -13,6 +13,7 @@ export default function OurWork() {
         position: "relative",
         // bgcolor: "#000",
         background: "radial-gradient(circle, #08289be3 0%, #070707ff 30%)",
+        overflow: "hidden",
       }}
     >
       <Box

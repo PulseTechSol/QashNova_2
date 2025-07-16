@@ -155,7 +155,7 @@ export default function Navbar() {
           </Box>
         </Box>
       </Box>
-      {/* {menu && (
+      {menu && (
         <Box
           sx={{
             display: { xs: "block", md: "none" },
@@ -170,7 +170,7 @@ export default function Navbar() {
             backgroundColor: "rgba(0, 0, 0, 0.2)", // optional dark effect
           }}
         />
-      )} */}
+      )}
 
       <Box
         onClick={sidebar}
@@ -201,18 +201,18 @@ export default function Navbar() {
             xs: `linear-gradient(180deg, #FFFFFF, #C5C5C5, #999999)`,
             md: "#fff",
           },
-          //   overflowY: "auto",
-          //   scrollbarWidth: "thin",
-          //   "&::-webkit-scrollbar": {
-          //     width: "6px",
-          //   },
-          //   "&::-webkit-scrollbar-thumb": {
-          //     backgroundColor: "#888",
-          //     borderRadius: "6px",
-          //   },
-          //   "&::-webkit-scrollbar-track": {
-          //     backgroundColor: "#f1f1f1",
-          //   },
+          overflowY: "auto",
+          scrollbarWidth: "thin",
+          "&::-webkit-scrollbar": {
+            width: "6px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: "#888",
+            borderRadius: "6px",
+          },
+          "&::-webkit-scrollbar-track": {
+            backgroundColor: "#f1f1f1",
+          },
         }}
       >
         <Box
@@ -225,7 +225,6 @@ export default function Navbar() {
           <Image
             onClick={sidebar}
             src={svgs.hamburger}
-            // src={svgs.cross}
             alt="kashanimgclose"
             height={50}
             width={50}
