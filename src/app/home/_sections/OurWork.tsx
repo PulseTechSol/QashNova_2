@@ -50,23 +50,10 @@ export default function OurWork() {
         />
       </Box>
 
-      {/* <Box
-        sx={{
-          position: "absolute",
-          background:
-            "linear-gradient(150deg, #5841D480, #0a0a0a0a , #1213121c)",
-          width: "390px",
-          height: "390px",
-          left: 0,
-          zIndex: -10,
-        }}
-      />*/}
       <Box
         sx={{
           maxWidth: "1440px",
-          // zIndex: "10",
-          // height: "1440px",
-          // position: "absolute",
+
           width: "100%",
           padding: sectionPadding,
           margin: "auto",
@@ -80,7 +67,6 @@ export default function OurWork() {
       >
         <Box
           sx={{
-            maxWidth: "1440px",
             width: "100%",
             display: "flex",
             justifyContent: "space-between",
@@ -99,7 +85,6 @@ export default function OurWork() {
           >
             <Typography
               sx={{
-                width: "100%",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
                 color: "#3C65FF",
@@ -110,11 +95,9 @@ export default function OurWork() {
             </Typography>
             <Typography
               sx={{
-                width: "100%",
                 color: "#3C65FF",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
-                // ml: { xs: "10px", sm: "0" },
                 textAlign: { xs: "center", sm: "center" },
               }}
             >
@@ -165,7 +148,6 @@ export default function OurWork() {
             isboolean={true}
             image={pngs.workimage1}
             sx={{
-              maxWidth: "1440px",
               height: { xs: "300px", sm: "450px", md: "620px", lg: "700px" },
             }}
           />
@@ -186,7 +168,6 @@ export default function OurWork() {
               image={pngs.workimage2}
               sx={{
                 maxWidth: { xs: "100%", md: "555px" },
-                // height: {"auto"},
               }}
             />
             <WorkShowcase
@@ -195,17 +176,14 @@ export default function OurWork() {
               image={pngs.workimage3}
               sx={{
                 maxWidth: { xs: "100%", md: "555px" },
-                //  height: "auto"
               }}
             />
           </Box>
           <WorkShowcase
             title="Isfahan & Kashan"
             year="2025"
-            // isboolean={true}
             image={pngs.workimag4}
             sx={{
-              maxWidth: "1440px",
               height: {
                 xs: "300px",
                 sm: "450px",
@@ -239,11 +217,6 @@ export function WorkShowcase({
     <Box
       sx={{
         width: "100%",
-        display: "flex",
-        // gap: "20px",
-        // flexWrap:{xs""}
-
-        // ...sx,
       }}
     >
       <Box
@@ -259,14 +232,13 @@ export function WorkShowcase({
         <Box
           sx={{
             width: "100%",
-            // maxWidth: "1440px",
+
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
             p: { xs: "20px", lg: " 20px 50px" },
             gap: "20px",
             textTransform: "capitalize",
-            // ...sx,
           }}
         >
           <Typography
@@ -276,7 +248,6 @@ export function WorkShowcase({
               fontSize: localFontSize.h5,
               fontWeight: 400,
               color: "#fff",
-              // textAlign: { xs: "center", sm: "start" },
             }}
           >
             {title}
@@ -288,7 +259,6 @@ export function WorkShowcase({
               fontSize: localFontSize.h5,
               fontWeight: 400,
               color: "#fff",
-              // textAlign: { xs: "center", sm: "start" },
             }}
           >
             {year}

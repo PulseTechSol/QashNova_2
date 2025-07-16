@@ -1,10 +1,10 @@
 import HeroHome from "./_sections/HeroHome";
 import Partness from "./_sections/Partness";
 import HowHelp from "./_sections/HowHelp";
-import CraftingWebsites from "./_sections/CraftingWebsites";
 import OurWork from "./_sections/OurWork";
 import Casestudies from "./_sections/Casestudies";
 import ContactUs from "@/_components/ContactUs";
+import SectionWithHeadingAndCTA from "../../_components/SectionWithHeadingAndCTA";
 
 export default function HomePage() {
   return (
@@ -12,7 +12,7 @@ export default function HomePage() {
       <HeroHome />
       <Partness />
       <HowHelp />
-      <CraftingWebsites />
+      <SectionWithHeadingAndCTA heading="Crafting Websites for Your Success" />
       <OurWork />
       <Casestudies />
       <ContactUs />

@@ -80,35 +80,6 @@ export default function HowHelp() {
     },
   ];
 
-  // useEffect(() => {
-  //   if (!containerRef.current) return;
-  //   const cards = containerRef.current.querySelectorAll(".gsap-card");
-  //   cards.forEach((card, i) => {
-  //     const nextCard = cards[i + 1];
-  //     gsap.set(card, { zIndex: cards.length - i });
-  //     if (nextCard) gsap.set(nextCard, { zIndex: cards.length - i - 1 });
-
-  //     ScrollTrigger.create({
-  //       trigger: card,
-  //       start: "top",
-  //       end: "bottom",
-  //       scrub: true,
-  //       onUpdate: (self) => {
-  //         gsap.to(card, {
-  //           scale: 1 - self.progress,
-  //           opacity: 1 - self.progress,
-  //         });
-  //         if (nextCard) {
-  //           gsap.to(nextCard, {
-  //             opacity: self.progress,
-  //             zIndex: cards.length - i + 1,
-  //           });
-  //         }
-  //       },
-  //     });
-  //   });
-  // }, []);
-
   return (
     <Box
       sx={{
@@ -169,7 +140,6 @@ export default function HowHelp() {
       >
         <Box
           sx={{
-            maxWidth: "1440px",
             width: "100%",
             display: "flex",
             justifyContent: "space-between",
@@ -187,7 +157,6 @@ export default function HowHelp() {
           >
             <Typography
               sx={{
-                width: "100%",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
                 color: "#3C65FF",
@@ -198,11 +167,9 @@ export default function HowHelp() {
             </Typography>
             <Typography
               sx={{
-                width: "100%",
                 color: "#3C65FF",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
-                // ml:{xs:"10px",}
                 textAlign: { xs: "center" },
               }}
             >
@@ -264,7 +231,6 @@ export default function HowHelp() {
               >
                 <Typography
                   sx={{
-                    width: "100%",
                     fontSize: localFontSize.h4,
                     fontWeight: 500,
                     color: "#3C65FF",
@@ -300,7 +266,6 @@ export default function HowHelp() {
                 <Typography
                   sx={{
                     mt: { xs: "30px", md: "60px" },
-                    width: "100%",
                     fontSize: localFontSize.p2,
                     fontWeight: 400,
                     color: "#00000080",
@@ -312,7 +277,7 @@ export default function HowHelp() {
               </Box>
               <Box
                 sx={{
-                  maxWidth: { width: "100%", md: "445px" },
+                  maxWidth: { xs: "100%", md: "445px" },
                   width: "100%",
                   height: "auto",
                 }}

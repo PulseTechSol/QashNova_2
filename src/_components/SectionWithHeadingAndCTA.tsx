@@ -1,0 +1,103 @@
+import svgs from "@/_assets/svgs";
+import ButtonComponent from "@/_components/ButtonComponent";
+import { localFontSize, sectionPadding } from "@/app/_utils/themes";
+import { Box, Typography } from "@mui/material";
+import Image from "next/image";
+interface SectionWithHeadingAndCTAProps {
+  heading?: string;
+  lastword?: string;
+}
+
+export default function SectionWithHeadingAndCTA({
+  heading,
+  lastword,
+}: SectionWithHeadingAndCTAProps) {
+  return (
+    <>
+      <Box
+        sx={{
+          background: "linear-gradient(20deg, #5841D466, #ffffffff,#ffffffff)",
+          overflow: "hidden",
+        }}
+      >
+        <Box
+          sx={{
+            position: "relative",
+            maxWidth: "1440px",
+            width: "100%",
+            padding: sectionPadding,
+            margin: "auto",
+            gap: { xs: "0" },
+          }}
+        >
+          <Typography
+            sx={{
+              textAlign: { xs: "center" },
+              background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              display: "inline-block",
+              textTransform: "uppercase",
+              mb: { xs: "40px", lg: "80px" },
+              fontSize: localFontSize.h2,
+              fontWeight: 600,
+            }}
+          >
+            {heading}
+            <span
+              style={{
+                position: "relative",
+                display: "inline-block",
+                color: "red",
+                backgroundColor: "red",
+                background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                // display: "inline-block",
+                textTransform: "uppercase",
+              }}
+            >
+              {lastword}
+              <Box
+                sx={{
+                  width: { xs: "124px", sm: "190px", md: "391px" },
+                  height: { xs: "14px", sm: "30px", md: "41px" },
+                  display: "block",
+                  position: "absolute",
+                  top: { xs: "20px", sm: 50 },
+                  left: { xs: "35%", lg: 310 },
+                }}
+              >
+                <Image
+                  src={svgs.line}
+                  alt="line"
+                  style={{ height: "100%", width: "100%" }}
+                />
+              </Box>
+            </span>
+          </Typography>
+          <Box
+            sx={{
+              width: "100%",
+              display: { xs: "flex" },
+              alignItems: { xs: "center" },
+              justifyContent: "center",
+            }}
+          >
+            <ButtonComponent
+              label="Learn How"
+              imgSrc={svgs.whiteArrow}
+              sx={{
+                background: { xs: "#3C65FF", md: "#3C65FF" },
+                color: { xs: "#fff" },
+                borderRadius: "50px",
+                border: "2px solid #3C65FF",
+                maxWidth: { xs: "188px", sm: "280px" },
+              }}
+            />
+          </Box>
+        </Box>
+      </Box>
+    </>
+  );
+}

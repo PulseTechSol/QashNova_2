@@ -40,13 +40,6 @@ export default function Casestudies() {
         position: "relative",
         bgcolor: "#fff",
         overflow: "hidden",
-        // background: {
-        //   xs: "linear-gradient(-90deg, #f9f9faff, #ffffff28, #2b14f827)",
-        //   md: "#fff",
-        // },
-        // background: "radial-gradient(circle, #08289be3 0%, #000 25%)",
-        // backgroundAttachment: "fixed",
-        // backgroundPosition: "center center",
       }}
     >
       <Box
@@ -120,7 +113,6 @@ export default function Casestudies() {
       >
         <Box
           sx={{
-            maxWidth: "1440px",
             width: "100%",
             display: "flex",
             justifyContent: "space-between",
@@ -153,7 +145,6 @@ export default function Casestudies() {
                 color: "#3C65FF",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
-                // ml:{xs:"10px",}
                 textAlign: { xs: "center" },
               }}
             >

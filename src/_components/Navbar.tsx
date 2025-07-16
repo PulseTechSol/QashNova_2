@@ -80,12 +80,10 @@ export default function Navbar() {
           }}
         >
           <Image
-            // width={287}
             style={{
               height: "100% !important",
               width: "100% !important",
               cursor: "pointer",
-              // objectFit: "cover",
             }}
             src={svgs.mobileLogo}
             alt="logo"
@@ -258,11 +256,6 @@ export default function Navbar() {
               }}
               sx={{
                 width: { xs: "100%" },
-                // height: "566px",
-                // alignItems: "center",
-                // justifyContent: "flex-start",
-                // display: "flex",
-
                 gap: "30px",
                 backgroundColor:
                   pathname ===

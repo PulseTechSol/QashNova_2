@@ -13,7 +13,7 @@
 export const localFontSize = {
   h1: {
     xs: "56px",
-    sm: "80px",
+    sm: "66px",
     md: "100px",
     lg: "120px",
     xl: "150px",

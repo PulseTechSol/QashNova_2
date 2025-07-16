@@ -10,11 +10,15 @@ import workimage1 from "./ourwork/workimage11.png";
 import workimage2 from "./ourwork/workimage2.png";
 import workimag4 from "./ourwork/workimag4.png";
 import workimage3 from "./ourwork/workimage3.png";
+import whatweDo from "./aboutus/whatweDo.png";
+import ourMission from "./aboutus/ourMission.png";
 
 const pngs = {
   image1,
+  ourMission,
   heroHome,
   workimage1,
+  whatweDo,
   howHeplLGcolor,
   workimage2,
   howHeplLG,
