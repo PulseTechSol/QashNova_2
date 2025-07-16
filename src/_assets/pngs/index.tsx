@@ -10,6 +10,9 @@ import workimage1 from "./ourwork/workimage11.png";
 import workimage2 from "./ourwork/workimage2.png";
 import workimag4 from "./ourwork/workimag4.png";
 import workimage3 from "./ourwork/workimage3.png";
+import clients1 from "./clients/client1.png";
+import clients2 from "./clients/client2.png";
+import clients3 from "./clients/client3.png";
 
 const pngs = {
   image1,
@@ -24,5 +27,8 @@ const pngs = {
   image3,
   image4,
   image5,
+  clients1,
+  clients2,
+  clients3,
 };
 export default pngs;
