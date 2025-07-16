@@ -64,7 +64,7 @@ const CustomInputField = forwardRef<
               borderRadius: "13px",
               backgroundColor: "#000",
               color: "#FFFFFF",
-              fontSize: localFontSize.p3.lg,
+              fontSize: localFontSize.p3,
               border: "none",
               resize: "none",
               outline: "none",

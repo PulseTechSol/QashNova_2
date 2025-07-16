@@ -14,7 +14,10 @@ export default function HomePage() {
       <HeroHome />
       <Partness />
       <HowHelp />
-      <SectionWithHeadingAndCTA heading="Crafting Websites for Your Success" />
+      <SectionWithHeadingAndCTA
+        heading="Crafting Websites for Your "
+        lastword="Success"
+      />
       <OurWork />
       <Casestudies />
       <ContactUs />

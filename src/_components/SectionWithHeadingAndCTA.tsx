@@ -65,7 +65,7 @@ export default function SectionWithHeadingAndCTA({
                   display: "block",
                   position: "absolute",
                   top: { xs: "20px", sm: 50 },
-                  left: { xs: "35%", lg: 310 },
+                  left: { xs: "35%", lg: 290 },
                 }}
               >
                 <Image
@@ -92,7 +92,7 @@ export default function SectionWithHeadingAndCTA({
                 color: { xs: "#fff" },
                 borderRadius: "50px",
                 border: "2px solid #3C65FF",
-                maxWidth: { xs: "188px", sm: "280px" },
+                maxWidth: { sm: "280px" },
               }}
             />
           </Box>
