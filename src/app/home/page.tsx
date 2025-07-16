@@ -5,10 +5,12 @@ import OurWork from "./_sections/OurWork";
 import Casestudies from "./_sections/Casestudies";
 import ContactUs from "@/_components/ContactUs";
 import SectionWithHeadingAndCTA from "../../_components/SectionWithHeadingAndCTA";
+import ClientsStories from "./_sections/ClientsStories";
 
 export default function HomePage() {
   return (
     <>
+      <ClientsStories />
       <HeroHome />
       <Partness />
       <HowHelp />
