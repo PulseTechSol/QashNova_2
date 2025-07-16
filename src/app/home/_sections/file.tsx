@@ -8,12 +8,11 @@ import ButtonComponent from "@/_components/ButtonComponent";
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HowHelp() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  // const containerRef = useRef<HTMLDivElement>(null);
 
   const websiteServices = [
     {
@@ -80,34 +79,35 @@ export default function HowHelp() {
       image: pngs.image5,
     },
   ];
-  useEffect(() => {
-    if (!containerRef.current) return;
-    const cards = containerRef.current.querySelectorAll(".gsap-card");
-    cards.forEach((card, i) => {
-      const nextCard = cards[i + 1];
-      gsap.set(card, { zIndex: cards.length - i });
-      if (nextCard) gsap.set(nextCard, { zIndex: cards.length - i - 1 });
 
-      ScrollTrigger.create({
-        trigger: card,
-        start: "top",
-        end: "bottom",
-        scrub: true,
-        onUpdate: (self) => {
-          gsap.to(card, {
-            scale: 1 - self.progress,
-            opacity: 1 - self.progress,
-          });
-          if (nextCard) {
-            gsap.to(nextCard, {
-              opacity: self.progress,
-              zIndex: cards.length - i + 1,
-            });
-          }
-        },
-      });
-    });
-  }, []);
+  // useEffect(() => {
+  //   if (!containerRef.current) return;
+  //   const cards = containerRef.current.querySelectorAll(".gsap-card");
+  //   cards.forEach((card, i) => {
+  //     const nextCard = cards[i + 1];
+  //     gsap.set(card, { zIndex: cards.length - i });
+  //     if (nextCard) gsap.set(nextCard, { zIndex: cards.length - i - 1 });
+
+  //     ScrollTrigger.create({
+  //       trigger: card,
+  //       start: "top",
+  //       end: "bottom",
+  //       scrub: true,
+  //       onUpdate: (self) => {
+  //         gsap.to(card, {
+  //           scale: 1 - self.progress,
+  //           opacity: 1 - self.progress,
+  //         });
+  //         if (nextCard) {
+  //           gsap.to(nextCard, {
+  //             opacity: self.progress,
+  //             zIndex: cards.length - i + 1,
+  //           });
+  //         }
+  //       },
+  //     });
+  //   });
+  // }, []);
 
   return (
     <Box
@@ -116,14 +116,13 @@ export default function HowHelp() {
         background: "radial-gradient(circle, #08289be3 0%, #000 25%)",
         backgroundAttachment: "fixed",
         backgroundPosition: "center center",
-        overflow: "hidden",
       }}
     >
       <Box
         sx={{
-          width: { xs: "355px", md: "633px" },
-          height: { xs: "355px", md: "633px" },
-          display: { xs: "block", lg: "block" },
+          width: "633px",
+          height: "633px",
+          display: { xs: "none", lg: "block" },
           position: "absolute",
           left: -13,
         }}
@@ -137,8 +136,8 @@ export default function HowHelp() {
 
       <Box
         sx={{
-          width: { xs: "300px", md: "790px" },
-          height: { xs: "300px", md: "790px" },
+          width: "790px",
+          height: "790px",
           display: { xs: "none", lg: "block" },
           position: "absolute",
           // top: 89,
@@ -153,7 +152,7 @@ export default function HowHelp() {
       </Box>
 
       <Box
-        ref={containerRef}
+        // ref={containerRef}
         sx={{
           maxWidth: "1440px",
           width: "100%",
@@ -169,37 +168,40 @@ export default function HowHelp() {
       >
         <Box
           sx={{
+            maxWidth: "1440px",
             width: "100%",
             display: "flex",
             justifyContent: "space-between",
-            alignItems: { xs: "start", sm: "center" },
+            alignItems: "center",
             flexDirection: { xs: "column", sm: "row" },
-            gap: { xs: "30px", sm: "40px" },
+            gap: "40px",
           }}
         >
           <Box
             sx={{
-              maxWidth: { xs: "300px", sm: "477px" },
+              maxWidth: "477px",
               width: "100%",
               textTransform: "capitalize",
             }}
           >
             <Typography
               sx={{
+                width: "100%",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
                 color: "#3C65FF",
-                textAlign: { xs: "start" },
+                textAlign: { xs: "center", sm: "start" },
               }}
             >
               How
             </Typography>
             <Typography
               sx={{
+                width: "100%",
                 color: "#3C65FF",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
-                textAlign: { xs: "center" },
+                textAlign: "center",
               }}
             >
               we Help
@@ -217,10 +219,10 @@ export default function HowHelp() {
             sx={{
               maxWidth: "490px",
               width: "100%",
-              fontSize: "18px",
+              fontSize: localFontSize.p1,
               fontWeight: 400,
               color: "#FFFFFF80",
-              textAlign: { xs: "end", sm: "start" },
+              textAlign: { xs: "center", sm: "start" },
             }}
           >
             Discover our full range of digital marketing services. From strategy
@@ -238,7 +240,7 @@ export default function HowHelp() {
               className="gsap-card"
               sx={{
                 width: "100%",
-                padding: { xs: "40px 20px ", sm: "40px" },
+                padding: "40px",
                 display: "flex",
                 flexWrap: { xs: "wrap", md: "nowrap" },
                 justifyContent: "center",
@@ -260,11 +262,12 @@ export default function HowHelp() {
               >
                 <Typography
                   sx={{
+                    width: "100%",
                     fontSize: localFontSize.h4,
                     fontWeight: 500,
                     color: "#3C65FF",
                     lineHeight: { md: "70px" },
-                    textAlign: { xs: "start" },
+                    textAlign: { xs: "center", sm: "start" },
                   }}
                 >
                   {service.title}
@@ -275,10 +278,7 @@ export default function HowHelp() {
                     mt: { xs: "20px", md: "30px" },
                     height: "auto",
                     width: "100%",
-                    fontSize: {
-                      xs: "12px",
-                      md: "16px",
-                    },
+                    fontSize: localFontSize.p3,
                     display: "flex",
                     flexWrap: "wrap",
                     gap: { xs: "5px", md: "10px" },
@@ -297,11 +297,12 @@ export default function HowHelp() {
                 </Box>
                 <Typography
                   sx={{
-                    mt: { xs: "30px", md: "60px" },
+                    mt: { xs: "40px", md: "60px" },
+                    width: "100%",
                     fontSize: localFontSize.p2,
                     fontWeight: 400,
                     color: "#00000080",
-                    textAlign: { xs: "start" },
+                    textAlign: { xs: "center", sm: "start" },
                   }}
                 >
                   {service.description}
@@ -309,7 +310,7 @@ export default function HowHelp() {
               </Box>
               <Box
                 sx={{
-                  maxWidth: { xs: "100%", md: "445px" },
+                  maxWidth: { width: "100%", md: "445px" },
                   width: "100%",
                   height: "auto",
                 }}

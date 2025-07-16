@@ -35,7 +35,7 @@ export default function Navbar() {
   }, [menu]);
   const navLinks = [
     { text: "home", route: "/" },
-    { text: "about", route: "" },
+    { text: "about", route: "/about-us" },
     { text: "websites", route: "" },
     { text: "Branding", route: "" },
     { text: "case study", route: "" },

@@ -146,13 +146,10 @@ export default function Footer() {
             display: { xs: "flex" },
             flexWrap: "wrap",
             gap: { xs: "10px", md: "10px" },
-            // flexDirection: { xs: "column", md: "row" },
             justifyContent: "center",
             alignItems: "center",
             textAlign: { xs: "center", md: "start" },
             bgcolor: { xs: "#FFFFFF33" },
-            // bgcolor: "green",
-            // height: "70px",
           }}
         >
           <Typography
