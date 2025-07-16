@@ -2,6 +2,8 @@ import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 import svgs from "@/_assets/svgs";
+import Link from "next/link";
+import pngs from "@/_assets/pngs";
 export default function Footer() {
   const headingStyles = {
     fontWeight: 500,
@@ -13,7 +15,39 @@ export default function Footer() {
 
   return (
     <>
-      <Box sx={{ backgroundColor: "#fff" }}>
+      <Box sx={{ backgroundColor: "#fff", position: "relative" }}>
+        <Box
+          sx={{
+            width: { xs: "355px", md: "633px" },
+            height: { xs: "355px", md: "633px" },
+            display: { xs: "block", lg: "block" },
+            position: "absolute",
+            left: -13,
+          }}
+        >
+          <Image
+            src={pngs.howHeplLG}
+            alt="star"
+            style={{ height: "100%", width: "100%" }}
+          />
+        </Box>
+
+        <Box
+          sx={{
+            width: { xs: "300px", md: "790px" },
+            height: { xs: "300px", md: "790px" },
+            display: { xs: "none", lg: "block" },
+            position: "absolute",
+            // top: 89,
+            right: 0,
+          }}
+        >
+          <Image
+            src={pngs.howHeplLGcolor}
+            alt="star"
+            style={{ height: "100%", width: "100%" }}
+          />
+        </Box>
         <Box
           sx={{
             padding: sectionPadding,
@@ -93,6 +127,93 @@ export default function Footer() {
               </Box>
             </Box>
           </Box>
+        </Box>
+        <Box
+          sx={{
+            padding: {
+              xs: "20px 20px ",
+              sm: "30px 60px ",
+              md: "30px 80px ",
+              lg: "30px 100px ",
+              xl: "30px 150px ",
+            },
+            display: { xs: "flex" },
+            flexWrap: "wrap",
+            gap: { xs: "10px", md: "10px" },
+            // flexDirection: { xs: "column", md: "row" },
+            justifyContent: "center",
+            alignItems: "center",
+            textAlign: { xs: "center", md: "start" },
+            bgcolor: { xs: "#FFFFFF33" },
+            // bgcolor: "green",
+            // height: "70px",
+          }}
+        >
+          <Typography
+            sx={{
+              display: { xs: "none", md: "block" },
+              fontSize: localFontSize.p2,
+              color: { xs: "#00000080", md: "#00000080" },
+              textAlign: { xs: "center", md: "start" },
+              fontWeight: 400,
+              "& a": {
+                transition: "all 0.4s ease-in-out",
+                color: "#00000080",
+                "&:hover": {
+                  color: "#00000080",
+                },
+              },
+            }}
+          >
+            Copyright © 2025 A Class Travel Ltd. All Rights Reserved.
+          </Typography>
+          <Typography
+            sx={{
+              display: { xs: "block", md: "none" },
+              fontSize: localFontSize.p2,
+              color: { xs: "#00000080", md: "#00000080" },
+              textAlign: { xs: "center", md: "start" },
+              fontWeight: 400,
+              "& a": {
+                transition: "all 0.4s ease-in-out",
+                color: "#00000080",
+                "&:hover": {
+                  color: "#00000080",
+                },
+              },
+            }}
+          >
+            © 2025 All Rights Reserved.
+          </Typography>
+          <Typography
+            // onClick={() => router.push("/about")}
+            sx={{
+              fontSize: localFontSize.p2,
+              fontWeight: 600,
+              color: { xs: "#3C65FF", md: "#3C65FF" },
+              textAlign: { xs: "center", md: "start" },
+
+              "& a": {
+                transition: "all 0.4s ease-in-out",
+                color: "#3C65FF",
+                "&:hover": {
+                  color: "#0027b4ff",
+                },
+              },
+            }}
+          >
+            <Link
+              href="https://www.qashnova.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                border: "none",
+                textDecoration: "none",
+              }}
+            >
+              Powered By Qashnova
+            </Link>
+          </Typography>
         </Box>
       </Box>
     </>

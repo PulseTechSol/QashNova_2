@@ -14,6 +14,7 @@ export default function HeroHome() {
         justifyContent: "center",
         minHeight: { xs: "calc(100vh - 97px)", md: "calc(100vh - 101px)" },
         background: "linear-gradient(-10deg, #DDDDDD, #ffffffff)",
+        overflow: "hidden",
       }}
     >
       <Box
@@ -119,14 +120,13 @@ export default function HeroHome() {
                 display: { xs: "block" },
                 alignItems: { xs: "center", sm: "start" },
                 justifyContent: "center",
-                // bgcolor: "#fa2323ff",
               }}
             >
               <ButtonComponent
                 sx={{
                   border: "3px solid transparent",
                   // borderRadius: "16px",
-                  backgroundImage: `linear-gradient(#fff, #fff),
+                  backgroundImage: `linear-gradient( #fff, #DDDDDD),
                       linear-gradient(90deg, #3C65FF, #8A38F5, #2617B1)`,
                   backgroundOrigin: "border-box",
                   backgroundClip: "content-box, border-box",
@@ -134,7 +134,7 @@ export default function HeroHome() {
                   // px: 23,
                   width: { xs: "184px", md: "194px" },
                   textAlign: { xs: "center", sm: "start" },
-
+                  bgcolor: "#fa2323ff !important",
                   // border: "3px solid #8A38F5 ",
                   color: "#3C65FF",
                 }}

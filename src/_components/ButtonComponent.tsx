@@ -13,6 +13,7 @@ type ButtonComponentProps = {
   sx?: SxProps<Theme>;
   type?: "button" | "submit" | "reset";
   loading?: boolean;
+  onClick?: () => void;
 };
 
 export default function ButtonComponent({
@@ -21,9 +22,11 @@ export default function ButtonComponent({
   sx = {},
   type = "button",
   loading,
+  onClick,
 }: ButtonComponentProps) {
   return (
     <Button
+      onClick={onClick}
       type={type}
       variant="contained"
       sx={{
