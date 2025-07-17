@@ -19,6 +19,7 @@ import whatsapp from "./whatsapp.svg";
 import phone from "./phone.svg";
 import email from "./email.svg";
 import mobileLogo from "./mobileLogo.svg";
+import sliderArrow from "./sliderArrow.svg";
 
 const svgs = {
   logoFooter,
@@ -42,6 +43,7 @@ const svgs = {
   whatsapp,
   phone,
   email,
+  sliderArrow,
 };
 
 export default svgs;

@@ -10,6 +10,7 @@ import ClientsStories from "./_sections/ClientsStories";
 export default function HomePage() {
   return (
     <>
+      <ClientsStories />
       <HeroHome />
       <Partness />
       <HowHelp />
@@ -18,8 +19,8 @@ export default function HomePage() {
         lastword="Success"
       />
       <OurWork />
-      <Casestudies />
       <ClientsStories />
+      <Casestudies />
       <ContactUs />
     </>
   );
