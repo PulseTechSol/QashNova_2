@@ -124,14 +124,14 @@ export default function ClientsStories() {
             stories
           </Typography>
         </Box>
-
         {/* Right Cards */}
         <Box
           sx={{
             position: "relative",
             width: "100%",
-            maxWidth: "560px",
-            height: "500px",
+            maxWidth: { xs: "400px", sm: "450px", md: "560px" },
+            height: { xs: "550px", sm: "570px", md: "500px" },
+            margin: "auto",
           }}
         >
           {cardData.map((card, index) => (
@@ -142,7 +142,8 @@ export default function ClientsStories() {
               }}
               sx={{
                 position: "absolute",
-                top: 0,
+                top: { xs: "", md: "0" },
+                bottom: { xs: "0", md: "unset" },
                 borderRadius: { xs: "20px", md: "40px" },
                 left: 0,
               }}
@@ -206,8 +207,8 @@ export function ClientCard({
     <Box
       sx={{
         height: "500px",
-        width: "560px",
-        // width: "100%",
+        maxWidth: { xs: "400px", sm: "450px", md: "560px" },
+        width: "100%",
         backgroundColor: bgColor,
         borderRadius: { xs: "20px", md: "40px" },
         display: "flex",
