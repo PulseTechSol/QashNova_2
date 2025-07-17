@@ -18,8 +18,8 @@ export default function PlanComponent({
   return (
     <Box
       sx={{
-        // maxWidth: "360px",
-        width: "360px",
+        maxWidth: "360px",
+        width: "100%",
         minHeight: "550px",
         borderRadius: "30px",
         padding: "20px 10px",
