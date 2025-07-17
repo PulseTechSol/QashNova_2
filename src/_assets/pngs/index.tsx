@@ -15,13 +15,31 @@ import ourMission from "./aboutus/ourMission.png";
 import clients1 from "./clients/client1.png";
 import clients2 from "./clients/client2.png";
 import clients3 from "./clients/client3.png";
+import websites1 from "./websites/websites1.png";
+import websites2 from "./websites/website2.png";
+import websites3 from "./websites/website3.png";
+import websites4 from "./websites/website4.png";
+import websites5 from "./websites/websites5.png";
+import branding1 from "./branding/branding1.png";
+import branding2 from "./branding/branding2.png";
+import branding3 from "./branding/branding3.png";
+import branding4 from "./branding/branding4.png";
 
 const pngs = {
   image1,
+  websites1,
   ourMission,
+  websites2,
   heroHome,
+  branding1,
+  websites3,
+  branding2,
   workimage1,
+  branding3,
+  websites4,
+  branding4,
   whatweDo,
+  websites5,
   howHeplLGcolor,
   workimage2,
   howHeplLG,

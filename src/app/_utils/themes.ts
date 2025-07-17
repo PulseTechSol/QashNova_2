@@ -37,8 +37,8 @@ export const localFontSize = {
     lg: "64px",
   },
   h5: {
-    xs: "30px",
-    md: "34px",
+    xs: "24px",
+    md: "28px",
     lg: "36px",
   },
   p1: {
