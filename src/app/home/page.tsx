@@ -18,8 +18,8 @@ export default function HomePage() {
         lastword="Success"
       />
       <OurWork />
-      <Casestudies />
       <ClientsStories />
+      <Casestudies />
       <ContactUs />
     </>
   );
