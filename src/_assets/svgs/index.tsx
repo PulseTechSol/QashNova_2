@@ -20,6 +20,7 @@ import phone from "./phone.svg";
 import email from "./email.svg";
 import mobileLogo from "./mobileLogo.svg";
 import sliderArrow from "./sliderArrow.svg";
+import arrowSliderDisabled from "./arrowSliderDisabled.svg";
 
 const svgs = {
   logoFooter,
@@ -44,6 +45,7 @@ const svgs = {
   phone,
   email,
   sliderArrow,
+  arrowSliderDisabled,
 };
 
 export default svgs;
