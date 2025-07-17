@@ -1,8 +1,6 @@
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import ContactUsForm from "./ContactUsForm";
-import ButtonComponent from "./ButtonComponent";
-import svgs from "@/_assets/svgs";
 
 export default function ContactUs() {
   return (
@@ -52,27 +50,7 @@ export default function ContactUs() {
           <Box sx={{ width: "100%" }}>
             {/* contactus form there */}
             <ContactUsForm />
-            <Box
-              sx={{
-                width: "100%",
-                mt: { xs: "20px", md: "40px" },
-                // display: { xs: "flex" },
-                // alignItems: { xs: "center" },
-                // justifyContent: "center",
-              }}
-            >
-              <ButtonComponent
-                label="Learn How"
-                imgSrc={svgs.whiteArrow}
-                sx={{
-                  background: { xs: "#3C65FF", md: "#3C65FF" },
-                  color: { xs: "#fff" },
-                  borderRadius: "50px",
-                  border: "2px solid #3C65FF",
-                  maxWidth: "280px",
-                }}
-              />
-            </Box>
+            
           </Box>
         </Box>
       </Box>
