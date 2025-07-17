@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import pngs from "@/_assets/pngs";
 import svgs from "@/_assets/svgs";
-import { localFontSize, sectionPadding } from "@/app/_utils/themes";
+import { sectionPadding } from "@/app/_utils/themes";
 
 interface HeroSectionProps {
   line1: string;
@@ -10,10 +10,23 @@ interface HeroSectionProps {
   line2Mobile?: string;
   line3Desktop: string;
   line3Mobile?: string;
+  isbool?: boolean;
 }
+const headingStyles = {
+  fontWeight: 600,
+  color: "#3C65FF",
+  fontSize: {
+    xs: "45px",
+    sm: "66px",
+    md: "100px",
+    lg: "120px",
+    xl: "150px",
+  },
+};
 
 export default function HeroSection({
   line1,
+  isbool = false,
   line2Desktop,
   line2Mobile = "",
   line3Desktop,
@@ -25,7 +38,7 @@ export default function HeroSection({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        minHeight: { xs: "450px", sm: "600px", md: "calc(100vh - 101px)" },
+        minHeight: { xs: "400px", sm: "600px", md: "calc(100vh - 101px)" },
         background: "linear-gradient(-10deg, #DDDDDD, #ffffffff)",
       }}
     >
@@ -49,9 +62,9 @@ export default function HeroSection({
           sx={{
             textAlign: "center",
             lineHeight: { md: "110px", xl: "150px" },
-            mt: { xs: "60px", lg: "80px" },
-            fontSize: localFontSize.h1,
-            fontWeight: 600,
+            mt: { xs: "40px", sm: "60px", lg: "80px" },
+            ...headingStyles,
+            flexWrap: "nowrap",
           }}
         >
           {line1}
@@ -63,8 +76,7 @@ export default function HeroSection({
             display: { xs: "none", sm: "block" },
             textAlign: "end",
             lineHeight: { md: "110px", xl: "150px" },
-            fontSize: localFontSize.h1,
-            fontWeight: 600,
+            ...headingStyles,
           }}
         >
           {line2Desktop}
@@ -72,11 +84,13 @@ export default function HeroSection({
         {line2Mobile && (
           <Typography
             sx={{
+              // maxWidth: "366px",
+              width: "100%",
               display: { xs: "block", sm: "none" },
-              textAlign: "end",
-              lineHeight: { xs: "30px" },
-              fontSize: localFontSize.h1,
-              fontWeight: 600,
+              textAlign: isbool ? "center" : "end",
+              lineHeight: { xs: "50px" },
+              ...headingStyles,
+              whiteSpace: "nowrap",
             }}
           >
             {line2Mobile}
@@ -89,8 +103,7 @@ export default function HeroSection({
             display: { xs: "none", sm: "block" },
             textAlign: "center",
             lineHeight: { md: "110px", xl: "150px" },
-            fontSize: localFontSize.h1,
-            fontWeight: 600,
+            ...headingStyles,
           }}
         >
           {line3Desktop}
@@ -102,8 +115,8 @@ export default function HeroSection({
               textAlign: "center",
               maxWidth: "370px",
               width: "100%",
-              fontSize: localFontSize.h1,
-              fontWeight: 600,
+              ...headingStyles,
+              whiteSpace: "nowrap",
             }}
           >
             {line3Mobile}
@@ -131,8 +144,9 @@ export default function HeroSection({
             width: { xs: "29px", sm: "121px" },
             height: { xs: "29px", sm: "121px" },
             position: "absolute",
-            top: { xs: 210, sm: 400, lg: 523 },
+            top: { xs: 180, sm: 400, lg: 523 },
             left: { xs: "25%", sm: -53 },
+            display: isbool ? { xs: "none", sm: "block" } : { sm: "block" },
           }}
         >
           <Image
@@ -146,7 +160,7 @@ export default function HeroSection({
             width: { xs: "61px", md: "114px" },
             height: { xs: "61px", md: "114px" },
             position: "absolute",
-            top: { xs: 310, sm: 240, lg: 290, xl: 340 },
+            top: { xs: 290, sm: 240, lg: 290, xl: 340 },
             right: { xs: 100, sm: -10, lg: 40, xl: 20 },
           }}
         >
