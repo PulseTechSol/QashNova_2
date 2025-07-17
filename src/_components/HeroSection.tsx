@@ -38,7 +38,12 @@ export default function HeroSection({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        minHeight: { xs: "400px", sm: "600px", md: "calc(100vh - 101px)" },
+        minHeight: {
+          xs: "400px",
+          sm: "600px",
+          md: "700px",
+          xl: "900px",
+        },
         background: "linear-gradient(-10deg, #DDDDDD, #ffffffff)",
       }}
     >
@@ -130,7 +135,7 @@ export default function HeroSection({
             height: { xs: "89px", sm: "121px" },
             position: "absolute",
             top: { xs: 16, lg: 73 },
-            left: { xs: 36, lg: 213 },
+            left: { xs: 36, md: 313 },
           }}
         >
           <Image
