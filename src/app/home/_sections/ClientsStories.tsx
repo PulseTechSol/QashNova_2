@@ -69,19 +69,16 @@ export default function ClientsStories() {
       });
     }
   };
-
-  const handlePrev = () => {
-    const items = itemsRef.current;
+  const items = itemsRef.current;
+  const handleNext = () => {
     if (items.length === 0) return;
 
     const first = items.shift(); // remove first
     if (first) items.push(first); // add it to the end
-
     updatePositions(0);
   };
 
-  const handleNext = () => {
-    const items = itemsRef.current;
+  const handlePrev = () => {
     if (items.length === 0) return;
 
     // Remove last and bring it to the front
