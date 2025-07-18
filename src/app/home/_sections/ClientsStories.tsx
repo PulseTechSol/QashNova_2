@@ -54,31 +54,55 @@ export default function ClientsStories() {
     updatePositions(currentIndex.current);
   }, []);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const updatePositions = (startIndex: number) => {
     const items = itemsRef.current;
     const total = items.length;
     for (let i = 0; i < total; i++) {
-      const itemIndex = (startIndex + i) % total;
-      const item = items[itemIndex];
+      const item = items[i];
       gsap.to(item, {
-        x: 15 * i, // ✅ was 30
-        y: -15 * i, // ✅ was -30
+        x: 15 * i,
+        y: -15 * i,
         zIndex: total - i,
         duration: 0.5,
         ease: "power2.out",
       });
     }
   };
-
+  const items = itemsRef.current;
   const handleNext = () => {
-    currentIndex.current = (currentIndex.current + 1) % cardData.length;
-    updatePositions(currentIndex.current);
+    if (items.length === 0) return;
+
+    const first = items.shift(); // remove first
+    if (first) items.push(first); // add it to the end
+    updatePositions(0);
   };
 
   const handlePrev = () => {
-    currentIndex.current =
-      (currentIndex.current - 1 + cardData.length) % cardData.length;
-    updatePositions(currentIndex.current);
+    if (items.length === 0) return;
+
+    // Remove last and bring it to the front
+    const last = items.pop();
+    if (last) {
+      items.unshift(last);
+
+      gsap.set(last, {
+        x: 15 * items.length,
+        y: -15 * items.length,
+        zIndex: 0,
+      });
+    }
+
+    // Animate all to their new positions
+    items.forEach((item, i) => {
+      gsap.to(item, {
+        x: 15 * i,
+        y: -15 * i,
+        zIndex: items.length - i,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    });
   };
 
   return (
@@ -170,7 +194,7 @@ export default function ClientsStories() {
             <Box
               onMouseOver={() => setHoverNext(true)}
               onMouseOut={() => setHoverNext(false)}
-              onClick={handleNext}
+              onClick={handlePrev}
               sx={{
                 width: "50px",
                 height: "auto",
@@ -199,7 +223,7 @@ export default function ClientsStories() {
             <Box
               onMouseOver={() => setHoverPrevoius(true)}
               onMouseOut={() => setHoverPrevoius(false)}
-              onClick={handlePrev}
+              onClick={handleNext}
               sx={{ width: "50px", height: "auto" }}
             >
               <Image
