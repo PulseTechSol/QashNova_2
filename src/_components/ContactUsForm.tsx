@@ -127,6 +127,8 @@ export default function ContactUsForm() {
               inputType="text"
               error={!!errors.message}
               helperText={errors.message?.message}
+              multiline={true}
+              rows={4}
             />
           )}
         />
