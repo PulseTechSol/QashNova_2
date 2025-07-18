@@ -10,7 +10,6 @@ import ClientsStories from "./_sections/ClientsStories";
 export default function HomePage() {
   return (
     <>
-      <ClientsStories />
       <HeroHome />
       <Partness />
       <HowHelp />
