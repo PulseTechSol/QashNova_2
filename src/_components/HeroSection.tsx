@@ -6,6 +6,7 @@ import { sectionPadding } from "@/app/_utils/themes";
 
 interface HeroSectionProps {
   line1: string;
+  line1Mobile: string;
   line2Desktop: string;
   line2Mobile?: string;
   line3Desktop: string;
@@ -26,6 +27,7 @@ const headingStyles = {
 
 export default function HeroSection({
   line1,
+  line1Mobile,
   isbool = false,
   line2Desktop,
   line2Mobile = "",
@@ -70,9 +72,22 @@ export default function HeroSection({
             mt: { xs: "40px", sm: "60px", lg: "80px" },
             ...headingStyles,
             flexWrap: "nowrap",
+            display: { xs: "none", sm: "block" },
           }}
         >
           {line1}
+        </Typography>
+        <Typography
+          sx={{
+            textAlign: "center",
+            // lineHeight: { md: "110px", xl: "150px" },
+            mt: { xs: "40px", sm: "60px", lg: "80px" },
+            ...headingStyles,
+            flexWrap: "nowrap",
+            display: { xs: "block", sm: "none" },
+          }}
+        >
+          {line1Mobile}
         </Typography>
 
         {/* Line 2 (Desktop & Mobile) */}
