@@ -37,10 +37,10 @@ export default function Navbar() {
     { text: "home", route: "/" },
     { text: "about", route: "/about-us" },
     { text: "websites", route: "/websites" },
-    { text: "Branding", route: "" },
-    { text: "case study", route: "" },
-    { text: "plans", route: "" },
-    { text: "contact", route: "" },
+    { text: "Branding", route: "/branding" },
+    { text: "case study", route: "case-study" },
+    { text: "plans", route: "/plans" },
+    { text: "contact", route: "/contact-us" },
   ];
 
   return (
