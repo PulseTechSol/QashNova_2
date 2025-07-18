@@ -1,7 +1,7 @@
 import React from "react";
 import PlanComponent from "../_components/PlanComponent";
-import { Box } from "@mui/material";
-import { sectionPadding } from "@/app/_utils/themes";
+import { Box, Typography } from "@mui/material";
+import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 
 export default function PlanScreen() {
   const plans = [
@@ -52,25 +52,63 @@ export default function PlanScreen() {
         width: "100%",
         margin: "auto",
         padding: sectionPadding,
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: { xs: "column", md: "row" },
-        gap: "30px",
-        position: "relative",
-        zIndex: 99,
       }}
     >
-      {plans.map((data, i) => (
-        <PlanComponent
-          key={i}
-          plan={data.plan}
-          desc={data.description}
-          price={data.price}
-          listItems={data.points}
-        />
-      ))}
+      <Box
+        sx={{
+          maxWidth: { xs: "400px", sm: "400px", md: "600px", lg: "715px" },
+          width: "100%",
+          margin: { xs: "0px auto 30px", md: "0px auto 60px" },
+          position: "relative",
+          zIndex: 99,
+        }}
+      >
+        <Typography
+          sx={{
+            fontSize: localFontSize.h3,
+            fontWeight: "600",
+            textTransform: "capitalize",
+            color: "#3C65FF",
+            lineHeight: { xs: "60px", md: "80px", lg: "120px" },
+          }}
+        >
+          Find Your
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: localFontSize.h3,
+            fontWeight: "600",
+            textTransform: "capitalize",
+            color: "#3C65FF",
+            textAlign: "right",
+            lineHeight: { xs: "60px", md: "80px", lg: "120px" },
+          }}
+        >
+          Perfect Plan
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: { xs: "column", md: "row" },
+          gap: "30px",
+          position: "relative",
+          zIndex: 99,
+        }}
+      >
+        {plans.map((data, i) => (
+          <PlanComponent
+            key={i}
+            plan={data.plan}
+            desc={data.description}
+            price={data.price}
+            listItems={data.points}
+          />
+        ))}
+      </Box>
     </Box>
   );
 }
