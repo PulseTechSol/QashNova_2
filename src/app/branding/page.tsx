@@ -6,6 +6,7 @@ export default function BrandingPage() {
     <>
       <HeroSection
         line1="Defining"
+        line1Mobile="Defining"
         line2Desktop="Your Unique"
         line2Mobile="Your Unique"
         line3Desktop="brand identity"

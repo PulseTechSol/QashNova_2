@@ -8,6 +8,7 @@ export default function AboutUsPage() {
     <>
       <HeroSection
         line1="designing"
+        line1Mobile="designing"
         line2Desktop="your Digital"
         line2Mobile="Digital"
         line3Desktop="Future today"

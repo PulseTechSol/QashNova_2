@@ -24,9 +24,13 @@ import branding1 from "./branding/branding1.png";
 import branding2 from "./branding/branding2.png";
 import branding3 from "./branding/branding3.png";
 import branding4 from "./branding/branding4.png";
+import caseStudy1 from "./caseStudy/caseStudy1.png";
+import caseStudy2 from "./caseStudy/caseStudy2.png";
 
 const pngs = {
   image1,
+  caseStudy1,
+  caseStudy2,
   websites1,
   ourMission,
   websites2,

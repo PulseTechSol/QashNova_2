@@ -5,16 +5,18 @@ import React from "react";
 interface GenericHeadingBoxProps {
   heading1?: string;
   heading2?: string;
+  isbool?: boolean;
 }
 
 export default function GenericHeadingBox({
   heading1,
   heading2,
+  isbool = false,
 }: GenericHeadingBoxProps) {
   return (
     <Box
       sx={{
-        maxWidth: { xs: "300px", sm: "555px" },
+        maxWidth: { xs: "350px", sm: "400px", md: "540px" },
         width: "100%",
         textTransform: "capitalize",
       }}
@@ -24,7 +26,7 @@ export default function GenericHeadingBox({
           fontSize: localFontSize.h3,
           fontWeight: 600,
           color: "#3C65FF",
-          textAlign: { xs: "start" },
+          textAlign: isbool ? "center" : "start",
           lineHeight: { xs: "50px", md: "80px" },
         }}
       >
@@ -36,7 +38,11 @@ export default function GenericHeadingBox({
           fontSize: localFontSize.h3,
           fontWeight: 600,
           // ml:{xs:"10px",}
-          textAlign: { xs: "center", md: "center", lg: "end" },
+          textAlign: {
+            xs: isbool ? "end" : "center",
+            md: isbool ? "end" : "center",
+            lg: "end",
+          },
         }}
       >
         {heading2}

@@ -7,6 +7,7 @@ export default function WebsitesPage() {
     <>
       <HeroSection
         line1="Where"
+        line1Mobile="Where"
         line2Desktop="Design Meets"
         line3Desktop="Performance"
         line2Mobile="Design Meets"
