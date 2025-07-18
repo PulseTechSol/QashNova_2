@@ -76,7 +76,7 @@ const CustomInputField = forwardRef<
           <Box
             sx={{
               color: error ? "#FF6B6B" : "#CCCCCC",
-              fontSize: localFontSize.p2,
+              fontSize: localFontSize.p3,
               marginTop: "8px",
             }}
           >

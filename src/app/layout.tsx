@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/_components/Navbar";
 import Footer from "@/_components/Footer";
 import { Box } from "@mui/material";
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: "Qashnove",
@@ -32,6 +33,7 @@ export default function RootLayout({
           <Footer />
         </Box>
       </body>
+      <ToastContainer position="top-right" autoClose={3000} />
     </html>
   );
 }

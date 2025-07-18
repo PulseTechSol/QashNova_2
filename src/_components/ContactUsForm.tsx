@@ -4,6 +4,9 @@ import { Box } from "@mui/material";
 import CustomInputField from "./CustomInputField";
 import ButtonComponent from "./ButtonComponent";
 import svgs from "@/_assets/svgs";
+import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function ContactUsForm() {
   const {
@@ -20,9 +23,28 @@ export default function ContactUsForm() {
     },
   });
 
-  function onSubmit(data: unknown) {
+  async function onSubmit(data: unknown) {
     console.log("Form Data: ", data);
-    reset();
+    try {
+      // setLoading(true);
+      const response = await axios.post("/api/contactus", data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (response?.status === 200) {
+        toast.success("Form submitted successfully!");
+      } else {
+        toast.error("Submission failed! Please try again.");
+      }
+      reset();
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (err) {
+      toast.error("Submission failed! Please try again.");
+      // console.log("Message error", err);
+    } finally {
+      // setLoading(false);
+    }
   }
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -117,7 +139,7 @@ export default function ContactUsForm() {
       >
         <ButtonComponent
           type="submit"
-          label="Learn How"
+          label="Submit"
           imgSrc={svgs.whiteArrow}
           sx={{
             background: { xs: "#3C65FF", md: "#3C65FF" },
