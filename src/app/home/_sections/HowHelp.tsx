@@ -82,31 +82,41 @@ export default function HowHelp() {
   ];
   useEffect(() => {
     if (!containerRef.current) return;
-    const cards = containerRef.current.querySelectorAll(".gsap-card");
-    cards.forEach((card, i) => {
-      const nextCard = cards[i + 1];
-      gsap.set(card, { zIndex: cards.length - i });
-      if (nextCard) gsap.set(nextCard, { zIndex: cards.length - i - 1 });
 
-      ScrollTrigger.create({
-        trigger: card,
-        start: "top",
-        end: "bottom",
-        scrub: true,
-        onUpdate: (self) => {
-          gsap.to(card, {
-            scale: 1 - self.progress,
-            opacity: 1 - self.progress,
-          });
-          if (nextCard) {
-            gsap.to(nextCard, {
-              opacity: self.progress,
-              zIndex: cards.length - i + 1,
-            });
-          }
-        },
-      });
+    const cards = containerRef.current.querySelectorAll(".gsap-card");
+
+    cards.forEach((card, index) => {
+      if (index === cards.length - 1) {
+        gsap.set(card, { opacity: 1, scale: 1 });
+        return; // No animation on last card
+      }
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: card,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+            pin: true,
+            pinSpacing: false,
+          },
+        })
+        .set(card, { opacity: 1, scale: 1 })
+        .to(
+          card,
+          {
+            opacity: 0,
+            scale: 0.6,
+            ease: "none",
+          },
+          0.01
+        );
     });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   return (
