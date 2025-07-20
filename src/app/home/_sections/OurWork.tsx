@@ -1,21 +1,38 @@
 "use client";
+
 import pngs from "@/_assets/pngs";
-// import ButtonComponent from "@/_components/ButtonComponent";
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Theme } from "@emotion/react";
 import { Box, SxProps, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
+import { useEffect } from "react";
 
 export default function OurWork() {
+  useEffect(() => {
+    const cards = document.querySelectorAll(".hover-card");
+
+    cards.forEach((card) => {
+      const overlay = card.querySelector(".curtain") as HTMLElement;
+
+      card.addEventListener("mouseenter", () => {
+        overlay.style.transform = "translateY(0%)";
+      });
+
+      card.addEventListener("mouseleave", () => {
+        overlay.style.transform = "translateY(100%)";
+      });
+    });
+  }, []);
+
   return (
     <Box
       sx={{
         position: "relative",
-        // bgcolor: "#000",
         background: "radial-gradient(circle, #08289be3 0%, #070707ff 30%)",
         overflow: "hidden",
       }}
     >
+      {/* BACKGROUND */}
       <Box
         sx={{
           width: { xs: "355px", md: "633px" },
@@ -34,12 +51,10 @@ export default function OurWork() {
 
       <Box
         sx={{
-          // m: "auto",
           width: "790px",
           height: "790px",
           display: { xs: "none", lg: "block" },
           position: "absolute",
-          // top: 89,
           right: 0,
         }}
       >
@@ -50,10 +65,10 @@ export default function OurWork() {
         />
       </Box>
 
+      {/* SECTION */}
       <Box
         sx={{
           maxWidth: "1440px",
-
           width: "100%",
           padding: sectionPadding,
           margin: "auto",
@@ -65,6 +80,7 @@ export default function OurWork() {
           gap: { xs: "40px", md: "80px" },
         }}
       >
+        {/* HEADING */}
         <Box
           sx={{
             width: "100%",
@@ -144,6 +160,7 @@ export default function OurWork() {
         >
           <WorkShowcase
             title="Sabir’s Grill"
+            overlayText="Transformed Sabir's Grill's digital presence with web design, development, social media, and SEO."
             year="2025"
             isboolean={true}
             image={pngs.workimage1}
@@ -151,7 +168,6 @@ export default function OurWork() {
               height: { xs: "300px", sm: "450px", md: "620px", lg: "700px" },
             }}
           />
-
           <Box
             width="100%"
             sx={{
@@ -164,6 +180,7 @@ export default function OurWork() {
           >
             <WorkShowcase
               title="sofa & rattan"
+              overlayText="We delivered integrated web design, development, social media, and SEO to elevate their online presence."
               year="2025"
               image={pngs.workimage2}
               sx={{
@@ -172,6 +189,7 @@ export default function OurWork() {
             />
             <WorkShowcase
               title="a class travel"
+              overlayText="Elevated their digital reach and client engagement through expert web design, development, social media, and SEO."
               year="2025"
               image={pngs.workimage3}
               sx={{
@@ -181,6 +199,7 @@ export default function OurWork() {
           </Box>
           <WorkShowcase
             title="Isfahan & Kashan"
+            overlayText="We enhanced their digital presence with expert web design, development, social media, and SEO."
             year="2025"
             image={pngs.workimag4}
             sx={{
@@ -204,6 +223,7 @@ interface WorkShowcaseProps {
   image?: StaticImageData;
   sx?: SxProps<Theme>;
   isboolean?: boolean;
+  overlayText?: string;
 }
 
 export function WorkShowcase({
@@ -212,13 +232,10 @@ export function WorkShowcase({
   image,
   sx,
   isboolean,
+  overlayText,
 }: WorkShowcaseProps) {
   return (
-    <Box
-      sx={{
-        width: "100%",
-      }}
-    >
+    <Box className="hover-card" sx={{ width: "100%" }}>
       <Box
         sx={{
           width: "100%",
@@ -232,11 +249,10 @@ export function WorkShowcase({
         <Box
           sx={{
             width: "100%",
-
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            p: { xs: "20px", lg: " 20px 50px" },
+            p: { xs: "20px", lg: "20px 50px" },
             gap: "20px",
             textTransform: "capitalize",
           }}
@@ -280,6 +296,8 @@ export function WorkShowcase({
                 }),
             ...sx,
             backgroundColor: "#fff",
+            position: "relative",
+            overflow: "hidden",
           }}
         >
           <Image
@@ -291,6 +309,37 @@ export function WorkShowcase({
               objectFit: isboolean ? "cover" : "contain",
             }}
           />
+          {/* Curtain */}
+          <Box
+            className="curtain"
+            sx={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(0, 0, 0, 0.85)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              transition: "transform 0.6s ease",
+              transform: "translateY(100%)",
+              zIndex: 2,
+            }}
+          >
+            <Typography
+              sx={{
+                color: "#fff",
+                fontSize: localFontSize.h5,
+                fontWeight: 500,
+                textAlign: "left",
+                padding: "20px",
+                width: { lg: "90%", xl: "80%" },
+              }}
+            >
+              {overlayText}
+            </Typography>
+          </Box>
         </Box>
       </Box>
     </Box>
