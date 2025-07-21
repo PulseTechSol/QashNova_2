@@ -278,7 +278,7 @@ export default function Navbar() {
                     (link.route.startsWith("./")
                       ? link.route.substring(1)
                       : link.route)
-                      ? "64px"
+                      ? { xs: "50px", sm: "64px" }
                       : { xs: "36px", md: "30px", lg: "36px" },
                   background:
                     pathname ===
