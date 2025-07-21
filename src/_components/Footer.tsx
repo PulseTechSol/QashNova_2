@@ -56,20 +56,21 @@ export default function Footer() {
         </Box>
         <Box
           sx={{
-            padding: sectionPadding,
-            maxWidth: maxWidth,
+            maxWidth: { xs: maxWidth, xxl: "80vw" },
             margin: "auto",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
             gap: "40px",
+            padding: sectionPadding,
+
             flexDirection: { xs: "column", md: "row" },
           }}
         >
           {/* image box */}
           <Box
             sx={{
-              width: { xs: "100px", md: "150px", lg: "230px" },
+              width: { xs: "100px", md: "150px", lg: "230px", xxl: "300px" },
               height: "auto",
             }}
           >
@@ -82,7 +83,13 @@ export default function Footer() {
           {/* other nevigations */}
           <Box
             sx={{
-              maxWidth: { xs: "400px", md: "440px", lg: "480px", xl: "550px" },
+              maxWidth: {
+                xs: "400px",
+                md: "440px",
+                lg: "480px",
+                xl: "550px",
+                xxl: "700px",
+              },
               width: "100%",
             }}
           >
@@ -142,6 +149,7 @@ export default function Footer() {
               md: "30px 80px ",
               lg: "30px 100px ",
               xl: "30px 150px ",
+              xxl: "60px 150px",
             },
             display: { xs: "flex" },
             flexWrap: "wrap",

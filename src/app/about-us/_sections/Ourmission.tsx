@@ -21,6 +21,7 @@ export default function Ourmission() {
         backgroundAttachment: "fixed",
         backgroundPosition: "center center",
         overflow: "hidden",
+        // padding: { ...sectionPadding, xxl: "0" },
       }}
     >
       <Box
@@ -59,16 +60,10 @@ export default function Ourmission() {
       <Box
         // ref={containerRef}
         sx={{
-          maxWidth: maxWidth,
+          maxWidth: { xs: maxWidth, xxl: "80vw" },
           width: "100%",
 
           margin: "auto",
-          // display: "flex",
-          // flexDirection: "column",
-          // justifyContent: "space-between",
-          // alignItems: "center",
-          // flexWrap: { xs: "wrap", lg: "nowrap" },
-          // gap: { xs: "40px", md: "0px" },
         }}
       >
         <Box
@@ -101,9 +96,9 @@ export default function Ourmission() {
             sx={{
               display: { xs: "none", md: "block" },
 
-              maxWidth: "490px",
+              maxWidth: { xs: "490px", xxl: "800px" },
               width: "100%",
-              fontSize: "18px",
+              fontSize: { xs: "18px", xxl: "24px" },
               fontWeight: 400,
               color: "#FFFFFF80",
               textAlign: { xs: "end", sm: "start" },
@@ -133,7 +128,7 @@ export default function Ourmission() {
         <Box
           sx={{
             // bgcolor: "red",
-            maxWidth: maxWidth,
+            maxWidth: { xs: maxWidth, xl: "80vw" },
             width: "100%",
             // height: { xs: "auto", lg: "800px" },
           }}

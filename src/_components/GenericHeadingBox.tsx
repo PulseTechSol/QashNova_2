@@ -20,6 +20,8 @@ export default function GenericHeadingBox({
           xs: isbool ? "250px" : "350px",
           sm: isbool ? "310px" : "400px",
           md: "540px",
+          // lg: "580px",
+          xxl: "800px",
         },
         width: "100%",
         textTransform: "capitalize",

@@ -4,7 +4,11 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import pngs from "@/_assets/pngs";
-import { maxWidth, sectionPadding } from "@/app/_utils/themes";
+import {
+  maxWidth,
+  sectionPaddingX,
+  sectionPaddingY,
+} from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import GenericHeadingBox from "@/_components/GenericHeadingBox";
@@ -20,6 +24,8 @@ export default function WhatweDo() {
         backgroundAttachment: "fixed",
         backgroundPosition: "center center",
         overflow: "hidden",
+        paddingX: sectionPaddingX,
+        // padding: { ...sectionPadding, xxl: "0" },
       }}
     >
       <Box
@@ -58,16 +64,16 @@ export default function WhatweDo() {
       <Box
         // ref={containerRef}
         sx={{
-          maxWidth: maxWidth,
+          py: sectionPaddingY,
+          maxWidth: { xs: maxWidth, xxl: "80vw" },
           width: "100%",
-          padding: sectionPadding,
           margin: "auto",
           display: "flex",
           flexDirection: { xs: "row" },
           justifyContent: "space-between",
           alignItems: "center",
           flexWrap: { xs: "wrap", md: "nowrap" },
-          gap: { xs: "40px", md: "80px" },
+          gap: { xs: "40px", md: "80px", xxl: "150px" },
         }}
       >
         <GenericHeadingBox heading1="what" heading2="we do" />
@@ -79,14 +85,14 @@ export default function WhatweDo() {
             justifyContent: "space-between",
             alignItems: { xs: "start", sm: "start" },
             flexDirection: { xs: "column" },
-            gap: { xs: "40px", lg: "80px" },
+            gap: { xs: "40px", lg: "80px", xxl: "120px" },
           }}
         >
           <Typography
             sx={{
-              maxWidth: "557px",
+              maxWidth: { xs: "557px", xxl: "1000px" },
               width: "100%",
-              fontSize: "18px",
+              fontSize: { xs: "18px", xxl: "24px" },
               fontWeight: 400,
               color: "#FFFFFF80",
               textAlign: { xs: "end", md: "start" },
@@ -112,9 +118,9 @@ export default function WhatweDo() {
           </Typography>
           <Box
             sx={{
-              maxWidth: { xs: "100%", md: "553px" },
+              maxWidth: { xs: "100%", md: "553px", xxl: "1400px" },
               width: "100%",
-              height: { xs: "auto", lg: "430px" },
+              height: { xs: "auto", lg: "430px", xxl: "100%" },
             }}
           >
             <Image

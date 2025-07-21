@@ -73,16 +73,17 @@ export default function WebsiteSection({
       <Box
         // ref={containerRef}
         sx={{
-          maxWidth: maxWidth,
-          width: "100%",
           padding: sectionPadding,
+
+          maxWidth: { xs: maxWidth, xxl: "80vw" },
+          width: "100%",
           margin: "auto",
           display: "flex",
           flexDirection: isbool ? { xs: "row", md: "row-reverse" } : "row",
           justifyContent: "space-between",
           alignItems: "center",
           flexWrap: { xs: "wrap", md: "nowrap" },
-          gap: { xs: "40px", md: "60px", lg: "80px" },
+          gap: { xs: "40px", md: "60px", lg: "80px", xxl: "120px" },
         }}
       >
         <GenericHeadingBox heading1={heading1} heading2={heading2} />
@@ -94,13 +95,13 @@ export default function WebsiteSection({
             justifyContent: "space-between",
             alignItems: { xs: "start", sm: "start" },
             flexDirection: { xs: "column-reverse", md: "column" },
-            gap: { xs: "40px", lg: "40px" },
+            gap: { xs: "40px", lg: "40px", xxl: "80px" },
           }}
         >
           <Box
             sx={{
               bgcolor: "#fff",
-              maxWidth: { xs: "100%", md: "555px" },
+              maxWidth: { xs: "100%", md: "555px", xxl: "1200px" },
               width: "100%",
               borderRadius: {
                 xs: "0 40px 40px 40px",
@@ -129,9 +130,9 @@ export default function WebsiteSection({
           >
             <Typography
               sx={{
-                maxWidth: "557px",
+                maxWidth: { xs: "557px", xxl: "1000px" },
                 width: "100%",
-                fontSize: "18px",
+                fontSize: { xs: "18px", xxl: "26px" },
                 fontWeight: 400,
                 // #00000080
                 color: isbool ? "#00000080" : "#FFFFFF80",
@@ -155,7 +156,7 @@ export default function WebsiteSection({
             <Box
               sx={{
                 width: "100%",
-                mt: "20px",
+                mt: { xs: "20px", xxl: "40px" },
                 display: { xs: "flex" },
                 alignItems: { xs: "end", md: "start" },
                 justifyContent: { xs: "end", md: "start" },
@@ -169,7 +170,7 @@ export default function WebsiteSection({
                   color: { xs: "#fff" },
                   borderRadius: "50px",
                   border: "2px solid #3C65FF",
-                  maxWidth: { sm: "280px" },
+                  maxWidth: { sm: "280px", xxl: "350px" },
                 }}
               />
             </Box>

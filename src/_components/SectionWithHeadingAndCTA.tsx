@@ -18,14 +18,14 @@ export default function SectionWithHeadingAndCTA({
         sx={{
           background: "linear-gradient(20deg, #5841D466, #ffffffff,#ffffffff)",
           overflow: "hidden",
+          padding: sectionPadding,
         }}
       >
         <Box
           sx={{
             position: "relative",
-            maxWidth: maxWidth,
+            maxWidth: { xs: maxWidth, xxl: "80vw" },
             width: "100%",
-            padding: sectionPadding,
             margin: "auto",
             gap: { xs: "0" },
           }}
@@ -39,7 +39,7 @@ export default function SectionWithHeadingAndCTA({
               display: "inline-block",
               textTransform: "uppercase",
               mb: { xs: "40px", lg: "80px" },
-              fontSize: localFontSize.h2,
+              fontSize: { ...localFontSize.h2, xxl: "180px" },
               fontWeight: 600,
             }}
           >
@@ -60,11 +60,16 @@ export default function SectionWithHeadingAndCTA({
               {lastword}
               <Box
                 sx={{
-                  width: { xs: "124px", sm: "190px", md: "391px" },
-                  height: { xs: "14px", sm: "30px", md: "41px" },
+                  width: {
+                    xs: "124px",
+                    sm: "190px",
+                    md: "391px",
+                    xxl: "450px",
+                  },
+                  height: { xs: "14px", sm: "30px", md: "41px", xxl: "60px" },
                   display: "block",
                   position: "absolute",
-                  top: { xs: "20px", sm: 50 },
+                  top: { xs: "20px", sm: 50, xxl: 70 },
                   left: { xs: "35%", lg: 290 },
                 }}
               >
@@ -92,7 +97,7 @@ export default function SectionWithHeadingAndCTA({
                 color: { xs: "#fff" },
                 borderRadius: "50px",
                 border: "2px solid #3C65FF",
-                maxWidth: { sm: "280px" },
+                maxWidth: { sm: "280px", md: "400px" },
               }}
             />
           </Box>

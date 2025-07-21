@@ -60,6 +60,7 @@ export const localFontSize = {
     sm: "54px",
     md: "70px",
     lg: "100px",
+    xxl: "150px",
   },
   h4: {
     xs: "36px",
@@ -71,6 +72,7 @@ export const localFontSize = {
     xs: "24px",
     md: "28px",
     lg: "36px",
+    xxl: "60px",
   },
   p1: {
     xs: "18px",
@@ -79,10 +81,12 @@ export const localFontSize = {
   p2: {
     xs: "16px",
     md: "18px",
+    xxl: "26px",
   },
   p3: {
     xs: "14px",
     md: "16px",
+    xxl: "20px",
   },
 };
 
@@ -91,4 +95,17 @@ export const sectionPadding = {
   sm: "60px",
   md: "80px",
   lg: "100px 150px",
+};
+export const sectionPaddingY = {
+  xs: "60px",
+  sm: "60px",
+  md: "80px",
+  lg: "100px",
+};
+
+export const sectionPaddingX = {
+  xs: "20px",
+  sm: "60px",
+  md: "80px",
+  lg: "150px",
 };
