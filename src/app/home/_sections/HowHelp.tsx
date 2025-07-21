@@ -248,17 +248,21 @@ export default function HowHelp() {
               className="gsap-card"
               sx={{
                 width: "100%",
-                padding: { xs: "40px 20px ", sm: "40px" },
+                padding: { xs: "20px 15px ", sm: "40px" },
                 display: "flex",
                 flexWrap: { xs: "wrap", md: "nowrap" },
                 justifyContent: "center",
                 alignItems: "center",
                 textAlign: "center",
-                gap: { xs: "40px", md: "60px" },
+                gap: { xs: "20px", sm: "40px", md: "60px" },
                 bgcolor: "#fff",
-                borderRadius: "80px",
-                borderTopLeftRadius: isFirst ? 0 : "80px",
-                borderBottomRightRadius: isLast ? 0 : "80px",
+                borderRadius: { xs: "30px", md: "80px" },
+                borderTopLeftRadius: isFirst
+                  ? { xs: 0, md: 0 }
+                  : { xs: "30px", md: "80px" },
+                borderBottomRightRadius: isLast
+                  ? { xs: 0, md: 0 }
+                  : { xs: "30px", md: "80px" },
               }}
             >
               <Box
@@ -273,7 +277,7 @@ export default function HowHelp() {
                     fontSize: localFontSize.h4,
                     fontWeight: 500,
                     color: "#3C65FF",
-                    lineHeight: { md: "70px" },
+                    lineHeight: { xs: "40px", md: "70px" },
                     textAlign: { xs: "start" },
                   }}
                 >
@@ -282,7 +286,7 @@ export default function HowHelp() {
 
                 <Box
                   sx={{
-                    mt: { xs: "20px", md: "30px" },
+                    mt: { xs: "10px", sm: "20px", md: "30px" },
                     height: "auto",
                     width: "100%",
                     fontSize: {
@@ -307,7 +311,7 @@ export default function HowHelp() {
                 </Box>
                 <Typography
                   sx={{
-                    mt: { xs: "30px", md: "60px" },
+                    mt: { xs: "15px", sm: "30px", md: "60px" },
                     fontSize: localFontSize.p2,
                     fontWeight: 400,
                     color: "#00000080",
@@ -322,17 +326,29 @@ export default function HowHelp() {
                   maxWidth: { xs: "100%", md: "445px" },
                   width: "100%",
                   height: "auto",
+
+                  // height: { xs: "400px", sm: "auto" },
+                  // overflow: "hidden",
                 }}
               >
                 <Image
                   src={service.image}
                   alt={`service-${index}`}
+                  className={`custom-img ${isFirst ? "first" : ""} ${
+                    isLast ? "last" : ""
+                  }`}
                   style={{
                     width: "100%",
                     height: "100%",
-                    borderRadius: "80px",
-                    borderTopLeftRadius: isFirst ? 0 : "80px",
-                    borderBottomRightRadius: isLast ? 0 : "80px",
+                    // objectFit: "contain",
+                    // borderRadius: "80px",
+                    // borderTopLeftRadius: isFirst ? 0 : "80px",
+                    // borderBottomRightRadius: isLast ? 0 : "80px",
+                    // "@media (max-width:600px)": {
+                    //   borderRadius: "40px",
+                    //   borderTopLeftRadius: isFirst ? 0 : "40px",
+                    //   borderBottomRightRadius: isLast ? 0 : "40px",
+                    // },
                   }}
                 />
               </Box>
