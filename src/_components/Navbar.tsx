@@ -28,7 +28,6 @@ export default function Navbar() {
     };
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup jab component unmount ho
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -38,7 +37,7 @@ export default function Navbar() {
     { text: "about", route: "/about-us" },
     { text: "websites", route: "/websites" },
     { text: "Branding", route: "/branding" },
-    { text: "case study", route: "case-study" },
+    { text: "case study", route: "/case-study" },
     { text: "plans", route: "/plans" },
     { text: "contact", route: "/contact-us" },
   ];
@@ -102,7 +101,6 @@ export default function Navbar() {
               height: "100% !important",
               width: "100% !important",
               cursor: "pointer",
-              // objectFit: "cover",
             }}
             src={svgs.logo}
             alt="logo"
@@ -114,7 +112,6 @@ export default function Navbar() {
             maxWidth: "280px",
             width: "100%",
             display: "flex",
-            // flexDirection:{xs:"row"}
             justifyContent: { xs: "start", md: "space-between" },
             alignItems: "center",
             gap: "30px",
@@ -135,8 +132,6 @@ export default function Navbar() {
                 borderRadius: "50px",
                 border: "2px solid #3C65FF",
                 maxWidth: "280px",
-
-                // maxWidth:
               }}
             />
           </Box>
@@ -186,13 +181,12 @@ export default function Navbar() {
       <Box
         sx={{
           height: { xs: "auto", md: "650px", lg: "760px" },
-          width: { xs: "100vw", sm: "50vw", md: "540px" },
+          width: { xs: "100vw", sm: "80vw", md: "540px" },
           position: "fixed",
           top: "0px",
           right: "0px",
           transition: "all 0.4s ease-in-out",
           transform: menu ? "translateX(0%)" : "translateX(100%)",
-          // transform: menu ? "translateX(100%)" : "translateX(-100%)",
           borderRadius: { xs: "0 40px 0 40px", md: " 40px 0 0 40px" },
           zIndex: 1000,
           background: {
@@ -316,7 +310,6 @@ export default function Navbar() {
           ))}
           <Box
             sx={{
-              // display: { xs: "none", sm: "block" },
               flexGrow: 1,
               overflowY: "scroll",
 

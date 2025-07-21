@@ -1,12 +1,11 @@
 "use client";
 
-// import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import pngs from "@/_assets/pngs";
-import { localFontSize } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+import GenericHeadingBox from "@/_components/GenericHeadingBox";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -87,34 +86,8 @@ export default function Ourmission() {
             gap: { xs: "30px", sm: "40px" },
           }}
         >
-          <Box
-            sx={{
-              maxWidth: { xs: "300px", sm: "477px" },
-              width: "100%",
-              textTransform: "capitalize",
-            }}
-          >
-            <Typography
-              sx={{
-                fontSize: localFontSize.h3,
-                fontWeight: 600,
-                color: "#3C65FF",
-                textAlign: { xs: "start" },
-              }}
-            >
-              Our
-            </Typography>
-            <Typography
-              sx={{
-                color: "#3C65FF",
-                fontSize: localFontSize.h3,
-                fontWeight: 600,
-                textAlign: { xs: "center" },
-              }}
-            >
-              mission
-            </Typography>
-          </Box>
+          <GenericHeadingBox heading1="Our" heading2="mission" />
+
           <Box
             sx={{
               width: "2px",

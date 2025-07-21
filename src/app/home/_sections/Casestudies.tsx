@@ -9,28 +9,33 @@ import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import svgs from "@/_assets/svgs";
+// import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Casestudies() {
-  // const containerRef = useRef<HTMLDivElement>(null);
-
   const websiteServices = [
     {
       title: "saif’s boxing & fitness",
       description:
         "Saif’s Boxing needed a bold and gritty online identity that reflects the energy of the gym and its community. We crafted a high-impact design that showcases training programs, client transformations, and class schedules with clarity.",
+      image: "/bgCase1.png",
+      imgMob: "/bgMoblCase1.png",
     },
     {
       title: "sabir’s grill",
       description:
         "We brought the essence of Sabir’s Grill to life online by blending cultural richness with a sleek, modern interface. Our focus was on creating a seamless browsing experience that highlights their diverse food offerings and rich heritage.",
+      image: "/bgCase2.png",
+      imgMob: "/bgMoblCase2.png",
     },
 
     {
       title: "conquest law solicitors",
       description:
         "For Conquest Law, we delivered a clean and authoritative web presence that instills trust and professionalism. The site layout is minimal yet impactful, highlighting their services and expertise with confidence.",
+      image: "/bgCase3.png",
+      imgMob: "/bgMoblCase3.png",
     },
   ];
 
@@ -84,7 +89,6 @@ export default function Casestudies() {
           position: "absolute",
           transform: "rotate(200deg)", // ✅ rotate here
           transformOrigin: "center",
-          // bgcolor: "red",
           top: 669,
           left: -50,
         }}
@@ -135,6 +139,7 @@ export default function Casestudies() {
                 fontWeight: 600,
                 color: "#3C65FF",
                 textAlign: { xs: "start" },
+                lineHeight: { xs: "50px", md: "70px" },
               }}
             >
               Case
@@ -145,7 +150,7 @@ export default function Casestudies() {
                 color: "#3C65FF",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
-                textAlign: { xs: "center" },
+                textAlign: { xs: "center", md: "end" },
               }}
             >
               studies
@@ -178,12 +183,11 @@ export default function Casestudies() {
         <Box
           sx={{
             width: "100%",
-            // display: "flex",
-            // justifyContent: "space-between",
-            // alignItems: "center",
-            // flexDirection: "column",
-            // gap: "20px",
-            // bgcolor: "#ccc",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+            gap: { xs: "20px", md: "40px" },
           }}
         >
           {websiteServices.map((items, index) => {
@@ -192,25 +196,94 @@ export default function Casestudies() {
                 key={index}
                 sx={{
                   width: "100%",
+                  height: {
+                    xs: "100%",
+
+                    md: "220px",
+                    "@media (min-width:1200px)": {
+                      height: "290px",
+                    },
+                    "@media (min-width:1290px)": {
+                      height: "220px",
+                    },
+                  },
                   display: "flex",
-                  justifyContent: "space-between",
+                  justifyContent: "center",
                   alignItems: "center",
+
                   flexDirection: "column",
-                  // gap: "20px",
-                  // bgcolor: "#ccc",
-                  mb: { xs: "20px", md: "40px" },
+                  position: { xs: "relative", md: "relative" },
+                  overflow: "hidden",
+                  transition: "all 0.4s ease-in-out",
+                  "&:hover .bgOverlay": {
+                    opacity: 1,
+                  },
+                  "&:hover .contentBox": {
+                    color: { xs: "#fff", md: "#fff" },
+                  },
+                  "&:hover .descriptionText": {
+                    color: { xs: "#fff", md: "#fff" },
+                  },
+                  "&:hover .lineBox": {
+                    display: { md: "none" },
+                  },
                 }}
               >
+                {/* Background Image + Overlay */}
                 <Box
+                  className="bgOverlay"
                   sx={{
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    backgroundImage: {
+                      xs: `url(${items.imgMob})`,
+                      md: `url(${items.image})`,
+                    },
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    zIndex: 0,
+                    opacity: 0,
+                    borderRadius: { md: "40px" },
+
+                    transition: "opacity 0.4s ease-in-out",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      borderRadius: { md: "40px" },
+                      backgroundColor: {
+                        xs: "rgba(0, 0, 0, 0.6)",
+
+                        md: "rgba(0, 0, 0, 0.6)",
+                      },
+                    }}
+                  />
+                </Box>
+
+                {/* Content */}
+                <Box
+                  className="contentBox"
+                  sx={{
+                    height: "100%",
+                    position: "relative",
+                    zIndex: 1,
                     width: "100%",
                     display: "flex",
-                    // bgcolor: "#ccc",
-                    justifyContent: "space-between",
+                    justifyContent: "center",
                     alignItems: "center",
                     flexDirection: { xs: "column", md: "row" },
-                    p: { xs: "0", lg: "0 20px" },
+                    p: { xs: " 10px", md: "0 20px" },
                     gap: { xs: "20px", md: "40px" },
+                    transition: "all 0.4s ease-in-out",
                   }}
                 >
                   <Typography
@@ -219,14 +292,16 @@ export default function Casestudies() {
                       width: "100%",
                       fontSize: localFontSize.h4,
                       fontWeight: 500,
-                      color: "#3C65FF",
+                      color: "#3C65FF", // title ka color blue hi rahe
                       textAlign: { xs: "center", md: "start" },
                       textTransform: "capitalize",
+                      transition: "color 0.4s ease-in-out",
                     }}
                   >
                     {items.title}
                   </Typography>
                   <Typography
+                    className="descriptionText"
                     sx={{
                       maxWidth: "554px",
                       width: "100%",
@@ -234,46 +309,54 @@ export default function Casestudies() {
                       fontWeight: 400,
                       color: "#00000080",
                       textAlign: { xs: "center", md: "start" },
+                      transition: "color 0.4s ease-in-out",
                     }}
                   >
                     {items.description}
                   </Typography>
                 </Box>
+
+                {/* Divider Line */}
                 <Box
+                  className="lineBox"
                   sx={{
-                    m: "40px 0",
+                    m: { xs: "30px 0 0", sm: "40px 0 0", md: "0" },
                     width: "100%",
                     height: "3px",
+                    display: { lg: "block" },
                     background:
                       "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
+                    zIndex: 0,
+                    position: { md: "relative" },
+                    transition: "all 0.3s ease-in-out",
                   }}
                 />
               </Box>
-              // {/* </Box> */}
             );
           })}
 
           {/* button */}
-          <Box
+        </Box>
+        <Box
+          sx={{
+            // mt: { md: "40px" },
+            width: "100%",
+            display: { xs: "flex" },
+            alignItems: { xs: "center" },
+            justifyContent: "center",
+          }}
+        >
+          <ButtonComponent
+            label="Learn How"
+            imgSrc={svgs.whiteArrow}
             sx={{
-              width: "100%",
-              display: { xs: "flex" },
-              alignItems: { xs: "center" },
-              justifyContent: "center",
+              background: { xs: "#3C65FF", md: "#3C65FF" },
+              color: { xs: "#fff" },
+              borderRadius: "50px",
+              border: "2px solid #3C65FF",
+              maxWidth: "280px",
             }}
-          >
-            <ButtonComponent
-              label="Learn How"
-              imgSrc={svgs.whiteArrow}
-              sx={{
-                background: { xs: "#3C65FF", md: "#3C65FF" },
-                color: { xs: "#fff" },
-                borderRadius: "50px",
-                border: "2px solid #3C65FF",
-                maxWidth: "280px",
-              }}
-            />
-          </Box>
+          />
         </Box>
       </Box>
     </Box>

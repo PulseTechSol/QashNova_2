@@ -86,39 +86,7 @@ export default function WebsiteSection({
         }}
       >
         <GenericHeadingBox heading1={heading1} heading2={heading2} />
-        {/* <Box
-          sx={{
-            maxWidth: { xs: "250px", sm: "300px", md: "555px" },
-            width: "100%",
-            textAlign: "left",
-            textTransform: "capitalize",
-          }}
-        >
-          <Typography
-            sx={{
-              width: "100%",
-              fontSize: localFontSize.h3,
-              fontWeight: 600,
-              color: "#3C65FF",
-              lineHeight: { xs: "50px", md: "80px" },
-              textAlign: { xs: "left" },
-            }}
-          >
-            {heading1}
-          </Typography>
-          <Typography
-            sx={{
-              width: "100%",
-              color: "#3C65FF",
-              fontSize: localFontSize.h3,
-              fontWeight: 600,
-              // ml:{xs:"10px",}
-              textAlign: { xs: "end", md: "center", lg: "end" },
-            }}
-          >
-            {heading2}
-          </Typography>
-        </Box> */}
+
         <Box
           sx={{
             width: "100%",
@@ -150,10 +118,6 @@ export default function WebsiteSection({
                 height: "100%",
                 overflow: "hidden",
                 objectFit: "contain",
-                // borderRadius: {
-                //   xs: "0 40px 40px 40px",
-                //   sm: "0 80px 80px 80px",
-                // },
               }}
             />
           </Box>
