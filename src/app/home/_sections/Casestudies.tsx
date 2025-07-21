@@ -19,23 +19,23 @@ export default function Casestudies() {
       title: "saif’s boxing & fitness",
       description:
         "Saif’s Boxing needed a bold and gritty online identity that reflects the energy of the gym and its community. We crafted a high-impact design that showcases training programs, client transformations, and class schedules with clarity.",
-      image: "/bgCase1.png",
-      imgMob: "/bgMoblCase1.png",
+      image: "/bgCase1.webp",
+      imgMob: "/bgMoblCase1.webp",
     },
     {
       title: "sabir’s grill",
       description:
         "We brought the essence of Sabir’s Grill to life online by blending cultural richness with a sleek, modern interface. Our focus was on creating a seamless browsing experience that highlights their diverse food offerings and rich heritage.",
-      image: "/bgCase2.png",
-      imgMob: "/bgMoblCase2.png",
+      image: "/bgCase2.webp",
+      imgMob: "/bgMoblCase2.webp",
     },
 
     {
       title: "conquest law solicitors",
       description:
         "For Conquest Law, we delivered a clean and authoritative web presence that instills trust and professionalism. The site layout is minimal yet impactful, highlighting their services and expertise with confidence.",
-      image: "/bgCase3.png",
-      imgMob: "/bgMoblCase3.png",
+      image: "/bgCase3.webp",
+      imgMob: "/bgMoblCase3.webp",
     },
   ];
 
