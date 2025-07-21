@@ -9,6 +9,37 @@
 //   },
 // });
 // export theme;
+import { createTheme } from "@mui/material/styles";
+
+// Extend the breakpoints with 'xxl'
+declare module "@mui/material/styles" {
+  interface BreakpointOverrides {
+    xs: true;
+    sm: true;
+    md: true;
+    lg: true;
+    xl: true;
+    xxl: true; // 👈 your custom breakpoint
+  }
+}
+
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+      xxl: 2000, // 👈 custom breakpoint
+    },
+  },
+  // You can also customize palette, typography, etc.
+});
+
+export default theme;
+
+export const maxWidth = "1440px";
 
 export const localFontSize = {
   h1: {
@@ -58,6 +89,6 @@ export const localFontSize = {
 export const sectionPadding = {
   xs: "60px 20px",
   sm: "60px",
-  md: "80px ",
+  md: "80px",
   lg: "100px 150px",
 };

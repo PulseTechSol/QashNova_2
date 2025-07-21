@@ -1,6 +1,6 @@
 "use client";
 
-import { localFontSize, sectionPadding } from "@/app/_utils/themes";
+import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 import GenericHeadingBox from "./GenericHeadingBox";
@@ -68,7 +68,7 @@ export default function CaseStudySection({
       <Box
         // ref={containerRef}
         sx={{
-          maxWidth: "1440px",
+          maxWidth: maxWidth,
           width: "100%",
           padding: sectionPadding,
           margin: "auto",

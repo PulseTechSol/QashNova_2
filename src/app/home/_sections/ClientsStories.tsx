@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { localFontSize, sectionPadding } from "@/app/_utils/themes";
+import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 import pngs from "@/_assets/pngs";
@@ -109,7 +109,7 @@ export default function ClientsStories() {
     <Box sx={{ backgroundColor: "#000000" }}>
       <Box
         sx={{
-          maxWidth: "1440px",
+          maxWidth: maxWidth,
           width: "100%",
           margin: "auto",
           padding: sectionPadding,

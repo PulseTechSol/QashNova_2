@@ -1,7 +1,7 @@
 import React from "react";
 import PlanComponent from "../_components/PlanComponent";
 import { Box, Typography } from "@mui/material";
-import { localFontSize, sectionPadding } from "@/app/_utils/themes";
+import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
 
 export default function PlanScreen() {
   const plans = [
@@ -48,7 +48,7 @@ export default function PlanScreen() {
   return (
     <Box
       sx={{
-        maxWidth: "1440px",
+        maxWidth: maxWidth,
         width: "100%",
         margin: "auto",
         padding: sectionPadding,

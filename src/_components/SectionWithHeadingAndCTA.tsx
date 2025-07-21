@@ -1,6 +1,6 @@
 import svgs from "@/_assets/svgs";
 import ButtonComponent from "@/_components/ButtonComponent";
-import { localFontSize, sectionPadding } from "@/app/_utils/themes";
+import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 interface SectionWithHeadingAndCTAProps {
@@ -23,7 +23,7 @@ export default function SectionWithHeadingAndCTA({
         <Box
           sx={{
             position: "relative",
-            maxWidth: "1440px",
+            maxWidth: maxWidth,
             width: "100%",
             padding: sectionPadding,
             margin: "auto",

@@ -1,7 +1,7 @@
 "use client";
 
 import pngs from "@/_assets/pngs";
-import { sectionPadding } from "@/app/_utils/themes";
+import { maxWidth, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 import ButtonComponent from "./ButtonComponent";
@@ -73,7 +73,7 @@ export default function WebsiteSection({
       <Box
         // ref={containerRef}
         sx={{
-          maxWidth: "1440px",
+          maxWidth: maxWidth,
           width: "100%",
           padding: sectionPadding,
           margin: "auto",

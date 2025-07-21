@@ -4,6 +4,7 @@ import Navbar from "@/_components/Navbar";
 import Footer from "@/_components/Footer";
 import { Box } from "@mui/material";
 import { ToastContainer } from "react-toastify";
+import ThemeRegistry from "./ThemeRegistry";
 
 export const metadata: Metadata = {
   title: "Qashnova",
@@ -17,23 +18,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <Box
-          sx={{
-            position: { xs: "fixed", sm: "unset" },
-            top: "0",
-            zIndex: "10000",
-            width: "100%",
-          }}
-        >
-          <Navbar />
-        </Box>
-        <Box sx={{ marginTop: { xs: "89px", sm: "unset" } }}>
-          {children}
-          <Footer />
-        </Box>
-      </body>
-      <ToastContainer position="top-right" autoClose={3000} />
+      <ThemeRegistry>
+        <body>
+          <Box
+            sx={{
+              position: { xs: "fixed", sm: "unset" },
+              top: "0",
+              zIndex: "10000",
+              width: "100%",
+            }}
+          >
+            <Navbar />
+          </Box>
+          <Box sx={{ marginTop: { xs: "89px", sm: "unset" } }}>
+            {children}
+            <Footer />
+          </Box>
+          <ToastContainer position="top-right" autoClose={3000} />
+        </body>
+      </ThemeRegistry>
     </html>
   );
 }

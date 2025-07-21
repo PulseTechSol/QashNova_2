@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import pngs from "@/_assets/pngs";
 import svgs from "@/_assets/svgs";
-import { sectionPadding } from "@/app/_utils/themes";
+import { maxWidth, sectionPadding } from "@/app/_utils/themes";
 
 interface HeroSectionProps {
   line1: string;
@@ -52,7 +52,7 @@ export default function HeroSection({
       <Box
         sx={{
           position: "relative",
-          maxWidth: "1440px",
+          maxWidth: maxWidth,
           width: "100%",
           padding: sectionPadding,
           margin: "auto",

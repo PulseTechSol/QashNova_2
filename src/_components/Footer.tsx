@@ -1,4 +1,4 @@
-import { localFontSize, sectionPadding } from "@/app/_utils/themes";
+import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 import svgs from "@/_assets/svgs";
@@ -57,7 +57,7 @@ export default function Footer() {
         <Box
           sx={{
             padding: sectionPadding,
-            maxWidth: "1440px",
+            maxWidth: maxWidth,
             margin: "auto",
             display: "flex",
             justifyContent: "space-between",

@@ -1,5 +1,5 @@
 import pngs from "@/_assets/pngs";
-import { localFontSize, sectionPadding } from "@/app/_utils/themes";
+import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
 import { Box, Grid, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 
@@ -67,7 +67,7 @@ export default function CardBranding() {
 
         <Box
           sx={{
-            maxWidth: "1440px",
+            maxWidth: maxWidth,
             width: "100%",
             padding: sectionPadding,
             margin: "auto",

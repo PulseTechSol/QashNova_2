@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import svgs from "@/_assets/svgs";
 import ButtonComponent from "./ButtonComponent";
+import { maxWidth } from "@/app/_utils/themes";
 // import { localFontSize } from "@/app/_utils/themes";
 
 export default function Navbar() {
@@ -68,7 +69,7 @@ export default function Navbar() {
             md: "20px 80px",
             lg: "20px 150px",
           },
-          maxWidth: "1440px",
+          maxWidth: maxWidth,
           margin: "auto",
         }}
       >

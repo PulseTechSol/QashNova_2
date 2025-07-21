@@ -4,7 +4,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import pngs from "@/_assets/pngs";
-import { localFontSize } from "@/app/_utils/themes";
+import { localFontSize, maxWidth } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
@@ -59,7 +59,7 @@ export default function Ourmission() {
       <Box
         // ref={containerRef}
         sx={{
-          maxWidth: "1440px",
+          maxWidth: maxWidth,
           width: "100%",
 
           margin: "auto",
@@ -159,7 +159,7 @@ export default function Ourmission() {
         <Box
           sx={{
             // bgcolor: "red",
-            maxWidth: "1440px",
+            maxWidth: maxWidth,
             width: "100%",
             // height: { xs: "auto", lg: "800px" },
           }}

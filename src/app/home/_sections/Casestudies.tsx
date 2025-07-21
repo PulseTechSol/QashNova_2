@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import pngs from "@/_assets/pngs";
 import ButtonComponent from "@/_components/ButtonComponent";
-import { localFontSize, sectionPadding } from "@/app/_utils/themes";
+import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import svgs from "@/_assets/svgs";
@@ -99,7 +99,7 @@ export default function Casestudies() {
       <Box
         // ref={containerRef}
         sx={{
-          maxWidth: "1440px",
+          maxWidth: maxWidth,
           width: "100%",
           padding: sectionPadding,
           margin: "auto",

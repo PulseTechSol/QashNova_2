@@ -1,4 +1,4 @@
-import { localFontSize, sectionPadding } from "@/app/_utils/themes";
+import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import ContactUsForm from "./ContactUsForm";
 
@@ -10,7 +10,7 @@ export default function ContactUs() {
           sx={{
             padding: sectionPadding,
             margin: "auto",
-            maxWidth: "1440px",
+            maxWidth: maxWidth,
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             justifyContent: "space-between",
@@ -50,7 +50,6 @@ export default function ContactUs() {
           <Box sx={{ width: "100%" }}>
             {/* contactus form there */}
             <ContactUsForm />
-            
           </Box>
         </Box>
       </Box>
