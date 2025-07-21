@@ -50,13 +50,13 @@ export default function HeroSection({
         },
         padding: sectionPadding,
         background: "linear-gradient(-10deg, #DDDDDD, #ffffffff)",
+        margin: "auto",
       }}
     >
       <Box
         sx={{
           maxWidth: { xs: "350px", sm: "600px", md: "1300px", xl: "1440px" },
           width: "100%",
-          margin: "auto",
           background: "linear-gradient(90deg, #3C65FF, #553FD2, #2617B1)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
