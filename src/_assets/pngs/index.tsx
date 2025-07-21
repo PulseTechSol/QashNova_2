@@ -6,7 +6,7 @@ import image5 from "./heroHelp/image5.png";
 import heroHome from "./heroHome.png";
 import howHeplLG from "./heroHelp/howHeplLG.png";
 import howHeplLGcolor from "./heroHelp/howHeplLGcolor.png";
-import workimage1 from "./ourwork/workimage11.png";
+import workimage1 from "./ourwork/working.png";
 import workimage2 from "./ourwork/workimage2.png";
 import workimag4 from "./ourwork/workimag4.png";
 import workimage3 from "./ourwork/workimage3.png";

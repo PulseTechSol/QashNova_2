@@ -9,6 +9,7 @@ import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import GenericHeadingBox from "@/_components/GenericHeadingBox";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -187,34 +188,7 @@ export default function HowHelp() {
             gap: { xs: "30px", sm: "40px" },
           }}
         >
-          <Box
-            sx={{
-              maxWidth: { xs: "300px", sm: "477px" },
-              width: "100%",
-              textTransform: "capitalize",
-            }}
-          >
-            <Typography
-              sx={{
-                fontSize: localFontSize.h3,
-                fontWeight: 600,
-                color: "#3C65FF",
-                textAlign: { xs: "start" },
-              }}
-            >
-              How
-            </Typography>
-            <Typography
-              sx={{
-                color: "#3C65FF",
-                fontSize: localFontSize.h3,
-                fontWeight: 600,
-                textAlign: { xs: "center" },
-              }}
-            >
-              we Help
-            </Typography>
-          </Box>
+          <GenericHeadingBox heading1="How" heading2="we Help" />
           <Box
             sx={{
               width: "2px",
@@ -256,13 +230,13 @@ export default function HowHelp() {
                 textAlign: "center",
                 gap: { xs: "20px", sm: "40px", md: "60px" },
                 bgcolor: "#fff",
-                borderRadius: { xs: "30px", md: "80px" },
+                borderRadius: { xs: "30px", sm: "80px" },
                 borderTopLeftRadius: isFirst
-                  ? { xs: 0, md: 0 }
+                  ? { xs: 0, sm: 0 }
                   : { xs: "30px", md: "80px" },
                 borderBottomRightRadius: isLast
-                  ? { xs: 0, md: 0 }
-                  : { xs: "30px", md: "80px" },
+                  ? { xs: 0, sm: 0 }
+                  : { xs: "30px", sm: "80px" },
               }}
             >
               <Box
@@ -326,9 +300,6 @@ export default function HowHelp() {
                   maxWidth: { xs: "100%", md: "445px" },
                   width: "100%",
                   height: "auto",
-
-                  // height: { xs: "400px", sm: "auto" },
-                  // overflow: "hidden",
                 }}
               >
                 <Image
@@ -340,15 +311,6 @@ export default function HowHelp() {
                   style={{
                     width: "100%",
                     height: "100%",
-                    // objectFit: "contain",
-                    // borderRadius: "80px",
-                    // borderTopLeftRadius: isFirst ? 0 : "80px",
-                    // borderBottomRightRadius: isLast ? 0 : "80px",
-                    // "@media (max-width:600px)": {
-                    //   borderRadius: "40px",
-                    //   borderTopLeftRadius: isFirst ? 0 : "40px",
-                    //   borderBottomRightRadius: isLast ? 0 : "40px",
-                    // },
                   }}
                 />
               </Box>

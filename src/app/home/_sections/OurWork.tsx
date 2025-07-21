@@ -105,6 +105,7 @@ export default function OurWork() {
                 fontWeight: 600,
                 color: "#3C65FF",
                 textAlign: { xs: "start" },
+                lineHeight: { xs: "50px", md: "70px" },
               }}
             >
               our

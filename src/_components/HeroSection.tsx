@@ -37,25 +37,27 @@ export default function HeroSection({
   return (
     <Box
       sx={{
+        position: "relative",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        maxWidth: "1440px",
         minHeight: {
           xs: "400px",
           sm: "600px",
           md: "700px",
           xl: "900px",
         },
+        padding: sectionPadding,
         background: "linear-gradient(-10deg, #DDDDDD, #ffffffff)",
+        margin: "auto",
       }}
     >
       <Box
         sx={{
           position: "relative",
-          maxWidth: maxWidth,
+          maxWidth: { xs: "350px", sm: "600px", md: "1300px", xl: maxWidth },
           width: "100%",
-          padding: sectionPadding,
-          margin: "auto",
           background: "linear-gradient(90deg, #3C65FF, #553FD2, #2617B1)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
@@ -68,7 +70,7 @@ export default function HeroSection({
         <Typography
           sx={{
             textAlign: "center",
-            lineHeight: { md: "110px", xl: "150px" },
+            lineHeight: { sm: "50px", md: "110px", xl: "150px" },
             mt: { xs: "40px", sm: "60px", lg: "80px" },
             ...headingStyles,
             flexWrap: "nowrap",
@@ -107,8 +109,8 @@ export default function HeroSection({
               // maxWidth: "366px",
               width: "100%",
               display: { xs: "block", sm: "none" },
-              textAlign: isbool ? "center" : "end",
-              lineHeight: { xs: "50px" },
+              textAlign: isbool ? "end" : "end",
+              lineHeight: { xs: "40px" },
               ...headingStyles,
               whiteSpace: "nowrap",
             }}
@@ -121,8 +123,8 @@ export default function HeroSection({
         <Typography
           sx={{
             display: { xs: "none", sm: "block" },
-            textAlign: "center",
-            lineHeight: { md: "110px", xl: "150px" },
+            textAlign: "left",
+            lineHeight: { sm: "50px", md: "110px", xl: "150px" },
             ...headingStyles,
           }}
         >
@@ -132,7 +134,7 @@ export default function HeroSection({
           <Typography
             sx={{
               display: { xs: "block", sm: "none" },
-              textAlign: "center",
+              textAlign: "left",
               maxWidth: "370px",
               width: "100%",
               ...headingStyles,
@@ -164,8 +166,8 @@ export default function HeroSection({
             width: { xs: "29px", sm: "121px" },
             height: { xs: "29px", sm: "121px" },
             position: "absolute",
-            top: { xs: 180, sm: 400, lg: 523 },
-            left: { xs: "25%", sm: -53 },
+            top: { xs: 205, sm: 400, lg: 523 },
+            left: { xs: "30%", sm: -53 },
             display: isbool ? { xs: "none", sm: "block" } : { sm: "block" },
           }}
         >
@@ -177,10 +179,11 @@ export default function HeroSection({
         </Box>
         <Box
           sx={{
+            // bgcolor: "red",
             width: { xs: "61px", md: "114px" },
             height: { xs: "61px", md: "114px" },
             position: "absolute",
-            top: { xs: 290, sm: 240, lg: 290, xl: 340 },
+            top: { xs: 310, sm: 300, lg: 330, xl: 440 },
             right: { xs: 100, sm: -10, lg: 40, xl: 20 },
           }}
         >

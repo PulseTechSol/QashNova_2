@@ -4,9 +4,10 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import pngs from "@/_assets/pngs";
-import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
+import { maxWidth, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+import GenericHeadingBox from "@/_components/GenericHeadingBox";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,35 +70,8 @@ export default function WhatweDo() {
           gap: { xs: "40px", md: "80px" },
         }}
       >
-        <Box
-          sx={{
-            maxWidth: { xs: "300px", sm: "477px" },
-            width: "100%",
-            textTransform: "capitalize",
-          }}
-        >
-          <Typography
-            sx={{
-              fontSize: localFontSize.h3,
-              fontWeight: 600,
-              color: "#3C65FF",
-              textAlign: { xs: "start" },
-            }}
-          >
-            what
-          </Typography>
-          <Typography
-            sx={{
-              color: "#3C65FF",
-              fontSize: localFontSize.h3,
-              fontWeight: 600,
-              // ml:{xs:"10px",}
-              textAlign: { xs: "center" },
-            }}
-          >
-            we do
-          </Typography>
-        </Box>
+        <GenericHeadingBox heading1="what" heading2="we do" />
+
         <Box
           sx={{
             width: "100%",

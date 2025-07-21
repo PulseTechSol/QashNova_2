@@ -16,7 +16,11 @@ export default function GenericHeadingBox({
   return (
     <Box
       sx={{
-        maxWidth: { xs: "350px", sm: "400px", md: "540px" },
+        maxWidth: {
+          xs: isbool ? "250px" : "350px",
+          sm: isbool ? "310px" : "400px",
+          md: "540px",
+        },
         width: "100%",
         textTransform: "capitalize",
       }}
@@ -27,7 +31,7 @@ export default function GenericHeadingBox({
           fontWeight: 600,
           color: "#3C65FF",
           textAlign: isbool ? "center" : "start",
-          lineHeight: { xs: "50px", md: "80px" },
+          lineHeight: { xs: "40px", md: "70px" },
         }}
       >
         {heading1}
