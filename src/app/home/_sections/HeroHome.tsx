@@ -1,17 +1,12 @@
 import pngs from "@/_assets/pngs";
 import svgs from "@/_assets/svgs";
 import ButtonComponent from "@/_components/ButtonComponent";
-<<<<<<< HEAD
-import ClientOnly from "@/_components/ClientOnly";
 import {
   localFontSize,
   maxWidth,
   sectionPaddingX,
   sectionPaddingY,
 } from "@/app/_utils/themes";
-=======
-import { localFontSize, sectionPadding } from "@/app/_utils/themes";
->>>>>>> fe02d775cbf87c3824faa85bddb73ae016b05c04
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 

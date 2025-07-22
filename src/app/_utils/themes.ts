@@ -105,27 +105,3 @@ export const localFontSize = {
     // xxl: "30px",
   },
 };
-<<<<<<< HEAD
-
-export const sectionPadding = {
-  xs: "60px 20px",
-  sm: "60px",
-  md: "80px",
-  lg: "100px 150px",
-};
-export const sectionPaddingY = {
-  xs: "60px",
-  sm: "60px",
-  md: "80px",
-  lg: "100px",
-  xxl: "150px",
-};
-
-export const sectionPaddingX = {
-  xs: "20px",
-  sm: "60px",
-  md: "80px",
-  lg: "150px",
-};
-=======
->>>>>>> fe02d775cbf87c3824faa85bddb73ae016b05c04
