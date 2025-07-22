@@ -3,7 +3,12 @@ import svgs from "@/_assets/svgs";
 import AnimatedBackground from "@/_components/AnimatedBackground";
 import ButtonComponent from "@/_components/ButtonComponent";
 import ClientOnly from "@/_components/ClientOnly";
-import { localFontSize, sectionPadding } from "@/app/_utils/themes";
+import {
+  localFontSize,
+  maxWidth,
+  sectionPaddingX,
+  sectionPaddingY,
+} from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
@@ -15,20 +20,19 @@ export default function HeroHome() {
       </ClientOnly>
       <Box
         sx={{
-          // bgcolor: "green",
           display: "flex",
           justifyContent: "center",
           minHeight: { xs: "calc(100vh - 97px)", md: "calc(100vh - 101px)" },
-          // background: "linear-gradient(-10deg, #DDDDDD, #ffffffff)",
           overflow: "hidden",
+          px: sectionPaddingX,
         }}
       >
         <Box
           sx={{
             position: "relative",
-            maxWidth: "1440px",
+            maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
             width: "100%",
-            padding: sectionPadding,
+            py: sectionPaddingY,
             margin: "auto",
             gap: { xs: "0" },
           }}
@@ -53,6 +57,7 @@ export default function HeroHome() {
           <Box
             sx={{
               width: "100%",
+
               textAlign: { xs: "start" },
               display: { xs: "flex" },
               justifyContent: { xs: "space-between" },
@@ -64,6 +69,7 @@ export default function HeroHome() {
           >
             <Box
               sx={{
+                maxWidth: { xl: "1000px" },
                 width: "100%",
                 background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
                 WebkitBackgroundClip: "text",
@@ -93,7 +99,7 @@ export default function HeroHome() {
               sx={{
                 right: 140,
                 top: 442,
-                maxWidth: "457px",
+                maxWidth: { xs: "457px", xl: "800px", xxl: "1000px" },
                 width: "100%",
               }}
             >
@@ -101,7 +107,7 @@ export default function HeroHome() {
                 sx={{
                   fontSize: localFontSize.p1,
                   color: "#1B1B1B",
-                  mb: "40px",
+                  mb: { xs: "40px", xl: "60px" },
                 }}
               >
                 Dull campaigns? Not on our watch. We specialize in dynamic
@@ -118,7 +124,7 @@ export default function HeroHome() {
                     backgroundOrigin: "border-box",
                     backgroundClip: "content-box, border-box",
                     padding: "1px",
-                    width: { xs: "184px", md: "194px" },
+                    width: { xs: "184px", md: "194px", xl: "260px" },
                     textAlign: { xs: "center", sm: "start" },
                     color: "#3C65FF",
                   }}

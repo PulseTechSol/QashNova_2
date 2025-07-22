@@ -1,7 +1,7 @@
 import React from "react";
 import PlanComponent from "../_components/PlanComponent";
 import { Box, Typography } from "@mui/material";
-import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
+import { localFontSize, maxWidth, sectionPaddingY } from "@/app/_utils/themes";
 
 export default function PlanScreen() {
   const plans = [
@@ -48,19 +48,27 @@ export default function PlanScreen() {
   return (
     <Box
       sx={{
-        maxWidth: maxWidth,
+        maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
         width: "100%",
         margin: "auto",
-        padding: sectionPadding,
+        paddingY: sectionPaddingY,
       }}
     >
       <Box
         sx={{
-          maxWidth: { xs: "400px", sm: "400px", md: "600px", lg: "715px" },
+          maxWidth: {
+            xs: "400px",
+            sm: "400px",
+            md: "600px",
+            lg: "715px",
+            xl: "900px",
+            xxl: "1100px",
+          },
           width: "100%",
           margin: { xs: "0px auto 30px", md: "0px auto 60px" },
           position: "relative",
           zIndex: 99,
+          mb: { xl: "100px" },
         }}
       >
         <Typography
@@ -69,7 +77,7 @@ export default function PlanScreen() {
             fontWeight: "600",
             textTransform: "capitalize",
             color: "#3C65FF",
-            lineHeight: { xs: "60px", md: "80px", lg: "120px" },
+            lineHeight: { xs: "60px", md: "80px", lg: "120px", xl: "150px" },
           }}
         >
           Find Your
@@ -81,7 +89,7 @@ export default function PlanScreen() {
             textTransform: "capitalize",
             color: "#3C65FF",
             textAlign: "right",
-            lineHeight: { xs: "60px", md: "80px", lg: "120px" },
+            lineHeight: { xs: "60px", md: "80px", lg: "120px", xl: "150px" },
           }}
         >
           Perfect Plan
@@ -90,11 +98,11 @@ export default function PlanScreen() {
       <Box
         sx={{
           display: "flex",
-          flexWrap: "wrap",
+          flexWrap: { xs: "wrap", xl: "nowrap" },
           justifyContent: "center",
           alignItems: "center",
           flexDirection: { xs: "column", md: "row" },
-          gap: "30px",
+          gap: { xs: "30px", xxl: "50px" },
           position: "relative",
           zIndex: 99,
         }}

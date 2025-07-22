@@ -16,11 +16,11 @@ export default function GenericHeadingBox({
   return (
     <Box
       sx={{
+        // bgcolor: "#f8f6f62d",
         maxWidth: {
           xs: isbool ? "250px" : "350px",
           sm: isbool ? "310px" : "400px",
           md: "540px",
-          // lg: "580px",
           xxl: "800px",
         },
         width: "100%",
@@ -33,7 +33,7 @@ export default function GenericHeadingBox({
           fontWeight: 600,
           color: "#3C65FF",
           textAlign: isbool ? "center" : "start",
-          lineHeight: { xs: "40px", md: "70px" },
+          lineHeight: { xs: "50px", md: "80px", lg: "100px", xxl: "150px" },
         }}
       >
         {heading1}
@@ -44,6 +44,7 @@ export default function GenericHeadingBox({
           fontSize: localFontSize.h3,
           fontWeight: 600,
           // ml:{xs:"10px",}
+          lineHeight: { xs: "50px", md: "80px", lg: "100px", xxl: "150px" },
           textAlign: {
             xs: isbool ? "end" : "center",
             md: isbool ? "end" : "center",

@@ -4,6 +4,7 @@ import PlanScreen from "./_sections/PlanScreen";
 import pngs from "@/_assets/pngs";
 import Image from "next/image";
 import HeroSection from "@/_components/HeroSection";
+import { sectionPaddingX } from "../_utils/themes";
 
 export default function page() {
   return (
@@ -21,6 +22,7 @@ export default function page() {
         sx={{
           position: "relative",
           background: "#000",
+          px: sectionPaddingX,
         }}
       >
         <Box

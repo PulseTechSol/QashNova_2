@@ -18,14 +18,15 @@ export default function PlanComponent({
   return (
     <Box
       sx={{
-        maxWidth: "360px",
+        maxWidth: { xs: "360px", xl: "500px", xxl: "500px" },
         width: "100%",
-        minHeight: "550px",
+        minHeight: { xs: "550px", xl: "760px", xxl: "700px" },
         borderRadius: "30px",
-        padding: "20px 10px",
+        padding: { xs: "20px 10px", xl: "20px" },
         backgroundImage:
           "linear-gradient(to bottom, #313e74, #37305e, #29254a)",
         display: "flex",
+
         flexDirection: "column",
         justifyContent: "center",
         border: "3px solid #FFFFFF66",
@@ -45,7 +46,7 @@ export default function PlanComponent({
       {plan === "Standard" && (
         <Box
           sx={{
-            maxWidth: "170px",
+            maxWidth: { xs: "170px", xl: "240px" },
             width: "100%",
             margin: "0px auto 20px",
             borderRadius: "10px",

@@ -5,7 +5,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import pngs from "@/_assets/pngs";
 import ButtonComponent from "@/_components/ButtonComponent";
-import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
+import {
+  localFontSize,
+  maxWidth,
+  sectionPaddingX,
+  sectionPaddingY,
+} from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
@@ -128,6 +133,7 @@ export default function HowHelp() {
         backgroundAttachment: "fixed",
         backgroundPosition: "center center",
         overflow: "hidden",
+        px: sectionPaddingX,
       }}
     >
       <Box
@@ -166,16 +172,16 @@ export default function HowHelp() {
       <Box
         ref={containerRef}
         sx={{
-          maxWidth: maxWidth,
+          maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
           width: "100%",
-          padding: sectionPadding,
+          py: sectionPaddingY,
           margin: "auto",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
           alignItems: "center",
           flexWrap: { xs: "wrap", lg: "nowrap" },
-          gap: { xs: "40px", md: "80px" },
+          gap: { xs: "40px", md: "80px", xl: "100px", xxl: "120px" },
         }}
       >
         <Box
@@ -185,7 +191,7 @@ export default function HowHelp() {
             justifyContent: "space-between",
             alignItems: { xs: "start", sm: "center" },
             flexDirection: { xs: "column", sm: "row" },
-            gap: { xs: "30px", sm: "40px" },
+            gap: { xs: "30px", sm: "40px", xl: "60px", xxl: "80px" },
           }}
         >
           <GenericHeadingBox heading1="How" heading2="we Help" />
@@ -199,9 +205,9 @@ export default function HowHelp() {
           />
           <Typography
             sx={{
-              maxWidth: "490px",
+              maxWidth: { xs: "490px", xl: "600px", xxl: "700px" },
               width: "100%",
-              fontSize: "18px",
+              fontSize: { xs: "18px", xl: "24px" },
               fontWeight: 400,
               color: "#FFFFFF80",
               textAlign: { xs: "end", sm: "start" },
@@ -222,13 +228,14 @@ export default function HowHelp() {
               className="gsap-card"
               sx={{
                 width: "100%",
-                padding: { xs: "20px 15px ", sm: "40px" },
+                maxWidth: { xl: "1800px" },
+                padding: { xs: "20px 15px ", sm: "40px", xl: "60px" },
                 display: "flex",
                 flexWrap: { xs: "wrap", md: "nowrap" },
                 justifyContent: "center",
                 alignItems: "center",
                 textAlign: "center",
-                gap: { xs: "20px", sm: "40px", md: "60px" },
+                gap: { xs: "20px", sm: "40px", md: "60px", xl: "80px" },
                 bgcolor: "#fff",
                 borderRadius: { xs: "30px", sm: "80px" },
                 borderTopLeftRadius: isFirst
@@ -241,9 +248,9 @@ export default function HowHelp() {
             >
               <Box
                 sx={{
-                  maxWidth: "555px",
+                  maxWidth: { xs: "555px", xl: "800px" },
                   width: "100%",
-                  padding: { xs: "0px", md: "40px 0" },
+                  padding: { xs: "0px", md: "40px 0", xl: "60px 0" },
                 }}
               >
                 <Typography
@@ -251,7 +258,7 @@ export default function HowHelp() {
                     fontSize: localFontSize.h4,
                     fontWeight: 500,
                     color: "#3C65FF",
-                    lineHeight: { xs: "40px", md: "70px" },
+                    lineHeight: { xs: "40px", md: "70px", xl: "80px" },
                     textAlign: { xs: "start" },
                   }}
                 >
@@ -260,16 +267,17 @@ export default function HowHelp() {
 
                 <Box
                   sx={{
-                    mt: { xs: "10px", sm: "20px", md: "30px" },
+                    mt: { xs: "10px", sm: "20px", md: "30px", xl: "50px" },
                     height: "auto",
                     width: "100%",
                     fontSize: {
                       xs: "12px",
                       md: "16px",
+                      // xl: "18px",
                     },
                     display: "flex",
                     flexWrap: "wrap",
-                    gap: { xs: "5px", md: "10px" },
+                    gap: { xs: "5px", md: "10px", xl: "15px" },
                   }}
                 >
                   {service.buttons.map((label, i) => (
@@ -277,15 +285,20 @@ export default function HowHelp() {
                       key={i}
                       label={label}
                       sx={{
-                        padding: { xs: "5px 15px", md: "10px 20px" },
-                        height: { xs: "30px", md: "44px" },
+                        maxWidth: { xl: "500px" },
+                        padding: {
+                          xs: "5px 15px",
+                          md: "10px 20px",
+                          xl: "20px 40px",
+                        },
+                        height: { xs: "30px", md: "44px", xl: "55px" },
                       }}
                     />
                   ))}
                 </Box>
                 <Typography
                   sx={{
-                    mt: { xs: "15px", sm: "30px", md: "60px" },
+                    mt: { xs: "15px", sm: "30px", md: "60px", xl: "80px" },
                     fontSize: localFontSize.p2,
                     fontWeight: 400,
                     color: "#00000080",
@@ -297,9 +310,14 @@ export default function HowHelp() {
               </Box>
               <Box
                 sx={{
-                  maxWidth: { xs: "100%", md: "445px" },
+                  maxWidth: {
+                    xs: "100%",
+                    md: "445px",
+                    xl: "600px",
+                    xxl: "700px",
+                  },
                   width: "100%",
-                  height: "auto",
+                  height: { xs: "100%", xl: "100%" },
                 }}
               >
                 <Image
@@ -311,6 +329,7 @@ export default function HowHelp() {
                   style={{
                     width: "100%",
                     height: "100%",
+                    objectFit: "contain",
                   }}
                 />
               </Box>

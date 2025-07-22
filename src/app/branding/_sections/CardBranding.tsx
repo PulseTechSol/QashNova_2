@@ -1,7 +1,13 @@
 import pngs from "@/_assets/pngs";
-import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
+import {
+  localFontSize,
+  maxWidth,
+  sectionPaddingX,
+  sectionPaddingY,
+} from "@/app/_utils/themes";
 import { Box, Grid, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
+// import { max } from "three/tsl";
 
 export default function CardBranding() {
   return (
@@ -12,6 +18,7 @@ export default function CardBranding() {
           // bgcolor: "#000",
           background: "radial-gradient(circle, #08289be3 0%, #070707ff 30%)",
           overflow: "hidden",
+          px: sectionPaddingX,
         }}
       >
         <Box
@@ -67,18 +74,29 @@ export default function CardBranding() {
 
         <Box
           sx={{
-            maxWidth: maxWidth,
+            maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
             width: "100%",
-            padding: sectionPadding,
+            py: sectionPaddingY,
             margin: "auto",
           }}
         >
           <Grid
             container
+            columnSpacing={{ xs: 1, sm: 2, md: 3, xl: 8, xxl: 10 }}
             spacing={4}
             sx={{
+              // maxWidth: { xxl: "2200px" },
+              justifyContent: "space-between",
+              alignItems: "center",
               width: "100%",
-              rowGap: { xs: "40px", md: "60px", lg: "80px" },
+
+              rowGap: {
+                xs: "40px",
+                md: "60px",
+                lg: "80px",
+                xl: "80px",
+                xxl: "100px",
+              },
               height: "100%",
             }}
           >
@@ -109,16 +127,19 @@ export function WorkShowcase({ title, image }: WorkShowcaseProps) {
           xs: "100%",
           sm: "400px",
           md: "555px",
+          xl: "800px",
+          xxl: "1200px",
         },
       }}
     >
       <Box
         sx={{
           width: "100%",
-          maxWidth: "555px",
+          maxWidth: { xs: "555px", xl: "800px", xxl: "1200px" },
           height: "100%",
           display: "flex",
           flexDirection: "column",
+
           bgcolor: "rgba(0, 0, 0, 0.3)",
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
@@ -140,21 +161,30 @@ export function WorkShowcase({ title, image }: WorkShowcaseProps) {
         {/* </Box> */}
         <Box
           sx={{
-            padding: "50px",
+            padding: { xs: "50px", xl: "100px" },
             width: "100%",
             maxWidth: {
               xs: "100%",
               sm: "400px",
-
               md: "555px",
+              xl: "800px",
+              xxl: "1200px",
             },
-            height: { xs: "280px", sm: "100%", md: "360px", lg: "455px" },
+            height: {
+              xs: "280px",
+              sm: "330px",
+              md: "360px",
+              lg: "455px",
+              xl: "600px",
+              xxl: "800px",
+              // xxl: "100%",
+            },
             backgroundColor: "#000",
           }}
         >
           <Image
             src={image as StaticImageData}
-            alt="workimage1"
+            alt="Branding"
             style={{
               width: "100%",
               height: "100%",

@@ -1,6 +1,11 @@
 "use client";
 
-import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
+import {
+  localFontSize,
+  maxWidth,
+  sectionPaddingX,
+  sectionPaddingY,
+} from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 import GenericHeadingBox from "./GenericHeadingBox";
@@ -30,6 +35,7 @@ export default function CaseStudySection({
         backgroundAttachment: "fixed",
         backgroundPosition: "center center",
         overflow: "hidden",
+        px: sectionPaddingX,
       }}
     >
       <Box
@@ -68,16 +74,17 @@ export default function CaseStudySection({
       <Box
         // ref={containerRef}
         sx={{
-          maxWidth: maxWidth,
+          // bgcolor: "red",
+          maxWidth: { xs: maxWidth, xl: "1536", xxl: "80vw" },
           width: "100%",
-          padding: sectionPadding,
+          paddingY: sectionPaddingY,
           margin: "auto",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
           alignItems: "center",
           flexWrap: { xs: "wrap", md: "nowrap" },
-          gap: { xs: "40px", md: "60px", lg: "60px" },
+          gap: { xs: "40px", md: "60px", lg: "60px", xl: "80px", xxl: "80px" },
         }}
       >
         <GenericHeadingBox
@@ -89,6 +96,7 @@ export default function CaseStudySection({
         <Box
           sx={{
             width: "100%",
+            maxWidth: { xxl: "2000px" },
             display: "flex",
             justifyContent: "space-between",
             alignItems: { xs: "center", md: "start" },
@@ -96,14 +104,20 @@ export default function CaseStudySection({
               xs: "column-reverse",
               md: !isbool ? "row" : "row-reverse",
             },
-            gap: { xs: "40px", lg: "40px" },
+            gap: { xs: "40px", lg: "40px", xl: "60px", xxl: "100px" },
           }}
         >
           <Box
             sx={{
               // bgcolor: "#45dc232b",
-              maxWidth: { xs: "100%", md: "555px" },
-              height: { xs: "100%", md: "400px", lg: "500px", xl: "600px" },
+              maxWidth: { xs: "100%", md: "555px", xl: "800px", xxl: "1200px" },
+              height: {
+                xs: "100%",
+                md: "400px",
+                lg: "500px",
+                xl: "800px",
+                xxl: "900px",
+              },
               width: "100%",
               display: "flex",
               alignItems: "flex-start",
@@ -125,13 +139,11 @@ export default function CaseStudySection({
           <Box
             sx={{
               width: "100%",
-              maxWidth: "557px",
-              height: { xs: "100%", lg: "500px", xl: "600px" },
+              maxWidth: { xs: "557px", xl: "800px", xxl: "800px" },
+              height: { xs: "100%", lg: "500px", xl: "800px", xxl: "900px" },
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              // bgcolor: "#cca4a462",
-              // textAlign: { xs: "end", md: "center" },
             }}
           >
             <Typography
@@ -139,9 +151,7 @@ export default function CaseStudySection({
                 width: "100%",
                 fontSize: localFontSize.p1,
                 fontWeight: 400,
-                // #00000080
                 color: "#FFFFFF80",
-                // textAlign: { xs: "end", md: "start" },
                 display: { xs: "none", md: "block" },
               }}
             >

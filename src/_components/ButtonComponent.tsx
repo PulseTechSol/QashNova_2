@@ -34,18 +34,20 @@ export default function ButtonComponent({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        // maxWidth: "170px",
+        maxWidth: { xl: "380px" },
         width: "max-content",
         height: { xs: "60px", md: "60px", xxl: "100px" },
-        padding: { xs: "15px 40px", md: "15px 40px", xxl: "40px 80px" },
+        padding: { xs: "15px 40px", md: "15px 40px", xl: "40px 80px" },
         gap: { xs: "6px", md: "10px" },
         fontSize: localFontSize.p3,
         fontWeight: 300,
         borderRadius: "50px",
+
         // outline: "none",
         textTransform: "capitalize",
         // bgcolor:"#DDDDD"
         bgcolor: "#3C65FF80",
+
         ...sx,
       }}
     >
