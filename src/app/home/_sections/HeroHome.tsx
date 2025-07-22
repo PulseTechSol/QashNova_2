@@ -1,7 +1,7 @@
 import pngs from "@/_assets/pngs";
 import svgs from "@/_assets/svgs";
-import AnimatedBackground from "@/_components/AnimatedBackground";
 import ButtonComponent from "@/_components/ButtonComponent";
+<<<<<<< HEAD
 import ClientOnly from "@/_components/ClientOnly";
 import {
   localFontSize,
@@ -9,15 +9,15 @@ import {
   sectionPaddingX,
   sectionPaddingY,
 } from "@/app/_utils/themes";
+=======
+import { localFontSize, sectionPadding } from "@/app/_utils/themes";
+>>>>>>> fe02d775cbf87c3824faa85bddb73ae016b05c04
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
 export default function HeroHome() {
   return (
-    <Box style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
-      <ClientOnly>
-        <AnimatedBackground />
-      </ClientOnly>
+    <Box>
       <Box
         sx={{
           display: "flex",
@@ -39,7 +39,6 @@ export default function HeroHome() {
         >
           <Typography
             sx={{
-              // width: "100%",
               background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
@@ -211,7 +210,6 @@ export default function HeroHome() {
               top: 5,
               left: -600,
               overflow: "hidden",
-              // bgcolor: "red",
             }}
           >
             <Image

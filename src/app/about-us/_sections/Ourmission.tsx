@@ -11,8 +11,6 @@ import GenericHeadingBox from "@/_components/GenericHeadingBox";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Ourmission() {
-  // const containerRef = useRef<HTMLDivElement>(null);
-
   return (
     <Box
       sx={{
@@ -21,7 +19,6 @@ export default function Ourmission() {
         backgroundAttachment: "fixed",
         backgroundPosition: "center center",
         overflow: "hidden",
-        // padding: { ...sectionPadding, xxl: "0" },
       }}
     >
       <Box
@@ -46,7 +43,6 @@ export default function Ourmission() {
           height: { xs: "300px", md: "790px" },
           display: { xs: "none", lg: "block" },
           position: "absolute",
-          // top: 89,
           right: 0,
         }}
       >
@@ -127,10 +123,8 @@ export default function Ourmission() {
         </Box>
         <Box
           sx={{
-            // bgcolor: "red",
             maxWidth: { xs: maxWidth, xl: "80vw" },
             width: "100%",
-            // height: { xs: "auto", lg: "800px" },
           }}
         >
           <Image

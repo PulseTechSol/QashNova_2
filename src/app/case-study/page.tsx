@@ -24,11 +24,9 @@ export default function CaseStudyPage() {
       />
       <CaseStudySection
         heading1="Homeflair"
-        // heading2="Grill"
         destopPara="Qashnova partnered with Homeflair for a complete brand and digital overhaul. We executed a comprehensive refresh, developing a modern, user-friendly website and a targeted social media strategy. This work delivered real impact, driving traffic and engagement, and firmly establishing Homeflair as a leading name in home décor."
         mobilePara="Qashnova partnered with Homeflair for a complete brand and digital overhaul. We executed a comprehensive refresh, developing a modern, user-friendly website and a targeted social media strategy."
         image={pngs.caseStudy2}
-        // isbool={true}
       />
     </>
   );

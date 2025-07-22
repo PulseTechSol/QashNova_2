@@ -1,8 +1,5 @@
 import { localFontSize } from "@/app/_utils/themes";
-// import { localFontSize } from "@/utils/themes";
 import { Button, CircularProgress, SxProps, Theme } from "@mui/material";
-// import { useMediaQuery, useTheme } from "@mui/material";
-// import { Box } from "@mui/system";
 
 import Image, { StaticImageData } from "next/image";
 import React from "react";
@@ -34,7 +31,10 @@ export default function ButtonComponent({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+<<<<<<< HEAD
         maxWidth: { xl: "380px" },
+=======
+>>>>>>> fe02d775cbf87c3824faa85bddb73ae016b05c04
         width: "max-content",
         height: { xs: "60px", md: "60px", xxl: "100px" },
         padding: { xs: "15px 40px", md: "15px 40px", xl: "40px 80px" },
@@ -42,10 +42,12 @@ export default function ButtonComponent({
         fontSize: localFontSize.p3,
         fontWeight: 300,
         borderRadius: "50px",
+<<<<<<< HEAD
 
         // outline: "none",
+=======
+>>>>>>> fe02d775cbf87c3824faa85bddb73ae016b05c04
         textTransform: "capitalize",
-        // bgcolor:"#DDDDD"
         bgcolor: "#3C65FF80",
 
         ...sx,
@@ -58,7 +60,6 @@ export default function ButtonComponent({
           {label}
           {imgSrc && (
             <Image
-              // style={{ display: imgSrc === "" ? "block" : "none" }}
               loading="lazy"
               src={imgSrc}
               alt="icon"

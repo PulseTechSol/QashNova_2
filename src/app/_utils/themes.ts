@@ -1,17 +1,5 @@
-// import { localFontSize } from "@/app/utils/themes";
-
-// this is the font family below there
-// import { createTheme } from "@mui/material/styles";
-
-// export const theme = createTheme({
-//   typography: {
-//     fontFamily: "Montserrat",
-//   },
-// });
-// export theme;
 import { createTheme } from "@mui/material/styles";
 
-// Extend the breakpoints with 'xxl'
 declare module "@mui/material/styles" {
   interface BreakpointOverrides {
     xs: true;
@@ -34,12 +22,31 @@ const theme = createTheme({
       xxl: 2000, // 👈 custom breakpoint
     },
   },
-  // You can also customize palette, typography, etc.
 });
 
 export default theme;
 
 export const maxWidth = "1440px";
+
+export const sectionPadding = {
+  xs: "60px 20px",
+  sm: "60px",
+  md: "80px",
+  lg: "100px 150px",
+};
+export const sectionPaddingY = {
+  xs: "60px",
+  sm: "60px",
+  md: "80px",
+  lg: "100px",
+};
+
+export const sectionPaddingX = {
+  xs: "20px",
+  sm: "60px",
+  md: "80px",
+  lg: "150px",
+};
 
 export const localFontSize = {
   h1: {
@@ -98,6 +105,7 @@ export const localFontSize = {
     // xxl: "30px",
   },
 };
+<<<<<<< HEAD
 
 export const sectionPadding = {
   xs: "60px 20px",
@@ -119,3 +127,5 @@ export const sectionPaddingX = {
   md: "80px",
   lg: "150px",
 };
+=======
+>>>>>>> fe02d775cbf87c3824faa85bddb73ae016b05c04

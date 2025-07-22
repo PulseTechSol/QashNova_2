@@ -5,9 +5,10 @@ import ContactUsForm from "./ContactUsForm";
 export default function ContactUs() {
   return (
     <>
-      <Box sx={{ backgroundColor: "#000000" }}>
+      <Box sx={{ backgroundColor: "#000000 !important", position: "relative" }}>
         <Box
           sx={{
+            backgroundColor: "#000000 !important",
             padding: sectionPadding,
             margin: "auto",
             maxWidth: maxWidth,

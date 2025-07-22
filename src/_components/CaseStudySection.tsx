@@ -60,7 +60,6 @@ export default function CaseStudySection({
           height: { xs: "300px", md: "790px" },
           display: { xs: "none", lg: "block" },
           position: "absolute",
-          // top: 89,
           right: 0,
         }}
       >
@@ -109,6 +108,7 @@ export default function CaseStudySection({
         >
           <Box
             sx={{
+<<<<<<< HEAD
               // bgcolor: "#45dc232b",
               maxWidth: { xs: "100%", md: "555px", xl: "800px", xxl: "1200px" },
               height: {
@@ -118,6 +118,10 @@ export default function CaseStudySection({
                 xl: "800px",
                 xxl: "900px",
               },
+=======
+              maxWidth: { xs: "100%", md: "555px" },
+              height: { xs: "100%", md: "400px", lg: "500px", xl: "600px" },
+>>>>>>> fe02d775cbf87c3824faa85bddb73ae016b05c04
               width: "100%",
               display: "flex",
               alignItems: "flex-start",
@@ -130,7 +134,7 @@ export default function CaseStudySection({
               style={{
                 textAlign: "start",
                 width: "100%",
-                height: "100%", // important
+                height: "100%",
                 objectFit: "cover",
               }}
             />

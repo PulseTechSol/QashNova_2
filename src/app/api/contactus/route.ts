@@ -5,7 +5,6 @@ export const POST = async (request: Request) => {
   const { name, email, phone, message } = await request.json();
 
   try {
-    // Step 1: Create transporter using Gmail
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -14,10 +13,9 @@ export const POST = async (request: Request) => {
       },
     });
 
-    // Step 2: Set email options
     const mailOptions = {
-      from: "marsad11223@gmail.com", // shows sender name
-      to: "hashamghaffar01@gmail.com", // target recipient
+      from: "marsad11223@gmail.com",
+      to: "hashamghaffar01@gmail.com",
       subject: "Contact Form Submission",
       text: message,
       html: `
@@ -28,13 +26,7 @@ export const POST = async (request: Request) => {
       `,
     };
 
-    // Step 3: Send the email
     const result = await transporter.sendMail(mailOptions);
-
-    // Step 4: Log the response for debugging
-    // console.log("✅ Email send result:", result);
-
-    // Step 5: Check if accepted
     if (result.accepted.length === 0) {
       console.warn("⚠️ Email not accepted by recipient server.");
       return NextResponse.json(

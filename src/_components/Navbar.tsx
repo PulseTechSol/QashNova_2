@@ -6,7 +6,6 @@ import Image from "next/image";
 import svgs from "@/_assets/svgs";
 import ButtonComponent from "./ButtonComponent";
 import { maxWidth } from "@/app/_utils/themes";
-// import { localFontSize } from "@/app/_utils/themes";
 
 export default function Navbar() {
   const [menu, setMenu] = React.useState(false);
@@ -46,11 +45,11 @@ export default function Navbar() {
   return (
     <Box
       sx={{
-        bgcolor: "#fff",
         top: "0",
         left: "0",
         right: "0",
         zIndex: 20000,
+        position: "relative",
       }}
     >
       <Box
@@ -158,10 +157,10 @@ export default function Navbar() {
             left: 0,
             width: "100vw",
             height: "100vh",
-            zIndex: 1000, // 👈 Menu ke niche
+            zIndex: 1000,
             backdropFilter: "blur(8px)",
             WebkitBackdropFilter: "blur(8px)",
-            backgroundColor: "rgba(0, 0, 0, 0.2)", // optional dark effect
+            backgroundColor: "rgba(0, 0, 0, 0.2)",
           }}
         />
       )}
@@ -169,7 +168,6 @@ export default function Navbar() {
       <Box
         onClick={sidebar}
         sx={{
-          // bgcolor:""
           display: menu ? "block" : "none",
           height: "100vh",
           width: "100vw",
@@ -233,12 +231,10 @@ export default function Navbar() {
         ></Box>
         <Box
           sx={{
-            // height: "566px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             flexDirection: "column",
-            // bgcolor: "#ccc",
             gap: { xs: "10px", md: "20px", lg: "20px" },
             padding: { xs: "20px  30px", md: "50px 30px" },
           }}
@@ -259,7 +255,6 @@ export default function Navbar() {
                     : link.route)
                     ? ""
                     : "",
-                // padding: { xs: "20px" },
                 cursor: "pointer",
               }}
               key={i}

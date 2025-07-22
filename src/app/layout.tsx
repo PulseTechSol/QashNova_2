@@ -5,6 +5,8 @@ import Footer from "@/_components/Footer";
 import { Box } from "@mui/material";
 import { ToastContainer } from "react-toastify";
 import ThemeRegistry from "./ThemeRegistry";
+import ClientOnly from "@/_components/ClientOnly";
+import AnimatedBackground from "@/_components/AnimatedBackground";
 
 export const metadata: Metadata = {
   title: "Qashnova",
@@ -20,6 +22,17 @@ export default function RootLayout({
     <html lang="en">
       <ThemeRegistry>
         <body>
+          <Box
+            sx={{
+              position: "relative",
+              height: "fit-content",
+              overflow: "hidden",
+            }}
+          >
+            <ClientOnly>
+              <AnimatedBackground />
+            </ClientOnly>
+          </Box>
           <Box
             sx={{
               position: { xs: "fixed", sm: "unset" },

@@ -1,6 +1,4 @@
 "use client";
-
-// import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import pngs from "@/_assets/pngs";
@@ -15,7 +13,6 @@ import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import GenericHeadingBox from "@/_components/GenericHeadingBox";
-
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HowHelp() {
@@ -94,7 +91,7 @@ export default function HowHelp() {
     cards.forEach((card, index) => {
       if (index === cards.length - 1) {
         gsap.set(card, { opacity: 1, scale: 1 });
-        return; // No animation on last card
+        return;
       }
 
       gsap
@@ -158,7 +155,6 @@ export default function HowHelp() {
           height: { xs: "300px", md: "790px" },
           display: { xs: "none", lg: "block" },
           position: "absolute",
-          // top: 89,
           right: 0,
         }}
       >

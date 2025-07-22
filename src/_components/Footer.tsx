@@ -17,7 +17,7 @@ export default function Footer() {
     <>
       <Box
         sx={{
-          backgroundColor: "#fff",
+          backgroundColor: "",
           position: "relative",
           overflow: "hidden",
         }}
@@ -44,7 +44,6 @@ export default function Footer() {
             height: { xs: "300px", md: "790px" },
             display: { xs: "none", lg: "block" },
             position: "absolute",
-            // top: 89,
             right: 0,
           }}
         >
@@ -197,13 +196,11 @@ export default function Footer() {
             © 2025 All Rights Reserved.
           </Typography>
           <Typography
-            // onClick={() => router.push("/about")}
             sx={{
               fontSize: localFontSize.p2,
               fontWeight: 600,
               color: { xs: "#3C65FF", md: "#3C65FF" },
               textAlign: { xs: "center", md: "start" },
-
               "& a": {
                 transition: "all 0.4s ease-in-out",
                 color: "#3C65FF",

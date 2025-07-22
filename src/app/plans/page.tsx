@@ -64,7 +64,6 @@ export default function page() {
             height: { xs: "300px", md: "790px" },
             display: { xs: "none", sm: "block" },
             position: "absolute",
-            // top: 89,
             right: 0,
           }}
         >

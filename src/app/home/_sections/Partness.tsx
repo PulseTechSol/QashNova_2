@@ -1,7 +1,7 @@
 import Marquee from "react-fast-marquee";
 import { Box } from "@mui/material";
 import Image from "next/image";
-import svgs from "@/_assets/svgs"; // adjust as needed
+import svgs from "@/_assets/svgs";
 
 export default function LogoMarquee() {
   const logos = [

@@ -53,7 +53,6 @@ export default function SectionWithHeadingAndCTA({
                 background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-                // display: "inline-block",
                 textTransform: "uppercase",
               }}
             >

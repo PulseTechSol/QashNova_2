@@ -154,9 +154,6 @@ export default function OurWork() {
 
             flexDirection: "column",
             gap: "20px",
-            // flexWrap:{xs""}
-
-            // ...sx,
           }}
         >
           <WorkShowcase
