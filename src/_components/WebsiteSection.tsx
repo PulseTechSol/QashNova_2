@@ -30,7 +30,7 @@ export default function WebsiteSection({
       sx={{
         position: "relative",
         background: isbool
-          ? "#fff"
+          ? ""
           : "radial-gradient(circle, #08289be3 0%, #000 25%)",
         backgroundAttachment: "fixed",
         backgroundPosition: "center center",

@@ -1,18 +1,18 @@
 import pngs from "@/_assets/pngs";
 import svgs from "@/_assets/svgs";
-import AnimatedBackground from "@/_components/AnimatedBackground";
+// import AnimatedBackground from "@/_components/AnimatedBackground";
 import ButtonComponent from "@/_components/ButtonComponent";
-import ClientOnly from "@/_components/ClientOnly";
+// import ClientOnly from "@/_components/ClientOnly";
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
 export default function HeroHome() {
   return (
-    <Box style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
-      <ClientOnly>
+    <Box>
+      {/* <ClientOnly>
         <AnimatedBackground />
-      </ClientOnly>
+      </ClientOnly> */}
       <Box
         sx={{
           // bgcolor: "green",

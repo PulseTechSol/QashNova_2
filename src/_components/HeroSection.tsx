@@ -48,7 +48,7 @@ export default function HeroSection({
           xl: "900px",
         },
         padding: { ...sectionPadding, xxl: "0" },
-        background: "linear-gradient(-10deg, #DDDDDD, #ffffffff)",
+        // background: "linear-gradient(-10deg, #DDDDDD, #ffffffff)",
       }}
     >
       <Box
