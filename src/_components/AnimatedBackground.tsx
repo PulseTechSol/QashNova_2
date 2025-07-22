@@ -9,11 +9,37 @@ function BlobShader() {
   const mouse = useRef({ x: 0.5, y: 0.5 });
   const lerpedMouse = useRef({ x: 0.5, y: 0.5 });
 
+  // this use effect will work for the full screen
+  // useEffect(() => {
+  //   const handleMouseMove = (e: MouseEvent) => {
+  //     const scrollY = window.scrollY || window.pageYOffset;
+
+  //     if (scrollY > window.innerHeight) {
+  //       mouse.current.x = e.clientX / window.innerWidth;
+  //       mouse.current.y = 1.0 - e.clientY / window.innerHeight;
+  //     } else {
+  //       // Lock the mouse interaction to default center when above 100vh
+  //       mouse.current.x = 0.5;
+  //       mouse.current.y = 0.5;
+  //     }
+  //   };
+
+  //   window.addEventListener("mousemove", handleMouseMove);
+  //   return () => window.removeEventListener("mousemove", handleMouseMove);
+  // }, []);
+
+  // this use effect will work only for 100vh
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      mouse.current.x = e.clientX / window.innerWidth;
-      mouse.current.y = 1.0 - e.clientY / window.innerHeight;
+      const scrollY = window.scrollY || window.pageYOffset;
+
+      if (scrollY <= window.innerHeight) {
+        // Only respond to mouse while within first 100vh
+        mouse.current.x = e.clientX / window.innerWidth;
+        mouse.current.y = 1.0 - e.clientY / window.innerHeight;
+      }
     };
+
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
