@@ -80,7 +80,9 @@ export default function WhatweDo() {
 
         <Box
           sx={{
+            // bgcolor: "red",
             width: "100%",
+            maxWidth: { xxl: "1500px" },
             display: "flex",
             justifyContent: "space-between",
             alignItems: { xs: "start", sm: "start" },

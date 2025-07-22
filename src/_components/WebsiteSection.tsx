@@ -91,6 +91,7 @@ export default function WebsiteSection({
         <Box
           sx={{
             width: "100%",
+            maxWidth: { xxl: "1200px" },
             display: "flex",
             justifyContent: "space-between",
             alignItems: { xs: "start", sm: "start" },
