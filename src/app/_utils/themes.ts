@@ -77,7 +77,7 @@ export const localFontSize = {
     md: "50px",
     lg: "64px",
     xl: "74px",
-    // xxl: "80px",
+    xxl: "80px",
   },
   h5: {
     xs: "24px",

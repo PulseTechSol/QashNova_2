@@ -11,7 +11,7 @@ export default function ContactUs() {
             backgroundColor: "#000000 !important",
             padding: sectionPadding,
             margin: "auto",
-            maxWidth: maxWidth,
+            maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             justifyContent: "space-between",
@@ -20,7 +20,7 @@ export default function ContactUs() {
         >
           <Box
             sx={{
-              maxWidth: { xs: "200px", sm: "250px", md: "477px" },
+              maxWidth: { xs: "200px", sm: "250px", md: "477px", xl: "800px" },
               width: "100%",
               textTransform: "capitalize",
             }}

@@ -1,7 +1,12 @@
 "use client";
 
 import pngs from "@/_assets/pngs";
-import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
+import {
+  localFontSize,
+  maxWidth,
+  sectionPaddingX,
+  sectionPaddingY,
+} from "@/app/_utils/themes";
 import { Theme } from "@emotion/react";
 import { Box, SxProps, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
@@ -30,6 +35,7 @@ export default function OurWork() {
         position: "relative",
         background: "radial-gradient(circle, #08289be3 0%, #070707ff 30%)",
         overflow: "hidden",
+        px: sectionPaddingX,
       }}
     >
       {/* BACKGROUND */}
@@ -68,22 +74,24 @@ export default function OurWork() {
       {/* SECTION */}
       <Box
         sx={{
-          maxWidth: maxWidth,
+          maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
           width: "100%",
-          padding: sectionPadding,
+          py: sectionPaddingY,
+          // padding: sectionPadding,
           margin: "auto",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
           alignItems: "center",
           flexWrap: { xs: "wrap", lg: "nowrap" },
-          gap: { xs: "40px", md: "80px" },
+          gap: { xs: "40px", md: "80px", xl: "100px" },
         }}
       >
         {/* HEADING */}
         <Box
           sx={{
             width: "100%",
+            maxWidth: { xl: "1800px" },
             display: "flex",
             justifyContent: "space-between",
             alignItems: { xs: "start", sm: "center" },
@@ -93,7 +101,7 @@ export default function OurWork() {
         >
           <Box
             sx={{
-              maxWidth: { xs: "300px", sm: "477px" },
+              maxWidth: { xs: "300px", sm: "477px", xl: "550px", xxl: "650px" },
               width: "100%",
 
               textTransform: "capitalize",
@@ -105,7 +113,7 @@ export default function OurWork() {
                 fontWeight: 600,
                 color: "#3C65FF",
                 textAlign: { xs: "start" },
-                lineHeight: { xs: "50px", md: "70px" },
+                lineHeight: { xs: "50px", md: "110px", xl: "150px" },
               }}
             >
               our
@@ -116,6 +124,7 @@ export default function OurWork() {
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
                 textAlign: { xs: "center", sm: "center" },
+                lineHeight: { xs: "50px", md: "120px", xl: "150px" },
               }}
             >
               work
@@ -131,9 +140,9 @@ export default function OurWork() {
           />
           <Typography
             sx={{
-              maxWidth: "490px",
+              maxWidth: { xs: "490px", xl: "700px" },
               width: "100%",
-              fontSize: "18px",
+              fontSize: { xs: "18px", xl: "24px" },
               fontWeight: 400,
               color: "#FFFFFF80",
               textAlign: { xs: "end", sm: "start" },
@@ -153,7 +162,7 @@ export default function OurWork() {
             display: "flex",
 
             flexDirection: "column",
-            gap: "20px",
+            gap: { xs: "20px", xl: "60px" },
           }}
         >
           <WorkShowcase
@@ -163,14 +172,21 @@ export default function OurWork() {
             isboolean={true}
             image={pngs.workimage1}
             sx={{
-              height: { xs: "300px", sm: "450px", md: "620px", lg: "700px" },
+              height: {
+                xs: "300px",
+                sm: "450px",
+                md: "620px",
+                lg: "700px",
+                xl: "1000px",
+                xxl: "1200px",
+              },
             }}
           />
           <Box
             width="100%"
             sx={{
               display: "flex",
-              gap: "20px",
+              gap: { xs: "20px", xl: "40px" },
               justifyContent: "space-between",
 
               flexWrap: { xs: "wrap", md: "nowrap" },
@@ -182,7 +198,12 @@ export default function OurWork() {
               year="2025"
               image={pngs.workimage2}
               sx={{
-                maxWidth: { xs: "100%", md: "555px" },
+                maxWidth: {
+                  xs: "100%",
+                  md: "555px",
+                  xl: "1000px",
+                  xxl: "1200px",
+                },
               }}
             />
             <WorkShowcase
@@ -191,7 +212,12 @@ export default function OurWork() {
               year="2025"
               image={pngs.workimage3}
               sx={{
-                maxWidth: { xs: "100%", md: "555px" },
+                maxWidth: {
+                  xs: "100%",
+                  md: "555px",
+                  xl: "1000px",
+                  xxl: "1200px",
+                },
               }}
             />
           </Box>
@@ -206,6 +232,8 @@ export default function OurWork() {
                 sm: "450px",
                 md: "600px",
                 lg: "700px",
+                xl: "1000px",
+                xxl: "1200px",
               },
             }}
           />
@@ -250,14 +278,14 @@ export function WorkShowcase({
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            p: { xs: "20px", lg: "20px 50px" },
+            p: { xs: "20px", lg: "20px 50px", xxl: "40px 80px" },
             gap: "20px",
             textTransform: "capitalize",
           }}
         >
           <Typography
             sx={{
-              maxWidth: { xs: "316px", md: "400px" },
+              maxWidth: { xs: "316px", md: "400px", xl: "600px" },
               width: "100%",
               fontSize: localFontSize.h5,
               fontWeight: 400,
@@ -268,7 +296,7 @@ export function WorkShowcase({
           </Typography>
           <Typography
             sx={{
-              maxWidth: "87px",
+              maxWidth: { xs: "87px", xl: "120px" },
               width: "100%",
               fontSize: localFontSize.h5,
               fontWeight: 400,
@@ -281,7 +309,13 @@ export function WorkShowcase({
         <Box
           sx={{
             width: "100%",
-            height: { xs: "300px", sm: "450px", md: "350px", lg: "458px" },
+            height: {
+              xs: "300px",
+              sm: "450px",
+              md: "350px",
+              lg: "458px",
+              xl: "550px",
+            },
             ...(image === pngs.workimag4
               ? {
                   borderBottomLeftRadius: { xs: "0", md: "80px" },
