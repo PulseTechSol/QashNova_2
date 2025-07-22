@@ -34,10 +34,10 @@ export default function PlanComponent({
           backgroundImage:
             "linear-gradient(to bottom, #3c63fd, #5642d5, #2b1cb6)",
           "& [data-section='plan']": {
-            color: "#fff", // hover white
+            color: "#fff",
           },
           "& [data-section='price']": {
-            color: "#fff", // hover white
+            color: "#fff",
           },
         },
       }}

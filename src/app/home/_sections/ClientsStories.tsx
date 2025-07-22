@@ -42,8 +42,7 @@ export default function ClientsStories() {
     const items = itemsRef.current;
     const color = gsap.utils.interpolate(["#3C65FF", "#243342"]);
     const map = gsap.utils.mapRange(0, items.length, 0, 1);
-    const offset = 15; // ✅ Reduced from 30 to 15
-
+    const offset = 15;
     gsap.set(items, {
       backgroundColor: (index: number) => color(map(index)),
       x: (index: number) => offset * index,

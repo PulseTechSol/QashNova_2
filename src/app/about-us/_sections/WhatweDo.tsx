@@ -1,6 +1,4 @@
 "use client";
-
-// import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import pngs from "@/_assets/pngs";
@@ -12,7 +10,6 @@ import {
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import GenericHeadingBox from "@/_components/GenericHeadingBox";
-
 gsap.registerPlugin(ScrollTrigger);
 
 export default function WhatweDo() {
@@ -25,7 +22,6 @@ export default function WhatweDo() {
         backgroundPosition: "center center",
         overflow: "hidden",
         paddingX: sectionPaddingX,
-        // padding: { ...sectionPadding, xxl: "0" },
       }}
     >
       <Box
@@ -50,7 +46,6 @@ export default function WhatweDo() {
           height: { xs: "300px", md: "790px" },
           display: { xs: "none", lg: "block" },
           position: "absolute",
-          // top: 89,
           right: 0,
         }}
       >
@@ -80,7 +75,6 @@ export default function WhatweDo() {
 
         <Box
           sx={{
-            // bgcolor: "red",
             width: "100%",
             maxWidth: { xxl: "1500px" },
             display: "flex",

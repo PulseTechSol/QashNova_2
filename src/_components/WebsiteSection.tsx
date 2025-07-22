@@ -7,7 +7,6 @@ import Image, { StaticImageData } from "next/image";
 import ButtonComponent from "./ButtonComponent";
 import svgs from "@/_assets/svgs";
 import GenericHeadingBox from "./GenericHeadingBox";
-// import GenericHeadingBox from "./GenericHeadingBox";
 
 interface WebsiteSectionProps {
   destopPara?: string;
@@ -59,7 +58,6 @@ export default function WebsiteSection({
           height: { xs: "300px", md: "790px" },
           display: { xs: "none", lg: "block" },
           position: "absolute",
-          // top: 89,
           right: 0,
         }}
       >
@@ -135,7 +133,6 @@ export default function WebsiteSection({
                 width: "100%",
                 fontSize: { xs: "18px", xxl: "26px" },
                 fontWeight: 400,
-                // #00000080
                 color: isbool ? "#00000080" : "#FFFFFF80",
                 textAlign: { xs: "end", md: "start" },
                 display: { xs: "none", md: "block" },

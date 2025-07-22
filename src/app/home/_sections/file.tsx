@@ -1,6 +1,4 @@
 "use client";
-
-// import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import pngs from "@/_assets/pngs";
@@ -8,12 +6,9 @@ import ButtonComponent from "@/_components/ButtonComponent";
 import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
-
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HowHelp() {
-  // const containerRef = useRef<HTMLDivElement>(null);
-
   const websiteServices = [
     {
       title: "Website Development",

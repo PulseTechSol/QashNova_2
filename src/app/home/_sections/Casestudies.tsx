@@ -1,6 +1,4 @@
 "use client";
-
-// import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import pngs from "@/_assets/pngs";
@@ -9,7 +7,6 @@ import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import svgs from "@/_assets/svgs";
-// import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -292,7 +289,7 @@ export default function Casestudies() {
                       width: "100%",
                       fontSize: localFontSize.h4,
                       fontWeight: 500,
-                      color: "#3C65FF", // title ka color blue hi rahe
+                      color: "#3C65FF",
                       textAlign: { xs: "center", md: "start" },
                       textTransform: "capitalize",
                       transition: "color 0.4s ease-in-out",
@@ -339,7 +336,6 @@ export default function Casestudies() {
         </Box>
         <Box
           sx={{
-            // mt: { md: "40px" },
             width: "100%",
             display: { xs: "flex" },
             alignItems: { xs: "center" },

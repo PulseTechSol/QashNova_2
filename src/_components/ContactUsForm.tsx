@@ -26,7 +26,6 @@ export default function ContactUsForm() {
   async function onSubmit(data: unknown) {
     console.log("Form Data: ", data);
     try {
-      // setLoading(true);
       const response = await axios.post("/api/contactus", data, {
         headers: {
           "Content-Type": "application/json",

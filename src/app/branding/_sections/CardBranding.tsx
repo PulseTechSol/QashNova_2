@@ -9,7 +9,6 @@ export default function CardBranding() {
       <Box
         sx={{
           position: "relative",
-          // bgcolor: "#000",
           background: "radial-gradient(circle, #08289be3 0%, #070707ff 30%)",
           overflow: "hidden",
         }}
@@ -54,7 +53,6 @@ export default function CardBranding() {
             height: { xs: "355px", md: "790px" },
             display: { xs: "block", lg: "block" },
             position: "absolute",
-            // top: 89,
             right: 0,
           }}
         >

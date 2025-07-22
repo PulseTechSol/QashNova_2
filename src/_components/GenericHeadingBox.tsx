@@ -20,7 +20,6 @@ export default function GenericHeadingBox({
           xs: isbool ? "250px" : "350px",
           sm: isbool ? "310px" : "400px",
           md: "540px",
-          // lg: "580px",
           xxl: "800px",
         },
         width: "100%",
@@ -43,7 +42,6 @@ export default function GenericHeadingBox({
           color: "#3C65FF",
           fontSize: localFontSize.h3,
           fontWeight: 600,
-          // ml:{xs:"10px",}
           textAlign: {
             xs: isbool ? "end" : "center",
             md: isbool ? "end" : "center",
