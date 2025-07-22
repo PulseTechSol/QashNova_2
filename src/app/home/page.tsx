@@ -18,7 +18,7 @@ export default function HomePage() {
         lastword="Success"
       />
       <OurWork />
-      <ClientsStories />
+      <ClientsStories /> {/* still bugging */}
       <Casestudies />
       <ContactUs />
     </>

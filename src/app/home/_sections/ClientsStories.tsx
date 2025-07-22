@@ -106,7 +106,15 @@ export default function ClientsStories() {
   };
 
   return (
-    <Box sx={{ backgroundColor: "#000000" }}>
+    <Box
+      sx={{
+        backgroundColor: "#000 !important",
+        position: "relative",
+        zIndex: 2000,
+        overflow: "hidden",
+        overflowX: "hidden",
+      }}
+    >
       <Box
         sx={{
           maxWidth: maxWidth,

@@ -46,11 +46,12 @@ export default function Navbar() {
   return (
     <Box
       sx={{
-        bgcolor: "#fff",
+        // bgcolor: "#fff",
         top: "0",
         left: "0",
         right: "0",
         zIndex: 20000,
+        position: "relative",
       }}
     >
       <Box

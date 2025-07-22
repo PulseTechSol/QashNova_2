@@ -116,7 +116,7 @@ export default function AnimatedBackground({
   return (
     <Canvas
       style={{
-        position: "absolute",
+        position: "fixed",
         top: 0,
         left: 0,
         zIndex: 0,

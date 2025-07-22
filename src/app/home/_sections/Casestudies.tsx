@@ -43,8 +43,8 @@ export default function Casestudies() {
     <Box
       sx={{
         position: "relative",
-        bgcolor: "#fff",
         overflow: "hidden",
+        zIndex: 10000,
       }}
     >
       <Box
