@@ -43,11 +43,8 @@ export default function GenericHeadingBox({
           color: "#3C65FF",
           fontSize: localFontSize.h3,
           fontWeight: 600,
-<<<<<<< HEAD
           // ml:{xs:"10px",}
           lineHeight: { xs: "50px", md: "80px", lg: "100px", xxl: "150px" },
-=======
->>>>>>> fe02d775cbf87c3824faa85bddb73ae016b05c04
           textAlign: {
             xs: isbool ? "end" : "center",
             md: isbool ? "end" : "center",
