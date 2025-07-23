@@ -56,7 +56,7 @@ export default function Ourmission() {
       <Box
         // ref={containerRef}
         sx={{
-          maxWidth: { xs: maxWidth, xxl: "80vw" },
+          maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
           width: "100%",
 
           margin: "auto",
@@ -94,9 +94,9 @@ export default function Ourmission() {
             sx={{
               display: { xs: "none", md: "block" },
 
-              maxWidth: { xs: "490px", xxl: "800px" },
+              maxWidth: { xs: "490px", xl: "600px", xxl: "800px" },
               width: "100%",
-              fontSize: { xs: "18px", xxl: "24px" },
+              fontSize: { xs: "18px", xl: "24px" },
               fontWeight: 400,
               color: "#FFFFFF80",
               textAlign: { xs: "end", sm: "start" },
@@ -127,7 +127,7 @@ export default function Ourmission() {
           data-aos="zoom-in"
           data-aos-duration="500"
           sx={{
-            maxWidth: { xs: maxWidth, xl: "80vw" },
+            maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
             width: "100%",
           }}
         >

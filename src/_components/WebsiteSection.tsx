@@ -1,7 +1,11 @@
 "use client";
 
 import pngs from "@/_assets/pngs";
-import { maxWidth, sectionPadding } from "@/app/_utils/themes";
+import {
+  maxWidth,
+  sectionPaddingX,
+  sectionPaddingY,
+} from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 import ButtonComponent from "./ButtonComponent";
@@ -34,6 +38,7 @@ export default function WebsiteSection({
         backgroundAttachment: "fixed",
         backgroundPosition: "center center",
         overflow: "hidden",
+        px: sectionPaddingX,
       }}
     >
       <Box
@@ -71,9 +76,10 @@ export default function WebsiteSection({
       <Box
         // ref={containerRef}
         sx={{
-          padding: sectionPadding,
+          // padding: sectionPadding,
+          py: sectionPaddingY,
 
-          maxWidth: { xs: maxWidth, xxl: "80vw" },
+          maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
           width: "100%",
           margin: "auto",
           display: "flex",
@@ -81,7 +87,13 @@ export default function WebsiteSection({
           justifyContent: "space-between",
           alignItems: "center",
           flexWrap: { xs: "wrap", md: "nowrap" },
-          gap: { xs: "40px", md: "60px", lg: "80px", xxl: "120px" },
+          gap: {
+            xs: "40px",
+            md: "60px",
+            lg: "80px",
+            xl: "100px",
+            xxl: "120px",
+          },
         }}
       >
         <GenericHeadingBox heading1={heading1} heading2={heading2} />
@@ -89,20 +101,20 @@ export default function WebsiteSection({
         <Box
           sx={{
             width: "100%",
-            maxWidth: { xxl: "1200px" },
+            maxWidth: { xl: "1000px" },
             display: "flex",
             justifyContent: "space-between",
             alignItems: { xs: "start", sm: "start" },
             flexDirection: { xs: "column-reverse", md: "column" },
-            gap: { xs: "40px", lg: "40px", xxl: "80px" },
+            gap: { xs: "40px", lg: "40px", xl: "80px" },
           }}
         >
           <Box
             data-aos="fade-left"
             data-aos-duration="500"
             sx={{
-              bgcolor: { xs: "#fff", xl: "transfers" },
-              maxWidth: { xs: "100%", md: "555px", xxl: "1200px" },
+              bgcolor: { xs: "#fff", xl: "#ffffff12" },
+              maxWidth: { xs: "100%", md: "555px", xl: "1000px" },
               width: "100%",
               borderRadius: {
                 xs: "0 40px 40px 40px",
@@ -118,7 +130,6 @@ export default function WebsiteSection({
               style={{
                 width: "100%",
                 height: "100%",
-                overflow: "hidden",
                 objectFit: "contain",
               }}
             />
@@ -133,9 +144,9 @@ export default function WebsiteSection({
           >
             <Typography
               sx={{
-                maxWidth: { xs: "557px", xxl: "1000px" },
+                maxWidth: { xs: "557px", xl: "1000px" },
                 width: "100%",
-                fontSize: { xs: "18px", xxl: "26px" },
+                fontSize: { xs: "18px", xl: "24px" },
                 fontWeight: 400,
                 color: isbool ? "#00000080" : "#FFFFFF80",
                 textAlign: { xs: "end", md: "start" },
@@ -158,7 +169,7 @@ export default function WebsiteSection({
             <Box
               sx={{
                 width: "100%",
-                mt: { xs: "20px", xxl: "40px" },
+                mt: { xs: "20px", xl: "40px" },
                 display: { xs: "flex" },
                 alignItems: { xs: "end", md: "start" },
                 justifyContent: { xs: "end", md: "start" },

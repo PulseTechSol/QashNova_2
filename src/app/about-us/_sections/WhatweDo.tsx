@@ -60,7 +60,7 @@ export default function WhatweDo() {
         // ref={containerRef}
         sx={{
           py: sectionPaddingY,
-          maxWidth: { xs: maxWidth, xxl: "80vw" },
+          maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
           width: "100%",
           margin: "auto",
           display: "flex",
@@ -68,7 +68,7 @@ export default function WhatweDo() {
           justifyContent: "space-between",
           alignItems: "center",
           flexWrap: { xs: "wrap", md: "nowrap" },
-          gap: { xs: "40px", md: "80px", xxl: "150px" },
+          gap: { xs: "40px", md: "80px", xl: "100px", xxl: "150px" },
         }}
       >
         <GenericHeadingBox heading1="what" heading2="we do" />
@@ -81,16 +81,16 @@ export default function WhatweDo() {
             justifyContent: "space-between",
             alignItems: { xs: "start", sm: "start" },
             flexDirection: { xs: "column" },
-            gap: { xs: "40px", lg: "80px", xxl: "120px" },
+            gap: { xs: "40px", lg: "80px", xl: "90px", xxl: "120px" },
           }}
         >
           <Typography
             data-aos="fade-left"
             data-aos-duration="500"
             sx={{
-              maxWidth: { xs: "557px", xxl: "1000px" },
+              maxWidth: { xs: "557px", xl: "1000px" },
               width: "100%",
-              fontSize: { xs: "18px", xxl: "24px" },
+              fontSize: { xs: "18px", xl: "24px" },
               fontWeight: 400,
               color: "#FFFFFF80",
               textAlign: { xs: "end", md: "start" },
@@ -120,9 +120,14 @@ export default function WhatweDo() {
             data-aos="fade-left"
             data-aos-duration="500"
             sx={{
-              maxWidth: { xs: "100%", md: "553px", xxl: "1400px" },
+              maxWidth: {
+                xs: "100%",
+                md: "553px",
+                xl: "1200px",
+                xxl: "1400px",
+              },
               width: "100%",
-              height: { xs: "auto", lg: "430px", xxl: "100%" },
+              height: { xs: "auto", lg: "430px", xl: "100%" },
             }}
           >
             <Image
