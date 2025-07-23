@@ -51,7 +51,6 @@ export default function HowHelp() {
       buttons: [
         "Growth Strategy",
         "Paid Search Performance",
-        "Digital Artistry",
         "Ranking Mastery",
         "Traffic & Conversions",
       ],

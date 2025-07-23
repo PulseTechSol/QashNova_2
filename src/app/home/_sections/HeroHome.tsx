@@ -106,7 +106,7 @@ export default function HeroHome() {
               <Typography
                 sx={{
                   fontSize: localFontSize.p1,
-                  color: "#1B1B1B",
+                  color: "#00000080",
                   mb: { xs: "40px", xl: "60px" },
                 }}
               >
