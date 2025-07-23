@@ -68,6 +68,8 @@ export default function Footer() {
         >
           {/* image box */}
           <Box
+            data-aos="fade-right"
+            data-aos-duration="500"
             sx={{
               width: { xs: "100px", md: "150px", lg: "230px", xxl: "300px" },
               height: "auto",
@@ -92,9 +94,15 @@ export default function Footer() {
               width: "100%",
             }}
           >
-            <Box sx={{ width: "100%" }}>
+            <Box
+              data-aos="fade-left"
+              data-aos-duration="500"
+              sx={{ width: "100%" }}
+            >
               <Typography sx={{ ...headingStyles }}>social media</Typography>
               <Box
+                data-aos="fade-left"
+                data-aos-duration="500"
                 sx={{
                   display: "flex",
                   justifyContent: { xs: "center", md: "space-between" },
@@ -114,6 +122,8 @@ export default function Footer() {
               </Box>
             </Box>
             <Box
+              data-aos="fade-left"
+              data-aos-duration="500"
               sx={{
                 width: "100%",
                 marginTop: { xs: "40px", md: "50px", lg: "80px" },

@@ -1,16 +1,26 @@
 "use client";
 import { Box, Typography } from "@mui/material";
-import React from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import svgs from "@/_assets/svgs";
 import ButtonComponent from "./ButtonComponent";
 import { maxWidth } from "@/app/_utils/themes";
+import AOS from "aos";
+
+import "aos/dist/aos.css";
+import React, { useEffect } from "react";
 
 export default function Navbar() {
   const [menu, setMenu] = React.useState(false);
   const router = useRouter();
   const pathname = usePathname();
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+    AOS.refresh();
+  }, []);
 
   const toggleDrawer = (open: boolean) => {
     setMenu(open);

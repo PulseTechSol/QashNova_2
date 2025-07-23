@@ -85,6 +85,8 @@ export default function WhatweDo() {
           }}
         >
           <Typography
+            data-aos="fade-left"
+            data-aos-duration="500"
             sx={{
               maxWidth: { xs: "557px", xxl: "1000px" },
               width: "100%",
@@ -101,6 +103,8 @@ export default function WhatweDo() {
             captivate and connect with your audience.
           </Typography>
           <Typography
+            data-aos="fade-left"
+            data-aos-duration="500"
             sx={{
               fontSize: "18px",
               fontWeight: 400,
@@ -113,6 +117,8 @@ export default function WhatweDo() {
             websites tailored to your unique needs.
           </Typography>
           <Box
+            data-aos="fade-left"
+            data-aos-duration="500"
             sx={{
               maxWidth: { xs: "100%", md: "553px", xxl: "1400px" },
               width: "100%",

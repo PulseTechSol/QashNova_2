@@ -19,6 +19,8 @@ export default function ContactUs() {
           }}
         >
           <Box
+            data-aos="fade-right"
+            data-aos-duration="500"
             sx={{
               maxWidth: { xs: "200px", sm: "250px", md: "477px", xl: "800px" },
               width: "100%",
@@ -48,7 +50,11 @@ export default function ContactUs() {
               touch
             </Typography>
           </Box>
-          <Box sx={{ width: "100%" }}>
+          <Box
+            data-aos="fade-left"
+            data-aos-duration="500"
+            sx={{ width: "100%" }}
+          >
             {/* contactus form there */}
             <ContactUsForm />
           </Box>

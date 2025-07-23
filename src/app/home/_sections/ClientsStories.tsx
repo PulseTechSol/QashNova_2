@@ -128,6 +128,8 @@ export default function ClientsStories() {
       >
         {/* Left Heading */}
         <Box
+          data-aos="fade-right"
+          data-aos-duration="500"
           sx={{
             maxWidth: { xs: "300px", sm: "477px" },
             width: "100%",
@@ -169,6 +171,8 @@ export default function ClientsStories() {
         >
           {cardData.map((card, index) => (
             <Box
+              data-aos="fade-left"
+              data-aos-duration="500"
               key={index}
               ref={(el: HTMLDivElement | null) => {
                 if (el) itemsRef.current[index] = el;

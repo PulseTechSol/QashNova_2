@@ -15,6 +15,8 @@ export default function GenericHeadingBox({
 }: GenericHeadingBoxProps) {
   return (
     <Box
+      data-aos="zoom-in"
+      data-aos-duration="500"
       sx={{
         // bgcolor: "#f8f6f62d",
         maxWidth: {

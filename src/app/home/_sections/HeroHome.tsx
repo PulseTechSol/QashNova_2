@@ -33,6 +33,8 @@ export default function HeroHome() {
           }}
         >
           <Typography
+            data-aos="fade-right"
+            data-aos-duration="500"
             sx={{
               background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
               WebkitBackgroundClip: "text",
@@ -62,6 +64,8 @@ export default function HeroHome() {
             }}
           >
             <Box
+              data-aos="fade-right"
+              data-aos-duration="500"
               sx={{
                 maxWidth: { xl: "1000px" },
                 width: "100%",
@@ -90,6 +94,8 @@ export default function HeroHome() {
               </Typography>
             </Box>
             <Box
+              data-aos="fade-left"
+              data-aos-duration="500"
               sx={{
                 right: 140,
                 top: 442,

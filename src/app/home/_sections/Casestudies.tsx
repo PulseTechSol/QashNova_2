@@ -131,6 +131,8 @@ export default function Casestudies() {
           }}
         >
           <Box
+            data-aos="fade-right"
+            data-aos-duration="500"
             sx={{
               maxWidth: { xs: "300px", sm: "477px", xl: "800px" },
               width: "100%",
@@ -171,6 +173,8 @@ export default function Casestudies() {
             }}
           />
           <Typography
+            data-aos="fade-left"
+            data-aos-duration="500"
             sx={{
               maxWidth: { xs: "490px", xl: "800px" },
               width: "100%",
@@ -296,6 +300,8 @@ export default function Casestudies() {
                   }}
                 >
                   <Typography
+                    data-aos="fade-right"
+                    data-aos-duration="500"
                     sx={{
                       maxWidth: { xs: "458px", xl: "600px", xxl: "700px" },
                       width: "100%",
@@ -310,6 +316,8 @@ export default function Casestudies() {
                     {items.title}
                   </Typography>
                   <Typography
+                    data-aos="fade-left"
+                    data-aos-duration="500"
                     className="descriptionText"
                     sx={{
                       maxWidth: { xs: "554px", xl: "650px", xxl: "750px" },
@@ -327,6 +335,8 @@ export default function Casestudies() {
 
                 {/* Divider Line */}
                 <Box
+                  data-aos="zoom-in"
+                  data-aos-duration="500"
                   className="lineBox"
                   sx={{
                     m: { xs: "30px 0 0", sm: "40px 0 0", md: "0" },
@@ -347,6 +357,8 @@ export default function Casestudies() {
           {/* button */}
         </Box>
         <Box
+          data-aos="zoom-in"
+          data-aos-duration="500"
           sx={{
             width: "100%",
             display: { xs: "flex" },

@@ -89,6 +89,8 @@ export default function Ourmission() {
             }}
           />
           <Typography
+            data-aos="fade-left"
+            data-aos-duration="500"
             sx={{
               display: { xs: "none", md: "block" },
 
@@ -122,6 +124,8 @@ export default function Ourmission() {
           </Typography>
         </Box>
         <Box
+          data-aos="zoom-in"
+          data-aos-duration="500"
           sx={{
             maxWidth: { xs: maxWidth, xl: "80vw" },
             width: "100%",

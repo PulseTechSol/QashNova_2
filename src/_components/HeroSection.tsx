@@ -62,6 +62,8 @@ export default function HeroSection({
         }}
       >
         <Box
+          data-aos="zoom-in"
+          data-aos-duration="500"
           sx={{
             maxWidth: {
               xs: "330px",

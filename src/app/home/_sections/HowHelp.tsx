@@ -181,6 +181,8 @@ export default function HowHelp() {
         }}
       >
         <Box
+          data-aos="fade-right"
+          data-aos-duration="500"
           sx={{
             width: "100%",
             display: "flex",
@@ -200,6 +202,8 @@ export default function HowHelp() {
             }}
           />
           <Typography
+            data-aos="fade-left"
+            data-aos-duration="500"
             sx={{
               maxWidth: { xs: "490px", xl: "600px", xxl: "700px" },
               width: "100%",
@@ -243,6 +247,8 @@ export default function HowHelp() {
               }}
             >
               <Box
+                data-aos="zoom-in"
+                data-aos-duration="500"
                 sx={{
                   maxWidth: { xs: "555px", xl: "800px" },
                   width: "100%",
@@ -262,6 +268,8 @@ export default function HowHelp() {
                 </Typography>
 
                 <Box
+                  data-aos="zoom-in"
+                  data-aos-duration="500"
                   sx={{
                     mt: { xs: "10px", sm: "20px", md: "30px", xl: "50px" },
                     height: "auto",
@@ -293,6 +301,8 @@ export default function HowHelp() {
                   ))}
                 </Box>
                 <Typography
+                  data-aos="zoom-in"
+                  data-aos-duration="500"
                   sx={{
                     mt: { xs: "15px", sm: "30px", md: "60px", xl: "80px" },
                     fontSize: localFontSize.p2,
@@ -305,6 +315,8 @@ export default function HowHelp() {
                 </Typography>
               </Box>
               <Box
+                data-aos="zoom-in"
+                data-aos-duration="500"
                 sx={{
                   maxWidth: {
                     xs: "100%",

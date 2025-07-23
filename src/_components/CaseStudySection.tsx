@@ -107,6 +107,8 @@ export default function CaseStudySection({
           }}
         >
           <Box
+            data-aos={!isbool ? "fade-right" : "fade-left"}
+            data-aos-duration="500"
             sx={{
               // bgcolor: "#45dc232b",
               maxWidth: { xs: "100%", md: "555px", xl: "800px", xxl: "1200px" },
@@ -146,6 +148,8 @@ export default function CaseStudySection({
             }}
           >
             <Typography
+              data-aos={isbool ? "fade-right" : "fade-left"}
+              data-aos-duration="500"
               sx={{
                 width: "100%",
                 fontSize: localFontSize.p1,

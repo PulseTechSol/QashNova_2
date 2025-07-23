@@ -17,6 +17,8 @@ export default function PlanComponent({
 }: PlanProps) {
   return (
     <Box
+      data-aos="zoom-in"
+      data-aos-duration="500"
       sx={{
         maxWidth: { xs: "360px", xl: "500px", xxl: "500px" },
         width: "100%",

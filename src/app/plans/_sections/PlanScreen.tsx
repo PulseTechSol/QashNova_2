@@ -55,6 +55,8 @@ export default function PlanScreen() {
       }}
     >
       <Box
+        data-aos="zoom-in"
+        data-aos-duration="500"
         sx={{
           maxWidth: {
             xs: "400px",

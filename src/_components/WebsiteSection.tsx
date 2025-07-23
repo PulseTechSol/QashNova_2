@@ -98,8 +98,10 @@ export default function WebsiteSection({
           }}
         >
           <Box
+            data-aos="fade-left"
+            data-aos-duration="500"
             sx={{
-              bgcolor: "#fff",
+              bgcolor: { xs: "#fff", xl: "transfers" },
               maxWidth: { xs: "100%", md: "555px", xxl: "1200px" },
               width: "100%",
               borderRadius: {
@@ -122,6 +124,8 @@ export default function WebsiteSection({
             />
           </Box>
           <Box
+            data-aos="fade-left"
+            data-aos-duration="500"
             sx={{
               width: "100%",
               textAlign: { xs: "end", md: "start" },
@@ -168,7 +172,7 @@ export default function WebsiteSection({
                   color: { xs: "#fff" },
                   borderRadius: "50px",
                   border: "2px solid #3C65FF",
-                  maxWidth: { sm: "280px", xxl: "350px" },
+                  maxWidth: { sm: "280px", xl: "350px" },
                 }}
               />
             </Box>

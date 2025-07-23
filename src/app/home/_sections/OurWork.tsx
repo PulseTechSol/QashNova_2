@@ -100,6 +100,8 @@ export default function OurWork() {
           }}
         >
           <Box
+            data-aos="fade-right"
+            data-aos-duration="500"
             sx={{
               maxWidth: { xs: "300px", sm: "477px", xl: "550px", xxl: "650px" },
               width: "100%",
@@ -139,6 +141,8 @@ export default function OurWork() {
             }}
           />
           <Typography
+            data-aos="fade-left"
+            data-aos-duration="500"
             sx={{
               maxWidth: { xs: "490px", xl: "700px" },
               width: "100%",
@@ -263,6 +267,8 @@ export function WorkShowcase({
   return (
     <Box className="hover-card" sx={{ width: "100%" }}>
       <Box
+        data-aos="zoom-in"
+        data-aos-duration="500"
         sx={{
           width: "100%",
           bgcolor: "rgba(0, 0, 0, 0.3)",

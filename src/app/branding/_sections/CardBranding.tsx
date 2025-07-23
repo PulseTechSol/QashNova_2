@@ -118,6 +118,8 @@ interface WorkShowcaseProps {
 export function WorkShowcase({ title, image }: WorkShowcaseProps) {
   return (
     <Grid
+      data-aos="zoom-in"
+      data-aos-duration="500"
       size={{ xs: 12, sm: 6 }}
       sx={{
         width: "100%",

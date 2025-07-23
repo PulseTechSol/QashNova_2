@@ -31,6 +31,8 @@ export default function SectionWithHeadingAndCTA({
           }}
         >
           <Typography
+            data-aos="zoom-in"
+            data-aos-duration="500"
             sx={{
               textAlign: { xs: "center" },
               background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
@@ -81,6 +83,8 @@ export default function SectionWithHeadingAndCTA({
             </span>
           </Typography>
           <Box
+            data-aos="zoom-in"
+            data-aos-duration="500"
             sx={{
               width: "100%",
               display: { xs: "flex" },
