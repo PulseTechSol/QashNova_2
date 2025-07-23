@@ -1,6 +1,8 @@
 "use client";
 
 import pngs from "@/_assets/pngs";
+import svgs from "@/_assets/svgs";
+import ButtonComponent from "@/_components/ButtonComponent";
 import {
   localFontSize,
   maxWidth,
@@ -11,8 +13,10 @@ import { Theme } from "@emotion/react";
 import { Box, SxProps, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function OurWork() {
+  const router = useRouter();
   useEffect(() => {
     const cards = document.querySelectorAll(".hover-card");
 
@@ -239,6 +243,21 @@ export default function OurWork() {
                 xl: "1000px",
                 xxl: "1200px",
               },
+            }}
+          />
+          <ButtonComponent
+            onClick={() => {
+              router.push("/websites");
+            }}
+            label="view all projects"
+            imgSrc={svgs.whiteArrow}
+            sx={{
+              background: "#3C65FF",
+              color: "#fff",
+              borderRadius: "50px",
+              border: "2px solid #3C65FF",
+              maxWidth: { xs: "280px", xl: "360px" },
+              margin: "auto",
             }}
           />
         </Box>

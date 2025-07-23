@@ -1,7 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
+import {
+  localFontSize,
+  sectionPaddingY,
+  sectionPaddingX,
+} from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 import pngs from "@/_assets/pngs";
@@ -112,14 +116,15 @@ export default function ClientsStories() {
         zIndex: 2000,
         overflow: "hidden",
         overflowX: "hidden",
+        paddingX: sectionPaddingX,
       }}
     >
       <Box
         sx={{
-          maxWidth: maxWidth,
+          maxWidth: "1500px",
           width: "100%",
           margin: "auto",
-          padding: sectionPadding,
+          paddingY: sectionPaddingY,
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
@@ -190,7 +195,7 @@ export default function ClientsStories() {
           ))}
 
           {/* Navigation Buttons */}
-          <Box
+          {/* <Box
             sx={{
               display: "flex",
               justifyContent: "center",
@@ -201,63 +206,74 @@ export default function ClientsStories() {
               width: "100%",
               zIndex: "20",
             }}
+          > */}
+          <Box
+            onMouseOver={() => setHoverNext(true)}
+            onMouseOut={() => setHoverNext(false)}
+            onClick={handlePrev}
+            sx={{
+              width: "50px",
+              height: "auto",
+              position: "absolute",
+              bottom: "20px",
+              left: "20px",
+              zIndex: "20",
+            }}
           >
-            <Box
-              onMouseOver={() => setHoverNext(true)}
-              onMouseOut={() => setHoverNext(false)}
-              onClick={handlePrev}
-              sx={{
-                width: "50px",
-                height: "auto",
+            <Image
+              style={{
+                width: "100%",
+                height: "100%",
+                transform: "rotate(180deg)",
+                display: hoverNext ? "inline" : "none",
               }}
-            >
-              <Image
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  transform: "rotate(180deg)",
-                  display: hoverNext ? "inline" : "none",
-                }}
-                src={svgs.sliderArrow}
-                alt="sliderArrow"
-              />
-              <Image
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  display: hoverNext ? "none" : "inline",
-                }}
-                src={svgs.arrowSliderDisabled}
-                alt="sliderArrow"
-              />
-            </Box>
-            <Box
-              onMouseOver={() => setHoverPrevoius(true)}
-              onMouseOut={() => setHoverPrevoius(false)}
-              onClick={handleNext}
-              sx={{ width: "50px", height: "auto" }}
-            >
-              <Image
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  display: hoverPrevoius ? "inline" : "none",
-                }}
-                src={svgs.sliderArrow}
-                alt="sliderArrow"
-              />{" "}
-              <Image
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  display: hoverPrevoius ? "none" : "inline",
-                  transform: "rotate(180deg)",
-                }}
-                src={svgs.arrowSliderDisabled}
-                alt="sliderArrow"
-              />
-            </Box>
+              src={svgs.sliderArrow}
+              alt="sliderArrow"
+            />
+            <Image
+              style={{
+                width: "100%",
+                height: "100%",
+                display: hoverNext ? "none" : "inline",
+              }}
+              src={svgs.arrowSliderDisabled}
+              alt="sliderArrow"
+            />
           </Box>
+          <Box
+            onMouseOver={() => setHoverPrevoius(true)}
+            onMouseOut={() => setHoverPrevoius(false)}
+            onClick={handleNext}
+            sx={{
+              width: "50px",
+              height: "auto",
+              position: "absolute",
+              bottom: "20px",
+              right: "20px",
+              zIndex: "20",
+            }}
+          >
+            <Image
+              style={{
+                width: "100%",
+                height: "100%",
+                display: hoverPrevoius ? "inline" : "none",
+              }}
+              src={svgs.sliderArrow}
+              alt="sliderArrow"
+            />{" "}
+            <Image
+              style={{
+                width: "100%",
+                height: "100%",
+                display: hoverPrevoius ? "none" : "inline",
+                transform: "rotate(180deg)",
+              }}
+              src={svgs.arrowSliderDisabled}
+              alt="sliderArrow"
+            />
+          </Box>
+          {/* </Box> */}
         </Box>
       </Box>
     </Box>

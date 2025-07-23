@@ -12,10 +12,12 @@ import {
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import svgs from "@/_assets/svgs";
+import { useRouter } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Casestudies() {
+  const router = useRouter();
   const websiteServices = [
     {
       title: "saif’s boxing & fitness",
@@ -367,7 +369,8 @@ export default function Casestudies() {
           }}
         >
           <ButtonComponent
-            label="Learn How"
+            onClick={() => router.push("/case-study")}
+            label="view all"
             imgSrc={svgs.whiteArrow}
             sx={{
               background: { xs: "#3C65FF", md: "#3C65FF" },

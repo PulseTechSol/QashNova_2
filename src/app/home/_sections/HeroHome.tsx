@@ -1,3 +1,4 @@
+"use client";
 import pngs from "@/_assets/pngs";
 import svgs from "@/_assets/svgs";
 import ButtonComponent from "@/_components/ButtonComponent";
@@ -9,8 +10,10 @@ import {
 } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function HeroHome() {
+  const router = useRouter();
   return (
     <Box>
       <Box
@@ -117,6 +120,9 @@ export default function HeroHome() {
 
               <Box sx={{}}>
                 <ButtonComponent
+                  onClick={() => {
+                    router.push("/contact-us");
+                  }}
                   sx={{
                     border: "3px solid transparent",
                     backgroundImage: `linear-gradient( #fff, #DDDDDD),

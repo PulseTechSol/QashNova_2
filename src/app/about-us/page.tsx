@@ -18,6 +18,7 @@ export default function AboutUsPage() {
       <SectionWithHeadingAndCTA
         heading="brighten your brand with "
         lastword="qashnova"
+        route="/case-study"
       />
       <Ourmission />
     </>

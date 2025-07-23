@@ -82,6 +82,7 @@ export default function Navbar() {
         }}
       >
         <Box
+          onClick={() => router.push("/")}
           sx={{
             maxWidth: "43px",
             height: "44px",
@@ -100,6 +101,7 @@ export default function Navbar() {
         </Box>
         {/* logo for md */}
         <Box
+          onClick={() => router.push("/")}
           sx={{
             maxWidth: "287px",
             display: { xs: "none", md: "block" },

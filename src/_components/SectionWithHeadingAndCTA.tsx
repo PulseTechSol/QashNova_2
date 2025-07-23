@@ -1,17 +1,23 @@
+"use client";
 import svgs from "@/_assets/svgs";
 import ButtonComponent from "@/_components/ButtonComponent";
 import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+
 interface SectionWithHeadingAndCTAProps {
   heading?: string;
   lastword?: string;
+  route?: string;
 }
 
 export default function SectionWithHeadingAndCTA({
   heading,
   lastword,
+  route = "/about-us",
 }: SectionWithHeadingAndCTAProps) {
+  const router = useRouter();
   return (
     <>
       <Box
@@ -93,6 +99,7 @@ export default function SectionWithHeadingAndCTA({
             }}
           >
             <ButtonComponent
+              onClick={() => router.push(route)}
               label="Learn How"
               imgSrc={svgs.whiteArrow}
               sx={{

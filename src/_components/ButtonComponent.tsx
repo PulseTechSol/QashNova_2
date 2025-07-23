@@ -31,17 +31,17 @@ export default function ButtonComponent({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        maxWidth: { xl: "380px" },
-        width: "max-content",
+        fontWeight: "400",
+        // maxWidth: { xl: "380px" },
+        // width: "max-content",
         height: { xs: "60px", md: "60px", xxl: "100px" },
         padding: { xs: "15px 40px", md: "15px 40px", xl: "40px 80px" },
         gap: { xs: "6px", md: "10px" },
         fontSize: localFontSize.p3,
-        fontWeight: 300,
         borderRadius: "50px",
         textTransform: "capitalize",
         bgcolor: "#3C65FF80",
-
+        textWrap: "nowrap",
         ...sx,
       }}
     >

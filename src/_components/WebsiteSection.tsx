@@ -6,7 +6,7 @@ import {
   sectionPaddingX,
   sectionPaddingY,
 } from "@/app/_utils/themes";
-import { Box, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 import ButtonComponent from "./ButtonComponent";
 import svgs from "@/_assets/svgs";
@@ -19,6 +19,7 @@ interface WebsiteSectionProps {
   isbool?: boolean;
   heading1?: string;
   heading2?: string;
+  link?: string;
 }
 export default function WebsiteSection({
   destopPara,
@@ -27,6 +28,7 @@ export default function WebsiteSection({
   mobilePara,
   image,
   isbool = false,
+  link,
 }: WebsiteSectionProps) {
   return (
     <Box
@@ -175,17 +177,19 @@ export default function WebsiteSection({
                 justifyContent: { xs: "end", md: "start" },
               }}
             >
-              <ButtonComponent
-                label="go to website"
-                imgSrc={svgs.whiteArrow}
-                sx={{
-                  background: { xs: "#3C65FF", md: "#3C65FF" },
-                  color: { xs: "#fff" },
-                  borderRadius: "50px",
-                  border: "2px solid #3C65FF",
-                  maxWidth: { sm: "280px", xl: "350px" },
-                }}
-              />
+              <Link href={link} target="_blank">
+                <ButtonComponent
+                  label="go to website"
+                  imgSrc={svgs.whiteArrow}
+                  sx={{
+                    background: { xs: "#3C65FF", md: "#3C65FF" },
+                    color: { xs: "#fff" },
+                    borderRadius: "50px",
+                    border: "2px solid #3C65FF",
+                    maxWidth: { sm: "280px", xl: "350px" },
+                  }}
+                />
+              </Link>
             </Box>
           </Box>
         </Box>
