@@ -115,14 +115,15 @@ export default function WebsiteSection({
             data-aos="fade-left"
             data-aos-duration="500"
             sx={{
-              bgcolor: { xs: "#fff", xl: "#ffffff12" },
-              maxWidth: { xs: "100%", md: "555px", xl: "1000px" },
+              // bgcolor: { xs: "#fff", xl: "#ffffff12" },
+              maxWidth: { xs: "100%", lg: "555px", xl: "1000px" },
               width: "100%",
               borderRadius: {
                 xs: "0 40px 40px 40px",
                 sm: "0 80px 80px 80px",
               },
-              height: { xs: "100%", sm: "100%" },
+              height: "auto",
+              // height: { xs: "100%", sm: "100%" },
               overflow: "hidden",
             }}
           >
@@ -131,7 +132,7 @@ export default function WebsiteSection({
               alt="Websites"
               style={{
                 width: "100%",
-                height: "100%",
+                height: "auto",
                 objectFit: "contain",
               }}
             />
