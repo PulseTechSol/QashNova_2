@@ -33,6 +33,7 @@ export default function HeroHome() {
             py: sectionPaddingY,
             margin: "auto",
             gap: { xs: "0" },
+            zIndex: 140,
           }}
         >
           <Typography
@@ -56,7 +57,8 @@ export default function HeroHome() {
           <Box
             sx={{
               width: "100%",
-
+              position: "relative",
+              zIndex: 140,
               textAlign: { xs: "start" },
               display: { xs: "flex" },
               justifyContent: { xs: "space-between" },
@@ -70,6 +72,8 @@ export default function HeroHome() {
               data-aos="fade-right"
               data-aos-duration="500"
               sx={{
+                position: "relative",
+                zIndex: 140,
                 maxWidth: { xl: "1000px" },
                 width: "100%",
                 background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
@@ -148,7 +152,8 @@ export default function HeroHome() {
               display: { xs: "block", md: "none", lg: "block" },
               position: "absolute",
               top: { xs: 16, lg: 73 },
-              left: { xs: 36, lg: 213 },
+              left: { xs: 36, lg: 13 },
+              zIndex: 3,
             }}
           >
             <Image
@@ -160,12 +165,14 @@ export default function HeroHome() {
           {/* left */}
           <Box
             sx={{
+              // bgcolor: "#ccc",
               width: { xs: "89px", lg: "121px" },
               height: { xs: "89px", lg: "121px" },
               display: { xs: "block", md: "none", lg: "block" },
               position: "absolute",
               top: { xs: "85%", lg: 523 },
-              left: { xs: 3, lg: -53 },
+              left: { xs: 3, lg: -200 },
+              zIndex: 3,
             }}
           >
             <Image
@@ -181,8 +188,9 @@ export default function HeroHome() {
               height: { xs: "89px", lg: "121px" },
               display: { xs: "block", md: "none", lg: "block" },
               position: "absolute",
-              top: { xs: "75%", lg: 700, xl: 823 },
-              right: { xs: -20, lg: 453 },
+              top: { xs: "75%", lg: 700, xl: 823, xxl: 909 },
+              right: { xs: -20, lg: 343, xxl: "42%" },
+              zIndex: 3,
             }}
           >
             <Image
@@ -198,8 +206,9 @@ export default function HeroHome() {
               height: { xs: "58px", lg: "84px" },
               display: { xs: "block", md: "none", lg: "block" },
               position: "absolute",
-              top: { xs: 294, lg: 590, xl: 690 },
-              right: { xs: 53, lg: 290 },
+              top: { xs: 294, lg: 590, xl: 690, xxl: 780 },
+              right: { xs: 53, lg: 160, xxl: "28%" },
+              zIndex: 3,
             }}
           >
             <Image
