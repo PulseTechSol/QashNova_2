@@ -324,7 +324,7 @@ export default function HowHelp() {
                     xxl: "700px",
                   },
                   width: "100%",
-                  height: { xs: "100%", xl: "100%" },
+                  height: "auto",
                 }}
               >
                 <Image
