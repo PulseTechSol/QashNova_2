@@ -59,6 +59,7 @@ export default function HeroSection({
           maxWidth: { xs: maxWidth, xxl: "80vw" },
           width: "100%",
           margin: "auto",
+          zIndex: 140,
         }}
       >
         <Box
@@ -159,71 +160,74 @@ export default function HeroSection({
               {line3Mobile}
             </Typography>
           )}
-
-          {/* Decorative Images */}
-          <Box
-            sx={{
-              width: { xs: "89px", sm: "121px" },
-              height: { xs: "89px", sm: "121px" },
-              position: "absolute",
-              top: { xs: 16, sm: -12, lg: 50 },
-              left: { xs: 36, md: 200, lg: 280 },
-            }}
-          >
-            <Image
-              src={svgs.startDark1}
-              alt="star"
-              style={{ width: "100%", height: "100%" }}
-            />
-          </Box>
-          <Box
-            sx={{
-              width: { xs: "29px", sm: "121px" },
-              height: { xs: "29px", sm: "121px" },
-              position: "absolute",
-              top: { xs: 170, sm: 400, lg: 523 },
-              left: { xs: "30%", sm: -53 },
-              display: isbool ? { xs: "none", sm: "block" } : { sm: "block" },
-            }}
-          >
-            <Image
-              src={svgs.startDark1}
-              alt="star"
-              style={{ width: "100%", height: "100%" }}
-            />
-          </Box>
-          <Box
-            sx={{
-              width: { xs: "61px", md: "114px" },
-              height: { xs: "61px", md: "114px" },
-              position: "absolute",
-              top: { xs: 290, sm: 190, lg: 290, xl: 350 },
-              right: { xs: 100, sm: -10, lg: 40, xl: 20 },
-            }}
-          >
-            <Image
-              src={svgs.stars2}
-              alt="star"
-              style={{ width: "100%", height: "100%" }}
-            />
-          </Box>
-          <Box
-            sx={{
-              width: "1400px",
-              height: "500px",
-              display: { xs: "none", lg: "block" },
-              position: "absolute",
-              top: 5,
-              left: -600,
-              overflow: "hidden",
-            }}
-          >
-            <Image
-              src={pngs.heroHome}
-              alt="hero"
-              style={{ width: "100%", height: "100%" }}
-            />
-          </Box>
+        </Box>
+        {/* Decorative Images */}
+        <Box
+          sx={{
+            width: { xs: "89px", sm: "121px" },
+            height: { xs: "89px", sm: "121px" },
+            position: "absolute",
+            top: { xs: -36, sm: -62, lg: -50 },
+            left: { xs: 36, sm: 100, md: 200, lg: 480, xl: 200 },
+            zIndex: -1,
+          }}
+        >
+          <Image
+            src={svgs.startDark1}
+            alt="star"
+            style={{ width: "100%", height: "100%" }}
+          />
+        </Box>
+        <Box
+          sx={{
+            width: { xs: "29px", sm: "121px" },
+            height: { xs: "29px", sm: "121px" },
+            position: "absolute",
+            top: { xs: 170, sm: 400, lg: 523 },
+            left: { xs: "30%", sm: -53 },
+            display: isbool ? { xs: "none", sm: "block" } : { sm: "block" },
+            zIndex: -1,
+          }}
+        >
+          <Image
+            src={svgs.startDark1}
+            alt="star"
+            style={{ width: "100%", height: "100%" }}
+          />
+        </Box>
+        <Box
+          sx={{
+            width: { xs: "61px", md: "114px" },
+            height: { xs: "61px", md: "114px" },
+            position: "absolute",
+            top: { xs: 290, sm: 190, lg: 290, xl: 350 },
+            right: { xs: 100, sm: -10, lg: 40, xl: 20 },
+            zIndex: -1,
+          }}
+        >
+          <Image
+            src={svgs.stars2}
+            alt="star"
+            style={{ width: "100%", height: "100%" }}
+          />
+        </Box>
+        <Box
+          sx={{
+            width: "1400px",
+            height: "500px",
+            display: { xs: "none", lg: "block" },
+            position: "absolute",
+            top: 5,
+            left: -600,
+            overflow: "hidden",
+            zIndex: -1,
+          }}
+        >
+          <Image
+            src={pngs.heroHome}
+            alt="hero"
+            style={{ width: "100%", height: "100%" }}
+          />
         </Box>
       </Box>
     </Box>

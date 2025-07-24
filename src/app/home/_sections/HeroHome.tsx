@@ -189,7 +189,7 @@ export default function HeroHome() {
               display: { xs: "block", md: "none", lg: "block" },
               position: "absolute",
               top: { xs: "75%", lg: 700, xl: 823, xxl: 909 },
-              right: { xs: -20, lg: 343, xxl: "42%" },
+              right: { xs: -20, lg: 343, xl: 600, xxl: "42%" },
               zIndex: 3,
             }}
           >
@@ -207,7 +207,7 @@ export default function HeroHome() {
               display: { xs: "block", md: "none", lg: "block" },
               position: "absolute",
               top: { xs: 294, lg: 590, xl: 690, xxl: 780 },
-              right: { xs: 53, lg: 160, xxl: "28%" },
+              right: { xs: 53, lg: 160, xl: "20%", xxl: "28%" },
               zIndex: 3,
             }}
           >

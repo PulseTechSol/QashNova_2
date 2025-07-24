@@ -169,7 +169,7 @@ export default function ClientsStories() {
           sx={{
             position: "relative",
             width: "100%",
-            maxWidth: { xs: "400px", sm: "450px", md: "560px" },
+            maxWidth: { xs: "322px", sm: "450px", md: "560px" },
             height: { xs: "550px", sm: "570px", md: "500px" },
             margin: "auto",
           }}
@@ -297,7 +297,7 @@ export function ClientCard({
     <Box
       sx={{
         height: "500px",
-        maxWidth: { xs: "400px", sm: "450px", md: "560px" },
+        maxWidth: { xs: "320px", sm: "450px", md: "560px" },
         width: "100%",
         backgroundColor: bgColor,
         borderRadius: { xs: "20px", md: "40px" },
