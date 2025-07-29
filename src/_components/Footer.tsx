@@ -1,3 +1,4 @@
+"use clinet";
 import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
@@ -116,9 +117,21 @@ export default function Footer() {
                   margin: "auto",
                 }}
               >
-                <SocialMediaItem text="facebook" image={svgs.facebook} />
-                <SocialMediaItem text="instagram" image={svgs.instagram} />
-                <SocialMediaItem text="whatsapp" image={svgs.whatsapp} />
+                <SocialMediaItem
+                  link="https://www.facebook.com/profile.php?id=61572441703298"
+                  text="facebook"
+                  image={svgs.facebook}
+                />
+                <SocialMediaItem
+                  link="https://www.instagram.com/qashnova1/"
+                  text="instagram"
+                  image={svgs.instagram}
+                />
+                <SocialMediaItem
+                  link="https://wa.me/447722002392"
+                  text="whatsapp"
+                  image={svgs.whatsapp}
+                />
               </Box>
             </Box>
             <Box
@@ -145,7 +158,11 @@ export default function Footer() {
                 }}
               >
                 <SocialMediaItem text="hello@qashnova.com" image={svgs.email} />
-                <SocialMediaItem text="0772002392" image={svgs.phone} />
+                <SocialMediaItem
+                  link="tel:+447722002392"
+                  text="0772002392"
+                  image={svgs.phone}
+                />
               </Box>
             </Box>
           </Box>
@@ -227,6 +244,7 @@ export default function Footer() {
               style={{
                 border: "none",
                 textDecoration: "none",
+                cursor: "pointer",
               }}
             >
               Powered By Qashnova
@@ -241,23 +259,38 @@ export default function Footer() {
 interface SocialMediaItemProps {
   text: string;
   image: StaticImageData;
+  link?: string;
 }
 
-export function SocialMediaItem({ text, image }: SocialMediaItemProps) {
+export function SocialMediaItem({ text, image, link }: SocialMediaItemProps) {
   return (
     <Box sx={{ display: "flex", gap: "10px" }}>
       <Image style={{ width: "20px", height: "auto" }} src={image} alt={text} />
-      <Typography>
+      {typeof link === "string" ? (
+        <Link style={{ textDecoration: "none" }} href={link} target="_blank">
+          <Typography
+            sx={{
+              color: "#000000",
+              fontSize: localFontSize.p1,
+              textTransform: "capitalize",
+              textDecoration: "none",
+            }}
+          >
+            {text}
+          </Typography>
+        </Link>
+      ) : (
         <Typography
           sx={{
             color: "#000000",
             fontSize: localFontSize.p1,
             textTransform: "capitalize",
+            textDecoration: "none",
           }}
         >
           {text}
         </Typography>
-      </Typography>
+      )}
     </Box>
   );
 }
