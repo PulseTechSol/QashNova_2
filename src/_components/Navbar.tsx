@@ -222,16 +222,14 @@ export default function Navbar() {
         <Box
           sx={{
             margin: { xs: "10px 20px ", md: "20px " },
-
             textAlign: { xs: "left", md: "right" },
           }}
         >
           <Image
             onClick={sidebar}
-            src={svgs.hamburger}
+            src={svgs.cross}
             alt="kashanimgclose"
-            height={50}
-            width={50}
+            width={40}
           />
         </Box>
         <Box
