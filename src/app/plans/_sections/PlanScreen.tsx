@@ -7,6 +7,8 @@ import {
   sectionPaddingX,
   sectionPaddingY,
 } from "@/app/_utils/themes";
+import Image from "next/image";
+import pngs from "@/_assets/pngs";
 // import Image from "next/image";
 // import pngs from "@/_assets/pngs";
 
@@ -136,13 +138,16 @@ export default function PlanScreen() {
         </Box>
       </Box>
       {/* the positioned images are there */}
-      {/* <Box
+      <Box
         sx={{
           width: { xs: "355px", md: "633px" },
           height: { xs: "355px", md: "633px" },
-          display: { xs: "block", lg: "block" },
+          display: { xs: "block" },
           position: "absolute",
           left: -13,
+          top: 2,
+          zIndex: 19,
+          // bgcolor: "red",
         }}
       >
         <Image
@@ -155,10 +160,12 @@ export default function PlanScreen() {
         sx={{
           width: { xs: "355px", md: "633px" },
           height: { xs: "355px", md: "633px" },
-          display: { xs: "block", lg: "block" },
+          display: { xs: "none", sm: "block" },
           position: "absolute",
           left: -13,
-          bottom: { xs: -50, md: -300 },
+          zIndex: 19,
+
+          bottom: { xs: 0, md: 1 },
           transform: "rotate(270deg)",
         }}
       >
@@ -171,9 +178,12 @@ export default function PlanScreen() {
       <Box
         sx={{
           width: { xs: "300px", md: "790px" },
-          height: { xs: "300px", md: "790px" },
+          height: { xs: "300px", md: "1000px" },
           display: { xs: "none", sm: "block" },
           position: "absolute",
+          top: 2,
+          zIndex: 1,
+          // bgcolor: "red",
           right: 0,
         }}
       >
@@ -182,7 +192,7 @@ export default function PlanScreen() {
           alt="star"
           style={{ height: "100%", width: "100%" }}
         />
-      </Box> */}
+      </Box>
     </Box>
   );
 }

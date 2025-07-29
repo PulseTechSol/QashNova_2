@@ -26,9 +26,11 @@ import branding3 from "./branding/branding3.webp";
 import branding4 from "./branding/branding4.webp";
 import caseStudy1 from "./caseStudy/caseStudy1.webp";
 import caseStudy2 from "./caseStudy/caseStudy2.webp";
+import footerbgImg from "./footerbgImg.png";
 
 const pngs = {
   image1,
+  footerbgImg,
   caseStudy1,
   caseStudy2,
   websites1,

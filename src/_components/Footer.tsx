@@ -26,33 +26,21 @@ export default function Footer() {
           sx={{
             width: { xs: "355px", md: "633px" },
             height: { xs: "355px", md: "633px" },
-            display: { xs: "block", lg: "block" },
+            display: { xs: "block" },
             position: "absolute",
             left: -13,
+            bottom: 1,
+            // bgcolor: "red",
+            zIndex: 1,
           }}
         >
           <Image
-            src={pngs.howHeplLG}
+            src={pngs.footerbgImg}
             alt="star"
             style={{ height: "100%", width: "100%" }}
           />
         </Box>
 
-        <Box
-          sx={{
-            width: { xs: "300px", md: "790px" },
-            height: { xs: "300px", md: "790px" },
-            display: { xs: "none", lg: "block" },
-            position: "absolute",
-            right: 0,
-          }}
-        >
-          <Image
-            src={pngs.howHeplLGcolor}
-            alt="star"
-            style={{ height: "100%", width: "100%" }}
-          />
-        </Box>
         <Box
           sx={{
             maxWidth: { xs: maxWidth, xxl: "80vw" },
@@ -71,8 +59,10 @@ export default function Footer() {
             data-aos="fade-right"
             data-aos-duration="500"
             sx={{
+              position: "relative",
               width: { xs: "100px", md: "150px", lg: "230px", xxl: "300px" },
               height: "auto",
+              zIndex: 111,
             }}
           >
             <Image
@@ -92,6 +82,8 @@ export default function Footer() {
                 xxl: "700px",
               },
               width: "100%",
+              position: "relative",
+              zIndex: 111,
             }}
           >
             <Box
