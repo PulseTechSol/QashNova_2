@@ -175,7 +175,6 @@ export default function Footer() {
             justifyContent: "center",
             alignItems: "center",
             textAlign: { xs: "center", md: "start" },
-            bgcolor: { xs: "#FFFFFF33" },
           }}
         >
           <Typography

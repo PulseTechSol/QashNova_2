@@ -45,7 +45,7 @@ export default function HowHelp() {
       image: pngs.image2,
     },
     {
-      title: "SEO & SEM Optimization",
+      title: "SEO & SEM optimisation",
       description:
         "We implement sophisticated SEO techniques and precision-targeted SEM campaigns to ensure your brand is seen by the right audience at the right time",
       buttons: [
@@ -62,7 +62,7 @@ export default function HowHelp() {
         "From compelling content creation to community nurturing and performance analytics, our comprehensive social media management ensures your brand thrives.",
       buttons: [
         "Community Growth",
-        "Platform Performance Optimization",
+        "Platform Performance optimisation",
         "Content Curation",
         "Audience Connection",
       ],

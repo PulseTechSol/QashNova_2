@@ -100,7 +100,7 @@ export default function SectionWithHeadingAndCTA({
           >
             <ButtonComponent
               onClick={() => router.push(route)}
-              label="Learn How"
+              label="Case Studies"
               imgSrc={svgs.whiteArrow}
               sx={{
                 background: { xs: "#3C65FF", md: "#3C65FF" },

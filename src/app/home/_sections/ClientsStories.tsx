@@ -31,7 +31,7 @@ const cardData = [
     image: pngs.clients3,
     name: "David Miller",
     description:
-      "Qashnova's expertise in SEO & SEM Optimization is truly unparalleled. Before them, we struggled to rank for key terms, but their diligent work and data-driven campaigns have put us front and center in search results.",
+      "Qashnova's expertise in SEO & SEM optimisation is truly unparalleled. Before them, we struggled to rank for key terms, but their diligent work and data-driven campaigns have put us front and center in search results.",
     bgColor: "#2617B1",
   },
 ];

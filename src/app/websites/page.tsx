@@ -17,8 +17,8 @@ export default function WebsitesPage() {
       <WebsiteSection
         heading1="Sabir's"
         heading2="Grill"
-        destopPara="We transformed Sabir's Grill's online presence by creating a sleek, culturally rich website that blends modern design with intuitive navigation and mobile optimization. The goal was a seamless Browse experience to highlight their diverse offerings and drive online reservations, resulting in a flavorful digital experience mirroring their cuisine's quality and warmth."
-        mobilePara="We transformed Sabir's Grill's online presence by creating a sleek, culturally rich website that blends modern design with intuitive navigation and mobile optimization."
+        destopPara="We transformed Sabir's Grill's online presence by creating a sleek, culturally rich website that blends modern design with intuitive navigation and mobile . The goal was a seamless Browse experience to highlight their diverse offerings and drive online reservations, resulting in a flavorful digital experience mirroring their cuisine's quality and warmth."
+        mobilePara="We transformed Sabir's Grill's online presence by creating a sleek, culturally rich website that blends modern design with intuitive navigation and mobile optimisation."
         image={pngs.websites1}
         link="https://www.sabirs.co.uk/"
       />

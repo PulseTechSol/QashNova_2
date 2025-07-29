@@ -60,7 +60,7 @@ export default function Navbar() {
         right: "0",
         zIndex: 20000,
         position: "relative",
-        backgroundColor: { xs: "#ffffff80", sm: "none" },
+        backgroundColor: "transparent",
       }}
     >
       <Box
@@ -150,7 +150,11 @@ export default function Navbar() {
           </Box>
           <Box
             onClick={sidebar}
-            sx={{ textAlign: "end", display: { xs: "block" } }}
+            sx={{
+              textAlign: "end",
+              display: { xs: "block" },
+              cursor: "pointer",
+            }}
           >
             <Image
               src={svgs.hamburger}
@@ -223,6 +227,7 @@ export default function Navbar() {
           sx={{
             margin: { xs: "10px 20px ", md: "20px " },
             textAlign: { xs: "left", md: "right" },
+            cursor: "pointer",
           }}
         >
           <Image
