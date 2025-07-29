@@ -34,7 +34,7 @@ export default function LogoMarquee() {
         },
       }}
     >
-      <Marquee speed={40} gradient={false}>
+      <Marquee speed={100} gradient={false}>
         {logos.map((item, index) => (
           <Box
             sx={{
