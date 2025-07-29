@@ -71,6 +71,14 @@ export const localFontSize = {
     xl: "120px",
     xxl: "150px",
   },
+  hMarquee: {
+    xs: "26px",
+    sm: "29px",
+    md: "37px",
+    lg: "53px",
+    xl: "64px",
+    xxl: "80px",
+  },
   h4: {
     xs: "36px",
     sm: "46px",

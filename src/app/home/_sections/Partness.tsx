@@ -1,24 +1,25 @@
+"use client";
 import Marquee from "react-fast-marquee";
-import { Box } from "@mui/material";
-import Image from "next/image";
-import svgs from "@/_assets/svgs";
+import { Box, Typography } from "@mui/material";
+import { localFontSize } from "@/app/_utils/themes";
 
 export default function LogoMarquee() {
   const logos = [
-    svgs.logo1,
-    svgs.logos2,
-    svgs.logo3,
-    svgs.logo4,
-    svgs.logo5,
-    svgs.logos6,
-    svgs.logos7,
-    svgs.logo1,
-    svgs.logos2,
-    svgs.logo3,
-    svgs.logo4,
-    svgs.logo5,
-    svgs.logos6,
-    svgs.logos7,
+    "Your Online Companion",
+    "Drive Digital Results",
+    "Power Your Brand",
+    // repetition1
+    "Your Online Companion",
+    "Drive Digital Results",
+    "Power Your Brand",
+    // repetition2
+    "Your Online Companion",
+    "Drive Digital Results",
+    "Power Your Brand",
+    // repetition3
+    "Your Online Companion",
+    "Drive Digital Results",
+    "Power Your Brand",
   ];
 
   return (
@@ -36,23 +37,21 @@ export default function LogoMarquee() {
       <Marquee speed={40} gradient={false}>
         {logos.map((item, index) => (
           <Box
-            key={index}
             sx={{
-              mx: { xs: 2, sm: 4 },
-              width: { xs: "100px", sm: "120px", md: "150px" },
-              height: { xs: "100px", md: "150px" },
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              paddingX: { xs: "25px", md: "35px", lg: " 50px", xxl: "150px" },
             }}
+            key={index}
           >
-            <Image
-              src={item}
-              alt={`logo-${index}`}
-              width={150}
-              height={150}
-              style={{ objectFit: "contain", width: "100%", height: "100%" }}
-            />
+            <Typography
+              sx={{
+                color: "rgba(0, 0, 0, 0.2)",
+                fontSize: localFontSize.hMarquee,
+                fontWeight: 600,
+                textTransform: "uppercase",
+              }}
+            >
+              {item}
+            </Typography>
           </Box>
         ))}
       </Marquee>
