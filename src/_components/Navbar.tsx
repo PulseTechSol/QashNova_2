@@ -4,7 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import svgs from "@/_assets/svgs";
 import ButtonComponent from "./ButtonComponent";
-import { maxWidth } from "@/app/_utils/themes";
+// import { maxWidth } from "@/app/_utils/themes";
 import AOS from "aos";
 
 import "aos/dist/aos.css";
@@ -60,6 +60,7 @@ export default function Navbar() {
         right: "0",
         zIndex: 20000,
         position: "relative",
+        backgroundColor: { xs: "#ffffff80", sm: "none" },
       }}
     >
       <Box
@@ -77,7 +78,7 @@ export default function Navbar() {
             md: "20px 80px",
             lg: "20px 150px",
           },
-          maxWidth: maxWidth,
+          // maxWidth: maxWidth,
           margin: "auto",
         }}
       >

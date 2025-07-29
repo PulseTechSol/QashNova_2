@@ -1,7 +1,14 @@
 import React from "react";
 import PlanComponent from "../_components/PlanComponent";
 import { Box, Typography } from "@mui/material";
-import { localFontSize, maxWidth, sectionPaddingY } from "@/app/_utils/themes";
+import {
+  localFontSize,
+  maxWidth,
+  sectionPaddingX,
+  sectionPaddingY,
+} from "@/app/_utils/themes";
+// import Image from "next/image";
+// import pngs from "@/_assets/pngs";
 
 export default function PlanScreen() {
   const plans = [
@@ -48,77 +55,134 @@ export default function PlanScreen() {
   return (
     <Box
       sx={{
-        maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
-        width: "100%",
-        margin: "auto",
-        paddingY: sectionPaddingY,
+        overflow: "hidden",
+        position: "relative",
+        background: "#000",
+        px: sectionPaddingX,
       }}
     >
       <Box
-        data-aos="zoom-in"
-        data-aos-duration="500"
         sx={{
-          maxWidth: {
-            xs: "400px",
-            sm: "400px",
-            md: "600px",
-            lg: "715px",
-            xl: "900px",
-            xxl: "1100px",
-          },
+          maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
           width: "100%",
-          margin: { xs: "0px auto 30px", md: "0px auto 60px" },
-          position: "relative",
-          zIndex: 99,
-          mb: { xl: "100px" },
+          margin: "auto",
+          paddingY: sectionPaddingY,
         }}
       >
-        <Typography
+        <Box
+          data-aos="zoom-in"
+          data-aos-duration="500"
           sx={{
-            fontSize: localFontSize.h3,
-            fontWeight: "600",
-            textTransform: "capitalize",
-            color: "#3C65FF",
-            lineHeight: { xs: "60px", md: "80px", lg: "120px", xl: "150px" },
+            maxWidth: {
+              xs: "400px",
+              sm: "400px",
+              md: "600px",
+              lg: "715px",
+              xl: "900px",
+              xxl: "1100px",
+            },
+            width: "100%",
+            margin: { xs: "0px auto 30px", md: "0px auto 60px" },
+            position: "relative",
+            zIndex: 99,
+            mb: { xl: "100px" },
           }}
         >
-          Find Your
-        </Typography>
-        <Typography
+          <Typography
+            sx={{
+              fontSize: localFontSize.h3,
+              fontWeight: "600",
+              textTransform: "capitalize",
+              color: "#3C65FF",
+              lineHeight: { xs: "60px", md: "80px", lg: "120px", xl: "150px" },
+            }}
+          >
+            Find Your
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: localFontSize.h3,
+              fontWeight: "600",
+              textTransform: "capitalize",
+              color: "#3C65FF",
+              textAlign: "right",
+              lineHeight: { xs: "60px", md: "80px", lg: "120px", xl: "150px" },
+            }}
+          >
+            Perfect Plan
+          </Typography>
+        </Box>
+        <Box
           sx={{
-            fontSize: localFontSize.h3,
-            fontWeight: "600",
-            textTransform: "capitalize",
-            color: "#3C65FF",
-            textAlign: "right",
-            lineHeight: { xs: "60px", md: "80px", lg: "120px", xl: "150px" },
+            display: "flex",
+            flexWrap: { xs: "wrap", xl: "nowrap" },
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: { xs: "column", md: "row" },
+            gap: { xs: "30px", xxl: "50px" },
+            position: "relative",
+            zIndex: 99,
           }}
         >
-          Perfect Plan
-        </Typography>
+          {plans.map((data, i) => (
+            <PlanComponent
+              key={i}
+              plan={data.plan}
+              desc={data.description}
+              price={data.price}
+              listItems={data.points}
+            />
+          ))}
+        </Box>
+      </Box>
+      {/* the positioned images are there */}
+      {/* <Box
+        sx={{
+          width: { xs: "355px", md: "633px" },
+          height: { xs: "355px", md: "633px" },
+          display: { xs: "block", lg: "block" },
+          position: "absolute",
+          left: -13,
+        }}
+      >
+        <Image
+          src={pngs.howHeplLG}
+          alt="star"
+          style={{ height: "100%", width: "100%" }}
+        />
       </Box>
       <Box
         sx={{
-          display: "flex",
-          flexWrap: { xs: "wrap", xl: "nowrap" },
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: { xs: "column", md: "row" },
-          gap: { xs: "30px", xxl: "50px" },
-          position: "relative",
-          zIndex: 99,
+          width: { xs: "355px", md: "633px" },
+          height: { xs: "355px", md: "633px" },
+          display: { xs: "block", lg: "block" },
+          position: "absolute",
+          left: -13,
+          bottom: { xs: -50, md: -300 },
+          transform: "rotate(270deg)",
         }}
       >
-        {plans.map((data, i) => (
-          <PlanComponent
-            key={i}
-            plan={data.plan}
-            desc={data.description}
-            price={data.price}
-            listItems={data.points}
-          />
-        ))}
+        <Image
+          src={pngs.howHeplLG}
+          alt="star"
+          style={{ height: "100%", width: "100%" }}
+        />
       </Box>
+      <Box
+        sx={{
+          width: { xs: "300px", md: "790px" },
+          height: { xs: "300px", md: "790px" },
+          display: { xs: "none", sm: "block" },
+          position: "absolute",
+          right: 0,
+        }}
+      >
+        <Image
+          src={pngs.howHeplLGcolor}
+          alt="star"
+          style={{ height: "100%", width: "100%" }}
+        />
+      </Box> */}
     </Box>
   );
 }
