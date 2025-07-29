@@ -51,7 +51,7 @@ export default function HeroHome() {
               fontWeight: 600,
             }}
           >
-            Ignite Your
+            Design.
           </Typography>
 
           <Box
@@ -89,7 +89,7 @@ export default function HeroHome() {
                   fontWeight: 600,
                 }}
               >
-                Digital
+                Market.
               </Typography>
               <Typography
                 sx={{
@@ -97,7 +97,7 @@ export default function HeroHome() {
                   fontWeight: 600,
                 }}
               >
-                Impact
+                Grow.
               </Typography>
             </Box>
             <Box
