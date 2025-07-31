@@ -53,7 +53,6 @@ export default function CardBranding() {
             style={{ height: "100%", width: "100%" }}
           />
         </Box>
-
         <Box
           sx={{
             width: { xs: "355px", md: "790px" },
@@ -69,7 +68,6 @@ export default function CardBranding() {
             style={{ height: "100%", width: "100%" }}
           />
         </Box>
-
         <Box
           sx={{
             maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
@@ -78,23 +76,31 @@ export default function CardBranding() {
             margin: "auto",
           }}
         >
+          <Typography
+            sx={{
+              fontSize: localFontSize.h3,
+              fontWeight: 600,
+              color: "#3C65FF",
+              lineHeight: {
+                xs: "50px",
+                md: "80px",
+                lg: "100px",
+                xl: "120px",
+                xxl: "150px",
+              },
+              paddingBottom: sectionPaddingY,
+              textAlign: "center",
+            }}
+          >
+            Logo
+          </Typography>
           <Grid
             container
-            columnSpacing={{ xs: 1, sm: 2, md: 3, xl: 8, xxl: 10 }}
-            spacing={4}
+            spacing={{ xs: 4, sm: 6, md: 8, xl: 10, xxl: 12 }}
             sx={{
-              // maxWidth: { xxl: "2200px" },
               justifyContent: "space-between",
               alignItems: "center",
               width: "100%",
-
-              rowGap: {
-                xs: "40px",
-                md: "60px",
-                lg: "80px",
-                xl: "80px",
-                xxl: "100px",
-              },
               height: "100%",
             }}
           >
@@ -123,13 +129,13 @@ export function WorkShowcase({ title, image }: WorkShowcaseProps) {
       size={{ xs: 12, sm: 6 }}
       sx={{
         width: "100%",
-        maxWidth: {
-          xs: "100%",
-          sm: "400px",
-          md: "555px",
-          xl: "800px",
-          xxl: "1200px",
-        },
+        // maxWidth: {
+        //   xs: "100%",
+        //   sm: "400px",
+        //   md: "655px",
+        //   xl: "850px",
+        //   xxl: "1200px",
+        // },
       }}
     >
       <Box
@@ -140,7 +146,7 @@ export function WorkShowcase({ title, image }: WorkShowcaseProps) {
           display: "flex",
           flexDirection: "column",
 
-          bgcolor: "rgba(0, 0, 0, 0.3)",
+          // bgcolor: "rgba(0, 0, 0, 0.3)",
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
         }}
@@ -154,6 +160,8 @@ export function WorkShowcase({ title, image }: WorkShowcaseProps) {
             fontSize: localFontSize.h5,
             fontWeight: 400,
             color: "#fff",
+            bgcolor: "rgba(0, 0, 0, 0.3)",
+            textWrap: "nowrap",
           }}
         >
           {title}
@@ -161,7 +169,6 @@ export function WorkShowcase({ title, image }: WorkShowcaseProps) {
         {/* </Box> */}
         <Box
           sx={{
-            padding: { xs: "50px", xl: "100px" },
             width: "100%",
             maxWidth: {
               xs: "100%",
@@ -170,16 +177,15 @@ export function WorkShowcase({ title, image }: WorkShowcaseProps) {
               xl: "800px",
               xxl: "1200px",
             },
-            height: {
-              xs: "280px",
-              sm: "330px",
-              md: "360px",
-              lg: "455px",
-              xl: "600px",
-              xxl: "800px",
-              // xxl: "100%",
-            },
-            backgroundColor: "#000",
+            // maxHeight: {
+            // xs: "280px",
+            // sm: "330px",
+            // md: "360px",
+            // lg: "455px",
+            // xl: "600px",
+            // xxl: "800px",
+            // },
+            height: "100%",
           }}
         >
           <Image
@@ -188,7 +194,7 @@ export function WorkShowcase({ title, image }: WorkShowcaseProps) {
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "contain",
+              objectFit: "cover",
             }}
           />
         </Box>
