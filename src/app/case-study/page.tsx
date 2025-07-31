@@ -17,15 +17,15 @@ export default function CaseStudyPage() {
       <CaseStudySection
         heading1="Sabir's"
         heading2="Grill"
-        destopPara="Sabir's partnered with Qashnova for a complete brand and digital overhaul. We modernized their branding and visual identity, developed a clean, responsive website, and executed engaging social media campaigns. This integrated approach significantly increased Sabir's online visibility, boosted customer engagement, and drove more traffic to their locations, proving how strategic digital transformation elevates a fast-food brand."
-        mobilePara="Sabir's partnered with Qashnova for a complete brand and digital overhaul. We modernized their branding and visual identity, developed a clean, responsive website, and executed engaging social media campaigns."
+        destopPara="Sabir's partnered with Qashnova for a complete brand and digital overhaul. We modernised their branding and visual identity, developed a clean, responsive custom website, and executed engaging social media campaigns. We also produced high-quality print materials including leaflets, menus, and posters, and built bespoke web solutions like feedback forms and an inventory management system. Our team fully managed key campaigns, including the successful launch of their Sheffield branch, significantly increasing Sabir's online visibility, boosting customer engagement, and driving more traffic to their locations."
+        mobilePara="Sabir's partnered with Qashnova for a complete brand and digital overhaul. We modernised their branding and visual identity, developed a clean, responsive custom website, and executed engaging social media campaigns."
         image={pngs.caseStudy1}
         isbool={true}
       />
       <CaseStudySection
         heading1="Homeflair"
-        destopPara="Qashnova partnered with Homeflair for a complete brand and digital overhaul. We executed a comprehensive refresh, developing a modern, user-friendly website and a targeted social media strategy. This work delivered real impact, driving traffic and engagement, and firmly establishing Homeflair as a leading name in home décor."
-        mobilePara="Qashnova partnered with Homeflair for a complete brand and digital overhaul. We executed a comprehensive refresh, developing a modern, user-friendly website and a targeted social media strategy."
+        destopPara="Qashnova partnered with Homeflair for a complete brand and digital overhaul. We created a full e-commerce website and continue to support with product management and uploads. Alongside this, we developed a completely new brand identity, including a new logo, premium colour palette, and refined typography. We post to both social platforms using tailored brand styles, positioning Homeflair as a more premium name. We’ve also worked on SEO to drive consistent organic traffic, significantly increasing engagement and establishing Homeflair as a leading name in home décor."
+        mobilePara="Qashnova partnered with Homeflair for a complete brand and digital overhaul. We created a full e-commerce website and continue to support with product management and uploads."
         image={pngs.caseStudy2}
       />
     </>
