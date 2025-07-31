@@ -35,7 +35,7 @@ export default function WebsiteSection({
       sx={{
         position: "relative",
         background: isbool
-          ? ""
+          ? "transparent"
           : "radial-gradient(circle, #08289be3 0%, #000 25%)",
         backgroundAttachment: "fixed",
         backgroundPosition: "center center",
@@ -47,7 +47,7 @@ export default function WebsiteSection({
         sx={{
           width: { xs: "355px", md: "633px" },
           height: { xs: "355px", md: "633px" },
-          display: { xs: "block", lg: "block" },
+          display: isbool ? "none" : "block",
           position: "absolute",
           left: -13,
         }}
@@ -63,9 +63,9 @@ export default function WebsiteSection({
         sx={{
           width: { xs: "300px", md: "790px" },
           height: { xs: "300px", md: "790px" },
-          display: { xs: "none", lg: "block" },
           position: "absolute",
           right: 0,
+          display: isbool ? "none" : "block",
         }}
       >
         <Image
@@ -96,6 +96,7 @@ export default function WebsiteSection({
             xl: "100px",
             xxl: "120px",
           },
+          textWrap: "nowrap",
         }}
       >
         <GenericHeadingBox heading1={heading1} heading2={heading2} />
@@ -109,6 +110,7 @@ export default function WebsiteSection({
             alignItems: { xs: "start", sm: "start" },
             flexDirection: { xs: "column-reverse", md: "column" },
             gap: { xs: "40px", lg: "40px", xl: "80px" },
+            textWrap: "wrap",
           }}
         >
           <Box

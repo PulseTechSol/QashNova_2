@@ -105,7 +105,7 @@ export default function Footer() {
                   flexWrap: "wrap",
                   rowGap: "20px",
                   columnGap: "30px",
-                  maxWidth: { xs: "240px", sm: "unset" },
+                  maxWidth: { xs: "276px", sm: "unset" },
                   margin: "auto",
                 }}
               >
@@ -138,7 +138,11 @@ export default function Footer() {
               <Box
                 sx={{
                   display: "flex",
-                  justifyContent: { xs: "center", md: "space-between" },
+                  justifyContent: {
+                    xs: "flex-start",
+                    sm: "center",
+                    md: "space-between",
+                  },
                   alignItems: "center",
                   width: "100%",
                   paddingTop: "20px",

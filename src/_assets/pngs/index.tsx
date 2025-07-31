@@ -15,11 +15,14 @@ import ourMission from "./aboutus/ourMission.webp";
 import clients1 from "./clients/client1.webp";
 import clients2 from "./clients/client2.webp";
 import clients3 from "./clients/client3.webp";
-import websites1 from "./websites/websites1.webp";
-import websites2 from "./websites/website2.webp";
-import websites3 from "./websites/website3.webp";
-import websites4 from "./websites/website4.webp";
-import websites5 from "./websites/websites5.webp";
+import websites1 from "./websites/website1.png";
+import websites2 from "./websites/website2.png";
+import websites3 from "./websites/website3.png";
+import websites4 from "./websites/website4.png";
+import websites5 from "./websites/website5.png";
+import websites6 from "./websites/website6.png";
+import websites7 from "./websites/website7.png";
+import websites8 from "./websites/website8.png";
 import branding1 from "./branding/branding1.webp";
 import branding2 from "./branding/branding2.webp";
 import branding3 from "./branding/branding3.webp";
@@ -50,6 +53,9 @@ const pngs = {
   branding4,
   whatweDo,
   websites5,
+  websites6,
+  websites7,
+  websites8,
   howHeplLGcolor,
   workimage2,
   howHeplLG,

@@ -43,6 +43,7 @@ export default function GenericHeadingBox({
             xl: "120px",
             xxl: "150px",
           },
+          textWrap: "inherit",
         }}
       >
         {heading1}
@@ -65,6 +66,7 @@ export default function GenericHeadingBox({
             md: isbool ? "end" : "center",
             lg: "end",
           },
+          textWrap: "inherit",
         }}
       >
         {heading2}
