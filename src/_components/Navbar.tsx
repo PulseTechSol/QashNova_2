@@ -59,8 +59,10 @@ export default function Navbar() {
         left: "0",
         right: "0",
         zIndex: 20000,
-        position: "relative",
-        backgroundColor: "transparent",
+        backgroundColor: { xs: "rgba(255, 255, 255, 0.4)", sm: "transparent" },
+        // this is to fix navbar on moble
+        position: { xs: "fixed", sm: "relative" },
+        width: "100%",
       }}
     >
       <Box

@@ -168,28 +168,10 @@ export default function OurWork() {
           sx={{
             width: "100%",
             display: "flex",
-
             flexDirection: "column",
-            gap: { xs: "20px", xl: "60px" },
+            gap: { xs: "20px", xl: "40px" },
           }}
         >
-          <WorkShowcase
-            title="Sabir’s Grill"
-            overlayText="Transformed Sabir's Grill's digital presence with web design, development, social media, and SEO."
-            year="2025"
-            isboolean={true}
-            image={pngs.workimage1}
-            sx={{
-              height: {
-                xs: "300px",
-                sm: "450px",
-                md: "620px",
-                lg: "700px",
-                xl: "1000px",
-                xxl: "1200px",
-              },
-            }}
-          />
           <Box
             width="100%"
             sx={{
@@ -204,47 +186,39 @@ export default function OurWork() {
               title="sofa & rattan"
               overlayText="We delivered integrated web design, development, social media, and SEO to elevate their online presence."
               year="2025"
-              image={pngs.workimage2}
-              sx={{
-                maxWidth: {
-                  xs: "100%",
-                  md: "555px",
-                  xl: "1000px",
-                  xxl: "1200px",
-                },
-              }}
+              image={pngs.projectOurWork1}
             />
             <WorkShowcase
               title="a class travel"
               overlayText="Elevated their digital reach and client engagement through expert web design, development, social media, and SEO."
               year="2025"
-              image={pngs.workimage3}
-              sx={{
-                maxWidth: {
-                  xs: "100%",
-                  md: "555px",
-                  xl: "1000px",
-                  xxl: "1200px",
-                },
-              }}
+              image={pngs.projectOurWork2}
             />
           </Box>
-          <WorkShowcase
-            title="Isfahan & Kashan"
-            overlayText="We enhanced their digital presence with expert web design, development, social media, and SEO."
-            year="2025"
-            image={pngs.workimag4}
+          <Box
+            width="100%"
             sx={{
-              height: {
-                xs: "300px",
-                sm: "450px",
-                md: "600px",
-                lg: "700px",
-                xl: "1000px",
-                xxl: "1200px",
-              },
+              display: "flex",
+              gap: { xs: "20px", xl: "40px" },
+              justifyContent: "space-between",
+
+              flexWrap: { xs: "wrap", md: "nowrap" },
             }}
-          />
+          >
+            <WorkShowcase
+              title="sofa & rattan"
+              overlayText="We delivered integrated web design, development, social media, and SEO to elevate their online presence."
+              year="2025"
+              image={pngs.projectOurWork3}
+            />
+            <WorkShowcase
+              title="a class travel"
+              overlayText="Elevated their digital reach and client engagement through expert web design, development, social media, and SEO."
+              year="2025"
+              image={pngs.projectOurWork4}
+            />
+          </Box>
+
           <ButtonComponent
             onClick={() => {
               router.push("/websites");
@@ -284,119 +258,98 @@ export function WorkShowcase({
   overlayText,
 }: WorkShowcaseProps) {
   return (
-    <Box className="hover-card" sx={{ width: "100%" }}>
+    <Box
+      className="hover-card"
+      data-aos="zoom-in"
+      data-aos-duration="500"
+      sx={{
+        width: "100%",
+        bgcolor: "rgba(0, 0, 0, 0.2)",
+      }}
+    >
       <Box
-        data-aos="zoom-in"
-        data-aos-duration="500"
         sx={{
           width: "100%",
-          bgcolor: "rgba(0, 0, 0, 0.3)",
-          borderRadius:
-            image === pngs.workimage1 ? { xs: "0", md: "80px 80px 0 0" } : "0",
-          backdropFilter: "blur(10px)",
-          WebkitBackdropFilter: "blur(10px)",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          p: { xs: "20px", lg: "20px 50px", xxl: "40px 80px" },
+          gap: "20px",
+          textTransform: "capitalize",
         }}
       >
-        <Box
+        <Typography
           sx={{
+            maxWidth: { xs: "316px", md: "400px", xl: "600px" },
             width: "100%",
+            fontSize: localFontSize.h5,
+            fontWeight: 400,
+            color: "#fff",
+          }}
+        >
+          {title}
+        </Typography>
+        <Typography
+          sx={{
+            maxWidth: { xs: "87px", xl: "120px" },
+            width: "100%",
+            fontSize: localFontSize.h5,
+            fontWeight: 400,
+            color: "#fff",
+          }}
+        >
+          {year}
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          width: "100%",
+          height: "fit-content",
+          backgroundColor: "#000",
+          position: "relative",
+          overflow: "hidden",
+          ...sx,
+        }}
+      >
+        <Image
+          src={image as StaticImageData}
+          alt="workimage1"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: isboolean ? "cover" : "cover",
+          }}
+        />
+        {/* Curtain */}
+        <Box
+          className="curtain"
+          sx={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.85)",
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: "center",
             alignItems: "center",
-            p: { xs: "20px", lg: "20px 50px", xxl: "40px 80px" },
-            gap: "20px",
-            textTransform: "capitalize",
+            transition: "transform 0.6s ease",
+            transform: "translateY(150%)",
+            zIndex: 2,
           }}
         >
           <Typography
             sx={{
-              maxWidth: { xs: "316px", md: "400px", xl: "600px" },
-              width: "100%",
-              fontSize: localFontSize.h5,
-              fontWeight: 400,
               color: "#fff",
-            }}
-          >
-            {title}
-          </Typography>
-          <Typography
-            sx={{
-              maxWidth: { xs: "87px", xl: "120px" },
-              width: "100%",
               fontSize: localFontSize.h5,
-              fontWeight: 400,
-              color: "#fff",
+              fontWeight: 500,
+              textAlign: "left",
+              padding: "20px",
+              width: { lg: "90%", xl: "80%" },
             }}
           >
-            {year}
+            {overlayText}
           </Typography>
-        </Box>
-        <Box
-          sx={{
-            width: "100%",
-            height: {
-              xs: "300px",
-              sm: "450px",
-              md: "350px",
-              lg: "458px",
-              xl: "550px",
-            },
-            ...(image === pngs.workimag4
-              ? {
-                  borderBottomLeftRadius: { xs: "0", md: "80px" },
-                  borderBottomRightRadius: { xs: "0", md: "80px" },
-                  overflow: "hidden",
-                }
-              : {
-                  borderRadius: "0",
-                  overflow: "hidden",
-                }),
-            ...sx,
-            backgroundColor: "#fff",
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
-          <Image
-            src={image as StaticImageData}
-            alt="workimage1"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: isboolean ? "cover" : "contain",
-            }}
-          />
-          {/* Curtain */}
-          <Box
-            className="curtain"
-            sx={{
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              backgroundColor: "rgba(0, 0, 0, 0.85)",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              transition: "transform 0.6s ease",
-              transform: "translateY(100%)",
-              zIndex: 2,
-            }}
-          >
-            <Typography
-              sx={{
-                color: "#fff",
-                fontSize: localFontSize.h5,
-                fontWeight: 500,
-                textAlign: "left",
-                padding: "20px",
-                width: { lg: "90%", xl: "80%" },
-              }}
-            >
-              {overlayText}
-            </Typography>
-          </Box>
         </Box>
       </Box>
     </Box>

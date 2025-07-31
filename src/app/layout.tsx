@@ -33,17 +33,8 @@ export default function RootLayout({
               <AnimatedBackground />
             </ClientOnly>
           </Box>
-          <Box
-            sx={{
-              position: { xs: "fixed", sm: "unset" },
-              top: "0",
-              zIndex: "10000",
-              width: "100%",
-            }}
-          >
-            <Navbar />
-          </Box>
-          <Box sx={{ marginTop: { xs: "89px", sm: "unset" } }}>
+          <Navbar />
+          <Box sx={{ marginTop: { xs: "96px", sm: "unset" } }}>
             {children}
             <Footer />
           </Box>

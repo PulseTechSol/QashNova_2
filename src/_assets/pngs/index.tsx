@@ -27,6 +27,10 @@ import branding4 from "./branding/branding4.webp";
 import caseStudy1 from "./caseStudy/caseStudy1.webp";
 import caseStudy2 from "./caseStudy/caseStudy2.webp";
 import footerbgImg from "./footerbgImg.png";
+import projectOurWork1 from "./ourwork/projectOurWork1.png";
+import projectOurWork2 from "./ourwork/projectOurWork2.png";
+import projectOurWork3 from "./ourwork/projectOurWork3.png";
+import projectOurWork4 from "./ourwork/projectOurWork4.png";
 
 const pngs = {
   image1,
@@ -58,5 +62,9 @@ const pngs = {
   clients1,
   clients2,
   clients3,
+  projectOurWork1,
+  projectOurWork2,
+  projectOurWork3,
+  projectOurWork4,
 };
 export default pngs;

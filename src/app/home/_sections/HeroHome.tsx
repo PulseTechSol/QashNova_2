@@ -36,24 +36,6 @@ export default function HeroHome() {
             zIndex: 140,
           }}
         >
-          <Typography
-            data-aos="fade-right"
-            data-aos-duration="500"
-            sx={{
-              background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              display: "inline-block",
-              textTransform: "uppercase",
-              textAlign: { xs: "start" },
-              mt: { xs: "60px", lg: "80px" },
-              fontSize: localFontSize.h1,
-              fontWeight: 600,
-            }}
-          >
-            Design.
-          </Typography>
-
           <Box
             sx={{
               width: "100%",
@@ -83,6 +65,24 @@ export default function HeroHome() {
                 textTransform: "uppercase",
               }}
             >
+              <Typography
+                data-aos="fade-right"
+                data-aos-duration="500"
+                sx={{
+                  background:
+                    "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  display: "inline-block",
+                  textTransform: "uppercase",
+                  textAlign: { xs: "start" },
+                  mt: { xs: "60px", lg: "80px" },
+                  fontSize: localFontSize.h1,
+                  fontWeight: 600,
+                }}
+              >
+                Design.
+              </Typography>
               <Typography
                 sx={{
                   fontSize: localFontSize.h1,
