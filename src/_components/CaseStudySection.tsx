@@ -132,7 +132,7 @@ export default function CaseStudySection({
                 textAlign: "start",
                 width: "100%",
                 height: "100%",
-                objectFit: "cover",
+                objectFit: "contain",
               }}
             />
           </Box>

@@ -1,5 +1,4 @@
 "use client";
-
 import pngs from "@/_assets/pngs";
 import svgs from "@/_assets/svgs";
 import ButtonComponent from "@/_components/ButtonComponent";
@@ -213,7 +212,7 @@ export default function OurWork() {
             />
             <WorkShowcase
               title="Saif’s Boxing"
-              overlayText="We developed a sophisticated branding strategy that captures their essence of luxury, professionalism, and reliability."
+              overlayText="We designed and developed a complete website for Saif’s Boxing & Fitness, a premier training facility dedicated to boxing and personal fitness."
               year="2025"
               image={pngs.projectOurWork4}
             />
