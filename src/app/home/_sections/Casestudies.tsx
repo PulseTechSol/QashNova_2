@@ -20,26 +20,25 @@ export default function Casestudies() {
   const router = useRouter();
   const websiteServices = [
     {
-      title: "saif’s boxing & fitness",
+      title: "conquest law solicitors",
       description:
-        "Saif’s Boxing needed a bold and gritty online identity that reflects the energy of the gym and its community. We crafted a high-impact design that showcases training programs, client transformations, and class schedules with clarity.",
-      image: "/bgCase1.webp",
-      imgMob: "/bgMoblCase1.webp",
+        "For Conquest Law, we delivered a clean and authoritative web presence that instills trust and professionalism. The site layout is minimal yet impactful, highlighting their services and expertise with confidence.",
+      image: "/bgCase1.png",
+      imgMob: "/bgMoblCase1.png",
     },
     {
       title: "sabir’s grill",
       description:
         "We brought the essence of Sabir’s Grill to life online by blending cultural richness with a sleek, modern interface. Our focus was on creating a seamless browsing experience that highlights their diverse food offerings and rich heritage.",
-      image: "/bgCase2.webp",
-      imgMob: "/bgMoblCase2.webp",
+      image: "/bgCase2.png",
+      imgMob: "/bgMoblCase2.png",
     },
-
     {
-      title: "conquest law solicitors",
+      title: "Homeflair",
       description:
-        "For Conquest Law, we delivered a clean and authoritative web presence that instills trust and professionalism. The site layout is minimal yet impactful, highlighting their services and expertise with confidence.",
-      image: "/bgCase3.webp",
-      imgMob: "/bgMoblCase3.webp",
+        "We designed and developed a responsive e-commerce website for Homeflair, focused on enhancing user experience and showcasing their products. Additionally, we managed targeted social media marketing campaigns to boost traffic and conversions.",
+      image: "/bgCase3.png",
+      imgMob: "/bgMoblCase3.png",
     },
   ];
 

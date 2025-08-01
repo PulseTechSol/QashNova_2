@@ -184,13 +184,13 @@ export default function OurWork() {
           >
             <WorkShowcase
               title="Isfahan & Kashan"
-              overlayText="We delivered integrated web design, development, social media, and SEO to elevate their online presence."
+              overlayText="We enhanced their digital presence with expert web design, development, social media, and SEO."
               year="2025"
               image={pngs.projectOurWork1}
             />
             <WorkShowcase
               title="Izec Prestige"
-              overlayText="Elevated their digital reach and client engagement through expert web design, development, social media, and SEO."
+              overlayText="We developed a sophisticated branding strategy that captures their essence of luxury, professionalism, and reliability."
               year="2025"
               image={pngs.projectOurWork2}
             />
@@ -207,13 +207,13 @@ export default function OurWork() {
           >
             <WorkShowcase
               title="Conquest Law"
-              overlayText="We delivered integrated web design, development, social media, and SEO to elevate their online presence."
+              overlayText="For Conquest Law Solicitors, a leading legal firm, we designed and developed a professional and authoritative website."
               year="2025"
               image={pngs.projectOurWork3}
             />
             <WorkShowcase
               title="Saif’s Boxing"
-              overlayText="Elevated their digital reach and client engagement through expert web design, development, social media, and SEO."
+              overlayText="We developed a sophisticated branding strategy that captures their essence of luxury, professionalism, and reliability."
               year="2025"
               image={pngs.projectOurWork4}
             />
