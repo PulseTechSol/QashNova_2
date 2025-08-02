@@ -122,26 +122,24 @@ export default function HeroHome() {
                 and ensures your brand captivates every scroll.
               </Typography>
 
-              <Box sx={{}}>
-                <ButtonComponent
-                  onClick={() => {
-                    router.push("/contact-us");
-                  }}
-                  sx={{
-                    border: "3px solid transparent",
-                    backgroundImage: `linear-gradient( #fff, #DDDDDD),
+              <ButtonComponent
+                onClick={() => {
+                  router.push("/contact-us");
+                }}
+                sx={{
+                  border: "3px solid transparent",
+                  backgroundImage: `linear-gradient( #fff, #DDDDDD),
                       linear-gradient(90deg, #3C65FF, #8A38F5, #2617B1)`,
-                    backgroundOrigin: "border-box",
-                    backgroundClip: "content-box, border-box",
-                    padding: "1px",
-                    width: { xs: "184px", md: "194px", xl: "260px" },
-                    textAlign: { xs: "center", sm: "start" },
-                    color: "#3C65FF",
-                  }}
-                  label="Let’s Chat"
-                  imgSrc={svgs.siarrowright}
-                />
-              </Box>
+                  backgroundOrigin: "border-box",
+                  backgroundClip: "content-box, border-box",
+                  padding: "1px",
+                  width: { xs: "184px", md: "194px", xl: "260px" },
+                  textAlign: { xs: "center", sm: "start" },
+                  color: "#3C65FF",
+                }}
+                label="Let’s Chat"
+                imgSrc={svgs.siarrowright}
+              />
             </Box>
           </Box>
           {/* top */}

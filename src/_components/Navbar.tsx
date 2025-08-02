@@ -84,6 +84,7 @@ export default function Navbar() {
           margin: "auto",
         }}
       >
+        {/* logo for mobile */}
         <Box
           onClick={() => router.push("/")}
           sx={{
@@ -121,35 +122,27 @@ export default function Navbar() {
             alt="logo"
           />
         </Box>
-
         <Box
+          onClick={() => router.push("/contact-us")}
           sx={{
-            maxWidth: "280px",
-            width: "100%",
-            display: "flex",
-            justifyContent: { xs: "start", md: "space-between" },
+            // maxWidth: "280px",
+            // width: "100%",
+            display: { xs: "none", md: "flex" },
+            justifyContent: { xs: "start", md: "center" },
             alignItems: "center",
             gap: "30px",
           }}
         >
-          <Box
-            onClick={() => router.push("/contact-us")}
+          <ButtonComponent
+            label="Hire Us"
+            imgSrc={svgs.whiteArrow}
             sx={{
-              display: { xs: "none", md: "block" },
+              background: { xs: "#3C65FF", md: "#3C65FF" },
+              color: { xs: "#fff" },
+              borderRadius: "50px",
+              maxWidth: { xs: "280px", xl: "360px" },
             }}
-          >
-            <ButtonComponent
-              label="Hire Us"
-              imgSrc={svgs.whiteArrow}
-              sx={{
-                background: { xs: "#3C65FF", md: "#3C65FF" },
-                color: { xs: "#fff" },
-                borderRadius: "50px",
-                border: "2px solid #3C65FF",
-                maxWidth: { xs: "280px", xl: "360px" },
-              }}
-            />
-          </Box>
+          />
           <Box
             onClick={sidebar}
             sx={{

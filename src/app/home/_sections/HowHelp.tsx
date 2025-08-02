@@ -285,6 +285,7 @@ export default function HowHelp() {
                 >
                   {service.buttons.map((label, i) => (
                     <ButtonComponent
+                      disableHover={true}
                       key={i}
                       label={label}
                       sx={{

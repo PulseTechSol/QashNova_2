@@ -228,8 +228,6 @@ export default function OurWork() {
               background: "#3C65FF",
               color: "#fff",
               borderRadius: "50px",
-              border: "2px solid #3C65FF",
-              maxWidth: { xs: "280px", xl: "360px" },
               margin: "auto",
             }}
           />

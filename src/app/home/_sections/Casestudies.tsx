@@ -375,7 +375,6 @@ export default function Casestudies() {
               background: { xs: "#3C65FF", md: "#3C65FF" },
               color: { xs: "#fff" },
               borderRadius: "50px",
-              border: "2px solid #3C65FF",
               maxWidth: { xs: "280px", xl: "360px" },
             }}
           />

@@ -106,7 +106,6 @@ export default function SectionWithHeadingAndCTA({
                 background: { xs: "#3C65FF", md: "#3C65FF" },
                 color: { xs: "#fff" },
                 borderRadius: "50px",
-                border: "2px solid #3C65FF",
                 maxWidth: { sm: "280px", md: "400px" },
               }}
             />

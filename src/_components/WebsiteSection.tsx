@@ -180,7 +180,11 @@ export default function WebsiteSection({
                 justifyContent: { xs: "end", md: "start" },
               }}
             >
-              <Link href={link} target="_blank">
+              <Link
+                style={{ textDecoration: "none" }}
+                href={link}
+                target="_blank"
+              >
                 <ButtonComponent
                   label="go to website"
                   imgSrc={svgs.whiteArrow}
@@ -188,7 +192,6 @@ export default function WebsiteSection({
                     background: { xs: "#3C65FF", md: "#3C65FF" },
                     color: { xs: "#fff" },
                     borderRadius: "50px",
-                    border: "2px solid #3C65FF",
                     maxWidth: { sm: "280px", xl: "350px" },
                   }}
                 />

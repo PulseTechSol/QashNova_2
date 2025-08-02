@@ -22,6 +22,7 @@ import mobileLogo from "./mobileLogo.svg";
 import sliderArrow from "./sliderArrow.svg";
 import arrowSliderDisabled from "./arrowSliderDisabled.svg";
 import cross from "./cross.svg";
+import arrow2 from "./arrow2.svg";
 
 const svgs = {
   logoFooter,
@@ -48,6 +49,7 @@ const svgs = {
   sliderArrow,
   arrowSliderDisabled,
   cross,
+  arrow2,
 };
 
 export default svgs;
