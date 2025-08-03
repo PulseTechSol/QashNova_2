@@ -34,7 +34,7 @@ export default function LayoutWrapper({
 
       <Box sx={{ marginTop: isLandingPage ? 0 : { xs: "96px", sm: "unset" } }}>
         {children}
-        <Footer />
+        {!isLandingPage &&  <Footer />}
       </Box>
 
       <ToastContainer position="top-right" autoClose={3000} />
