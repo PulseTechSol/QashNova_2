@@ -18,23 +18,25 @@ export default function LayoutWrapper({
 
   return (
     <>
-      <Box
-        sx={{
-          position: "relative",
-          height: "fit-content",
-          overflow: "hidden",
-        }}
-      >
-        <ClientOnly>
-          <AnimatedBackground />
-        </ClientOnly>
-      </Box>
+      {!isLandingPage && (
+        <Box
+          sx={{
+            position: "relative",
+            height: "fit-content",
+            overflow: "hidden",
+          }}
+        >
+          <ClientOnly>
+            <AnimatedBackground />
+          </ClientOnly>
+        </Box>
+      )}
 
       {!isLandingPage && <Navbar />}
 
       <Box sx={{ marginTop: isLandingPage ? 0 : { xs: "96px", sm: "unset" } }}>
         {children}
-        {!isLandingPage &&  <Footer />}
+        {!isLandingPage && <Footer />}
       </Box>
 
       <ToastContainer position="top-right" autoClose={3000} />
