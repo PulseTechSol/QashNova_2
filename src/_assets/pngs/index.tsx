@@ -34,6 +34,18 @@ import projectOurWork1 from "./ourwork/projectOurWork1.png";
 import projectOurWork2 from "./ourwork/projectOurWork2.png";
 import projectOurWork3 from "./ourwork/projectOurWork3.png";
 import projectOurWork4 from "./ourwork/projectOurWork4.png";
+// imports of landingpage
+// import howHeplLG from "./howHeplLG.webp";
+// import howHeplLGcolor from "./howHeplLGcolor.webp";
+// import heroHome from "./heroHome.webp";
+import sabirlogo from "./landingpage/sabirlogo.webp";
+import bgimgecircle from "./landingpage/bgimgecircle.webp";
+import girls from "./landingpage/girls.webp";
+import bulbgif from "./landingpage/bulb.gif";
+import bulb from "./landingpage/light.webp";
+import bgcolorBlue from "./landingpage/bgcolorBlue.webp";
+import circlebg from "./landingpage/circlebg.webp";
+import girl from "./landingpage/girl.png";
 
 const pngs = {
   image1,
@@ -72,5 +84,14 @@ const pngs = {
   projectOurWork2,
   projectOurWork3,
   projectOurWork4,
+  // landing page exports
+  sabirlogo,
+  bgimgecircle,
+  girls,
+  bulbgif,
+  bulb,
+  bgcolorBlue,
+  circlebg,
+  girl,
 };
 export default pngs;
