@@ -19,13 +19,13 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Casestudies() {
   const router = useRouter();
   const websiteServices = [
-    {
-      title: "conquest law solicitors",
-      description:
-        "For Conquest Law, we delivered a clean and authoritative web presence that instills trust and professionalism. The site layout is minimal yet impactful, highlighting their services and expertise with confidence.",
-      image: "/bgCase1.png",
-      imgMob: "/bgMoblCase1.png",
-    },
+    // {
+    //   title: "conquest law solicitors",
+    //   description:
+    //     "For Conquest Law, we delivered a clean and authoritative web presence that instills trust and professionalism. The site layout is minimal yet impactful, highlighting their services and expertise with confidence.",
+    //   image: "/bgCase1.png",
+    //   imgMob: "/bgMoblCase1.png",
+    // },
     {
       title: "sabir’s grill",
       description:

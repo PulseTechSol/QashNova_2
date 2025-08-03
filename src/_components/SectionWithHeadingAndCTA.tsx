@@ -15,7 +15,7 @@ interface SectionWithHeadingAndCTAProps {
 export default function SectionWithHeadingAndCTA({
   heading,
   lastword,
-  route = "/about-us",
+  route = "/case-study",
 }: SectionWithHeadingAndCTAProps) {
   const router = useRouter();
   return (
