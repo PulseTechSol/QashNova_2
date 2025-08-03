@@ -1,12 +1,18 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import Navbar from "@/_components/Navbar";
-import Footer from "@/_components/Footer";
+import dynamic from "next/dynamic";
 import { Box } from "@mui/material";
 import { ToastContainer } from "react-toastify";
 import ClientOnly from "@/_components/ClientOnly";
-import AnimatedBackground from "@/_components/AnimatedBackground";
+
+// Lazy load components
+const Navbar = dynamic(() => import("@/_components/Navbar"), { ssr: false });
+const Footer = dynamic(() => import("@/_components/Footer"), { ssr: false });
+const AnimatedBackground = dynamic(
+  () => import("@/_components/AnimatedBackground"),
+  { ssr: false }
+);
 
 export default function LayoutWrapper({
   children,
