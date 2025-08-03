@@ -349,10 +349,15 @@ export default function HeroHome() {
             zIndex: 1,
           }}
         >
-          <Image
-            src={pngs.bgimgecircle}
-            alt="bg-center"
-            style={{ height: "100%", width: "100%" }}
+          <Box
+            sx={{
+              width: "100%",
+              height: "100%",
+              borderRadius: "50%",
+              background: "rgba(38, 23, 177, 0.14)",
+              filter: "blur(50px)",
+              zIndex: -1,
+            }}
           />
         </Box>
       </Box>

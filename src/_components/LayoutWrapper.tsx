@@ -2,10 +2,10 @@
 
 import { usePathname } from "next/navigation";
 import dynamic from "next/dynamic";
+import Navbar from "../../../qashnova-landing-page/src/_components/Navbar";
 import { Box } from "@mui/material";
 import { ToastContainer } from "react-toastify";
 import ClientOnly from "@/_components/ClientOnly";
-import Navbar from "@/_components/Navbar";
 
 // Lazy load components
 const Footer = dynamic(() => import("@/_components/Footer"), { ssr: false });
