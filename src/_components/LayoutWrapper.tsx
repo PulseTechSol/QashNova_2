@@ -5,9 +5,9 @@ import dynamic from "next/dynamic";
 import { Box } from "@mui/material";
 import { ToastContainer } from "react-toastify";
 import ClientOnly from "@/_components/ClientOnly";
+import Navbar from "@/_components/Navbar";
 
 // Lazy load components
-const Navbar = dynamic(() => import("@/_components/Navbar"), { ssr: false });
 const Footer = dynamic(() => import("@/_components/Footer"), { ssr: false });
 const AnimatedBackground = dynamic(
   () => import("@/_components/AnimatedBackground"),
