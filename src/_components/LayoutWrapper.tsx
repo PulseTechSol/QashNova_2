@@ -1,12 +1,18 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import Navbar from "@/_components/Navbar";
-import Footer from "@/_components/Footer";
+import dynamic from "next/dynamic";
+import Navbar from "../../../qashnova-landing-page/src/_components/Navbar";
 import { Box } from "@mui/material";
 import { ToastContainer } from "react-toastify";
 import ClientOnly from "@/_components/ClientOnly";
-import AnimatedBackground from "@/_components/AnimatedBackground";
+
+// Lazy load components
+const Footer = dynamic(() => import("@/_components/Footer"), { ssr: false });
+const AnimatedBackground = dynamic(
+  () => import("@/_components/AnimatedBackground"),
+  { ssr: false }
+);
 
 export default function LayoutWrapper({
   children,
@@ -18,23 +24,25 @@ export default function LayoutWrapper({
 
   return (
     <>
-      <Box
-        sx={{
-          position: "relative",
-          height: "fit-content",
-          overflow: "hidden",
-        }}
-      >
-        <ClientOnly>
-          <AnimatedBackground />
-        </ClientOnly>
-      </Box>
+      {!isLandingPage && (
+        <Box
+          sx={{
+            position: "relative",
+            height: "fit-content",
+            overflow: "hidden",
+          }}
+        >
+          <ClientOnly>
+            <AnimatedBackground />
+          </ClientOnly>
+        </Box>
+      )}
 
       {!isLandingPage && <Navbar />}
 
       <Box sx={{ marginTop: isLandingPage ? 0 : { xs: "96px", sm: "unset" } }}>
         {children}
-        {!isLandingPage &&  <Footer />}
+        {!isLandingPage && <Footer />}
       </Box>
 
       <ToastContainer position="top-right" autoClose={3000} />

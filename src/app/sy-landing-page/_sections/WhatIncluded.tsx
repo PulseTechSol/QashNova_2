@@ -1,10 +1,7 @@
 "use client";
 import { sectionPadding } from "@/app/_utils/themes";
 import { Box } from "@mui/material";
-import Image from "next/image";
 import svgs from "@/_assets/svgs";
-import pngs from "@/_assets/pngs";
-// import { WhatIncludedCard } from "@/_components/WhatIncludedCard";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -51,7 +48,6 @@ export default function WhatIncluded() {
     <Box
       sx={{
         bgcolor: "#fff",
-        // background: "linear-gradient(180deg, #DDDDDD, #fff)",
         position: "relative",
       }}
     >
@@ -109,10 +105,21 @@ export default function WhatIncluded() {
           display: { xs: "none", sm: "block" },
         }}
       >
-        <Image
+        {/* <Image
           src={pngs.bgimgecircle}
           alt="star"
           style={{ height: "100%", width: "100%" }}
+        /> */}
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "50%",
+            background: "rgba(60, 101, 255, 0.2)",
+            filter: "blur(50px)",
+            zIndex: -1,
+            aspectRatio: "1/1",
+          }}
         />
       </Box>
       <Box
@@ -127,10 +134,21 @@ export default function WhatIncluded() {
           display: { xs: "none", sm: "block" },
         }}
       >
-        <Image
+        {/* <Image
           src={pngs.bgimgecircle}
           alt="star"
           style={{ height: "100%", width: "100%" }}
+        /> */}
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "50%",
+            background: "rgba(88, 65, 212, 0.1)",
+            filter: "blur(50px)",
+            zIndex: -1,
+            aspectRatio: "1/1",
+          }}
         />
       </Box>
       <Box
@@ -145,10 +163,16 @@ export default function WhatIncluded() {
           display: { xs: "none", sm: "block" },
         }}
       >
-        <Image
-          src={pngs.bgimgecircle}
-          alt="star"
-          style={{ height: "100%", width: "100%" }}
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "50%",
+            background: "rgba(88, 65, 212, 0.1)",
+            filter: "blur(50px)",
+            zIndex: -1,
+            aspectRatio: "1/1",
+          }}
         />
       </Box>
     </Box>
