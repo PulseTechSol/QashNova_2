@@ -1,12 +1,8 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/_components/Navbar";
-import Footer from "@/_components/Footer";
-import { Box } from "@mui/material";
-import { ToastContainer } from "react-toastify";
 import ThemeRegistry from "./ThemeRegistry";
-import ClientOnly from "@/_components/ClientOnly";
-import AnimatedBackground from "@/_components/AnimatedBackground";
+import LayoutWrapper from "@/_components/LayoutWrapper";
 
 export const metadata: Metadata = {
   title: "Qashnova",
@@ -15,30 +11,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <ThemeRegistry>
         <body>
-          <Box
-            sx={{
-              position: "relative",
-              height: "fit-content",
-              overflow: "hidden",
-            }}
-          >
-            <ClientOnly>
-              <AnimatedBackground />
-            </ClientOnly>
-          </Box>
-          <Navbar />
-          <Box sx={{ marginTop: { xs: "96px", sm: "unset" } }}>
-            {children}
-            <Footer />
-          </Box>
-          <ToastContainer position="top-right" autoClose={3000} />
+          <LayoutWrapper>{children}</LayoutWrapper>
         </body>
       </ThemeRegistry>
     </html>
