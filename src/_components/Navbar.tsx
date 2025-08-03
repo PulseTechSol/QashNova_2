@@ -123,7 +123,6 @@ export default function Navbar() {
           />
         </Box>
         <Box
-          onClick={() => router.push("/contact-us")}
           sx={{
             // maxWidth: "280px",
             // width: "100%",
@@ -134,6 +133,7 @@ export default function Navbar() {
           }}
         >
           <ButtonComponent
+            onClick={() => router.push("/contact-us")}
             label="Hire Us"
             imgSrc={svgs.whiteArrow}
             sx={{

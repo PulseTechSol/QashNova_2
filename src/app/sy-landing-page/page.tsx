@@ -1,4 +1,4 @@
-import HeroHome from "./_sections/Hero";
+import Hero from "./_sections/Hero";
 import WhatIncluded from "./_sections/WhatIncluded";
 import SabirSection from "./_sections/SabirSection";
 import FaqSection from "./_sections/FaqSection";
@@ -10,7 +10,7 @@ import { Box } from "@mui/material";
 export default function Home() {
   return (
     <Box sx={{ position: "relative", overflow: "hidden" }}>
-      <HeroHome />
+      <Hero />
       <WhatIncluded />
       <SabirSection />
       <ServiceSection />

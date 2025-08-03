@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import Navbar from "@/_components/Navbar";
+import Navbar from "../_components/Navbar";
 
 // function useHasScrolledPast100vh() {
 //   const [hasScrolled, setHasScrolled] = useState(false);
