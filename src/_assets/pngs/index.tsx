@@ -16,7 +16,7 @@ import clients1 from "./clients/client1.webp";
 import clients2 from "./clients/client2.webp";
 import clients3 from "./clients/client3.webp";
 import websites1 from "./websites/website1.png";
-import websites2 from "./websites/website2.png";
+import websites2 from "./websites/sabirs.webp";
 import websites3 from "./websites/website3.png";
 import websites4 from "./websites/website4.png";
 import websites5 from "./websites/website5.png";
