@@ -66,15 +66,21 @@ export default function SabirSection() {
           height: "633px",
           display: { xs: "none", sm: "block" },
           position: "absolute",
-          left: 0,
-          bottom: -1,
+          left: -160,
+          bottom: -130,
           zIndex: 1,
         }}
       >
-        <Image
-          src={pngs.bgcolorBlue}
-          alt="star"
-          style={{ height: "100%", width: "100%" }}
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "50%",
+            background: "rgba(60, 101, 255, 0.2)",
+            filter: "blur(50px)",
+            zIndex: -1,
+            aspectRatio: "1/1",
+          }}
         />
       </Box>
 
