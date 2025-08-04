@@ -31,8 +31,6 @@ export default function RootLayout({
             fbq('track', 'PageView');
           `}
         </Script>
-      </head>
-      <body>
         {/* Meta Pixel NoScript fallback */}
         <noscript>
           <img
@@ -42,6 +40,8 @@ export default function RootLayout({
             src="https://www.facebook.com/tr?id=1732463187404935&ev=PageView&noscript=1"
           />
         </noscript>
+      </head>
+      <body>
         <ThemeRegistry>
           <LayoutWrapper>{children}</LayoutWrapper>
         </ThemeRegistry>
