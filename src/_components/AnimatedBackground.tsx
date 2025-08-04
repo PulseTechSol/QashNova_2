@@ -3,38 +3,20 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 function BlobShader() {
   const mesh = useRef<THREE.Mesh>(null);
+  const materialRef = useRef<THREE.ShaderMaterial>(null);
   const mouse = useRef({ x: 0.5, y: 0.5 });
   const lerpedMouse = useRef({ x: 0.5, y: 0.5 });
 
-  // this use effect will work for the full screen
-  // useEffect(() => {
-  //   const handleMouseMove = (e: MouseEvent) => {
-  //     const scrollY = window.scrollY || window.pageYOffset;
-
-  //     if (scrollY > window.innerHeight) {
-  //       mouse.current.x = e.clientX / window.innerWidth;
-  //       mouse.current.y = 1.0 - e.clientY / window.innerHeight;
-  //     } else {
-  //       // Lock the mouse interaction to default center when above 100vh
-  //       mouse.current.x = 0.5;
-  //       mouse.current.y = 0.5;
-  //     }
-  //   };
-
-  //   window.addEventListener("mousemove", handleMouseMove);
-  //   return () => window.removeEventListener("mousemove", handleMouseMove);
-  // }, []);
-
-  // this use effect will work only for 100vh
+  // mouse tracking only on first 100vh
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const scrollY = window.scrollY || window.pageYOffset;
 
       if (scrollY <= window.innerHeight) {
-        // Only respond to mouse while within first 100vh
         mouse.current.x = e.clientX / window.innerWidth;
         mouse.current.y = 1.0 - e.clientY / window.innerHeight;
       }
@@ -44,17 +26,33 @@ function BlobShader() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  // resolution update on resize
+  useEffect(() => {
+    const updateResolution = () => {
+      if (materialRef.current) {
+        materialRef.current.uniforms.u_resolution.value.set(
+          window.innerWidth,
+          window.innerHeight
+        );
+      }
+    };
+
+    updateResolution(); // set initially
+    window.addEventListener("resize", updateResolution);
+    return () => window.removeEventListener("resize", updateResolution);
+  }, []);
+
+  // frame loop updates
   useFrame(() => {
     lerpedMouse.current.x += (mouse.current.x - lerpedMouse.current.x) * 0.05;
     lerpedMouse.current.y += (mouse.current.y - lerpedMouse.current.y) * 0.05;
 
-    if (mesh.current) {
-      const mat = mesh.current.material as THREE.ShaderMaterial;
-      mat.uniforms.u_mouse.value.set(
+    if (materialRef.current) {
+      materialRef.current.uniforms.u_mouse.value.set(
         lerpedMouse.current.x,
         lerpedMouse.current.y
       );
-      mat.uniforms.u_time.value += 0.01;
+      materialRef.current.uniforms.u_time.value += 0.01;
     }
   });
 
@@ -115,12 +113,11 @@ function BlobShader() {
     <mesh ref={mesh}>
       <planeGeometry args={[2, 2]} />
       <shaderMaterial
+        ref={materialRef}
         uniforms={{
           u_mouse: { value: new THREE.Vector2(0.5, 0.5) },
           u_time: { value: 0 },
-          u_resolution: {
-            value: new THREE.Vector2(window.innerWidth, window.innerHeight),
-          },
+          u_resolution: { value: new THREE.Vector2(1, 1) }, // dummy, will be set on mount
         }}
         vertexShader={`
           void main() {
@@ -139,8 +136,11 @@ export default function AnimatedBackground({
 }: {
   darkMode?: boolean;
 }) {
+  const pathname = usePathname(); // triggers Canvas remount
+
   return (
     <Canvas
+      key={pathname}
       style={{
         position: "fixed",
         top: 0,
