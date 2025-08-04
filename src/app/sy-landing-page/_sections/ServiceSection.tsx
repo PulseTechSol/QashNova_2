@@ -2,12 +2,8 @@
 
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
-import Image from "next/image";
-import pngs from "@/_assets/pngs";
 import CountdownTimer from "../_components/Time";
 import EmailInputBox from "../_components/EmailInputBox";
-// import CountdownTimer from "@/_components/Time";
-// import EmailInputBox from "@/_components/EmailInputBox";
 
 export default function ServiceSection() {
   return (
@@ -16,6 +12,7 @@ export default function ServiceSection() {
         bgcolor: "#000",
         position: "relative",
         zIndex: 111,
+        p: sectionPadding,
       }}
     >
       <Box
@@ -26,12 +23,12 @@ export default function ServiceSection() {
           zIndex: 111,
           maxWidth: { xs: "1440px" },
           width: "100%",
-          p: sectionPadding,
+          // p: sectionPadding,
           margin: "auto",
           display: "flex",
-
           justifyContent: "center",
           alignItems: "center",
+          borderRadius: "40px",
         }}
       >
         <Box
@@ -46,7 +43,14 @@ export default function ServiceSection() {
             alignItems: "center",
             gap: "30px",
             borderRadius: "50px",
-            p: { xs: " 20px", sm: "40px 70px" },
+            padding: {
+              xs: "20px",
+              sm: "30px 20px",
+              md: "40px",
+              lg: "40px 80px",
+            },
+            background:
+              "linear-gradient(101.99deg, rgba(60, 101, 255, 0.2) 0%, rgba(88, 65, 212, 0.2) 50.48%, rgba(38, 23, 177, 0.2) 100%)",
           }}
         >
           <Typography
@@ -85,10 +89,16 @@ export default function ServiceSection() {
           zIndex: 12,
         }}
       >
-        <Image
-          src={pngs.howHeplLG}
-          alt="star"
-          style={{ height: "100%", width: "100%" }}
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "50%",
+            background: "rgba(60, 101, 255, 0.1)",
+            filter: "blur(50px)",
+            zIndex: -1,
+            aspectRatio: "1/1",
+          }}
         />
       </Box>
 
@@ -103,10 +113,16 @@ export default function ServiceSection() {
           zIndex: 12,
         }}
       >
-        <Image
-          src={pngs.howHeplLGcolor}
-          alt="star"
-          style={{ height: "100%", width: "100%" }}
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "50%",
+            background: "rgba(60, 101, 255, 0.1)",
+            filter: "blur(50px)",
+            zIndex: -1,
+            aspectRatio: "1/1",
+          }}
         />
       </Box>
     </Box>

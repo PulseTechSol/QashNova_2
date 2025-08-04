@@ -72,7 +72,8 @@ const CountdownTimer = () => {
         alignItems: "center",
         justifyContent: "center",
         boxShadow: "rgba(193, 190, 190, 0.36) 0px 2px 4px 0px inset",
-        background: "linear-gradient(145deg, #281b60ff, #07071aff)",
+        // background: "linear-gradient(145deg, #281b60ff, #07071aff)",
+        background: "rgba(255, 255, 255, 0.1)",
         padding: { xs: "5px 2px", sm: "20px" },
       }}
     >
