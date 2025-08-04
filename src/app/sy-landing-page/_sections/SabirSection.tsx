@@ -1,9 +1,8 @@
 "use client";
-
-import pngs from "@/_assets/pngs";
+// import pngs from "@/_assets/pngs";
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function SabirSection() {
   return (
@@ -86,7 +85,6 @@ export default function SabirSection() {
 
       <Box
         sx={{
-          // bgcolor: "red",
           width: { xs: "300px", md: "790px" },
           height: { xs: "300px", md: "790px" },
           display: { xs: "none", sm: "block" },
@@ -94,12 +92,19 @@ export default function SabirSection() {
           transform: "rotate(180deg)",
           right: 0,
           zIndex: 1,
+          top: "0",
         }}
       >
-        <Image
-          src={pngs.bgimgecircle}
-          alt="star"
-          style={{ height: "100%", width: "100%" }}
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "50%",
+            background: "rgba(60, 101, 255, 0.2)",
+            filter: "blur(50px)",
+            zIndex: -1,
+            aspectRatio: "1/1",
+          }}
         />
       </Box>
     </Box>
