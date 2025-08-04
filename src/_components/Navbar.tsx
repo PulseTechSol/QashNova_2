@@ -123,7 +123,7 @@ export default function Navbar() {
           />
         </Box>
         <Box
-          sx={{e
+          sx={{
             // maxWidth: "280px",
             // width: "100%",
             display: { xs: "none", md: "flex" },
