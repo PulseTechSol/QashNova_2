@@ -42,3 +42,19 @@ body {
     border-bottom-right-radius: 0;
   }
 }
+
+.custom-dots li {
+  margin: 0 6px;
+}
+
+.custom-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.custom-dots li.slick-active .custom-dot {
+  background-color: rgba(60, 101, 255, 1);
+}
