@@ -1,7 +1,4 @@
 "use client";
-import pngs from "@/_assets/pngs";
-import svgs from "@/_assets/svgs";
-import ButtonComponent from "@/_components/ButtonComponent";
 import {
   localFontSize,
   maxWidth,
@@ -9,11 +6,8 @@ import {
   sectionPaddingY,
 } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 export default function HeroHome() {
-  const router = useRouter();
   return (
     <Box>
       <Box
@@ -99,47 +93,6 @@ export default function HeroHome() {
               >
                 Grow.
               </Typography>
-            </Box>
-            <Box
-              data-aos="fade-left"
-              data-aos-duration="500"
-              sx={{
-                right: 140,
-                top: 442,
-                maxWidth: { xs: "457px", xl: "800px", xxl: "1000px" },
-                width: "100%",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: localFontSize.p1,
-                  color: "#00000080",
-                  mb: { xs: "40px", xl: "60px" },
-                }}
-              >
-                Dull campaigns? Not on our watch. We specialize in dynamic
-                digital marketing that sparks engagement, accelerates growth,
-                and ensures your brand captivates every scroll.
-              </Typography>
-
-              <ButtonComponent
-                onClick={() => {
-                  router.push("/contact-us");
-                }}
-                sx={{
-                  border: "3px solid transparent",
-                  backgroundImage: `linear-gradient( #fff, #DDDDDD),
-                      linear-gradient(90deg, #3C65FF, #8A38F5, #2617B1)`,
-                  backgroundOrigin: "border-box",
-                  backgroundClip: "content-box, border-box",
-                  padding: "1px",
-                  width: { xs: "184px", md: "194px", xl: "260px" },
-                  textAlign: { xs: "center", sm: "start" },
-                  color: "#3C65FF",
-                }}
-                label="Let’s Chat"
-                imgSrc={svgs.siarrowright}
-              />
             </Box>
           </Box>
         </Box>
