@@ -95,7 +95,7 @@ export default function PlanScreen() {
               fontSize: localFontSize.h3,
               fontWeight: "600",
               textTransform: "capitalize",
-              color: "#3C65FF",
+              color: "#fff",
               lineHeight: { xs: "60px", md: "80px", lg: "120px", xl: "150px" },
             }}
           >
@@ -106,7 +106,7 @@ export default function PlanScreen() {
               fontSize: localFontSize.h3,
               fontWeight: "600",
               textTransform: "capitalize",
-              color: "#3C65FF",
+              color: "#fff",
               textAlign: "right",
               lineHeight: { xs: "60px", md: "80px", lg: "120px", xl: "150px" },
             }}

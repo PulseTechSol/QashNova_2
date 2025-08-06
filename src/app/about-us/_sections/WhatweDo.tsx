@@ -71,7 +71,7 @@ export default function WhatweDo() {
           gap: { xs: "40px", md: "80px", xl: "100px", xxl: "150px" },
         }}
       >
-        <GenericHeadingBox heading1="what" heading2="we do" />
+        <GenericHeadingBox isbool={true} heading1="what" heading2="we do" />
 
         <Box
           sx={{

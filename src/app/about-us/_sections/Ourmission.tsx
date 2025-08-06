@@ -78,7 +78,7 @@ export default function Ourmission() {
             gap: { xs: "30px", sm: "40px" },
           }}
         >
-          <GenericHeadingBox heading1="Our" heading2="mission" />
+          <GenericHeadingBox isbool={true} heading1="Our" heading2="mission" />
 
           <Box
             sx={{

@@ -1,7 +1,6 @@
 "use client";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import pngs from "@/_assets/pngs";
 import ButtonComponent from "@/_components/ButtonComponent";
 import {
   localFontSize,
@@ -10,7 +9,6 @@ import {
   sectionPaddingY,
 } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
-import Image from "next/image";
 import svgs from "@/_assets/svgs";
 import { useRouter } from "next/navigation";
 
@@ -51,59 +49,6 @@ export default function Casestudies() {
         px: sectionPaddingX,
       }}
     >
-      <Box
-        sx={{
-          width: { xs: "355px", md: "633px" },
-          height: { xs: "355px", md: "633px" },
-          display: { xs: "block", lg: "block" },
-          position: "absolute",
-          left: -43,
-        }}
-      >
-        <Image
-          src={pngs.howHeplLG}
-          alt="star"
-          style={{ height: "100%", width: "100%" }}
-        />
-      </Box>
-
-      <Box
-        sx={{
-          width: { xs: "300px", md: "790px" },
-          height: { xs: "300px", md: "790px" },
-          display: { xs: "block", lg: "block" },
-          position: "absolute",
-          transform: "rotate(40deg)", // ✅ rotate here
-          transformOrigin: "center",
-          top: { xs: 300, md: 209 },
-          right: { xs: -81, md: -200 },
-        }}
-      >
-        <Image
-          src={pngs.howHeplLGcolor}
-          alt="star"
-          style={{ height: "100%", width: "100%", borderRadius: "80px" }}
-        />
-      </Box>
-      <Box
-        sx={{
-          width: { xs: "300px", md: "790px" },
-          height: { xs: "300px", md: "790px" },
-          display: { xs: "block", lg: "none" },
-          position: "absolute",
-          transform: "rotate(200deg)", // ✅ rotate here
-          transformOrigin: "center",
-          top: 669,
-          left: -50,
-        }}
-      >
-        <Image
-          src={pngs.howHeplLGcolor}
-          alt="star"
-          style={{ height: "100%", width: "100%", borderRadius: "80px" }}
-        />
-      </Box>
-
       <Box
         // ref={containerRef}
         sx={{
@@ -380,6 +325,32 @@ export default function Casestudies() {
           />
         </Box>
       </Box>
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          maxWidth: "40%",
+          width: "100%",
+          backgroundColor: "rgba(88, 65, 212, 0.4)",
+          filter: "blur(200px)",
+          zIndex: 0,
+          height: "30%",
+        }}
+      />
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          maxWidth: "40%",
+          width: "100%",
+          backgroundColor: "rgba(88, 65, 212, 0.4)",
+          filter: "blur(200px)",
+          zIndex: 0,
+          height: "30%",
+        }}
+      />
     </Box>
   );
 }

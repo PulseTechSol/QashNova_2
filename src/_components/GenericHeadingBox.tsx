@@ -34,8 +34,8 @@ export default function GenericHeadingBox({
         sx={{
           fontSize: localFontSize.h3,
           fontWeight: 600,
-          color: "rgba(0, 0, 0, 1)",
-          textAlign: isbool ? "center" : "start",
+          color: isbool ? "#fff" : "rgba(0, 0, 0, 1)",
+          textAlign: isbool ? "center" : "left",
           lineHeight: {
             xs: "50px",
             md: "80px",
@@ -50,7 +50,7 @@ export default function GenericHeadingBox({
       </Typography>
       <Typography
         sx={{
-          color: "rgba(0, 0, 0, 1)",
+          color: isbool ? "#fff" : "rgba(0, 0, 0, 1)",
           fontSize: localFontSize.h3,
           fontWeight: 600,
           // ml:{xs:"10px",}

@@ -99,7 +99,11 @@ export default function WebsiteSection({
           textWrap: "nowrap",
         }}
       >
-        <GenericHeadingBox heading1={heading1} heading2={heading2} />
+        <GenericHeadingBox
+          isbool={!isbool}
+          heading1={heading1}
+          heading2={heading2}
+        />
 
         <Box
           sx={{

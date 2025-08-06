@@ -203,8 +203,12 @@ export default function OurWork() {
             top: 0,
             left: 0,
             maxWidth: "50vw",
+            height: { xs: "50%", md: "unset" },
             width: "100%",
-            backgroundColor: "rgba(88, 65, 212, 0.4)",
+            backgroundColor: {
+              xs: "rgba(88, 65, 212, 1)",
+              md: "rgba(88, 65, 212, 0.4)",
+            },
             filter: "blur(400px)",
             zIndex: 0,
             aspectRatio: "1/1",
@@ -213,14 +217,19 @@ export default function OurWork() {
         <Box
           sx={{
             position: "absolute",
-            top: "50%",
-            left: "50%",
+            bottom: 0,
+            left: 0,
             maxWidth: "50vw",
+            height: { xs: "20%", md: "unset" },
             width: "100%",
-            backgroundColor: "rgba(88, 65, 212, 0.4)",
+            backgroundColor: {
+              xs: "rgba(88, 65, 212, 1)",
+              md: "rgba(88, 65, 212, 0.4)",
+            },
             filter: "blur(400px)",
             zIndex: 0,
-            transformtranslate: "translate(-50%, -50%)",
+            aspectRatio: "1/1",
+            display: { xs: "block", md: "none" },
           }}
         />
       </Box>

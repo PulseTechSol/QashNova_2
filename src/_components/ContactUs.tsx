@@ -67,7 +67,10 @@ export default function ContactUs() {
               left: "50%",
               width: "50%",
               height: "60%",
-              backgroundColor: "rgba(88, 65, 212, 0.6)",
+              backgroundColor: {
+                xs: "rgba(88, 65, 212, 1)",
+                md: "rgba(88, 65, 212, 0.4)",
+              },
               filter: "blur(400px)",
               zIndex: 0,
               transform: "translate(-50%, -50%)",

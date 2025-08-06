@@ -80,7 +80,7 @@ export default function CardBranding() {
             sx={{
               fontSize: localFontSize.h3,
               fontWeight: 600,
-              color: "#3C65FF",
+              color: "#fff",
               lineHeight: {
                 xs: "50px",
                 md: "80px",
