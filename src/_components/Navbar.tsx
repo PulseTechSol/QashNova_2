@@ -159,6 +159,15 @@ export default function Navbar() {
             />
           </Box>
         </Box>
+        <Box
+          onClick={sidebar}
+          sx={{
+            display: { xs: "block", md: "none" },
+            cursor: "pointer",
+          }}
+        >
+          <Image src={svgs.hamburger} alt="hamburger" height={50} width={50} />
+        </Box>
       </Box>
       {menu && (
         <Box
