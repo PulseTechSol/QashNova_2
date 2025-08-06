@@ -8,11 +8,10 @@ import {
   sectionPaddingX,
   sectionPaddingY,
 } from "@/app/_utils/themes";
-import { Theme } from "@emotion/react";
-import { Box, SxProps, Typography } from "@mui/material";
-import Image, { StaticImageData } from "next/image";
+import { Box, Typography } from "@mui/material";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { WorkShowcCase } from "../_components/WorkShowcCase";
 
 export default function OurWork() {
   const router = useRouter();
@@ -36,51 +35,16 @@ export default function OurWork() {
     <Box
       sx={{
         position: "relative",
-        background: "radial-gradient(circle, #08289be3 0%, #070707ff 30%)",
-        overflow: "hidden",
+        background: "rgba(0, 0, 0, 1)",
         px: sectionPaddingX,
       }}
     >
-      {/* BACKGROUND */}
-      <Box
-        sx={{
-          width: { xs: "355px", md: "633px" },
-          height: { xs: "355px", md: "633px" },
-          display: { xs: "block", lg: "block" },
-          position: "absolute",
-          left: -13,
-        }}
-      >
-        <Image
-          src={pngs.howHeplLG}
-          alt="star"
-          style={{ height: "100%", width: "100%" }}
-        />
-      </Box>
-
-      <Box
-        sx={{
-          width: "790px",
-          height: "790px",
-          display: { xs: "none", lg: "block" },
-          position: "absolute",
-          right: 0,
-        }}
-      >
-        <Image
-          src={pngs.howHeplLGcolor}
-          alt="star"
-          style={{ height: "100%", width: "100%" }}
-        />
-      </Box>
-
       {/* SECTION */}
       <Box
         sx={{
           maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
           width: "100%",
           py: sectionPaddingY,
-          // padding: sectionPadding,
           margin: "auto",
           display: "flex",
           flexDirection: "column",
@@ -88,6 +52,7 @@ export default function OurWork() {
           alignItems: "center",
           flexWrap: { xs: "wrap", lg: "nowrap" },
           gap: { xs: "40px", md: "80px", xl: "100px" },
+          position: "relative",
         }}
       >
         {/* HEADING */}
@@ -116,7 +81,7 @@ export default function OurWork() {
               sx={{
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
-                color: "#3C65FF",
+                color: "rgba(255, 255, 255, 1)",
                 textAlign: { xs: "start" },
                 lineHeight: { xs: "50px", md: "110px", xl: "150px" },
               }}
@@ -125,7 +90,7 @@ export default function OurWork() {
             </Typography>
             <Typography
               sx={{
-                color: "#3C65FF",
+                color: "rgba(255, 255, 255, 1)",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
                 textAlign: { xs: "center", sm: "center" },
@@ -161,8 +126,7 @@ export default function OurWork() {
             stunning creative solutions.
           </Typography>
         </Box>
-
-        {/*  */}
+        {/* projects boxes */}
         <Box
           sx={{
             width: "100%",
@@ -181,13 +145,13 @@ export default function OurWork() {
               flexWrap: { xs: "wrap", md: "nowrap" },
             }}
           >
-            <WorkShowcase
+            <WorkShowcCase
               title="Isfahan & Kashan"
               overlayText="We enhanced their digital presence with expert web design, development, social media, and SEO."
               year="2025"
               image={pngs.projectOurWork1}
             />
-            <WorkShowcase
+            <WorkShowcCase
               title="Izec Prestige"
               overlayText="We developed a sophisticated branding strategy that captures their essence of luxury, professionalism, and reliability."
               year="2025"
@@ -204,13 +168,13 @@ export default function OurWork() {
               flexWrap: { xs: "wrap", md: "nowrap" },
             }}
           >
-            <WorkShowcase
+            <WorkShowcCase
               title="Conquest Law"
               overlayText="For Conquest Law Solicitors, a leading legal firm, we designed and developed a professional and authoritative website."
               year="2025"
               image={pngs.projectOurWork3}
             />
-            <WorkShowcase
+            <WorkShowcCase
               title="Saif’s Boxing"
               overlayText="We designed and developed a complete website for Saif’s Boxing & Fitness, a premier training facility dedicated to boxing and personal fitness."
               year="2025"
@@ -232,122 +196,33 @@ export default function OurWork() {
             }}
           />
         </Box>
-      </Box>
-    </Box>
-  );
-}
-
-interface WorkShowcaseProps {
-  title?: string;
-  year?: string;
-  image?: StaticImageData;
-  sx?: SxProps<Theme>;
-  isboolean?: boolean;
-  overlayText?: string;
-}
-
-export function WorkShowcase({
-  title,
-  year,
-  image,
-  sx,
-  isboolean,
-  overlayText,
-}: WorkShowcaseProps) {
-  return (
-    <Box
-      className="hover-card"
-      data-aos="zoom-in"
-      data-aos-duration="500"
-      sx={{
-        width: "100%",
-        bgcolor: "rgba(0, 0, 0, 0.2)",
-      }}
-    >
-      <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          p: { xs: "20px", lg: "20px 50px", xxl: "40px 80px" },
-          gap: "20px",
-          textTransform: "capitalize",
-        }}
-      >
-        <Typography
-          sx={{
-            maxWidth: { xs: "316px", md: "400px", xl: "600px" },
-            width: "100%",
-            fontSize: localFontSize.h5,
-            fontWeight: 400,
-            color: "#fff",
-          }}
-        >
-          {title}
-        </Typography>
-        <Typography
-          sx={{
-            maxWidth: { xs: "87px", xl: "120px" },
-            width: "100%",
-            fontSize: localFontSize.h5,
-            fontWeight: 400,
-            color: "#fff",
-          }}
-        >
-          {year}
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          width: "100%",
-          height: "fit-content",
-          backgroundColor: "#000",
-          position: "relative",
-          overflow: "hidden",
-          ...sx,
-        }}
-      >
-        <Image
-          src={image as StaticImageData}
-          alt="workimage1"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: isboolean ? "cover" : "cover",
-          }}
-        />
-        {/* Curtain */}
+        {/* background blurr plased by positioning box  */}
         <Box
-          className="curtain"
           sx={{
             position: "absolute",
-            bottom: 0,
+            top: 0,
             left: 0,
+            maxWidth: "50vw",
             width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.85)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            transition: "transform 0.6s ease",
-            transform: "translateY(150%)",
-            zIndex: 2,
+            backgroundColor: "rgba(88, 65, 212, 0.4)",
+            filter: "blur(400px)",
+            zIndex: 0,
+            aspectRatio: "1/1",
           }}
-        >
-          <Typography
-            sx={{
-              color: "#fff",
-              fontSize: localFontSize.h5,
-              fontWeight: 500,
-              textAlign: "left",
-              padding: "20px",
-              width: { lg: "90%", xl: "80%" },
-            }}
-          >
-            {overlayText}
-          </Typography>
-        </Box>
+        />
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            maxWidth: "50vw",
+            width: "100%",
+            backgroundColor: "rgba(88, 65, 212, 0.4)",
+            filter: "blur(400px)",
+            zIndex: 0,
+            transformtranslate: "translate(-50%, -50%)",
+          }}
+        />
       </Box>
     </Box>
   );

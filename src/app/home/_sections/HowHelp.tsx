@@ -125,45 +125,9 @@ export default function HowHelp() {
     <Box
       sx={{
         position: "relative",
-        background: "radial-gradient(circle, #08289be3 0%, #000 25%)",
-        backgroundAttachment: "fixed",
-        backgroundPosition: "center center",
-        overflow: "hidden",
         px: sectionPaddingX,
       }}
     >
-      <Box
-        sx={{
-          width: { xs: "355px", md: "633px" },
-          height: { xs: "355px", md: "633px" },
-          display: { xs: "block", lg: "block" },
-          position: "absolute",
-          left: -13,
-        }}
-      >
-        <Image
-          src={pngs.howHeplLG}
-          alt="star"
-          style={{ height: "100%", width: "100%" }}
-        />
-      </Box>
-
-      <Box
-        sx={{
-          width: { xs: "300px", md: "790px" },
-          height: { xs: "300px", md: "790px" },
-          display: { xs: "none", lg: "block" },
-          position: "absolute",
-          right: 0,
-        }}
-      >
-        <Image
-          src={pngs.howHeplLGcolor}
-          alt="star"
-          style={{ height: "100%", width: "100%" }}
-        />
-      </Box>
-
       <Box
         ref={containerRef}
         sx={{
@@ -177,6 +141,8 @@ export default function HowHelp() {
           alignItems: "center",
           flexWrap: { xs: "wrap", lg: "nowrap" },
           gap: { xs: "40px", md: "80px", xl: "100px", xxl: "120px" },
+          position: "relative",
+          zIndex: 10,
         }}
       >
         <Box
@@ -196,7 +162,7 @@ export default function HowHelp() {
             sx={{
               width: "2px",
               height: 200,
-              bgcolor: "#FFFFFF80",
+              bgcolor: "rgba(0, 0, 0, 1)",
               display: { xs: "none", lg: "block" },
             }}
           />
@@ -208,7 +174,7 @@ export default function HowHelp() {
               width: "100%",
               fontSize: { xs: "18px", xl: "24px" },
               fontWeight: 400,
-              color: "#FFFFFF80",
+              color: "rgba(0, 0, 0, 1)",
               textAlign: { xs: "end", sm: "start" },
             }}
           >
@@ -258,7 +224,7 @@ export default function HowHelp() {
                   sx={{
                     fontSize: localFontSize.h4,
                     fontWeight: 500,
-                    color: "#3C65FF",
+                    color: "rgba(0, 0, 0, 1)",
                     lineHeight: { xs: "40px", md: "70px", xl: "80px" },
                     textAlign: { xs: "start" },
                   }}
@@ -296,6 +262,8 @@ export default function HowHelp() {
                           xl: "20px 40px",
                         },
                         height: { xs: "30px", md: "44px", xl: "55px" },
+                        backgroundColor: "rgba(60, 101, 255, 0.5)",
+                        color: "rgba(255, 255, 255, 1)",
                       }}
                     />
                   ))}
@@ -307,7 +275,7 @@ export default function HowHelp() {
                     mt: { xs: "15px", sm: "30px", md: "60px", xl: "80px" },
                     fontSize: localFontSize.p2,
                     fontWeight: 400,
-                    color: "#00000080",
+                    color: "rgba(0, 0, 0, 1)",
                     textAlign: { xs: "start" },
                   }}
                 >
@@ -345,6 +313,32 @@ export default function HowHelp() {
           );
         })}
       </Box>
+      {/* background */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "50%",
+          aspectRatio: "1 / 1",
+          backgroundColor: "rgba(88, 65, 212, 0.4)",
+          filter: "blur(400px)",
+          zIndex: 0,
+        }}
+      />
+      <Box
+        sx={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          width: "50%",
+          aspectRatio: "1 / 1",
+          backgroundColor: "background: rgba(60, 101, 255, 0.7)",
+          filter: "blur(400px)",
+          zIndex: 0,
+          transform: "translate(-40%, -50%)",
+        }}
+      />
     </Box>
   );
 }

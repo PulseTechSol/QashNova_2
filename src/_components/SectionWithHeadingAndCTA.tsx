@@ -22,9 +22,9 @@ export default function SectionWithHeadingAndCTA({
     <>
       <Box
         sx={{
-          background: "linear-gradient(20deg, #5841D466, #ffffffff,#ffffffff)",
           overflow: "hidden",
           padding: sectionPadding,
+          position: "relative",
         }}
       >
         <Box
@@ -41,11 +41,8 @@ export default function SectionWithHeadingAndCTA({
             data-aos-duration="500"
             sx={{
               textAlign: { xs: "center" },
-              background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              display: "inline-block",
               textTransform: "uppercase",
+              color: "rgba(0, 0, 0, 1)",
               mb: { xs: "40px", lg: "80px" },
               fontSize: { ...localFontSize.h2, xxl: "180px" },
               fontWeight: 600,
@@ -55,13 +52,6 @@ export default function SectionWithHeadingAndCTA({
             <span
               style={{
                 position: "relative",
-                display: "inline-block",
-                color: "red",
-                backgroundColor: "red",
-                background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                textTransform: "uppercase",
               }}
             >
               {lastword}
@@ -111,6 +101,20 @@ export default function SectionWithHeadingAndCTA({
             />
           </Box>
         </Box>
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            maxWidth: "700px",
+            width: "100%",
+            height: "200px",
+            backgroundColor: "rgba(88, 65, 212, 0.4)",
+            filter: "blur(170px)",
+            zIndex: 0,
+            display: { xs: "none", md: "block" },
+          }}
+        />
       </Box>
     </>
   );

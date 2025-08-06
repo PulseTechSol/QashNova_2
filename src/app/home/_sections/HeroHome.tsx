@@ -1,11 +1,5 @@
 "use client";
-import {
-  localFontSize,
-  // maxWidth,
-  // sectionPaddingX,
-  // sectionPaddingY,
-  sectionPadding,
-} from "@/app/_utils/themes";
+import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 
 export default function HeroHome() {
