@@ -148,7 +148,9 @@ export default function AnimatedBackground({
         zIndex: 0,
         width: "100%",
         height: "100%",
-        backgroundColor: darkMode ? "black" : "white",
+        background: darkMode
+          ? "rgba(0, 0, 0, 1)"
+          : "linear-gradient(180deg, #FFFFFF 0%, #DDDDDD 100%)",
       }}
     >
       <BlobShader />
