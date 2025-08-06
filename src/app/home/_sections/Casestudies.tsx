@@ -145,7 +145,7 @@ export default function Casestudies() {
                 width: "100%",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
-                color: "#3C65FF",
+                color: "#000",
                 textAlign: { xs: "start" },
                 lineHeight: { xs: "50px", md: "120px", xl: "150px" },
               }}
@@ -155,7 +155,7 @@ export default function Casestudies() {
             <Typography
               sx={{
                 width: "100%",
-                color: "#3C65FF",
+                color: "#000",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
                 textAlign: { xs: "center", md: "end" },
@@ -308,7 +308,7 @@ export default function Casestudies() {
                       width: "100%",
                       fontSize: localFontSize.h4,
                       fontWeight: 500,
-                      color: "#3C65FF",
+                      color: "#000",
                       textAlign: { xs: "center", md: "start" },
                       textTransform: "capitalize",
                       transition: "color 0.4s ease-in-out",

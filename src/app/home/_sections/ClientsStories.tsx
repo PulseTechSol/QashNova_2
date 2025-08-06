@@ -114,14 +114,12 @@ export default function ClientsStories() {
         backgroundColor: "#000 !important",
         position: "relative",
         zIndex: 2000,
-        overflow: "hidden",
-        overflowX: "hidden",
         paddingX: sectionPaddingX,
       }}
     >
       <Box
         sx={{
-          maxWidth: "1500px",
+          maxWidth: "1700px",
           width: "100%",
           margin: "auto",
           paddingY: sectionPaddingY,
@@ -146,7 +144,7 @@ export default function ClientsStories() {
               width: "100%",
               fontSize: localFontSize.h3,
               fontWeight: 600,
-              color: "#3C65FF",
+              color: "#fff",
               textAlign: { xs: "start" },
             }}
           >
@@ -155,7 +153,7 @@ export default function ClientsStories() {
           <Typography
             sx={{
               width: "100%",
-              color: "#3C65FF",
+              color: "#fff",
               fontSize: localFontSize.h3,
               fontWeight: 600,
               textAlign: { xs: "center" },
@@ -276,6 +274,33 @@ export default function ClientsStories() {
           {/* </Box> */}
         </Box>
       </Box>
+      {/* Background Blur Effect */}
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          maxWidth: "40vw",
+          height: "400px",
+          width: "100%",
+          background: "#5841D466",
+          filter: "blur(200px)",
+          zIndex: 0,
+        }}
+      />
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: 0,
+          right: 0,
+          maxWidth: "40vw",
+          height: "400px",
+          width: "100%",
+          background: "#5841D466",
+          filter: "blur(200px)",
+          zIndex: 0,
+        }}
+      />
     </Box>
   );
 }

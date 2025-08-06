@@ -16,6 +16,7 @@ export default function ContactUs() {
             flexDirection: { xs: "column", md: "row" },
             justifyContent: "space-between",
             alignItems: "center",
+            position: "relative",
           }}
         >
           <Box
@@ -32,7 +33,7 @@ export default function ContactUs() {
                 width: "100%",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
-                color: "#3C65FF",
+                color: "#fff",
                 textAlign: { xs: "start", sm: "start" },
               }}
             >
@@ -41,7 +42,7 @@ export default function ContactUs() {
             <Typography
               sx={{
                 width: "100%",
-                color: "#3C65FF",
+                color: "#fff",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
                 textAlign: "center",
@@ -58,6 +59,21 @@ export default function ContactUs() {
             {/* contactus form there */}
             <ContactUsForm />
           </Box>
+          {/* there is the blurr box */}
+          <Box
+            sx={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              width: "50%",
+              height: "60%",
+              backgroundColor: "rgba(88, 65, 212, 0.6)",
+              filter: "blur(400px)",
+              zIndex: 0,
+              transform: "translate(-50%, -50%)",
+              aspectRatio: "1/1",
+            }}
+          />
         </Box>
       </Box>
     </>

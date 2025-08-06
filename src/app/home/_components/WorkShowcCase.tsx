@@ -1,6 +1,4 @@
 "use client";
-
-import { localFontSize } from "@/app/_utils/themes";
 import { Box, Typography, SxProps, Theme } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 
@@ -28,9 +26,9 @@ export function WorkShowcCase({
       data-aos-duration="500"
       sx={{
         width: "100%",
-        bgcolor: "rgba(0, 0, 0, 0.2)",
         position: "relative",
         zIndex: 10,
+        bgcolor: "rgba(0, 0, 0, 0.2)",
       }}
     >
       <Box
@@ -48,9 +46,14 @@ export function WorkShowcCase({
           sx={{
             maxWidth: { xs: "316px", md: "400px", xl: "600px" },
             width: "100%",
-            fontSize: localFontSize.h5,
+            fontSize: {
+              xs: "24px",
+              md: "28px",
+              lg: "36px",
+            },
             fontWeight: 400,
             color: "#fff",
+            textWrap: "nowrap",
           }}
         >
           {title}
@@ -59,7 +62,11 @@ export function WorkShowcCase({
           sx={{
             maxWidth: { xs: "87px", xl: "120px" },
             width: "100%",
-            fontSize: localFontSize.h5,
+            fontSize: {
+              xs: "24px",
+              md: "28px",
+              lg: "36px",
+            },
             fontWeight: 400,
             color: "#fff",
           }}
@@ -70,7 +77,7 @@ export function WorkShowcCase({
       <Box
         sx={{
           width: "100%",
-          height: "fit-content",
+          height: "auto",
           backgroundColor: "#000",
           position: "relative",
           overflow: "hidden",
@@ -83,8 +90,7 @@ export function WorkShowcCase({
           style={{
             width: "100%",
             height: "100%",
-            objectFit: isboolean ? "cover" : "cover",
-            backgroundColor: "red",
+            objectFit: isboolean ? "contain" : "contain",
           }}
         />
         <Box
@@ -100,14 +106,18 @@ export function WorkShowcCase({
             justifyContent: "center",
             alignItems: "center",
             transition: "transform 0.6s ease",
-            transform: "translateY(150%)",
+            transform: "translateY(300%)",
             zIndex: 2,
           }}
         >
           <Typography
             sx={{
               color: "#fff",
-              fontSize: localFontSize.h5,
+              fontSize: {
+                xs: "24px",
+                md: "28px",
+                xl: "36px",
+              },
               fontWeight: 500,
               textAlign: "left",
               padding: "20px",
