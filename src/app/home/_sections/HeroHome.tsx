@@ -1,101 +1,87 @@
 "use client";
 import {
   localFontSize,
-  maxWidth,
-  sectionPaddingX,
-  sectionPaddingY,
+  // maxWidth,
+  // sectionPaddingX,
+  // sectionPaddingY,
+  sectionPadding,
 } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 
 export default function HeroHome() {
   return (
-    <Box>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "flex-start",
+        minHeight: { md: "calc(100vh - 101px)" },
+        overflow: "hidden",
+        padding: {
+          xs: "100px 20px 60px 20px",
+          sm: sectionPadding.sm,
+          md: sectionPadding.md,
+          lg: sectionPadding.lg,
+        },
+        alignItems: "center",
+      }}
+    >
       <Box
         sx={{
-          display: "flex",
-          justifyContent: "center",
-          minHeight: { xs: "calc(100vh - 97px)", md: "calc(100vh - 101px)" },
-          overflow: "hidden",
-          px: sectionPaddingX,
+          // 🔕 Temporarily disabled: this is the code to implement the gradient in the text
+          // background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
+          // WebkitBackgroundClip: "text",
+          // WebkitTextFillColor: "transparent",
+          width: "100%",
+          position: "relative",
+          zIndex: 140,
+          "& > h1": {
+            fontWeight: 600,
+            textTransform: "uppercase",
+            color: "#000",
+            fontSize: localFontSize.h1,
+            lineHeight: {
+              xs: "70px",
+              sm: "76px",
+              md: "115px",
+              lg: "130px",
+              xl: "160px",
+              xxl: "200px",
+            },
+            textAlign: "left",
+          },
         }}
       >
-        <Box
+        <Typography variant="h1">Design.</Typography>
+        <Typography
+          variant="h1"
           sx={{
-            position: "relative",
-            maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
-            width: "100%",
-            py: sectionPaddingY,
-            margin: "auto",
-            gap: { xs: "0" },
-            zIndex: 140,
+            paddingLeft: {
+              xs: "60px",
+              sm: "80px",
+              md: "150px",
+              lg: "200px",
+              xl: "300px",
+              xxl: "320px",
+            },
           }}
         >
-          <Box
-            sx={{
-              width: "100%",
-              position: "relative",
-              zIndex: 140,
-              textAlign: { xs: "start" },
-              display: { xs: "flex" },
-              justifyContent: { xs: "space-between" },
-              alignItems: "center",
-              flexWrap: { xs: "wrap", lg: "nowrap" },
-              mb: { xs: "30%", md: "0", lg: "100px" },
-              gap: 4,
-            }}
-          >
-            <Box
-              data-aos="fade-right"
-              data-aos-duration="500"
-              sx={{
-                position: "relative",
-                zIndex: 140,
-                maxWidth: { xl: "1000px" },
-                width: "100%",
-                background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                display: "inline-block",
-                textTransform: "uppercase",
-              }}
-            >
-              <Typography
-                data-aos="fade-right"
-                data-aos-duration="500"
-                sx={{
-                  background:
-                    "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  display: "inline-block",
-                  textTransform: "uppercase",
-                  textAlign: { xs: "start" },
-                  mt: { xs: "60px", lg: "80px" },
-                  fontSize: localFontSize.h1,
-                  fontWeight: 600,
-                }}
-              >
-                Design.
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: localFontSize.h1,
-                  fontWeight: 600,
-                }}
-              >
-                Market.
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: localFontSize.h1,
-                  fontWeight: 600,
-                }}
-              >
-                Grow.
-              </Typography>
-            </Box>
-          </Box>
-        </Box>
+          Market.
+        </Typography>
+        <Typography
+          variant="h1"
+          sx={{
+            paddingLeft: {
+              xs: "120px",
+              sm: "160px",
+              md: "300px",
+              lg: "400px",
+              xl: "600px",
+              xxl: "640px",
+            },
+          }}
+        >
+          Grow.
+        </Typography>
       </Box>
     </Box>
   );
