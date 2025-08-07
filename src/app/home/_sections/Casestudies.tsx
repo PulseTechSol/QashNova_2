@@ -44,7 +44,7 @@ export default function Casestudies() {
     <Box
       sx={{
         position: "relative",
-        overflow: "hidden",
+        // overflow: "hidden",
         zIndex: 10000,
         px: sectionPaddingX,
       }}
