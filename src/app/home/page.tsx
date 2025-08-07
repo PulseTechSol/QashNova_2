@@ -6,6 +6,7 @@ import Casestudies from "./_sections/Casestudies";
 import ContactUs from "@/_components/ContactUs";
 import SectionWithHeadingAndCTA from "../../_components/SectionWithHeadingAndCTA";
 import ClientsStories from "./_sections/ClientsStories";
+import DigitalInsights from "./_sections/DigitalInsights";
 
 export default function HomePage() {
   return (
@@ -20,6 +21,7 @@ export default function HomePage() {
       <OurWork />
       <ClientsStories />
       <Casestudies />
+      <DigitalInsights />
       <ContactUs />
     </>
   );
