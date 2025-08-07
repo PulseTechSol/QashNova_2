@@ -49,6 +49,7 @@ export default function Navbar() {
     { text: "Branding", route: "/branding" },
     { text: "case study", route: "/case-study" },
     { text: "plans", route: "/plans" },
+    { text: "blogs", route: "/blogs" },
     { text: "contact", route: "/contact-us" },
   ];
 
@@ -200,7 +201,7 @@ export default function Navbar() {
       ></Box>
       <Box
         sx={{
-          height: { xs: "auto", md: "650px", lg: "760px" },
+          // height: { xs: "auto", md: "650px", lg: "760px" },
           width: { xs: "100vw", sm: "80vw", md: "540px" },
           position: "fixed",
           top: "0px",

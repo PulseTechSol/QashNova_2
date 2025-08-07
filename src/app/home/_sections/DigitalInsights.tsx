@@ -9,6 +9,8 @@ import {
 } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import DigitalInsightCard from "@/_components/DigitalInsightCard";
+import ButtonComponent from "@/_components/ButtonComponent";
+import svgs from "@/_assets/svgs";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -156,6 +158,17 @@ export default function DigitalInsights() {
             />
           ))}
         </Box>
+        <ButtonComponent
+          label="view all"
+          imgSrc={svgs.whiteArrow}
+          sx={{
+            background: { xs: "#3C65FF", md: "#3C65FF" },
+            color: { xs: "#fff" },
+            borderRadius: "50px",
+            maxWidth: { xs: "280px", xl: "360px" },
+            marginTop: { xs: "20px", md: "unset" },
+          }}
+        />
       </Box>
       {/* <Box
         sx={{
@@ -169,7 +182,7 @@ export default function DigitalInsights() {
           zIndex: 0,
           height: "30%",
         }}
-      />
+      /> */}
       <Box
         sx={{
           position: "absolute",
@@ -182,7 +195,7 @@ export default function DigitalInsights() {
           zIndex: 0,
           height: "30%",
         }}
-      /> */}
+      />
     </Box>
   );
 }
