@@ -14,6 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function DigitalInsights() {
   type CardContent = {
+    backgroundImage: string | undefined;
     heading: string;
     description: string;
   };
@@ -23,21 +24,37 @@ export default function DigitalInsights() {
       heading: "Mastering SEO in 2025: Your Essential Guide",
       description:
         "Learn the latest SEO strategies and techniques to boost your search rankings and attract more organic traffic to your website this year.",
+      backgroundImage: "/blogs/blog1.webp",
     },
     {
       heading: "The Power of Visual Storytelling in Branding",
       description:
         "Discover how compelling visuals and narratives can transform your brand identity and deeply resonate with your audience on every platform.",
+      backgroundImage: "/blogs/blog2.webp",
     },
     {
       heading: "Social Media Trends You Can't Ignore",
       description:
         "Stay ahead with insights into the most impactful social media trends, and learn how to leverage them for stronger engagement and community building.",
+      backgroundImage: "/blogs/blog3.webp",
     },
     {
       heading: "Website Redesign Checklist: Avoiding Common Pitfalls",
       description:
         "Planning a new website? This guide offers crucial tips and a checklist to ensure a smooth redesign process and a successful online launch.",
+      backgroundImage: "/blogs/blog1.webp",
+    },
+    {
+      heading: "Maximizing ROI in Digital Ads",
+      description:
+        "Learn strategies to fine-tune your digital advertising campaigns for better performance and a stronger return on investment.",
+      backgroundImage: "/blogs/blog1.webp",
+    },
+    {
+      heading: "The Future of E-commerce: What's Next?",
+      description:
+        "Explore emerging trends and technologies shaping the online retail landscape, from AI-powered personalization to seamless checkout experiences.",
+      backgroundImage: "/blogs/blog1.webp",
     },
   ];
 
@@ -48,6 +65,7 @@ export default function DigitalInsights() {
         overflow: "hidden",
         zIndex: 10000,
         px: sectionPaddingX,
+        backgroundColor: "rgba(0, 0, 0, 1)",
       }}
     >
       <Box
@@ -90,31 +108,31 @@ export default function DigitalInsights() {
                 width: "100%",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
-                color: "#000",
+                color: "rgba(255, 255, 255, 1)",
                 textAlign: { xs: "start" },
                 lineHeight: { xs: "50px", md: "120px", xl: "150px" },
               }}
             >
-              digital
+              Digital
             </Typography>
             <Typography
               sx={{
                 width: "100%",
-                color: "#000",
+                color: "rgba(255, 255, 255, 1)",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
                 textAlign: { xs: "center", md: "end" },
                 lineHeight: { xs: "50px", md: "120px", xl: "150px" },
               }}
             >
-              insights
+              Insights
             </Typography>
           </Box>
           <Box
             sx={{
               width: "2px",
               height: 200,
-              bgcolor: "#00000080",
+              bgcolor: "rgba(255, 255, 255, 0.5)",
               display: { xs: "none", lg: "block" },
             }}
           />
@@ -126,7 +144,7 @@ export default function DigitalInsights() {
               width: "100%",
               fontSize: { xs: "18px", xl: "24px" },
               fontWeight: 400,
-              color: "#00000080",
+              color: "rgba(255, 255, 255, 0.5)",
               textAlign: { xs: "end", sm: "start" },
             }}
           >
@@ -153,18 +171,19 @@ export default function DigitalInsights() {
               key={index}
               heading={item.heading}
               description={item.description}
+              backgroundImage={item.backgroundImage}
             />
           ))}
         </Box>
       </Box>
-      {/* <Box
+      <Box
         sx={{
           position: "absolute",
           top: 0,
           left: 0,
           maxWidth: "40%",
           width: "100%",
-          backgroundColor: "rgba(88, 65, 212, 0.4)",
+          backgroundColor: "rgba(88, 65, 212, 0.3)",
           filter: "blur(200px)",
           zIndex: 0,
           height: "30%",
@@ -177,12 +196,25 @@ export default function DigitalInsights() {
           left: 0,
           maxWidth: "40%",
           width: "100%",
-          backgroundColor: "rgba(88, 65, 212, 0.4)",
+          backgroundColor: "rgba(88, 65, 212, 0.18)",
           filter: "blur(200px)",
           zIndex: 0,
           height: "30%",
         }}
-      /> */}
+      />
+      <Box
+        sx={{
+          position: "absolute",
+          top: "50%",
+          right: 0,
+          maxWidth: "40%",
+          width: "100%",
+          backgroundColor: "rgba(60, 101, 255, 0.18)",
+          filter: "blur(200px)",
+          zIndex: 0,
+          height: "30%",
+        }}
+      />
     </Box>
   );
 }
