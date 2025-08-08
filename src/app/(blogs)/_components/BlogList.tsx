@@ -5,7 +5,13 @@ interface BlogListProps {
 }
 export default function BlogList({ items }: BlogListProps) {
   return (
-    <Box sx={{ pl: { xs: "10px", md: "16px" } }}>
+    <Box
+      component="ul"
+      sx={{
+        pl: { xs: "10px", md: "16px" },
+        marginLeft: { xs: "10px", md: "16px" },
+      }}
+    >
       {items.map((item, index) => (
         <Box
           component="li"
