@@ -7,7 +7,10 @@ import { sectionPadding, blogScreenGap, maxWidth } from "@/app/_utils/themes";
 export default function EcommerceFuturePage() {
   return (
     <>
-      <BlogHero text="The Future of E-commerce: What's Next?" />
+      <BlogHero
+        text="The Future of E-commerce: What's Next?"
+        backgroundImage="./blogsBackgrounds/blog6.webp"
+      />
       <Box
         sx={{
           padding: sectionPadding,

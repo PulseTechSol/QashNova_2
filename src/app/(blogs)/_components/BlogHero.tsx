@@ -8,8 +8,9 @@ import {
 
 interface BlogHeroProps {
   text: string;
+  backgroundImage?: string;
 }
-export default function BlogHero({ text }: BlogHeroProps) {
+export default function BlogHero({ text, backgroundImage }: BlogHeroProps) {
   return (
     <>
       <Box sx={{ padding: sectionPadding }}>
@@ -24,7 +25,7 @@ export default function BlogHero({ text }: BlogHeroProps) {
             margin: "auto",
             paddingY: sectionPaddingY,
             paddingX: { xs: "20px", sm: "40px", md: "60px", xxl: "80px" },
-            backgroundImage: "url(/bgCase1.webp)",
+            backgroundImage: `url(${backgroundImage || "/bgCase1.webp"})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             borderRadius: { xs: "20px", md: "40px" },

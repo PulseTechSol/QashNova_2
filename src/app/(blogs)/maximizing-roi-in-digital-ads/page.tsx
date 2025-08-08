@@ -7,7 +7,10 @@ import { sectionPadding, blogScreenGap, maxWidth } from "@/app/_utils/themes";
 export default function MaximizingROIBlogPage() {
   return (
     <>
-      <BlogHero text="Maximizing ROI in Digital Ads" />
+      <BlogHero
+        text="Maximizing ROI in Digital Ads"
+        backgroundImage="./blogsBackgrounds/blog5.webp"
+      />
       <Box
         sx={{
           padding: sectionPadding,

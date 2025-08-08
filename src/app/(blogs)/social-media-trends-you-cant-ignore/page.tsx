@@ -8,7 +8,10 @@ import { sectionPadding, blogScreenGap, maxWidth } from "@/app/_utils/themes";
 export default function SocialMediaTrendsPage() {
   return (
     <>
-      <BlogHero text="Social Media Trends You Can't Ignore" />
+      <BlogHero
+        text="Social Media Trends You Can't Ignore"
+        backgroundImage="./blogsBackgrounds/blog3.webp"
+      />
       <Box
         sx={{
           padding: sectionPadding,

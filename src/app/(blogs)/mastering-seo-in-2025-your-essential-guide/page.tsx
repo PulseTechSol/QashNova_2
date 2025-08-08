@@ -8,7 +8,10 @@ import { sectionPadding, blogScreenGap, maxWidth } from "@/app/_utils/themes";
 export default function MasteringSEOPage() {
   return (
     <>
-      <BlogHero text="Mastering SEO in 2025: Your Essential Guide" />
+      <BlogHero
+        text="Mastering SEO in 2025: Your Essential Guide"
+        backgroundImage="./blogsBackgrounds/blog1.webp"
+      />
       <Box
         sx={{
           padding: sectionPadding,

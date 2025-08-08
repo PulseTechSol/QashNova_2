@@ -8,7 +8,10 @@ import { sectionPadding, blogScreenGap, maxWidth } from "@/app/_utils/themes";
 export default function WebsiteRedesignChecklistPage() {
   return (
     <>
-      <BlogHero text="Website Redesign Checklist: Avoiding Common Pitfalls" />
+      <BlogHero
+        text="Website Redesign Checklist: Avoiding Common Pitfalls"
+        backgroundImage="./blogsBackgrounds/blog4.webp"
+      />
       <Box
         sx={{
           padding: sectionPadding,
