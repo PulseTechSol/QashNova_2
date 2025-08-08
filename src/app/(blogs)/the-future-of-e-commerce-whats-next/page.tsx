@@ -1,7 +1,3 @@
-// export default function EcommerceFuturePage() {
-//   return <></>;
-// }
-
 import BlogHero from "@/app/(blogs)/_components/BlogHero";
 import { Box } from "@mui/material";
 import BlogHeading from "../_components/BlogHeading";

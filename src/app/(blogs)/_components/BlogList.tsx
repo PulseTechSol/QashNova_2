@@ -3,7 +3,6 @@ import { Box, Typography } from "@mui/material";
 interface BlogListProps {
   items: string[];
 }
-
 export default function BlogList({ items }: BlogListProps) {
   return (
     <Box sx={{ pl: { xs: "10px", md: "16px" } }}>
