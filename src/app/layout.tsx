@@ -1,8 +1,8 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-// import ThemeRegistry from "./ThemeRegistry";
-// import LayoutWrapper from "@/_components/LayoutWrapper";
+import ThemeRegistry from "./ThemeRegistry";
+import LayoutWrapper from "@/_components/LayoutWrapper";
 import Script from "next/script";
 
 export const metadata: Metadata = {
@@ -41,7 +41,11 @@ export default function RootLayout({
           />
         </noscript>
       </head>
-      <body>{children}</body>
+      <body>
+        <ThemeRegistry>
+          <LayoutWrapper>{children}</LayoutWrapper>
+        </ThemeRegistry>
+      </body>
     </html>
   );
 }
