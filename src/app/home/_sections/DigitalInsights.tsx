@@ -20,6 +20,7 @@ export default function DigitalInsights() {
   type CardContent = {
     heading: string;
     description: string;
+    route: string;
   };
 
   const cardContentList: CardContent[] = [
@@ -27,21 +28,25 @@ export default function DigitalInsights() {
       heading: "Mastering SEO in 2025: Your Essential Guide",
       description:
         "Learn the latest SEO strategies and techniques to boost your search rankings and attract more organic traffic to your website this year.",
+      route: "/mastering-seo-in-2025-your-essential-guide",
     },
     {
       heading: "The Power of Visual Storytelling in Branding",
       description:
         "Discover how compelling visuals and narratives can transform your brand identity and deeply resonate with your audience on every platform.",
+      route: "/the-power-of-visual-storytelling-in-branding",
     },
     {
       heading: "Social Media Trends You Can't Ignore",
       description:
         "Stay ahead with insights into the most impactful social media trends, and learn how to leverage them for stronger engagement and community building.",
+      route: "/social-media-trends-you-cant-ignore",
     },
     {
       heading: "Website Redesign Checklist: Avoiding Common Pitfalls",
       description:
         "Planning a new website? This guide offers crucial tips and a checklist to ensure a smooth redesign process and a successful online launch.",
+      route: "/website-redesign-checklist-avoiding-common-pitfalls",
     },
   ];
 
@@ -157,6 +162,7 @@ export default function DigitalInsights() {
               key={index}
               heading={item.heading}
               description={item.description}
+              onClick={() => router.push(item.route)}
             />
           ))}
         </Box>

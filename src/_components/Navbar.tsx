@@ -6,7 +6,6 @@ import svgs from "@/_assets/svgs";
 import ButtonComponent from "./ButtonComponent";
 // import { maxWidth } from "@/app/_utils/themes";
 import AOS from "aos";
-
 import "aos/dist/aos.css";
 import React, { useEffect } from "react";
 

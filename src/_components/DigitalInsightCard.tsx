@@ -9,12 +9,14 @@ type DigitalInsightCardProps = {
   heading: string;
   description: string;
   backgroundImage?: string;
+  onClick?: () => void;
 };
 
 export default function DigitalInsightCard({
   heading,
   description,
   backgroundImage,
+  onClick,
 }: DigitalInsightCardProps) {
   return (
     <Box
@@ -89,6 +91,7 @@ export default function DigitalInsightCard({
         </Typography>
       </Box>
       <ButtonComponent
+        onClick={onClick}
         label="Read more"
         imgSrc={svgs.whiteArrow}
         sx={{
