@@ -16,6 +16,8 @@ export default function MasteringSEOPage() {
         sx={{
           padding: sectionPadding,
           paddingTop: "0px !important",
+          position: "relative",
+          zIndex: 100,
         }}
       >
         <Box

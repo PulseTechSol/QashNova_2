@@ -13,7 +13,7 @@ interface BlogHeroProps {
 export default function BlogHero({ text, backgroundImage }: BlogHeroProps) {
   return (
     <>
-      <Box sx={{ padding: sectionPadding }}>
+      <Box sx={{ padding: sectionPadding, position: "relative", zIndex: 100 }}>
         <Box
           sx={{
             display: "flex",
