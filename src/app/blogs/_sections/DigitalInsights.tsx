@@ -198,7 +198,7 @@ export default function DigitalInsights() {
           width: "100%",
           backgroundColor: "rgba(88, 65, 212, 0.18)",
           filter: "blur(200px)",
-          zIndex: 0,
+          zIndex: -1,
           height: "30%",
         }}
       />
@@ -211,7 +211,7 @@ export default function DigitalInsights() {
           width: "100%",
           backgroundColor: "rgba(60, 101, 255, 0.18)",
           filter: "blur(200px)",
-          zIndex: 0,
+          zIndex: -1,
           height: "30%",
         }}
       />

@@ -11,10 +11,12 @@ import { Box, Typography } from "@mui/material";
 import DigitalInsightCard from "@/_components/DigitalInsightCard";
 import ButtonComponent from "@/_components/ButtonComponent";
 import svgs from "@/_assets/svgs";
+import { useRouter } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function DigitalInsights() {
+  const router = useRouter();
   type CardContent = {
     heading: string;
     description: string;
@@ -159,6 +161,7 @@ export default function DigitalInsights() {
           ))}
         </Box>
         <ButtonComponent
+          onClick={() => router.push("/blogs")}
           label="view all"
           imgSrc={svgs.whiteArrow}
           sx={{
@@ -192,7 +195,7 @@ export default function DigitalInsights() {
           width: "100%",
           backgroundColor: "rgba(88, 65, 212, 0.4)",
           filter: "blur(200px)",
-          zIndex: 0,
+          zIndex: -1,
           height: "30%",
         }}
       />
