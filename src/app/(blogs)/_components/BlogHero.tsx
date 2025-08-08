@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import {
   localFontSize,
+  maxWidth,
   sectionPadding,
   sectionPaddingY,
 } from "@/app/_utils/themes";
@@ -17,7 +18,7 @@ export default function BlogHero({ text }: BlogHeroProps) {
             display: "flex",
             justifyContent: "flex-start",
             alignItems: "center",
-            maxWidth: "1400px",
+            maxWidth: maxWidth,
             width: "100%",
             height: { xl: "555px", xxl: "650px" },
             margin: "auto",

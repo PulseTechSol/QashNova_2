@@ -1,4 +1,4 @@
-import BlogHero from "@/_components/BlogHero";
+import BlogHero from "@/app/(blogs)/_components/BlogHero";
 import { Box } from "@mui/material";
 import BlogHeading from "../_components/BlogHeading";
 import BlogParagraph from "../_components/BlogParagraph";
