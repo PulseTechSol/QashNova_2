@@ -4,7 +4,11 @@ import {
   sectionPadding,
   sectionPaddingY,
 } from "@/app/_utils/themes";
-export default function BlogHero() {
+
+interface BlogHeroProps {
+  text: string;
+}
+export default function BlogHero({ text }: BlogHeroProps) {
   return (
     <>
       <Box sx={{ padding: sectionPadding }}>
@@ -51,12 +55,7 @@ export default function BlogHero() {
               paddingBottom: "10px",
             }}
           >
-            Mastering SEO in 2025: Your Essential Guide Mastering SEO in 2025:
-            Your Essential Guide Mastering SEO in 2025: Your Essential Guide
-            Mastering SEO in 2025: Your Essential GuideMastering SEO in 2025:
-            Your Essential Guide Mastering SEO in 2025: Your Essential Guide
-            Mastering SEO in 2025: Your Essential Guide Mastering SEO in 2025:
-            Your Essential Guide
+            {text}
           </Typography>
         </Box>
       </Box>

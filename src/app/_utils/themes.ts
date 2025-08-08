@@ -48,6 +48,8 @@ export const sectionPaddingX = {
   lg: "150px",
 };
 
+export const blogScreenGap = { xs: "10px", sm: "15px", md: "20px", xl: "35px" };
+
 export const localFontSize = {
   h1: {
     xs: "56px",
