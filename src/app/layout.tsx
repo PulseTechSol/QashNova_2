@@ -16,6 +16,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-Y44PD5YH11"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Y44PD5YH11');
+          `}
+        </Script>
         {/* Meta Pixel Script */}
         <Script id="facebook-pixel" strategy="afterInteractive">
           {`
