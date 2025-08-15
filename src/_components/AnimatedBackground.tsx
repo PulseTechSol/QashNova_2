@@ -147,7 +147,7 @@ export default function AnimatedBackground({
         left: 0,
         zIndex: 0,
         width: "100%",
-        height: "100%",
+        height: "100vh",
         background: darkMode
           ? "rgba(0, 0, 0, 1)"
           : "linear-gradient(180deg, #FFFFFF 0%, #DDDDDD 100%)",
