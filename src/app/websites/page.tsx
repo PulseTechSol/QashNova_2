@@ -54,7 +54,7 @@ export default function WebsitesPage() {
         destopPara="For Izec Prestige Cars, an executive chauffeur service, we designed and developed a sophisticated and user-friendly website. This platform effectively showcases their premium services, from airport transfers to event travel, ensuring a seamless online experience that reflects their commitment to comfort, professionalism, and luxury."
         mobilePara="For Izec Prestige Cars, an executive chauffeur service, we designed and developed a sophisticated and user-friendly website. This platform effectively showcases their premium services, from airport transfers to event travel."
         image={pngs.websites5}
-        link="https://izec-prestige.vercel.app/"
+        link="https://www.izecprestige.co.uk/"
         isbool={true}
       />
       <WebsiteSection

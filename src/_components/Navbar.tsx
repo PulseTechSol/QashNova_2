@@ -48,7 +48,7 @@ export default function Navbar() {
     { text: "Branding", route: "/branding" },
     { text: "case study", route: "/case-study" },
     { text: "plans", route: "/plans" },
-    { text: "blogs", route: "/blogs" },
+    { text: "blog", route: "/blogs" },
     { text: "contact", route: "/contact-us" },
   ];
 
