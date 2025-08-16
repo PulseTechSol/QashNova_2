@@ -80,7 +80,6 @@ export default function Navbar() {
     { text: "case study", route: "/case-study" },
     { text: "plans", route: "/plans" },
     { text: "blogs", route: "/blogs" },
-    { text: "privacy policy", route: "/privacy-policy" },
     { text: "contact", route: "/contact-us" },
   ];
 
