@@ -1,10 +1,10 @@
 "use client";
+
 import { Box, Typography } from "@mui/material";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import svgs from "@/_assets/svgs";
 import ButtonComponent from "./ButtonComponent";
-// import { maxWidth } from "@/app/_utils/themes";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import React, { useEffect } from "react";
@@ -13,34 +13,65 @@ export default function Navbar() {
   const [menu, setMenu] = React.useState(false);
   const router = useRouter();
   const pathname = usePathname();
+  const openMeta = React.useRef({ y: 0, t: 0 });
+
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
+    AOS.init({ duration: 800, once: true });
     AOS.refresh();
   }, []);
 
-  const toggleDrawer = (open: boolean) => {
-    setMenu(open);
-  };
+  const toggleDrawer = (open: boolean) => setMenu(open);
   function sidebar() {
     setMenu((p) => !p);
-    console.log(menu);
   }
 
-  React.useEffect(() => {
-    const handleScroll = () => {
-      if (menu) {
-        setMenu(false);
-      }
+  useEffect(() => {
+    if (!menu) return;
+
+    openMeta.current.y = window.scrollY;
+    openMeta.current.t = performance.now();
+
+    const prev = {
+      position: document.body.style.position,
+      top: document.body.style.top,
+      width: document.body.style.width,
+      overflow: document.body.style.overflow,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      touchAction: (document.body.style as any).touchAction,
     };
-    window.addEventListener("scroll", handleScroll);
+    const startY = window.scrollY;
+
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${startY}px`;
+    document.body.style.width = "100%";
+    document.body.style.overflow = "hidden";
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (document.body.style as any).touchAction = "none";
+
+    const handleScroll = () => {
+      const dt = performance.now() - openMeta.current.t;
+      const dy = Math.abs(window.scrollY - openMeta.current.y);
+      if (dt < 150) return;
+      if (dy >= 60) setMenu(false);
+    };
+
+    const id = setTimeout(() => {
+      window.addEventListener("scroll", handleScroll, { passive: true });
+    }, 80);
 
     return () => {
+      clearTimeout(id);
       window.removeEventListener("scroll", handleScroll);
+      document.body.style.position = prev.position;
+      document.body.style.top = prev.top;
+      document.body.style.width = prev.width;
+      document.body.style.overflow = prev.overflow;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (document.body.style as any).touchAction = prev.touchAction;
+      window.scrollTo(0, startY);
     };
   }, [menu]);
+
   const navLinks = [
     { text: "home", route: "/" },
     { text: "about", route: "/about-us" },
@@ -48,7 +79,8 @@ export default function Navbar() {
     { text: "Branding", route: "/branding" },
     { text: "case study", route: "/case-study" },
     { text: "plans", route: "/plans" },
-    { text: "blog", route: "/blogs" },
+    { text: "blogs", route: "/blogs" },
+    { text: "privacy policy", route: "/privacy-policy" },
     { text: "contact", route: "/contact-us" },
   ];
 
@@ -60,7 +92,6 @@ export default function Navbar() {
         right: "0",
         zIndex: 20000,
         backgroundColor: { xs: "rgba(255, 255, 255, 0.4)", sm: "transparent" },
-        // this is to fix navbar on moble
         position: { xs: "fixed", sm: "relative" },
         width: "100%",
       }}
@@ -80,11 +111,9 @@ export default function Navbar() {
             md: "20px 80px",
             lg: "20px 150px",
           },
-          // maxWidth: maxWidth,
           margin: "auto",
         }}
       >
-        {/* logo for mobile */}
         <Box
           onClick={() => router.push("/")}
           sx={{
@@ -103,13 +132,10 @@ export default function Navbar() {
             alt="logo"
           />
         </Box>
-        {/* logo for md */}
+
         <Box
           onClick={() => router.push("/")}
-          sx={{
-            maxWidth: "287px",
-            display: { xs: "none", md: "block" },
-          }}
+          sx={{ maxWidth: "287px", display: { xs: "none", md: "block" } }}
         >
           <Image
             width={287}
@@ -122,10 +148,9 @@ export default function Navbar() {
             alt="logo"
           />
         </Box>
+
         <Box
           sx={{
-            // maxWidth: "280px",
-            // width: "100%",
             display: { xs: "none", md: "flex" },
             justifyContent: { xs: "start", md: "center" },
             alignItems: "center",
@@ -159,29 +184,30 @@ export default function Navbar() {
             />
           </Box>
         </Box>
+
         <Box
           onClick={sidebar}
-          sx={{
-            display: { xs: "block", md: "none" },
-            cursor: "pointer",
-          }}
+          sx={{ display: { xs: "block", md: "none" }, cursor: "pointer" }}
         >
           <Image src={svgs.hamburger} alt="hamburger" height={50} width={50} />
         </Box>
       </Box>
+
       {menu && (
         <Box
+          onClick={sidebar}
           sx={{
-            display: { xs: "block", md: "none" },
             position: "fixed",
             top: 0,
             left: 0,
             width: "100vw",
-            height: "100vh",
+            height: "100svh",
             zIndex: 1000,
             backdropFilter: "blur(8px)",
             WebkitBackdropFilter: "blur(8px)",
             backgroundColor: "rgba(0, 0, 0, 0.2)",
+            touchAction: "none",
+            overscrollBehavior: "none",
           }}
         />
       )}
@@ -190,17 +216,17 @@ export default function Navbar() {
         onClick={sidebar}
         sx={{
           display: menu ? "block" : "none",
-          height: "100vh",
-          width: "100vw",
+          // height: "100svh",
+          // width: "100vw",
           position: "fixed",
           top: "0px",
           left: "0px",
           zIndex: 1000,
         }}
-      ></Box>
+      />
+
       <Box
         sx={{
-          // height: { xs: "auto", md: "650px", lg: "760px" },
           width: { xs: "100vw", sm: "80vw", md: "540px" },
           position: "fixed",
           top: "0px",
@@ -208,23 +234,22 @@ export default function Navbar() {
           transition: "all 0.4s ease-in-out",
           transform: menu ? "translateX(0%)" : "translateX(100%)",
           borderRadius: { xs: "0 40px 0 40px", md: " 40px 0 0 40px" },
-          zIndex: 1000,
+          zIndex: 1001,
           background: {
             xs: `linear-gradient(180deg, #FFFFFF, #C5C5C5, #999999)`,
             md: "#fff",
           },
+          // height: "100svh",
           overflowY: "auto",
+          WebkitOverflowScrolling: "touch",
+          overscrollBehavior: "contain",
           scrollbarWidth: "thin",
-          "&::-webkit-scrollbar": {
-            width: "6px",
-          },
+          "&::-webkit-scrollbar": { width: "6px" },
           "&::-webkit-scrollbar-thumb": {
             backgroundColor: "#888",
             borderRadius: "6px",
           },
-          "&::-webkit-scrollbar-track": {
-            backgroundColor: "#f1f1f1",
-          },
+          "&::-webkit-scrollbar-track": { backgroundColor: "#f1f1f1" },
         }}
       >
         <Box
@@ -241,6 +266,7 @@ export default function Navbar() {
             width={40}
           />
         </Box>
+
         <Box
           sx={{
             display: { xs: "none", md: "block" },
@@ -248,7 +274,8 @@ export default function Navbar() {
             bgcolor: "#00000080",
             width: "100%",
           }}
-        ></Box>
+        />
+
         <Box
           sx={{
             display: "flex",
@@ -265,18 +292,7 @@ export default function Navbar() {
                 toggleDrawer(false);
                 router.push(link.route);
               }}
-              sx={{
-                width: { xs: "100%" },
-                gap: "30px",
-                backgroundColor:
-                  pathname ===
-                  (link.route.startsWith("./")
-                    ? link.route.substring(1)
-                    : link.route)
-                    ? ""
-                    : "",
-                cursor: "pointer",
-              }}
+              sx={{ width: { xs: "100%" }, gap: "30px", cursor: "pointer" }}
               key={i}
             >
               <Typography
@@ -328,19 +344,14 @@ export default function Navbar() {
             sx={{
               flexGrow: 1,
               overflowY: "scroll",
-
-              "&::-webkit-scrollbar": {
-                width: "6px",
-              },
+              "&::-webkit-scrollbar": { width: "6px" },
               "&::-webkit-scrollbar-thumb": {
                 backgroundColor: "#888",
                 borderRadius: "6px",
               },
-              "&::-webkit-scrollbar-track": {
-                backgroundColor: "#f1f1f1ff",
-              },
+              "&::-webkit-scrollbar-track": { backgroundColor: "#f1f1f1ff" },
             }}
-          ></Box>
+          />
         </Box>
       </Box>
     </Box>

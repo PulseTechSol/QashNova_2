@@ -6,7 +6,7 @@ interface HeroSectionProps {
   line1Mobile: string;
   line2Desktop: string;
   line2Mobile?: string;
-  line3Desktop: string;
+  line3Desktop?: string;
   line3Mobile?: string;
   isbool?: boolean;
 }
@@ -41,7 +41,7 @@ export default function HeroSection({
         // minHeight: {
         //   xs: "393px",
         //   sm: "unset",
-         
+
         // },
         padding: { ...sectionPadding, xxl: "0" },
       }}
@@ -63,13 +63,13 @@ export default function HeroSection({
           data-aos-duration="500"
           sx={{
             maxWidth: {
-              xs:"380px",
+              xs: "380px",
               sm: "600px",
               md: "1300px",
               lg: "1083px",
               xl: "2000px",
             },
-           
+
             width: "100%",
             textTransform: "uppercase",
             textAlign: "center",
@@ -78,15 +78,21 @@ export default function HeroSection({
           {/* Line 1 */}
           <Typography
             sx={{
-              width:"100%",
+              width: "100%",
               textAlign: "start",
-               maxWidth: {
-              sm: "600px",
-              md: "947px",   
-            },
+              maxWidth: {
+                sm: "600px",
+                md: "947px",
+              },
 
-             lineHeight: {sm:"60px", md: "90px", lg:"100px", xl: "120px", xxl: "160px" },
-              ml: {  sm: "30px", lg: "60px" },
+              lineHeight: {
+                sm: "60px",
+                md: "90px",
+                lg: "100px",
+                xl: "120px",
+                xxl: "160px",
+              },
+              ml: { sm: "30px", lg: "60px" },
               ...headingStyles,
               flexWrap: "nowrap",
               display: { xs: "none", sm: "block" },
@@ -96,10 +102,10 @@ export default function HeroSection({
           </Typography>
           <Typography
             sx={{
-              mt:"90px",
+              mt: "90px",
               textAlign: "start",
-              ml: { xs: "20px", },
-                lineHeight: { xs: "50px" },
+              ml: { xs: "20px" },
+              lineHeight: { xs: "50px" },
               ...headingStyles,
               flexWrap: "nowrap",
               display: { xs: "block", sm: "none" },
@@ -113,7 +119,13 @@ export default function HeroSection({
             sx={{
               display: { xs: "none", sm: "block" },
               textAlign: "end",
-             lineHeight: {sm:"60px", md: "90px", lg:"100px", xl: "120px", xxl: "160px" },
+              lineHeight: {
+                sm: "60px",
+                md: "90px",
+                lg: "100px",
+                xl: "120px",
+                xxl: "160px",
+              },
               ...headingStyles,
             }}
           >
@@ -123,7 +135,7 @@ export default function HeroSection({
             <Typography
               sx={{
                 width: "100%",
-                maxWidth:{xs:"500px"},
+                maxWidth: { xs: "500px" },
                 // bgcolor:"#000",
                 display: { xs: "block", sm: "none" },
                 textAlign: isbool ? "end" : "end",
@@ -143,7 +155,13 @@ export default function HeroSection({
               width: "100%",
               display: { xs: "none", sm: "block" },
               textAlign: "left",
-              lineHeight: {sm:"60px", md: "90px", lg:"100px", xl: "120px", xxl: "160px" },
+              lineHeight: {
+                sm: "60px",
+                md: "90px",
+                lg: "100px",
+                xl: "120px",
+                xxl: "160px",
+              },
               ...headingStyles,
             }}
           >
@@ -156,7 +174,7 @@ export default function HeroSection({
                 textAlign: "left",
                 maxWidth: "370px",
                 width: "100%",
-                  lineHeight: { xs: "50px" },
+                lineHeight: { xs: "50px" },
                 ...headingStyles,
                 whiteSpace: "nowrap",
               }}
