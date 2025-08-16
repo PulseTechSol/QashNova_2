@@ -161,6 +161,42 @@ export default function Footer() {
                 />
               </Box>
             </Box>
+            <Box
+              data-aos="fade-left"
+              data-aos-duration="500"
+              sx={{
+                width: "100%",
+                marginTop: { xs: "40px", md: "50px", lg: "80px" },
+              }}
+            >
+              <Typography sx={{ ...headingStyles }}>
+                Terms & Condution
+              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: {
+                    xs: "flex-start",
+                    sm: "center",
+                    md: "space-between",
+                  },
+                  alignItems: "center",
+                  width: "100%",
+                  paddingTop: "20px",
+                  flexWrap: "wrap-reverse",
+                  rowGap: "20px",
+                  columnGap: "30px",
+                  maxWidth: { xs: "240px", sm: "unset" },
+                  margin: "auto",
+                }}
+              >
+                <SocialMediaItem
+                  link="https://www.qashnova.com/privacy-policy"
+                  text="Privacy Policy"
+                  image={svgs.privacyPolicy}
+                />
+              </Box>
+            </Box>
           </Box>
         </Box>
         <Box

@@ -52,6 +52,7 @@ import closeIcon from "./landingpage/close-icon.svg";
 import addIcon from "./landingpage/add-icon.svg";
 import branding from "./landingpage/branding.svg";
 // import arrow2 from "./landingpage/arrow2.svg";
+import privacyPolicy from "./privacyPolicy.svg";
 
 const svgs = {
   logoFooter,
@@ -93,6 +94,7 @@ const svgs = {
   closeIcon,
   addIcon,
   branding,
+  privacyPolicy,
 };
 
 export default svgs;
