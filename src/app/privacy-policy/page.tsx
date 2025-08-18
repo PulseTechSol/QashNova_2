@@ -2,12 +2,20 @@
 import PrivatePolicies from "./_sections/PrivatePolicies";
 import Navbar from "@/_components/Navbar";
 import Footer from "@/_components/Footer";
+import { Box } from "@mui/material";
 // import { Box } from "@mui/material";
 
 export default function PrivacyPolicy() {
   return (
     <>
-      <Navbar />
+      <Box
+        sx={{
+          maxWidth: "1536px",
+          margin: "auto",
+        }}
+      >
+        <Navbar />
+      </Box>
       {/* <Box
         sx={{
           maxWidth: { sm: "600px", md: "900px", lg: "1200px" },
