@@ -71,7 +71,7 @@ export default function WebsitesPage() {
         destopPara="We designed and developed a responsive website for Isfahan & Kashan, showcasing their premium Persian and rugged carpets. The site blends traditional elegance with a modern layout to highlight their craftsmanship and enhance the customer experience."
         mobilePara="We designed and developed a responsive website for Isfahan & Kashan, showcasing their premium Persian and rugged carpets."
         image={pngs.websites7}
-        link="https://isfahan-and-kashan.vercel.app/"
+        link="https://www.isfahanandkashan.com"
         isbool={true}
       />
       <WebsiteSection
