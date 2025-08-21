@@ -156,7 +156,7 @@ export default function Footer() {
                 <SocialMediaItem text="hello@qashnova.com" image={svgs.email} />
                 <SocialMediaItem
                   link="tel:+447722002392"
-                  text="0772002392"
+                  text="07722002392"
                   image={svgs.phone}
                 />
               </Box>
@@ -169,31 +169,44 @@ export default function Footer() {
                 marginTop: { xs: "40px", md: "50px", lg: "80px" },
               }}
             >
-              <Typography sx={{ ...headingStyles }}>
-                Terms & Condution
-              </Typography>
+              <Typography sx={{ ...headingStyles }}>Useful Links</Typography>
               <Box
                 sx={{
-                  display: "flex",
-                  justifyContent: {
-                    xs: "flex-start",
-                    sm: "center",
-                    md: "space-between",
+                  display: "grid",
+                  gridTemplateColumns: {
+                    xs: "1fr",
+                    sm: "repeat(2, 1fr)",
+                    md: "repeat(3, 1fr)",
                   },
-                  alignItems: "center",
+                  gap: "12px 30px",
+                  alignItems: "start",
                   width: "100%",
                   paddingTop: "20px",
-                  flexWrap: "wrap-reverse",
-                  rowGap: "20px",
-                  columnGap: "30px",
                   maxWidth: { xs: "240px", sm: "unset" },
                   margin: "auto",
                 }}
               >
-                <SocialMediaItem
+                <LinkItem
+                  link="https://www.qashnova.com/websites"
+                  text="Websites"
+                />
+                <LinkItem
+                  link="https://www.qashnova.com/branding"
+                  text="Branding"
+                />
+                <LinkItem
+                  link="https://www.qashnova.com/case-study"
+                  text="Case Study"
+                />
+                <LinkItem link="https://www.qashnova.com/plans" text="Plans" />
+                <LinkItem link="https://www.qashnova.com/blogs" text="Blog" />
+                <LinkItem
                   link="https://www.qashnova.com/privacy-policy"
                   text="Privacy Policy"
-                  image={svgs.privacyPolicy}
+                />
+                <LinkItem
+                  link="https://www.qashnova.com/contact-us"
+                  text="Contact Us"
                 />
               </Box>
             </Box>
@@ -317,6 +330,44 @@ export function SocialMediaItem({ text, image, link }: SocialMediaItemProps) {
             fontSize: localFontSize.p1,
             textTransform: "capitalize",
             textDecoration: "none",
+          }}
+        >
+          {text}
+        </Typography>
+      )}
+    </Box>
+  );
+}
+
+export function LinkItem({ text, link }: { text: string; link?: string }) {
+  return (
+    <Box sx={{ display: "flex", gap: "10px" }}>
+      {typeof link === "string" ? (
+        <Link href={link} target="_blank" style={{ textDecoration: "none" }}>
+          <Typography
+            sx={{
+              color: "#000000",
+              fontSize: localFontSize.p1,
+              textTransform: "capitalize",
+              cursor: "pointer",
+              transition: "all 0.2s ease",
+              whiteSpace: "nowrap", // ✅ stops breaking into 2 lines
+              "&:hover": {
+                textDecoration: "underline",
+                color: "#1976d2",
+              },
+            }}
+          >
+            {text}
+          </Typography>
+        </Link>
+      ) : (
+        <Typography
+          sx={{
+            color: "#000000",
+            fontSize: localFontSize.p1,
+            textTransform: "capitalize",
+            whiteSpace: "nowrap", // ✅ same fix for non-links too
           }}
         >
           {text}
