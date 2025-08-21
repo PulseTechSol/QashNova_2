@@ -228,11 +228,15 @@ export default function Navbar() {
         sx={{
           width: { xs: "100vw", sm: "80vw", md: "540px" },
           position: "fixed",
-          top: "0px",
-          right: "0px",
+          top: 0,
+          left: { xs: 0, md: "auto" }, // 👈 mobile: left, desktop: right
+          right: { xs: "auto", md: 0 }, // 👈 desktop: right
           transition: "all 0.4s ease-in-out",
-          transform: menu ? "translateX(0%)" : "translateX(100%)",
-          borderRadius: { xs: "0 40px 0 40px", md: " 40px 0 0 40px" },
+          transform: {
+            xs: menu ? "translateX(0)" : "translateX(-100%)", // 👈 slide from left on mobile
+            md: menu ? "translateX(0)" : "translateX(100%)", // 👈 slide from right on desktop
+          },
+          borderRadius: { xs: "0 40px 40px 0", md: "40px 0 0 40px" },
           zIndex: 1001,
           background: {
             xs: `linear-gradient(180deg, #FFFFFF, #C5C5C5, #999999)`,
