@@ -233,7 +233,7 @@ export default function Footer() {
               },
             }}
           >
-            Copyright © 2025 A Class Travel Ltd. All Rights Reserved.
+            Copyright © 2025. All Rights Reserved.
           </Typography>
           <Typography
             sx={{
