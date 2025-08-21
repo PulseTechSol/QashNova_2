@@ -1,6 +1,16 @@
 import pngs from "@/_assets/pngs";
 import CaseStudySection from "@/_components/CaseStudySection";
 import HeroSection from "@/_components/HeroSection";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Case Studies | Qashnova Success Stories",
+  description:
+    "Explore real case studies of businesses that grew with Qashnova’s websites, branding, and marketing strategies.",
+  alternates: {
+    canonical: "https://www.qashnova.com/case-study",
+  },
+};
 
 export default function CaseStudyPage() {
   return (

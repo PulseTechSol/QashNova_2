@@ -1,6 +1,16 @@
 import pngs from "@/_assets/pngs";
 import HeroSection from "@/_components/HeroSection";
 import WebsiteSection from "@/_components/WebsiteSection";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Custom Website Development Services | Qashnova",
+  description:
+    "Get modern, fast, and responsive websites built by Qashnova. We design websites that not only look great but also perform for your business.",
+  alternates: {
+    canonical: "https://www.qashnova.com/websites",
+  },
+};
 
 export default function WebsitesPage() {
   return (

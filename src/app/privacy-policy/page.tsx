@@ -3,7 +3,17 @@ import PrivatePolicies from "./_sections/PrivatePolicies";
 import Navbar from "@/_components/Navbar";
 import Footer from "@/_components/Footer";
 import { Box } from "@mui/material";
+import { Metadata } from "next";
 // import { Box } from "@mui/material";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Qashnova",
+  description:
+    "Read Qashnova’s privacy policy to understand how we handle your data, cookies, and user information securely.",
+  alternates: {
+    canonical: "https://www.qashnova.com/privacy-policy",
+  },
+};
 
 export default function PrivacyPolicy() {
   return (
