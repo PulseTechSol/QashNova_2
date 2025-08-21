@@ -343,7 +343,7 @@ export function LinkItem({ text, link }: { text: string; link?: string }) {
   return (
     <Box sx={{ display: "flex", gap: "10px" }}>
       {typeof link === "string" ? (
-        <Link href={link} target="_blank" style={{ textDecoration: "none" }}>
+        <Link href={link} style={{ textDecoration: "none" }}>
           <Typography
             sx={{
               color: "#000000",
