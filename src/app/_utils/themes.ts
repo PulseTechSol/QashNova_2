@@ -96,6 +96,12 @@ export const localFontSize = {
     xl: "46px",
     // xxl: "50px",
   },
+  h6: {
+    xs: "32px",
+    sm: "42px",
+    md: "54px",
+    lg: "70px",
+  },
   p1: {
     xs: "18px",
     md: "20px",
