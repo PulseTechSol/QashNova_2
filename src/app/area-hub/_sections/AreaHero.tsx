@@ -1,10 +1,12 @@
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
+import Navbar from "@/app/sy-landing-page/_components/Navbar";
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
 export default function AreaHero() {
   return (
     <Box sx={{ bgcolor: "#fff" }}>
+      <Navbar />
       <Box
         sx={{
           maxWidth: "1440px",
@@ -19,7 +21,6 @@ export default function AreaHero() {
         }}
       >
         {/* <Box sx={{width:"100%",maxWidth:"1140px"}}> */}
-
         <Typography
           sx={{
             textAlign: "center",

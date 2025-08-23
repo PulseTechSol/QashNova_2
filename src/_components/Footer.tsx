@@ -1,10 +1,17 @@
-"use clinet";
-import { localFontSize, maxWidth, maxWidthxxl, sectionPadding } from "@/app/_utils/themes";
+"use client";
+import {
+  localFontSize,
+  maxWidth,
+  maxWidthxxl,
+  sectionPadding,
+} from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 import svgs from "@/_assets/svgs";
 import Link from "next/link";
 import pngs from "@/_assets/pngs";
+import { usePathname } from "next/navigation";
+
 export default function Footer() {
   const headingStyles = {
     fontWeight: 500,
@@ -13,6 +20,9 @@ export default function Footer() {
     textTransform: "capitalize",
     textAlign: { xs: "center", md: "right" },
   };
+
+  const pathname = usePathname();
+  const isAreaHub = pathname.includes("area-hub");
 
   return (
     <>
@@ -44,7 +54,7 @@ export default function Footer() {
 
         <Box
           sx={{
-            maxWidth: { xs: maxWidth, xxl: maxWidthxxl },
+            maxWidth: { xs: maxWidth, xxl: isAreaHub ? "1440px" : maxWidthxxl },
             margin: "auto",
             display: "flex",
             justifyContent: "space-between",
