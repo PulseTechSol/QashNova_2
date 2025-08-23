@@ -208,6 +208,10 @@ export default function Footer() {
                   link="https://www.qashnova.com/case-study"
                   text="Case Study"
                 />
+                <LinkItem
+                  link="https://www.qashnova.com/area-hub"
+                  text="Area Hub"
+                />
                 <LinkItem link="https://www.qashnova.com/plans" text="Plans" />
                 <LinkItem link="https://www.qashnova.com/blogs" text="Blog" />
                 <LinkItem

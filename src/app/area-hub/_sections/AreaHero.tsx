@@ -1,13 +1,25 @@
+"use client";
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import Navbar from "@/app/sy-landing-page/_components/Navbar";
 import { Box, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function AreaHero() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
     <Box sx={{ bgcolor: "#fff" }}>
       <Navbar />
       <Box
+        data-aos="zoom-in"
+        data-aos-duration="500"
         sx={{
           maxWidth: "1440px",
           width: "100%",
