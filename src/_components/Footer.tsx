@@ -1,5 +1,5 @@
 "use clinet";
-import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
+import { localFontSize, maxWidth, maxWidthxxl, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 import svgs from "@/_assets/svgs";
@@ -44,7 +44,7 @@ export default function Footer() {
 
         <Box
           sx={{
-            maxWidth: { xs: maxWidth, xxl: "80vw" },
+            maxWidth: { xs: maxWidth, xxl: maxWidthxxl },
             margin: "auto",
             display: "flex",
             justifyContent: "space-between",

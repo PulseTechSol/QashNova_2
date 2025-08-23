@@ -27,6 +27,7 @@ const theme = createTheme({
 export default theme;
 
 export const maxWidth = "1440px";
+export const maxWidthxxl = "80vw";
 
 export const sectionPadding = {
   xs: "60px 20px",
@@ -97,8 +98,8 @@ export const localFontSize = {
     // xxl: "50px",
   },
   h6: {
-    xs: "32px",
-    sm: "42px",
+    xs: "40px",
+    sm: "48px",
     md: "54px",
     lg: "70px",
   },

@@ -26,12 +26,33 @@ export default function LayoutWrapper({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const isLandingPage =
-    pathname === "/sy-landing-page" || pathname === "/privacy-policy";
+  const isLandingPage = pathname === "/sy-landing-page";
+
+  const normalNavbarPaths = [
+    "/",
+    "/about-us",
+    "/websites",
+    "/branding",
+    "/case-study",
+    "/plans",
+    "/blogs",
+    "/contact-us",
+  ];
+
+  const animatedBackgroundPaths = [
+    "/",
+    "/about-us",
+    "/websites",
+    "/branding",
+    "/case-study",
+    "/plans",
+    "/blogs",
+    "/contact-us",
+  ];
 
   return (
     <>
-      {!isLandingPage && (
+      {animatedBackgroundPaths.includes(pathname) && (
         <Box
           sx={{
             position: "relative",
@@ -45,7 +66,7 @@ export default function LayoutWrapper({
         </Box>
       )}
 
-      {!isLandingPage && <Navbar />}
+      {normalNavbarPaths.includes(pathname) && <Navbar />}
 
       <Box sx={{ marginTop: isLandingPage ? 0 : { xs: "96px", sm: "unset" } }}>
         {children}
