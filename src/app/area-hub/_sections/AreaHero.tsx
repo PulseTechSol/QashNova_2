@@ -22,6 +22,7 @@ export default function AreaHero() {
       >
         {/* <Box sx={{width:"100%",maxWidth:"1140px"}}> */}
         <Typography
+          variant="h1"
           sx={{
             textAlign: "center",
             fontSize: localFontSize.h6,

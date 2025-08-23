@@ -6,27 +6,29 @@ import Image from "next/image";
 import React from "react";
 
 export default function OurHubareasCards() {
-
-
   const websiteServices = [
     {
       title: "Rotherham",
       image: svgs.locationhub,
-      description: "We're local and work with South Yorkshire businesses daily. That means fast response times and practical advice tailored to Rotherham customers.",
+      description:
+        "We're local and work with South Yorkshire businesses daily. That means fast response times and practical advice tailored to Rotherham customers.",
     },
     {
       title: "South Yorkshire",
       image: svgs.locationhub,
-      description: "Our websites are built to be fast, secure and easy to manage, so you can focus on running your business while we bring you more customers.  ",
+      description:
+        "Our websites are built to be fast, secure and easy to manage, so you can focus on running your business while we bring you more customers.  ",
     },
     {
       title: "sheffield",
       image: svgs.locationhub,
-      description: "Designing bespoke websites that capture the unique spirit of Sheffield, ensuring a seamless and engaging user experience that drive real business growth.",
+      description:
+        "Designing bespoke websites that capture the unique spirit of Sheffield, ensuring a seamless and engaging user experience that drive real business growth.",
     },
   ];
-  return <Box sx={{position:"relative", bgcolor: "#000000",  overflow:"hidden"}}>
- <Box
+  return (
+    <Box sx={{ position: "relative", bgcolor: "#000000", overflow: "hidden" }}>
+      <Box
         sx={{
           width: { xs: "355px", md: "633px" },
           height: { xs: "355px", md: "633px" },
@@ -47,10 +49,8 @@ export default function OurHubareasCards() {
           height: { xs: "500px", md: "790px" },
           position: "absolute",
           right: 0,
-           transform: "rotate(90deg)",
-           bottom:-1,
-          
-       
+          transform: "rotate(90deg)",
+          bottom: -1,
         }}
       >
         <Image
@@ -59,57 +59,57 @@ export default function OurHubareasCards() {
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
-    <Box sx={{
-      maxWidth: "1440px", width: "100%",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center", alignItems: "center", padding: sectionPadding,
-      margin: "auto",
-      gap: { xs: "40px", md: "80px" },
-
-    }}
-
-    >
-
-
-      <Typography sx={{
-        textAlign: "center",
-        fontSize: localFontSize.h4,
-        fontWeight: 500,
-        color: "#fff",
-
-        textTransform: "capitalize",
-      }}>
-
-        our hub areas
-      </Typography >
-
       <Box
         sx={{
-
+          maxWidth: "1440px",
           width: "100%",
-          display: { xs: "flex", },
+          display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-
-          flexWrap: { xs: "wrap", lg: "nowrap" },
-          overflow: "hidden",
-          gap: { xs: "20px", md: "30px" },
+          padding: sectionPadding,
+          margin: "auto",
+          gap: { xs: "40px", md: "80px" },
         }}
       >
+        <Typography
+          sx={{
+            textAlign: "center",
+            fontSize: localFontSize.h4,
+            fontWeight: 500,
+            color: "#fff",
 
-        {websiteServices.map((items, index) => (
-          <WhatIncludedCard
-            key={index}
-            image={items.image}
-            title={items.title}
-            description={items.description}
-            index={index}
-          />
-        ))}
+            textTransform: "capitalize",
+          }}
+        >
+          our hub areas
+        </Typography>
+
+        <Box
+          sx={{
+            width: "100%",
+            display: { xs: "flex" },
+            justifyContent: "center",
+            alignItems: "center",
+
+            flexWrap: { xs: "wrap", lg: "nowrap" },
+            overflow: "hidden",
+            gap: { xs: "20px", md: "30px" },
+          }}
+        >
+          {websiteServices.map((items, index) => (
+            <WhatIncludedCard
+              key={index}
+              image={items.image}
+              title={items.title}
+              description={items.description}
+              index={index}
+            />
+          ))}
+        </Box>
       </Box>
     </Box>
-  </Box>;
+  );
 }
 type WhatIncludedCardProps = {
   image: string;
@@ -126,20 +126,21 @@ export function WhatIncludedCard({
 }: WhatIncludedCardProps) {
   return (
     <Box
-      sx={{
-        // backgroundColor:"#ccc",
-        // padding: { xs: "40px 20px 30px 20px", sm: "unset" },
-        // width: { xs: "100%", sm: "unset" },
-      }}
+      sx={
+        {
+          // backgroundColor:"#ccc",
+          // padding: { xs: "40px 20px 30px 20px", sm: "unset" },
+          // width: { xs: "100%", sm: "unset" },
+        }
+      }
     >
       <Box
         key={index}
-
         sx={{
           margin: "auto",
-          maxWidth: { xs: "360px", },
+          maxWidth: { xs: "360px" },
           width: "100%",
-          height: { xs: "350px", },
+          height: { xs: "350px" },
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -151,24 +152,19 @@ export function WhatIncludedCard({
           cursor: "pointer",
           background:
             " linear-gradient(133.39deg, rgba(60, 101, 255, 0.2) 0%, rgba(88, 65, 212, 0.2) 50%, rgba(38, 23, 177, 0.2) 100%)",
-          
+
           border: "1px solid rgba(255, 255, 255, 0.15)",
           backdropFilter: "blur(20px)",
           WebkitBackdropFilter: "blur(20px)",
-
         }}
       >
         {/* Default content (image + title) */}
         <Box
-
           sx={{
             display: "flex",
             flexDirection: "column",
             gap: "20px",
             alignItems: "start",
-            
-
-
           }}
         >
           <Box
@@ -203,9 +199,7 @@ export function WhatIncludedCard({
             {title}
           </Typography>
           <Typography
-
             sx={{
-
               textAlign: "left",
 
               color: "#FFFFFF80",
@@ -213,7 +207,7 @@ export function WhatIncludedCard({
               fontWeight: 400,
               width: "100%",
               display: "-webkit-box",
-              WebkitLineClamp: 5,          // kitni lines dikhani hain
+              WebkitLineClamp: 5, // kitni lines dikhani hain
               WebkitBoxOrient: "vertical",
               overflow: "hidden",
               textOverflow: "ellipsis",
@@ -222,9 +216,6 @@ export function WhatIncludedCard({
             {description}
           </Typography>
         </Box>
-
-
-
       </Box>
     </Box>
   );
