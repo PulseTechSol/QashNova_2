@@ -94,6 +94,71 @@ export default function CardBranding() {
           >
             Logo
           </Typography>
+
+          <Typography
+            data-aos={"fade-left"}
+            data-aos-duration="500"
+            sx={{
+              width: "100%",
+              fontSize: localFontSize.p1,
+              fontWeight: 400,
+              color: "#FFFFFF80",
+              display: { xs: "none", md: "block" },
+              textAlign: "center",
+              marginBottom: 10,
+            }}
+          >
+            A strong logo is one of the most important parts of any brand. It is
+            often the first thing people notice and the image they remember long
+            after visiting your business. A well designed logo captures your
+            values, sets you apart from competitors and builds trust with your
+            audience.
+            <br />
+            <br />
+            At our studio we create new logos that reflect your brand’s
+            personality and vision. We take time to understand your business,
+            your goals and your customers before developing designs that are
+            clear, versatile and memorable. Whether you are starting fresh or
+            looking to update an existing design, our process is focused on
+            making sure your logo works across print, digital and social media.
+            <br />
+            <br />
+            We also specialise in re-designing logos to give established brands
+            a modern edge while keeping the essence that people recognise. This
+            helps businesses stay relevant and consistent as they grow and
+            evolve.
+          </Typography>
+
+          <Typography
+            sx={{
+              fontSize: localFontSize.p1,
+              fontWeight: 400,
+              color: "#FFFFFF80",
+              textAlign: { xs: "center", md: "start" },
+              display: { xs: "block", md: "none" },
+              marginBottom: 10,
+            }}
+          >
+            A strong logo is one of the most important parts of any brand. It is
+            often the first thing people notice and the image they remember long
+            after visiting your business. A well designed logo captures your
+            values, sets you apart from competitors and builds trust with your
+            audience.
+            <br />
+            <br />
+            At our studio we create new logos that reflect your brand’s
+            personality and vision. We take time to understand your business,
+            your goals and your customers before developing designs that are
+            clear, versatile and memorable. Whether you are starting fresh or
+            looking to update an existing design, our process is focused on
+            making sure your logo works across print, digital and social media.
+            <br />
+            <br />
+            We also specialise in re-designing logos to give established brands
+            a modern edge while keeping the essence that people recognise. This
+            helps businesses stay relevant and consistent as they grow and
+            evolve.
+          </Typography>
           <Grid
             container
             spacing={{ xs: 4, sm: 6, md: 8, xl: 10, xxl: 12 }}
