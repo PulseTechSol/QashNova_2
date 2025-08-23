@@ -114,6 +114,51 @@ export default function PlanScreen() {
             Perfect Plan
           </Typography>
         </Box>
+
+        <Typography
+          data-aos={"fade-left"}
+          data-aos-duration="500"
+          sx={{
+            width: "100%",
+            fontSize: localFontSize.p1,
+            fontWeight: 400,
+            color: "#FFFFFF80",
+            display: { xs: "none", md: "block" },
+            textAlign: "center",
+            marginBottom: 10,
+          }}
+        >
+          Our plans are designed to give every business the right foundation to
+          grow online. Whether you need a simple landing page, a professional
+          website for your small business or a fully integrated e-commerce
+          platform, we have an option to suit your goals. Each package includes
+          secure hosting, a custom domain and responsive design as standard.
+          From our affordable Basic plan to our advanced Premium solution, you
+          can choose the level of functionality and support that best matches
+          your needs. Whatever stage your business is at, we make sure your
+          website is built to perform and scale.
+        </Typography>
+
+        <Typography
+          sx={{
+            fontSize: localFontSize.p1,
+            fontWeight: 400,
+            color: "#FFFFFF80",
+            textAlign: { xs: "center", md: "start" },
+            display: { xs: "block", md: "none" },
+            marginBottom: 10,
+          }}
+        >
+          Our plans are designed to give every business the right foundation to
+          grow online. Whether you need a simple landing page, a professional
+          website for your small business or a fully integrated e-commerce
+          platform, we have an option to suit your goals. Each package includes
+          secure hosting, a custom domain and responsive design as standard.
+          From our affordable Basic plan to our advanced Premium solution, you
+          can choose the level of functionality and support that best matches
+          your needs. Whatever stage your business is at, we make sure your
+          website is built to perform and scale.
+        </Typography>
         <Box
           sx={{
             display: "flex",
