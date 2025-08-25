@@ -1,5 +1,7 @@
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
+import Image from "next/image";
+import svgs from "@/_assets/svgs";
 
 export default function HeroCity() {
   return (
@@ -8,14 +10,51 @@ export default function HeroCity() {
         sx={{
           maxWidth: "1440px",
           width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          // display: "flex",
+          // justifyContent: "center",
+          // alignItems: "center",
           padding: sectionPadding,
+          paddingTop: { xs: "30px", md: "40px", lg: "50px" },
           margin: "auto",
         }}
       >
-        <Box sx={{ width: "100%", maxWidth: { md: "600px", lg: "864px" } }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: "10px",
+            alignItems: "center",
+            paddingBottom: { xs: "30px", md: "40px", lg: "50px" },
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: "18px",
+              color: "#00000080",
+              textAlign: "center",
+              fontWeight: "400",
+            }}
+          >
+            Areas Hub
+          </Typography>
+          <Image src={svgs.arrowRight} alt="arrowRight" />
+          <Typography
+            sx={{
+              fontSize: "18px",
+              color: "rgba(60, 101, 255, 1)",
+              textAlign: "center",
+              fontWeight: "400",
+            }}
+          >
+            Rotherham
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            width: "100%",
+            maxWidth: { md: "600px", lg: "864px" },
+            margin: "auto",
+          }}
+        >
           <Typography
             sx={{
               textAlign: "center",
@@ -26,7 +65,6 @@ export default function HeroCity() {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               mb: "40px",
-              // lineHeight:"100px",
               textTransform: "uppercase",
             }}
           >
