@@ -46,6 +46,9 @@ import bulb from "./landingpage/light.webp";
 import bgcolorBlue from "./landingpage/bgcolorBlue.webp";
 import circlebg from "./landingpage/circlebg.webp";
 import girl from "./landingpage/girl.png";
+import WhyChooseQashNova from "./whyQashnovaSection/WhyChooseQashNova.png";
+import WhyTrustQashNova from "./whyQashnovaSection/WhyTrustQashNova.png";
+import whyQashnova from "./whyQashnovaSection/whyQashnova.png";
 
 const pngs = {
   image1,
@@ -93,5 +96,8 @@ const pngs = {
   bgcolorBlue,
   circlebg,
   girl,
+  WhyChooseQashNova,
+  WhyTrustQashNova,
+  whyQashnova,
 };
 export default pngs;
