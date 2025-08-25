@@ -5,9 +5,9 @@ import svgs from "@/_assets/svgs";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import EmailInputBox from "./EmailInputBox";
+import EmailInputBox from "../app/sy-landing-page/_components/EmailInputBox";
 
-export default function Navbar() {
+export default function LandingNavbar() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -81,6 +81,58 @@ export default function Navbar() {
         </Box>
 
         <EmailInputBox buttonLabel="Free Audit" />
+      </Box>
+      <Box
+        sx={{
+          maxWidth: { xs: "300px", md: "35vw", lg: "50%", xxl: "30%" },
+          width: "100%",
+          position: "absolute",
+          left: "0px",
+          top: { xs: "-2%", lg: "10%" },
+          zIndex: 1,
+          transform: {
+            xs: "translate(-20%, -10%)",
+            lg: "translate(-40%, -20%)",
+          },
+        }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "50%",
+            background: "rgba(60, 101, 255, 0.2)",
+            filter: "blur(50px)",
+            zIndex: -1,
+            aspectRatio: "1/1",
+          }}
+        />
+      </Box>
+      <Box
+        sx={{
+          maxWidth: { xs: "300px", md: "35vw", lg: "50%", xxl: "30%" },
+          width: "100%",
+          position: "absolute",
+          right: "0px",
+          top: { xs: "-2%", lg: "10%" },
+          zIndex: 1,
+          transform: {
+            xs: "translate(20%, -10%)",
+            lg: "translate(40%, -20%)",
+          },
+        }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "50%",
+            background: "rgba(60, 101, 255, 0.2)",
+            filter: "blur(50px)",
+            zIndex: -1,
+            aspectRatio: "1/1",
+          }}
+        />
       </Box>
     </Box>
   );
