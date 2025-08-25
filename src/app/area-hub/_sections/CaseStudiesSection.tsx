@@ -35,25 +35,26 @@ export default function CaseStudiesSection() {
             paddingBottom: { xs: "30px", md: "40px", lg: "80px" },
           }}
         >
-          South Yorkshire Case Studies
+          Recent Rotherham Projects
         </Typography>
         {/* the card section  */}
         <Box sx={{}}>
           <CaseStudyCard
-            title="South Yorkshire Manufacturing — B2B Lead Generation"
-            image={pngs.southYorkshireB2bLeads}
+            index={0}
+            title="Rotherham Bakery — Online Orders Success"
+            image={pngs.rotherhamBakeryOnlineOrdersSuccess}
             bullets={[
               {
                 label: "Challenge",
-                text: "No online presence or ordering system",
+                text: "Challenge: Outdated site with no online ordering system",
               },
               {
                 label: "Solution",
-                text: "New website with online ordering and local delivery",
+                text: "New ecommerce site with clear product pages and local delivery options",
               },
               {
                 label: "Result",
-                text: "50% increase in orders within 2 months",
+                text: "45% increase in online orders within 3 months",
               },
             ]}
           />

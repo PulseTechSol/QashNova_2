@@ -63,20 +63,20 @@ export default function SeoSupportSection() {
             />
             <FeatureItem
               image={svgs.blueTick}
-              title="Google Business Profile"
-              subtitle="Setup and optimization included"
+              title="Monthly Packages"
+              subtitle="Ongoing SEO & marketing available"
             />
           </Box>
           <Box sx={{ display: "flex", gap: { xs: "10px", sm: "20px" } }}>
             <FeatureItem
               image={svgs.blueTick}
-              title="Google Business Profile"
-              subtitle="Setup and optimization included"
+              title="On-Page SEO"
+              subtitle="Every site includes SEO optimization"
             />
             <FeatureItem
               image={svgs.blueTick}
-              title="Google Business Profile"
-              subtitle="Setup and optimization included"
+              title="Local Keywords"
+              subtitle="Rotherham, South Yorkshire & Sheffield targeting"
             />
           </Box>
         </Box>

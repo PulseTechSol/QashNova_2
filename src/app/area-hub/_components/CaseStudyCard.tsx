@@ -13,6 +13,7 @@ interface CaseStudyCardProps {
   image: StaticImageData;
   bullets: BulletItem[];
   index?: number;
+  isLast?: boolean;
 }
 
 export default function CaseStudyCard({
@@ -20,7 +21,9 @@ export default function CaseStudyCard({
   image,
   bullets,
   index = 0,
+  isLast = false,
 }: CaseStudyCardProps) {
+  const isFirst = index === 0;
   return (
     <Box
       key={index}
@@ -34,6 +37,12 @@ export default function CaseStudyCard({
         gap: { xs: "45px", md: "48px", xl: "64px" },
         bgcolor: "#fff",
         borderRadius: { xs: "28px", sm: "36px" },
+        borderTopLeftRadius: isFirst
+          ? { xs: 0, sm: 0 }
+          : { xs: "30px", md: "80px" },
+        borderBottomRightRadius: isLast
+          ? { xs: 0, sm: 0 }
+          : { xs: "30px", sm: "80px" },
         minHeight: { xs: "fit-content", sm: "750px", md: "543px" },
         position: "static",
         zIndex: "100",
