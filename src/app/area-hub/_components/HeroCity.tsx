@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 
 export default function HeroCity() {
   return (
-    <Box sx={{ bgcolor: "#fff" }}>
+    <Box sx={{}}>
       <Box
         sx={{
           maxWidth: "1440px",
