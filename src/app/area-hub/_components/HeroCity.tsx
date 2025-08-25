@@ -1,23 +1,35 @@
+"use client";
+
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import svgs from "@/_assets/svgs";
 
-export default function HeroCity() {
+interface HeroCityProps {
+  breadcrumbLeft: string; // e.g. "Areas Hub"
+  breadcrumbRight: string; // e.g. "Rotherham"
+  heading: string; // e.g. "Website Design in Rotherham"
+  description: string; // e.g. "Crafting bespoke websites in Rotherham..."
+}
+
+export default function HeroCity({
+  breadcrumbLeft = "Areas Hub",
+  breadcrumbRight,
+  heading,
+  description,
+}: HeroCityProps) {
   return (
-    <Box sx={{}}>
+    <Box>
       <Box
         sx={{
           maxWidth: "1440px",
           width: "100%",
-          // display: "flex",
-          // justifyContent: "center",
-          // alignItems: "center",
           padding: sectionPadding,
           paddingTop: { xs: "30px", md: "40px", lg: "50px" },
           margin: "auto",
         }}
       >
+        {/* Breadcrumb */}
         <Box
           sx={{
             display: "flex",
@@ -34,7 +46,7 @@ export default function HeroCity() {
               fontWeight: "400",
             }}
           >
-            Areas Hub
+            {breadcrumbLeft}
           </Typography>
           <Image src={svgs.arrowRight} alt="arrowRight" />
           <Typography
@@ -45,9 +57,11 @@ export default function HeroCity() {
               fontWeight: "400",
             }}
           >
-            Rotherham
+            {breadcrumbRight}
           </Typography>
         </Box>
+
+        {/* Heading & Description */}
         <Box
           sx={{
             width: "100%",
@@ -60,7 +74,6 @@ export default function HeroCity() {
               textAlign: "center",
               fontSize: localFontSize.h6,
               fontWeight: 600,
-              color: "#3C65FF",
               background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
@@ -68,7 +81,7 @@ export default function HeroCity() {
               textTransform: "uppercase",
             }}
           >
-            Website Design in Rotherham
+            {heading}
           </Typography>
           <Typography
             sx={{
@@ -78,9 +91,7 @@ export default function HeroCity() {
               fontWeight: "400",
             }}
           >
-            Crafting bespoke websites in Rotherham. We blend stunning aesthetics
-            with powerful functionality. Our designs are tailored to elevate
-            your brand.
+            {description}
           </Typography>
         </Box>
       </Box>

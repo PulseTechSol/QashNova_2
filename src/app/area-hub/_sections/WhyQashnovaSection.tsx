@@ -1,8 +1,20 @@
+"use client";
+
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
-import Image from "next/image";
-import pngs from "@/_assets/pngs";
-export default function WhyQashnovaSection() {
+import Image, { StaticImageData } from "next/image";
+
+interface WhyQashnovaSectionProps {
+  heading: string;
+  description: string;
+  image: StaticImageData;
+}
+
+export default function WhyQashnovaSection({
+  heading,
+  description,
+  image,
+}: WhyQashnovaSectionProps) {
   return (
     <Box sx={{ bgcolor: "#000", position: "relative" }}>
       <Box
@@ -18,7 +30,7 @@ export default function WhyQashnovaSection() {
           gap: { xs: "40px", md: "60px", lg: "80px" },
         }}
       >
-        {/* this is heading  */}
+        {/* heading */}
         <Typography
           sx={{
             textAlign: { xs: "center", md: "left" },
@@ -29,13 +41,13 @@ export default function WhyQashnovaSection() {
             },
             fontWeight: 500,
             color: "#fff",
-
             textTransform: "capitalize",
           }}
         >
-          why qashnova
+          {heading}
         </Typography>
-        {/* the card section  */}
+
+        {/* description + image */}
         <Box sx={{ maxWidth: "466px" }}>
           <Typography
             sx={{
@@ -43,18 +55,18 @@ export default function WhyQashnovaSection() {
               fontSize: localFontSize.p3,
             }}
           >
-            Our small-team approach means you&apos;ll deal with the same people
-            who build and support your site. Real experience running campaigns
-            that deliver results.
+            {description}
           </Typography>
           <Box sx={{ mt: { xs: "20px", md: "60px", lg: "80px" } }}>
             <Image
               style={{ width: "100%", height: "100%", objectFit: "contain" }}
-              src={pngs.WhyChooseQashNova}
-              alt="qashnova"
+              src={image}
+              alt={heading}
             />
           </Box>
         </Box>
+
+        {/* blur background circle */}
         <Box
           sx={{
             maxWidth: { xs: "300px", md: "25vw", lg: "30%", xxl: "20%" },

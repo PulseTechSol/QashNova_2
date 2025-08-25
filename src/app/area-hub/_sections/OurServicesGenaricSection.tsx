@@ -1,8 +1,27 @@
+"use client";
+
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
-import svgs from "@/_assets/svgs";
-export default function OurServicesGenaricSection() {
+
+interface ServiceCardProps {
+  text: string;
+  image: StaticImageData;
+}
+
+interface OurServicesGenaricSectionProps {
+  heading: string;
+  leftColumnCards: ServiceCardProps[];
+  rightColumnCards: ServiceCardProps[];
+  rightColumnPaddingTop?: { xs: string; sm: string; md: string }; // ✅ relative padding
+}
+
+export default function OurServicesGenaricSection({
+  heading,
+  leftColumnCards,
+  rightColumnCards,
+  rightColumnPaddingTop = { xs: "70px", sm: "80px", md: "95px" },
+}: OurServicesGenaricSectionProps) {
   return (
     <Box sx={{ position: "relative" }}>
       <Box
@@ -18,7 +37,7 @@ export default function OurServicesGenaricSection() {
           gap: "80px",
         }}
       >
-        {/* this is heading  */}
+        {/* heading */}
         <Typography
           sx={{
             textAlign: { xs: "center", lg: "left" },
@@ -29,19 +48,20 @@ export default function OurServicesGenaricSection() {
             },
             fontWeight: 500,
             color: "#000",
-
             textTransform: "capitalize",
           }}
         >
-          services in Rotherham
+          {heading}
         </Typography>
-        {/* the card section  */}
+
+        {/* card section */}
         <Box
           sx={{
             display: "flex",
             gap: { xs: "10px", sm: "20px", md: "40px" },
           }}
         >
+          {/* left column */}
           <Box
             sx={{
               display: "flex",
@@ -49,34 +69,28 @@ export default function OurServicesGenaricSection() {
               gap: { xs: "10px", sm: "20px", md: "40px" },
             }}
           >
-            <ServiceCard
-              text="Ecommerce Websites"
-              image={svgs.websiteRedesign}
-            />
-            <ServiceCard
-              text="Ecommerce Websites"
-              image={svgs.websiteRedesign}
-            />
+            {leftColumnCards.map((card, i) => (
+              <ServiceCard key={i} text={card.text} image={card.image} />
+            ))}
           </Box>
+
+          {/* right column */}
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
               gap: { xs: "10px", sm: "20px", md: "40px" },
-              paddingTop: "95px",
+              paddingTop: rightColumnPaddingTop,
             }}
           >
-            <ServiceCard
-              text="Ecommerce Websites"
-              image={svgs.websiteRedesign}
-            />
-            <ServiceCard
-              text="Ecommerce Websites"
-              image={svgs.websiteRedesign}
-            />
+            {rightColumnCards.map((card, i) => (
+              <ServiceCard key={i} text={card.text} image={card.image} />
+            ))}
           </Box>
         </Box>
       </Box>
+
+      {/* background blur circle */}
       <Box
         sx={{
           maxWidth: { xs: "300px", md: "25vw", lg: "30%", xxl: "20%" },
@@ -107,11 +121,7 @@ export default function OurServicesGenaricSection() {
   );
 }
 
-interface ServiceCardProps {
-  text: string;
-  image: StaticImageData;
-}
-
+/* ServiceCard Component */
 export function ServiceCard({ text, image }: ServiceCardProps) {
   return (
     <Box

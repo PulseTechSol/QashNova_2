@@ -6,6 +6,8 @@ import { Box } from "@mui/material";
 import WhyQashnovaSection from "../_sections/WhyQashnovaSection";
 import CaseStudiesSection from "../_sections/CaseStudiesSection";
 import SeoSupportSection from "../_sections/SeoSupportSection";
+import svgs from "@/_assets/svgs";
+import pngs from "@/_assets/pngs";
 
 function Rotherham() {
   return (
@@ -17,9 +19,28 @@ function Rotherham() {
         }}
       >
         <LandingNavbar />
-        <HeroCity />
-        <OurServicesGenaricSection />
-        <WhyQashnovaSection />
+        <HeroCity
+          breadcrumbLeft="Areas Hub"
+          breadcrumbRight="Rotherham"
+          heading="Website Design in Rotherham"
+          description="Crafting bespoke websites in Rotherham. We blend stunning aesthetics with powerful functionality. Our designs are tailored to elevate your brand."
+        />
+        <OurServicesGenaricSection
+          heading="Services in Rotherham"
+          leftColumnCards={[
+            { text: "Ecommerce Websites", image: svgs.websiteRedesign },
+            { text: "Business Sites", image: svgs.businessSites },
+          ]}
+          rightColumnCards={[
+            { text: "Website Redesign", image: svgs.websiteRedesign },
+            { text: "Support & SEO", image: svgs.supportSeo },
+          ]}
+        />
+        <WhyQashnovaSection
+          heading="Why Qashnova"
+          description="Our small-team approach means you'll deal with the same people who build and support your site. Real experience running campaigns that deliver results."
+          image={pngs.WhyChooseQashNova}
+        />
         <CaseStudiesSection />
         <SeoSupportSection />
       </Box>
