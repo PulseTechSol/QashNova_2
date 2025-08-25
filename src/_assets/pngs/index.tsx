@@ -49,6 +49,11 @@ import girl from "./landingpage/girl.png";
 import WhyChooseQashNova from "./whyQashnovaSection/WhyChooseQashNova.png";
 import WhyTrustQashNova from "./whyQashnovaSection/WhyTrustQashNova.png";
 import whyQashnova from "./whyQashnovaSection/whyQashnova.png";
+import doncasterLocalSeo from "./CaseStudiesSectionImages/doncasterLocalSeo.png";
+import rotherhamBakeryOnlineOrdersSuccess from "./CaseStudiesSectionImages/rotherhamBakeryOnlineOrdersSuccess.png";
+import sheffieldAccountancyRedesign from "./CaseStudiesSectionImages/sheffieldAccountancyRedesign.png";
+import sheffieldCafeOrders from "./CaseStudiesSectionImages/sheffieldCafeOrders.png";
+import southYorkshireB2bLeads from "./CaseStudiesSectionImages/southYorkshireB2bLeads.png";
 
 const pngs = {
   image1,
@@ -99,5 +104,10 @@ const pngs = {
   WhyChooseQashNova,
   WhyTrustQashNova,
   whyQashnova,
+  doncasterLocalSeo,
+  rotherhamBakeryOnlineOrdersSuccess,
+  sheffieldAccountancyRedesign,
+  sheffieldCafeOrders,
+  southYorkshireB2bLeads,
 };
 export default pngs;

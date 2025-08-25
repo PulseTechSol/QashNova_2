@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import svgs from "@/_assets/svgs";
 export default function OurServicesGenaricSection() {
   return (
-    <Box sx={{ bgcolor: "#fff", position: "relative" }}>
+    <Box sx={{ position: "relative" }}>
       <Box
         sx={{
           maxWidth: "1536px",

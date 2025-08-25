@@ -33,7 +33,7 @@ export default function WhyQashnovaSection() {
             textTransform: "capitalize",
           }}
         >
-          Why Choose QashNova
+          why qashnova
         </Typography>
         {/* the card section  */}
         <Box sx={{ maxWidth: "466px" }}>
