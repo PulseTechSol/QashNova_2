@@ -85,6 +85,53 @@ export default function OurHubareasCards() {
           our hub areas
         </Typography>
 
+        <Typography
+          data-aos={"fade-left"}
+          data-aos-duration="500"
+          sx={{
+            width: "100%",
+            fontSize: localFontSize.p1,
+            fontWeight: 400,
+            color: "#FFFFFF80",
+            display: { xs: "none", md: "block" },
+            textAlign: "center",
+            marginBottom: 5,
+          }}
+        >
+          At Qashnova, we have been working with clients across the UK,
+          providing tailored digital solutions that help businesses grow and
+          succeed. Our projects cover a wide range of services including web
+          design, development, branding and digital marketing. We take time to
+          understand the challenges faced in different industries and create
+          strategies that deliver lasting results. From small start-ups to
+          established companies, our focus is always on building strong
+          partnerships and providing measurable value. By combining creativity
+          with technical expertise, we continue to support businesses nationwide
+          and expand our presence across a variety of sectors.
+        </Typography>
+
+        <Typography
+          sx={{
+            fontSize: localFontSize.p1,
+            fontWeight: 400,
+            color: "#FFFFFF80",
+            textAlign: { xs: "center", md: "start" },
+            display: { xs: "block", md: "none" },
+            marginBottom: 5,
+          }}
+        >
+          At Qashnova, we have been working with clients across the UK,
+          providing tailored digital solutions that help businesses grow and
+          succeed. Our projects cover a wide range of services including web
+          design, development, branding and digital marketing. We take time to
+          understand the challenges faced in different industries and create
+          strategies that deliver lasting results. From small start-ups to
+          established companies, our focus is always on building strong
+          partnerships and providing measurable value. By combining creativity
+          with technical expertise, we continue to support businesses nationwide
+          and expand our presence across a variety of sectors.
+        </Typography>
+
         <Box
           sx={{
             width: "100%",
