@@ -22,8 +22,8 @@ import mobileLogo from "./mobileLogo.svg";
 import sliderArrow from "./sliderArrow.svg";
 import arrowSliderDisabled from "./arrowSliderDisabled.svg";
 import cross from "./cross.svg";
-import arrow2 from "./arrow2.svg"; 
-import locationhub from "./locationhub.svg"; 
+import arrow2 from "./arrow2.svg";
+import locationhub from "./locationhub.svg";
 
 // imports of landingpage
 
@@ -54,6 +54,12 @@ import addIcon from "./landingpage/add-icon.svg";
 import branding from "./landingpage/branding.svg";
 // import arrow2 from "./landingpage/arrow2.svg";
 import privacyPolicy from "./privacyPolicy.svg";
+
+// ourServicesGenericSectionIcons icons
+import businessSites from "./ourServicesGenericSectionIcons/businessSites.svg";
+import ecommerceWebsites from "./ourServicesGenericSectionIcons/ecommerceWebsites.svg";
+import supportSeo from "./ourServicesGenericSectionIcons/supportSeo.svg";
+import websiteRedesign from "./ourServicesGenericSectionIcons/websiteRedesign.svg";
 
 const svgs = {
   logoFooter,
@@ -97,6 +103,12 @@ const svgs = {
   addIcon,
   branding,
   privacyPolicy,
+
+  // ourServicesGenericSectionIcons icons
+  businessSites,
+  ecommerceWebsites,
+  supportSeo,
+  websiteRedesign,
 };
 
 export default svgs;

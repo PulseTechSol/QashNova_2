@@ -1,6 +1,6 @@
 "use client";
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
-import Navbar from "@/app/sy-landing-page/_components/Navbar";
+import Navbar from "@/_components/LandingNavbar";
 import { Box, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import AOS from "aos";

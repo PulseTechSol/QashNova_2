@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import Navbar from "../_components/Navbar";
+import LandingNavbar from "../../../_components/LandingNavbar";
 
 // function useHasScrolledPast100vh() {
 //   const [hasScrolled, setHasScrolled] = useState(false);
@@ -82,7 +82,7 @@ export default function HeroHome() {
         background: "linear-gradient(180deg, #fff,#DDDDDD)",
       }}
     >
-      <Navbar />
+      <LandingNavbar />
       <Box
         sx={{
           display: "flex",

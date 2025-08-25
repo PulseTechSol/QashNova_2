@@ -35,7 +35,6 @@ function page() {
           }}
         />
       </Box>
-
       <Box
         sx={{
           maxWidth: { xs: "300px", md: "35vw", lg: "50%", xxl: "30%" },
