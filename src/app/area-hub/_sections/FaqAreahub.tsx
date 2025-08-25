@@ -23,7 +23,7 @@ interface AccordionItem {
 
 interface GenericAccordionProps {
   items: AccordionItem[];
- defaultExpanded?: number | false; 
+  defaultExpanded?: number | false;
 }
 
 const FaqAreahub: React.FC<GenericAccordionProps> = ({
@@ -38,15 +38,8 @@ const FaqAreahub: React.FC<GenericAccordionProps> = ({
     };
 
   return (
-
-
-
-
- <Box
+    <Box
       sx={{
-        // background: "linear-gradient(180deg, #DDDDDD, #fff, #DDDDDD)",
-        bgcolor: "#fff",
-        overflow: "hidden",
         position: "relative",
         zIndex: 111,
       }}
@@ -81,140 +74,128 @@ const FaqAreahub: React.FC<GenericAccordionProps> = ({
         >
           FAQ
         </Typography>
-         {/* <GenericAccordion items={faqData} defaultExpanded={0} /> */}
- <Box sx={{ width: "100%" }}>
-      {items.map((item, index) => (
-        <Accordion
-          key={index}
-          expanded={expanded === index}
-          onChange={handleChange(index)}
-          sx={{
-            zIndex: 111,
-            color: "#000",
-            cursor: "pointer",
-            marginBottom: "20px",
-            borderRadius: "0px !important",
-            boxShadow: "none",
-            borderBottom: "1px solid #000000",
-            "&::before": { display: "none" },
-            backgroundColor: "transparent",
-
-          }}
-        >
-          <AccordionSummary
-
-            sx={{
-              minHeight:{xs: "44px !important" ,sm:"74px !important"},
-   
-  }}
-           
-            expandIcon={
-
-              <IconButton
-                sx={{
-                  width: { xs: "24px", md: "34px" },
-                  height: { xs: "24px", md: "34px" },
-                  color: "#fff",
-                  cursor: "pointer",
-                  transition: "none",
-                  "&:hover": { bgcolor: "transparent" },
-                  "& > :first-of-type": {
-                    width: { xs: "24px", md: "34px" },
-                    height: { xs: "24px", md: "34px" },
-                  },
-                }}
-              >
-                {expanded === index ? (
-                  <Image src={svgs.closeIcon} alt="close-icon" />
-                ) : (
-                  <Image src={svgs.addIcon} alt="add-icon" />
-                )}
-              </IconButton>
-            }
-          >
-            <Typography
+        {/* <GenericAccordion items={faqData} defaultExpanded={0} /> */}
+        <Box sx={{ width: "100%" }}>
+          {items.map((item, index) => (
+            <Accordion
+              key={index}
+              expanded={expanded === index}
+              onChange={handleChange(index)}
               sx={{
-                fontFamily: "Poppins",
-                fontWeight: 400,
-                fontSize: {xs:"16px", md:"20", lg:"24px"},
-                lineHeight: "100%",
-                color: "#000000",
-                letterSpacing: "0%",
+                zIndex: 111,
+                color: "#000",
+                cursor: "pointer",
+                marginBottom: "20px",
+                borderRadius: "0px !important",
+                boxShadow: "none",
+                borderBottom: "1px solid #000000",
+                "&::before": { display: "none" },
+                backgroundColor: "transparent",
               }}
             >
-              {item.title}
-            </Typography>
-          </AccordionSummary>
+              <AccordionSummary
+                sx={{
+                  minHeight: { xs: "44px !important", sm: "74px !important" },
+                }}
+                expandIcon={
+                  <IconButton
+                    sx={{
+                      width: { xs: "24px", md: "34px" },
+                      height: { xs: "24px", md: "34px" },
+                      color: "#fff",
+                      cursor: "pointer",
+                      transition: "none",
+                      "&:hover": { bgcolor: "transparent" },
+                      "& > :first-of-type": {
+                        width: { xs: "24px", md: "34px" },
+                        height: { xs: "24px", md: "34px" },
+                      },
+                    }}
+                  >
+                    {expanded === index ? (
+                      <Image src={svgs.closeIcon} alt="close-icon" />
+                    ) : (
+                      <Image src={svgs.addIcon} alt="add-icon" />
+                    )}
+                  </IconButton>
+                }
+              >
+                <Typography
+                  sx={{
+                    fontFamily: "Poppins",
+                    fontWeight: 400,
+                    fontSize: { xs: "16px", md: "20", lg: "24px" },
+                    lineHeight: "100%",
+                    color: "#000000",
+                    letterSpacing: "0%",
+                  }}
+                >
+                  {item.title}
+                </Typography>
+              </AccordionSummary>
 
-          <AccordionDetails>
-            <Typography
-              sx={{ fontSize: localFontSize.p1}}
-              color="gray"
-            >
-              {item.content}
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-      ))}
-    </Box>
-        
+              <AccordionDetails>
+                <Typography sx={{ fontSize: localFontSize.p1 }} color="gray">
+                  {item.content}
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+          ))}
+        </Box>
       </Box>
+      <Box
+        sx={{
+          maxWidth: { xs: "300px", md: "25vw", lg: "30%", xxl: "20%" },
+          width: "100%",
+          position: "absolute",
+          right: "-190px",
+          top: { xs: "-2%", lg: "10%" },
+          zIndex: 1,
+          transform: {
+            xs: "translate(-20%, -10%)",
+            lg: "translate(-40%, -20%)",
+          },
+        }}
+      >
         <Box
           sx={{
-            maxWidth: { xs: "300px", md: "25vw", lg: "30%", xxl: "20%" },
             width: "100%",
-            position: "absolute",
-            right: "-190px",
-            top: { xs: "-2%", lg: "10%" },
-            zIndex: 1,
-            transform: {
-              xs: "translate(-20%, -10%)",
-              lg: "translate(-40%, -20%)",
-            },
+            height: "100%",
+            borderRadius: "50%",
+            background: "#3C65FF1A",
+            filter: "blur(50px)",
+            zIndex: -1,
+            aspectRatio: "1/1",
           }}
-        >
-          <Box
-            sx={{
-              width: "100%",
-              height: "100%",
-              borderRadius: "50%",
-              background: "#3C65FF1A",
-              filter: "blur(50px)",
-              zIndex: -1,
-              aspectRatio: "1/1",
-            }}
-          />
-        </Box>
+        />
+      </Box>
       <Box
-              sx={{
-                maxWidth: { xs: "300px", md: "25vw", lg: "30%", xxl: "20%" },
-                width: "100%",
-                position: "absolute",
-                left: "60px",
-                bottom: { xs: "-10px",  },
-                zIndex: 1,
-                transform: {
-                  xs: "translate(-20%, -10%)",
-                  lg: "translate(-40%, -20%)",
-                },
-              }}
-            >
-              <Box
-                sx={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: "50%",
-                  background: "#2617B11A",
-                  filter: "blur(50px)",
-                  zIndex: -1,
-                  aspectRatio: "1/1",
-                }}
-              />
-            </Box>
+        sx={{
+          maxWidth: { xs: "300px", md: "25vw", lg: "30%", xxl: "20%" },
+          width: "100%",
+          position: "absolute",
+          left: "60px",
+          bottom: { xs: "-10px" },
+          zIndex: 1,
+          transform: {
+            xs: "translate(-20%, -10%)",
+            lg: "translate(-40%, -20%)",
+          },
+        }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "50%",
+            background: "#2617B11A",
+            filter: "blur(50px)",
+            zIndex: -1,
+            aspectRatio: "1/1",
+          }}
+        />
+      </Box>
     </Box>
-
-
-   
   );
 };
 

@@ -10,10 +10,14 @@ import FaqAreahub from "../_sections/FaqAreahub";
 import SeoSupportSection from "../_sections/SeoSupportSection";
 import svgs from "@/_assets/svgs";
 import pngs from "@/_assets/pngs";
+import Footer from "@/_components/Footer";
 
 function Rotherham() {
-    const faqData = [
-    { title: "Do I need technical skills?", content: "No, we handle everything." },
+  const faqData = [
+    {
+      title: "Do I need technical skills?",
+      content: "No, we handle everything.",
+    },
     { title: "How long to go live?", content: "Usually 10 to 14 days." },
     { title: "Can I add features later?", content: "Yes. Scale as you grow." },
   ];
@@ -49,8 +53,9 @@ function Rotherham() {
           image={pngs.WhyChooseQashNova}
         />
         <CaseStudiesSection />
-      <FaqAreahub items={faqData}   />
         <SeoSupportSection />
+        <FaqAreahub items={faqData} />
+        <Footer />
       </Box>
     </>
   );
