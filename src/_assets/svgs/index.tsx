@@ -60,6 +60,7 @@ import businessSites from "./ourServicesGenericSectionIcons/businessSites.svg";
 import ecommerceWebsites from "./ourServicesGenericSectionIcons/ecommerceWebsites.svg";
 import supportSeo from "./ourServicesGenericSectionIcons/supportSeo.svg";
 import websiteRedesign from "./ourServicesGenericSectionIcons/websiteRedesign.svg";
+import blueTick from "./blueTick.svg";
 
 const svgs = {
   logoFooter,
@@ -109,6 +110,7 @@ const svgs = {
   ecommerceWebsites,
   supportSeo,
   websiteRedesign,
+  blueTick,
 };
 
 export default svgs;

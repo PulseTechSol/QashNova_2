@@ -5,6 +5,7 @@ import OurServicesGenaricSection from "../_sections/OurServicesGenaricSection";
 import { Box } from "@mui/material";
 import WhyQashnovaSection from "../_sections/WhyQashnovaSection";
 import CaseStudiesSection from "../_sections/CaseStudiesSection";
+import SeoSupportSection from "../_sections/SeoSupportSection";
 
 function Rotherham() {
   return (
@@ -20,6 +21,7 @@ function Rotherham() {
         <OurServicesGenaricSection />
         <WhyQashnovaSection />
         <CaseStudiesSection />
+        <SeoSupportSection />
       </Box>
     </>
   );
