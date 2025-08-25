@@ -14,10 +14,12 @@ type ButtonComponentProps = {
   loading?: boolean;
   onClick?: () => void;
   disableHover?: boolean;
+   disabled?: boolean; 
 };
 
 export default function ButtonComponent({
   imgSrc,
+  disabled,
   label = "Learn More",
   sx = {},
   type = "button",
@@ -29,6 +31,7 @@ export default function ButtonComponent({
 
   return (
     <Button
+     disabled={disabled || loading} 
       onClick={onClick}
       type={type}
       variant="contained"

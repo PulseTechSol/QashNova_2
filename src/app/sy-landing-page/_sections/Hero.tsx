@@ -194,7 +194,8 @@ export default function HeroHome() {
 
 
 <Box sx={{width:"100%", display :{xs:"flex",sm :"none"},justifyContent:"center",alignItems:"center", flexDirection:"column",gap:"10px"}}>
- <TextField         
+ <TextField  
+  disabled={loading}        
           placeholder="Enter Your Email"
           
           type="text"
@@ -235,9 +236,13 @@ export default function HeroHome() {
 
   <ButtonComponent
   label="Get My Free Audit"
-   onClick={onSubmit}
-          loading={loading}
+  onClick={onSubmit}
+  loading={loading}
+   disabled={loading} 
+  
+  
   sx={{
+    // disabled:loading,  
     width: "100%",
     maxWidth: "361px",
     borderRadius: "10px",
