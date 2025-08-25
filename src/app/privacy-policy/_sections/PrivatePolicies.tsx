@@ -29,7 +29,7 @@ export default function PrivatePolicies({
           marginTop: { xs: "96px", sm: "0" },
         }}
       >
-        <Typography variant="h4" sx={{ fontWeight: 600 }}>
+        <Typography variant="h1" sx={{ fontWeight: 600, fontSize: "32px" }}>
           Privacy Policy
         </Typography>
         <br />
