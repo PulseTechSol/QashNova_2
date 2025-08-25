@@ -2,13 +2,18 @@
 import pngs from "@/_assets/pngs";
 import svgs from "@/_assets/svgs";
 import { localFontSize, sectionPaddingX } from "@/app/_utils/themes";
-import { Box, Typography } from "@mui/material";
+import { Box,  TextField, Typography } from "@mui/material";
+import { ResponsiveStyleValue } from "@mui/system";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../_components/Navbar";
+import ButtonComponent from "@/_components/ButtonComponent";
+import { toast } from "react-toastify";
+import axios from "axios";
+
 
 // function useHasScrolledPast100vh() {
 //   const [hasScrolled, setHasScrolled] = useState(false);
@@ -26,24 +31,24 @@ import Navbar from "../_components/Navbar";
 //   return hasScrolled;
 // }
 
-const AnimatedText = ({ text }: { text: string }) => {
+const AnimatedText = ({ text,display }: { text: string, display?: ResponsiveStyleValue<"none" | "block" | "flex" | "inline-flex" | "inline">; }) => {
   return (
     <Typography
       component="div"
       sx={{
-        display: "flex",
+        display: display,
         background: "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         textTransform: "uppercase",
         textWrap: { xl: "nowrap" },
-        fontSize: { xs: "37px", lg: "60px", xl: "69px" },
+        fontSize: { xs: "40px", lg: "60px", xl: "69px" },
         lineHeight: { xs: "45px", lg: "70px", xl: "79px" },
         fontWeight: 600,
         justifyContent: "center",
         flexWrap: "wrap",
         columnGap: "0.25em",
-        maxWidth: { xs: "340px", sm: "unset" },
+        maxWidth: { xs: "361px", sm: "unset" },
       }}
     >
       {text.split(" ").map((word, wordIndex) => (
@@ -65,9 +70,53 @@ const AnimatedText = ({ text }: { text: string }) => {
   );
 };
 
+const isValidEmail = (email: string) => {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+};
 export default function HeroHome() {
   // const isMobile = useMediaQuery("(max-width:900px)");
   // const hasScrolledPast100vh = useHasScrolledPast100vh();
+
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
+    async function onSubmit() {
+      if (!email) {
+        toast.error("Please enter your email");
+        return;
+      }
+  
+      if (!isValidEmail(email)) {
+        toast.error("Please enter a valid email address");
+        return;
+      }
+  
+      try {
+        setLoading(true);
+        const response = await axios.post(
+          "/api/landingPage",
+          { email },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+  
+        if (response?.status === 200) {
+          toast.success("Form submitted successfully!");
+          setEmail("");
+        } else {
+          toast.error("Submission failed! Please try again.");
+        }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      } catch (err) {
+        toast.error("Submission failed! Please try again.");
+      } finally {
+        setLoading(false);
+      }
+    }
+  
 
   useEffect(() => {
     AOS.init({
@@ -75,6 +124,9 @@ export default function HeroHome() {
       once: true,
     });
   }, []);
+
+
+  
 
   return (
     <Box
@@ -118,7 +170,10 @@ export default function HeroHome() {
               gap: "40px",
             }}
           >
-            <AnimatedText text="Grow Online for £200/month" />
+            
+           <AnimatedText text="Grow Online for £200/month" display={{ xs: "none", sm: "flex" }} />
+           <AnimatedText text="get free website & marketing audit" display={{ xs: "flex", sm: "none" }} />
+
             <Typography
               data-aos="zoom-in"
               data-aos-duration="600"
@@ -135,12 +190,126 @@ export default function HeroHome() {
               focus on growing your business locally
             </Typography>
           </Box>
+          {/* --------------button and in input */}
+
+
+<Box sx={{width:"100%", display :{xs:"flex",sm :"none"},justifyContent:"center",alignItems:"center", flexDirection:"column",gap:"10px"}}>
+ <TextField         
+          placeholder="Enter Your Email"
+          
+          type="text"
+           value={email}
+        onChange={(e) => setEmail(e.target.value)}
+
+       
+          sx={{
+            width: "100%",
+            maxWidth:"361px",
+            
+           
+            
+
+            "& .MuiInputBase-input": {
+              borderRadius:"10px",
+    padding: "10px",  
+     border: `1px solid  #3C65FF80`,
+
+  },
+           
+            "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        border: "none",  
+      },
+    },
+            "& .MuiInputBase-input::placeholder": {
+              fontSize: "16px",
+               fontWeight:"400",
+              color: "#00000033",
+             
+
+
+            },
+          
+          }}
+        />
+
+  <ButtonComponent
+  label="Get My Free Audit"
+   onClick={onSubmit}
+          loading={loading}
+  sx={{
+    width: "100%",
+    maxWidth: "361px",
+    borderRadius: "10px",
+    padding: "10px",
+    fontWeight: "400",
+    fontSize: "16px",
+    height: "45px",
+    bgcolor: "#3C65FF",
+    color: "#fff",
+    border: "none",
+    outline: "none",
+    cursor: "pointer",
+    position: "relative",
+    zIndex: 0,
+
+    "&::before": {
+      content: '""',
+      position: "absolute",
+      top: "-2px",
+      left: "-2px",
+      width: "calc(100% + 4px)",
+      height: "calc(100% + 4px)",
+      background:
+        "linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000)",
+      backgroundSize: "400%",
+      filter: "blur(5px)",
+      zIndex: -1,
+      opacity: 0,
+      transition: "opacity .3s ease-in-out",
+      borderRadius: "10px",
+      animation: "glowing 20s linear infinite",
+    },
+
+    "&:hover::before": {
+      opacity: 1,
+    },
+
+    "&::after": {
+      content: '""',
+      position: "absolute",
+      width: "100%",
+      height: "100%",
+      background: "#3C65FF",
+      left: 0,
+      top: 0,
+      zIndex: -1,
+      borderRadius: "10px",
+    },
+
+    "&:active": {
+      color: "#000",
+    },
+    "&:active::after": {
+      background: "transparent",
+    },
+  }}
+/>
+
+
+</Box>
+
+
+
+
 
           <Box
             sx={{
+            
+              
               width: "100%",
               textAlign: { xs: "start" },
-              display: { xs: "flex" },
+              display: {xs:"none", sm: "flex" },
               flexDirection: { xs: "column-reverse", md: "row" },
               justifyContent: { xs: "center", md: "space-between" },
               alignItems: "center",
