@@ -8,8 +8,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
-import Navbar from "../_components/Navbar";
+import { useEffect, useState } from "react";
+import ButtonComponent from "@/_components/ButtonComponent";
+import { toast } from "react-toastify";
+import axios from "axios";
+import LandingNavbar from "@/_components/LandingNavbar";
+
 
 // function useHasScrolledPast100vh() {
 //   const [hasScrolled, setHasScrolled] = useState(false);
