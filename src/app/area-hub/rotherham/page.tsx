@@ -7,6 +7,7 @@ import WhyQashnovaSection from "../_sections/WhyQashnovaSection";
 import CaseStudiesSection from "../_sections/CaseStudiesSection";
 import FaqAreahub from "../_sections/FaqAreahub";
 
+import SeoSupportSection from "../_sections/SeoSupportSection";
 
 function Rotherham() {
     const faqData = [
@@ -28,6 +29,7 @@ function Rotherham() {
         <WhyQashnovaSection />
         <CaseStudiesSection />
       <FaqAreahub items={faqData}   />
+        <SeoSupportSection />
       </Box>
     </>
   );

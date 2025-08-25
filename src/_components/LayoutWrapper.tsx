@@ -26,7 +26,8 @@ export default function LayoutWrapper({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const isLandingPage = pathname === "/sy-landing-page";
+  const isLandingPage =
+    pathname === "/sy-landing-page" || pathname === "/area-hub/rotherham";
 
   const normalNavbarPaths = [
     "/",
