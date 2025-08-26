@@ -1,8 +1,26 @@
+"use client";
+
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
-import svgs from "@/_assets/svgs";
-export default function SeoSupportSection() {
+
+export interface FeatureItemProps {
+  image: StaticImageData;
+  title: string;
+  subtitle: string;
+}
+
+export interface SeoSupportData {
+  heading: string;
+  description: string;
+  features: FeatureItemProps[][];
+}
+
+interface SeoSupportSectionProps {
+  data: SeoSupportData;
+}
+
+export default function SeoSupportSection({ data }: SeoSupportSectionProps) {
   return (
     <Box sx={{ position: "relative" }}>
       <Box
@@ -18,7 +36,7 @@ export default function SeoSupportSection() {
           gap: { xs: "40px", md: "60px", lg: "80px" },
         }}
       >
-        {/* this is heading  */}
+        {/* heading + description */}
         <Box sx={{ maxWidth: "360px" }}>
           <Typography
             sx={{
@@ -30,11 +48,10 @@ export default function SeoSupportSection() {
               },
               fontWeight: 500,
               color: "#000",
-
               textTransform: "capitalize",
             }}
           >
-            Local SEO & Support
+            {data.heading}
           </Typography>
           <Typography
             sx={{
@@ -42,12 +59,11 @@ export default function SeoSupportSection() {
               fontSize: localFontSize.p3,
             }}
           >
-            {`We don't just build attractive sites — we make sure they can be
-            found by Rotherham customers`}
+            {data.description}
           </Typography>
         </Box>
 
-        {/* the card section  */}
+        {/* features grid */}
         <Box
           sx={{
             display: "flex",
@@ -55,66 +71,25 @@ export default function SeoSupportSection() {
             flexDirection: "column",
           }}
         >
-          <Box sx={{ display: "flex", gap: { xs: "10px", sm: "20px" } }}>
-            <FeatureItem
-              image={svgs.blueTick}
-              title="Google Business Profile"
-              subtitle="Setup and optimization included"
-            />
-            <FeatureItem
-              image={svgs.blueTick}
-              title="Monthly Packages"
-              subtitle="Ongoing SEO & marketing available"
-            />
-          </Box>
-          <Box sx={{ display: "flex", gap: { xs: "10px", sm: "20px" } }}>
-            <FeatureItem
-              image={svgs.blueTick}
-              title="On-Page SEO"
-              subtitle="Every site includes SEO optimization"
-            />
-            <FeatureItem
-              image={svgs.blueTick}
-              title="Local Keywords"
-              subtitle="Rotherham, South Yorkshire & Sheffield targeting"
-            />
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            maxWidth: { xs: "300px", md: "25vw", lg: "30%", xxl: "20%" },
-            width: "100%",
-            position: "absolute",
-            left: "0px",
-            bottom: { xs: "-2%", lg: "10%" },
-            zIndex: 1,
-            transform: {
-              xs: "translate(-20%, -10%)",
-              lg: "translate(-40%, -20%)",
-            },
-          }}
-        >
-          <Box
-            sx={{
-              width: "100%",
-              height: "100%",
-              borderRadius: "50%",
-              background: "rgba(60, 101, 255, 0.2)",
-              filter: "blur(50px)",
-              zIndex: -1,
-              aspectRatio: "1/1",
-            }}
-          />
+          {data.features.map((row, rowIndex) => (
+            <Box
+              key={rowIndex}
+              sx={{ display: "flex", gap: { xs: "10px", sm: "20px" } }}
+            >
+              {row.map((item, idx) => (
+                <FeatureItem
+                  key={idx}
+                  image={item.image}
+                  title={item.title}
+                  subtitle={item.subtitle}
+                />
+              ))}
+            </Box>
+          ))}
         </Box>
       </Box>
     </Box>
   );
-}
-
-interface FeatureItemProps {
-  image: StaticImageData;
-  title: string;
-  subtitle: string;
 }
 
 export function FeatureItem({ image, title, subtitle }: FeatureItemProps) {

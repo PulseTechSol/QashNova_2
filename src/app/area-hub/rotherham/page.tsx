@@ -7,7 +7,9 @@ import WhyQashnovaSection from "../_sections/WhyQashnovaSection";
 import CaseStudiesSection from "../_sections/CaseStudiesSection";
 import FaqAreahub from "../_sections/FaqAreahub";
 
-import SeoSupportSection from "../_sections/SeoSupportSection";
+import SeoSupportSection, {
+  SeoSupportData,
+} from "../_sections/SeoSupportSection";
 import svgs from "@/_assets/svgs";
 import pngs from "@/_assets/pngs";
 import Footer from "@/_components/Footer";
@@ -74,6 +76,37 @@ function Rotherham() {
       },
     ],
   };
+  const seoSupportData: SeoSupportData = {
+    heading: "Local SEO & Support",
+    description:
+      "We don't just build attractive sites — we make sure they can be found by Rotherham customers",
+    features: [
+      [
+        {
+          image: svgs.blueTick,
+          title: "Google Business Profile",
+          subtitle: "Setup and optimization included",
+        },
+        {
+          image: svgs.blueTick,
+          title: "Monthly Packages",
+          subtitle: "Ongoing SEO & marketing available",
+        },
+      ],
+      [
+        {
+          image: svgs.blueTick,
+          title: "On-Page SEO",
+          subtitle: "Every site includes SEO optimization",
+        },
+        {
+          image: svgs.blueTick,
+          title: "Local Keywords",
+          subtitle: "Rotherham, South Yorkshire & Sheffield targeting",
+        },
+      ],
+    ],
+  };
 
   return (
     <>
@@ -107,7 +140,7 @@ function Rotherham() {
           image={pngs.WhyChooseQashNova}
         />
         <CaseStudiesSection data={caseStudiesData} />
-        <SeoSupportSection />
+        <SeoSupportSection data={seoSupportData} />
         <FaqAreahub items={faqData} />
         <Footer />
       </Box>

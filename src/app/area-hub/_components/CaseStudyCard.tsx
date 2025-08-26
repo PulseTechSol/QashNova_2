@@ -83,26 +83,27 @@ export default function CaseStudyCard({
               component="li"
               sx={{ display: "flex", gap: "8px", alignItems: "baseline" }}
             >
-              <Box
-                sx={{
-                  width: 6,
-                  height: 6,
-                  borderRadius: "50%",
-                  bgcolor: "#3C65FF",
-                  mt: "6px",
-                }}
-              />
+              <Box sx={{ pb: "3px" }}>
+                <Box
+                  sx={{
+                    width: 6,
+                    height: 6,
+                    borderRadius: "50%",
+                    bgcolor: "#3C65FF",
+                  }}
+                />
+              </Box>
               <Typography
                 component="span"
                 sx={{
                   color: "rgba(0,0,0,0.6)",
                   fontSize: { xs: "16px", md: "18px" },
+                  fontWeight: 400,
                 }}
               >
                 <span
                   style={{
                     color: "#3C65FF",
-                    fontWeight: 600,
                     fontSize: "inherit",
                   }}
                 >
