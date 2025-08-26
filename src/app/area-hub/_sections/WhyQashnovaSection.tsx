@@ -27,7 +27,7 @@ export default function WhyQashnovaSection({
           padding: sectionPadding,
           margin: "auto",
           flexDirection: { xs: "column", md: "row" },
-          gap: { xs: "40px", md: "60px", lg: "80px" },
+          gap: { xs: "30px", md: "60px", lg: "80px" },
         }}
       >
         {/* heading */}
@@ -37,13 +37,17 @@ export default function WhyQashnovaSection({
           sx={{
             textAlign: { xs: "center", md: "left" },
             fontSize: {
-              ...localFontSize.h4,
-              xl: localFontSize.h4.lg,
+              xs:"32px",
+              md:localFontSize.h4.md,
+              lg: localFontSize.h4.lg,
               xxl: localFontSize.h4.lg,
             },
             fontWeight: 500,
             color: "#fff",
             textTransform: "capitalize",
+            maxWidth:{md:"400px",xl:"100%"},
+            width:"100%",
+            lineHeight:{md:"60px",lg:"70px"},
           }}
         >
           {heading}
@@ -55,8 +59,10 @@ export default function WhyQashnovaSection({
            data-aos="fade-left"
             data-aos-duration="500"
             sx={{
+               textAlign: { xs: "center", md: "left" },
               color: "rgba(255, 255, 255, 0.5)",
-              fontSize: localFontSize.p3,
+              fontSize: {xs:"18px",sm:"20px"},
+              mb:{ xs: "40px", md: "60px", lg: "80px" },
             }}
           >
             {description}

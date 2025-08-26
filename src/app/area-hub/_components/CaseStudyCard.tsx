@@ -38,7 +38,7 @@ export default function CaseStudyCard({
         display: "flex",
         flexWrap: { xs: "wrap", md: "nowrap" },
         alignItems: "center",
-        gap: { xs: "45px", md: "48px", xl: "64px" },
+        gap: { xs: "40px", md: "48px", xl: "64px" },
         bgcolor: "#fff",
         borderRadius: { xs: "30px", md: "80px" },
         borderTopLeftRadius:
@@ -56,15 +56,17 @@ export default function CaseStudyCard({
         boxShadow: "0px 4px 40px 0px rgba(0, 0, 0, 0.15)",
       }}
     >
-      <Box  sx={{ maxWidth: "555px" }}>
+      <Box  sx={{ maxWidth: "555px" ,}}>
         <Typography
 data-aos="fade-right"
             data-aos-duration="500"
           sx={{
-            fontSize: { xs: "32px", md: "42px", lg: "48px" },
+            fontSize: { xs:"24px",sm: "32px", md: "42px", lg: "48px" },
             fontWeight: 500,
             color: "rgba(0,0,0,1)",
             textAlign: "left",
+            mb:{xs:"30px",sm:"40px"},
+             lineHeight:{md:"60px",lg:"70px"},
           }}
         >
           {title}

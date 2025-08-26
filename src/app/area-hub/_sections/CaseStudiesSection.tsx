@@ -36,8 +36,9 @@ export default function CaseStudiesSection({ data }: CaseStudiesSectionProps) {
             data-aos-duration="500"
           sx={{
             fontSize: {
-              ...localFontSize.h4,
-              xl: localFontSize.h4.lg,
+              xs:"32px",
+              md:localFontSize.h4.md,
+              lg: localFontSize.h4.lg,
               xxl: localFontSize.h4.lg,
             },
             fontWeight: 500,
