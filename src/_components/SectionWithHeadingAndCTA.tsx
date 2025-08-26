@@ -18,8 +18,12 @@ export default function SectionWithHeadingAndCTA({
   route = "/case-study",
 }: SectionWithHeadingAndCTAProps) {
   const router = useRouter();
+
   return (
-    <>
+    <Box
+      component="section"
+      aria-label={`${heading ?? ""} ${lastword ?? ""}`.trim()}
+    >
       <Box
         sx={{
           overflow: "hidden",
@@ -33,10 +37,12 @@ export default function SectionWithHeadingAndCTA({
             maxWidth: { xs: maxWidth, xxl: "80vw" },
             width: "100%",
             margin: "auto",
-            gap: { xs: "0" },
+            gap: { xs: 0 },
           }}
         >
           <Typography
+            variant="h2"
+            component="h2"
             data-aos="zoom-in"
             data-aos-duration="500"
             sx={{
@@ -49,14 +55,16 @@ export default function SectionWithHeadingAndCTA({
             }}
           >
             {heading}
-            <span
-              style={{
-                position: "relative",
-              }}
+            <Box
+              component="span"
+              sx={{ position: "relative", display: "inline-block" }}
             >
               {lastword}
               <Box
                 sx={{
+                  position: "absolute",
+                  top: { xs: "20px", sm: 50, xxl: 70 },
+                  left: { xs: "35%", lg: 290 },
                   width: {
                     xs: "124px",
                     sm: "190px",
@@ -65,26 +73,26 @@ export default function SectionWithHeadingAndCTA({
                   },
                   height: { xs: "14px", sm: "30px", md: "41px", xxl: "60px" },
                   display: "block",
-                  position: "absolute",
-                  top: { xs: "20px", sm: 50, xxl: 70 },
-                  left: { xs: "35%", lg: 290 },
+                  pointerEvents: "none",
                 }}
               >
                 <Image
                   src={svgs.line}
-                  alt="line"
+                  alt="" /* decorative underline */
+                  aria-hidden
                   style={{ height: "100%", width: "100%" }}
                 />
               </Box>
-            </span>
+            </Box>
           </Typography>
+
           <Box
             data-aos="zoom-in"
             data-aos-duration="500"
             sx={{
               width: "100%",
-              display: { xs: "flex" },
-              alignItems: { xs: "center" },
+              display: "flex",
+              alignItems: "center",
               justifyContent: "center",
             }}
           >
@@ -101,7 +109,10 @@ export default function SectionWithHeadingAndCTA({
             />
           </Box>
         </Box>
+
+        {/* bottom blur (decorative) */}
         <Box
+          aria-hidden
           sx={{
             position: "absolute",
             bottom: 0,
@@ -116,6 +127,6 @@ export default function SectionWithHeadingAndCTA({
           }}
         />
       </Box>
-    </>
+    </Box>
   );
 }
