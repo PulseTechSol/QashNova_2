@@ -129,7 +129,7 @@ export function FeatureItem({ image, title, subtitle }: FeatureItemProps) {
             sx={{
               color: "rgba(0, 0, 0, 1)",
               fontSize: { xs: "24px", md: "32px" },
-              paddingBottom: "20px",
+              paddingBottom: {xs:"10px",sm:"20px"},
               fontWeight: 600,
             }}
           >
