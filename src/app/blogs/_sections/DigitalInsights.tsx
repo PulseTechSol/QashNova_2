@@ -1,22 +1,19 @@
 "use client";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Box, Typography } from "@mui/material";
+import { useRouter } from "next/navigation";
+import DigitalInsightCard from "@/_components/DigitalInsightCard";
 import {
   localFontSize,
   maxWidth,
   sectionPaddingX,
   sectionPaddingY,
 } from "@/app/_utils/themes";
-import { Box, Typography } from "@mui/material";
-import DigitalInsightCard from "@/_components/DigitalInsightCard";
-import { useRouter } from "next/navigation";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function DigitalInsights() {
   const router = useRouter();
+
   type CardContent = {
-    backgroundImage: string | undefined;
+    backgroundImage?: string;
     heading: string;
     description: string;
     route: string;
@@ -69,12 +66,37 @@ export default function DigitalInsights() {
 
   return (
     <Box
+      component="section"
       sx={{
         position: "relative",
         overflow: "hidden",
-        zIndex: 10000,
+        zIndex: 0,
         px: sectionPaddingX,
         backgroundColor: "rgba(0, 0, 0, 1)",
+
+        // Top-left & bottom-left blurs via pseudo-elements (reduce extra DOM)
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "40%",
+          height: "30%",
+          backgroundColor: "rgba(88, 65, 212, 0.3)",
+          filter: "blur(200px)",
+          zIndex: 0,
+        },
+        "&::after": {
+          content: '""',
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          width: "40%",
+          height: "30%",
+          backgroundColor: "rgba(88, 65, 212, 0.18)",
+          filter: "blur(200px)",
+          zIndex: 0,
+        },
       }}
     >
       <Box
@@ -82,30 +104,43 @@ export default function DigitalInsights() {
           maxWidth: { xs: maxWidth, xl: "1536px", xxl: "1700px" },
           width: "100%",
           py: sectionPaddingY,
-          margin: "auto",
+          mx: "auto",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
           alignItems: "center",
-          flexWrap: { xs: "wrap", lg: "nowrap" },
           gap: { xs: "40px", md: "80px", xl: "100px" },
+
+          // Right-side blue blur as another pseudo instead of extra Box
+          position: "relative",
+          "&::after": {
+            content: '""',
+            position: "absolute",
+            top: "50%",
+            right: 0,
+            transform: "translateY(-50%)",
+            width: "40%",
+            height: "30%",
+            backgroundColor: "rgba(60, 101, 255, 0.18)",
+            filter: "blur(200px)",
+            zIndex: 0,
+          },
         }}
       >
-        {/* this is the heading box */}
+        {/* Heading + intro */}
         <Box
           sx={{
-            maxWidth: { xl: "1800px" },
             width: "100%",
+            maxWidth: { xl: "1800px" },
             display: "flex",
             justifyContent: "space-between",
             alignItems: { xs: "start", sm: "center" },
             flexDirection: { xs: "column", sm: "row" },
             gap: { xs: "30px", sm: "40px", xl: "60px" },
+            position: "relative",
+            zIndex: 1,
           }}
         >
           <Box
-            data-aos="fade-right"
-            data-aos-duration="500"
             sx={{
               maxWidth: { xs: "300px", sm: "477px", xl: "800px" },
               width: "100%",
@@ -113,41 +148,35 @@ export default function DigitalInsights() {
             }}
           >
             <Typography
+              variant="h1"
+              component="h1"
               sx={{
-                width: "100%",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
-                color: "rgba(255, 255, 255, 1)",
-                textAlign: { xs: "start" },
+                color: "#fff",
                 lineHeight: { xs: "50px", md: "120px", xl: "150px" },
               }}
             >
-              Digital
-            </Typography>
-            <Typography
-              sx={{
-                width: "100%",
-                color: "rgba(255, 255, 255, 1)",
-                fontSize: localFontSize.h3,
-                fontWeight: 600,
-                textAlign: { xs: "center", md: "end" },
-                lineHeight: { xs: "50px", md: "120px", xl: "150px" },
-              }}
-            >
-              Insights
+              <Box
+                component="span"
+                sx={{ display: "block", textAlign: "start" }}
+              >
+                Digital
+              </Box>
+              <Box
+                component="span"
+                sx={{
+                  display: "block",
+                  textAlign: { xs: "center", md: "end" },
+                }}
+              >
+                Insights
+              </Box>
             </Typography>
           </Box>
-          <Box
-            sx={{
-              width: "2px",
-              height: 200,
-              bgcolor: "rgba(255, 255, 255, 0.5)",
-              display: { xs: "none", lg: "block" },
-            }}
-          />
+
           <Typography
-            data-aos="fade-left"
-            data-aos-duration="500"
+            paragraph
             sx={{
               maxWidth: { xs: "490px", xl: "800px" },
               width: "100%",
@@ -155,6 +184,7 @@ export default function DigitalInsights() {
               fontWeight: 400,
               color: "rgba(255, 255, 255, 0.5)",
               textAlign: { xs: "end", sm: "start" },
+              m: 0,
             }}
           >
             Dive into our latest articles, expert analysis, and actionable tips.
@@ -162,8 +192,10 @@ export default function DigitalInsights() {
             strategies to propel your business forward.
           </Typography>
         </Box>
-        {/* this is the parent of cards */}
+
+        {/* Cards */}
         <Box
+          component="div"
           sx={{
             width: "100%",
             display: "flex",
@@ -172,9 +204,10 @@ export default function DigitalInsights() {
             flexDirection: { xs: "column", md: "row" },
             gap: { xs: "20px", md: "40px", xl: "60px" },
             flexWrap: "wrap",
+            position: "relative",
+            zIndex: 1,
           }}
         >
-          {/* this is the cards */}
           {cardContentList.map((item, index) => (
             <DigitalInsightCard
               key={index}
@@ -186,45 +219,6 @@ export default function DigitalInsights() {
           ))}
         </Box>
       </Box>
-      <Box
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          maxWidth: "40%",
-          width: "100%",
-          backgroundColor: "rgba(88, 65, 212, 0.3)",
-          filter: "blur(200px)",
-          zIndex: 0,
-          height: "30%",
-        }}
-      />
-      <Box
-        sx={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          maxWidth: "40%",
-          width: "100%",
-          backgroundColor: "rgba(88, 65, 212, 0.18)",
-          filter: "blur(200px)",
-          zIndex: -1,
-          height: "30%",
-        }}
-      />
-      <Box
-        sx={{
-          position: "absolute",
-          top: "50%",
-          right: 0,
-          maxWidth: "40%",
-          width: "100%",
-          backgroundColor: "rgba(60, 101, 255, 0.18)",
-          filter: "blur(200px)",
-          zIndex: -1,
-          height: "30%",
-        }}
-      />
     </Box>
   );
 }
