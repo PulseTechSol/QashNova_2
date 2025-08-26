@@ -1,291 +1,194 @@
+"use client";
 import { Box, Typography, List, ListItem } from "@mui/material";
 
-interface PrivatePoliciesProps {
+type PrivatePoliciesProps = {
   date?: string;
   businessName: string;
   businessEmail: string;
   businessPhone: string;
-}
+};
 
 export default function PrivatePolicies({
-  date = "6 may 2025",
+  date = "6 May 2025",
   businessName,
   businessEmail,
   businessPhone,
-}: PrivatePoliciesProps): JSX.Element {
+}: PrivatePoliciesProps) {
   return (
-    <>
-      <Box
-        sx={{
-          bgColor: "#ffffff",
-          maxWidth: "1536px",
-          margin: "auto",
-          padding: {
-            xs: "40px 20px",
-            sm: "80px 40px",
-            md: "80px",
-            lg: "100px 150px",
-          },
-          marginTop: { xs: "96px", sm: "0" },
-        }}
+    <Box
+      component="article"
+      sx={{
+        backgroundColor: "#ffffff",
+        maxWidth: "1440px",
+        mx: "auto",
+        px: { xs: 2, sm: 4, md: 8, lg: 12 },
+        py: { xs: 5, sm: 8, md: 10 },
+        mt: { xs: "96px", sm: 0 },
+      }}
+    >
+      <Typography
+        variant="h1"
+        component="h1"
+        sx={{ fontWeight: 600, fontSize: "32px", mb: 2 }}
       >
-        <Typography variant="h1" sx={{ fontWeight: 600, fontSize: "32px" }}>
-          Privacy Policy
+        Privacy Policy
+      </Typography>
+
+      <Typography paragraph>
+        <strong>Effective Date:</strong> Effective from {date}
+      </Typography>
+
+      <Typography paragraph>
+        This website is operated by {businessName}. We are committed to
+        protecting and respecting your privacy in accordance with UK data
+        protection laws, including the UK General Data Protection Regulation (UK
+        GDPR) and the Data Protection Act 2018.
+      </Typography>
+
+      <Typography paragraph>
+        This Privacy Policy explains how we collect, use, and safeguard your
+        personal data when you interact with this website.
+      </Typography>
+
+      <Section title="1. Information We Collect">
+        <Typography paragraph>
+          We may collect and process the following data about you:
         </Typography>
-        <br />
-        <Typography>
-          <Typography component="span" fontWeight="bold">
-            Effective Date:{" "}
-          </Typography>
-          Effective from {date}
+        <Bullets
+          items={[
+            "Information you provide directly: such as your name, email address, phone number, or any other details submitted via contact forms or account registration.",
+            "Technical information: including IP address, browser type, operating system, and browsing behavior via cookies and analytics tools.",
+            "Usage data: pages visited, time spent, interactions with content, and referring URLs.",
+          ]}
+        />
+      </Section>
+
+      <Section title="2. How We Use Your Information">
+        <Typography paragraph>We may use your personal data to:</Typography>
+        <Bullets
+          items={[
+            "Respond to enquiries or provide services requested via the website.",
+            "Improve the performance and content of the website.",
+            "Ensure security and monitor for fraud or misuse.",
+            "Comply with legal or regulatory obligations.",
+          ]}
+        />
+      </Section>
+
+      <Section title="3. Lawful Bases for Processing">
+        <Typography paragraph>
+          We process your personal data under one or more of the following legal
+          bases:
         </Typography>
-        <br />
-        <Typography>
-          This website is operated by {businessName}. We are committed to
-          protecting and respecting your privacy in accordance with UK data
-          protection laws, including the UK General Data Protection Regulation
-          (UK GDPR) and the Data Protection Act 2018.
-          <br />
-          <br />
-          This Privacy Policy explains how we collect, use, and safeguard your
-          personal data when you interact with this website. <br /> <br />
+        <Bullets
+          items={[
+            "Consent: when you provide clear consent (e.g., newsletter signup).",
+            "Contract: when processing is necessary for the performance of a contract.",
+            "Legal obligation: to comply with applicable law.",
+            "Legitimate interests: for the operation and improvement of the website and services.",
+          ]}
+        />
+      </Section>
+
+      <Section title="4. Cookies and Tracking">
+        <Typography paragraph>
+          We use cookies and similar technologies to collect technical and usage
+          data. You can control cookie preferences through your browser
+          settings. For more information, please see our Cookie Policy (if
+          applicable).
         </Typography>
-        <Box
-          sx={{
-            "& > :not(:last-child)": {
-              pb: { xs: "6px", sm: "12px", md: "18px" },
-            },
-          }}
-        >
-          <Box>
-            <Typography variant="h6" sx={{ fontWeight: 600 }}>
-              1. Information We Collect
-            </Typography>
-            <Typography>
-              We may collect and process the following data about you:
-            </Typography>
-            <List component="ul" sx={{ pl: 2, listStyleType: "disc" }}>
-              <ListItem
-                component="li"
-                sx={{ display: "list-item", paddingX: 0 }}
-              >
-                Information you provide directly: Such as your name, email
-                address, phone number, or any other details submitted via
-                contact forms or account registration.
-              </ListItem>
-              <ListItem
-                component="li"
-                sx={{ display: "list-item", paddingX: 0 }}
-              >
-                Technical information: Including IP address, browser type,
-                operating system, and browsing behavior via cookies and
-                analytics tools.
-              </ListItem>
-              <ListItem
-                component="li"
-                sx={{ display: "list-item", paddingX: 0 }}
-              >
-                Usage data: Pages visited, time spent, interactions with
-                content, and referring URLs.
-              </ListItem>
-            </List>
-          </Box>
+      </Section>
 
-          <Box>
-            <Typography variant="h6" sx={{ fontWeight: "600" }}>
-              2. How We Use Your Information
-            </Typography>
-            <Typography>We may use your personal data to:</Typography>
-            <List component="ul" sx={{ pl: 2, listStyleType: "disc" }}>
-              <ListItem
-                component="li"
-                sx={{ display: "list-item", paddingX: 0 }}
-              >
-                Respond to enquiries or provide services requested via the
-                website.
-              </ListItem>
-              <ListItem
-                component="li"
-                sx={{ display: "list-item", paddingX: 0 }}
-              >
-                Improve the performance and content of the website.
-              </ListItem>
-              <ListItem
-                component="li"
-                sx={{ display: "list-item", paddingX: 0 }}
-              >
-                Ensure security and monitor for fraud or misuse.
-              </ListItem>
-              <ListItem
-                component="li"
-                sx={{ display: "list-item", paddingX: 0 }}
-              >
-                Comply with legal or regulatory obligations.
-              </ListItem>
-            </List>
-          </Box>
+      <Section title="5. Data Sharing">
+        <Typography paragraph>
+          We do not sell your personal data. However, we may share data with:
+        </Typography>
+        <Bullets
+          items={[
+            "Service providers or contractors supporting our business operations (e.g., hosting providers).",
+            "Law enforcement or regulatory authorities if legally required.",
+          ]}
+        />
+      </Section>
 
-          <Box>
-            <Typography variant="h6" sx={{ fontWeight: "600" }}>
-              3. Lawful Bases for Processing
-            </Typography>
-            <Typography>
-              We process your personal data under one or more of the following
-              legal bases:
-            </Typography>
-            <List component="ul" sx={{ pl: 2, listStyleType: "disc" }}>
-              <ListItem
-                component="li"
-                sx={{ display: "list-item", paddingX: 0 }}
-              >
-                Consent: When you provide clear consent (e.g., newsletter
-                signup).
-              </ListItem>
-              <ListItem
-                component="li"
-                sx={{ display: "list-item", paddingX: 0 }}
-              >
-                Contract: When processing is necessary for the performance of a
-                contract.
-              </ListItem>
-              <ListItem
-                component="li"
-                sx={{ display: "list-item", paddingX: 0 }}
-              >
-                Legal obligation: To comply with applicable law.
-              </ListItem>
-              <ListItem
-                component="li"
-                sx={{ display: "list-item", paddingX: 0 }}
-              >
-                Legitimate interests: For the operation and improvement of the
-                website and services.
-              </ListItem>
-            </List>
-          </Box>
+      <Section title="6. International Transfers">
+        <Typography paragraph>
+          If we transfer your personal data outside the UK, we ensure
+          appropriate safeguards are in place in accordance with UK GDPR
+          requirements.
+        </Typography>
+      </Section>
 
-          <Box>
-            <Typography variant="h6" sx={{ fontWeight: "600" }}>
-              4. Cookies and Tracking
-            </Typography>
-            <Typography>
-              We use cookies and similar technologies to collect technical and
-              usage data. You can control cookie preferences through your
-              browser settings. For more information, please see our Cookie
-              Policy (if applicable).
-            </Typography>
-          </Box>
+      <Section title="7. Data Retention">
+        <Typography paragraph>
+          We retain your data only as long as necessary for the purposes set out
+          in this policy or as required by law.
+        </Typography>
+      </Section>
 
-          <Box>
-            <Typography variant="h6" sx={{ fontWeight: "600" }}>
-              5. Data Sharing
-            </Typography>
-            <Typography>
-              We do not sell your personal data. However, we may share data
-              with:
-            </Typography>
-            <List component="ul" sx={{ pl: 2, listStyleType: "disc" }}>
-              <ListItem
-                component="li"
-                sx={{ display: "list-item", paddingX: 0 }}
-              >
-                Service providers or contractors supporting our business
-                operations (e.g., hosting providers).
-              </ListItem>
-              <ListItem
-                component="li"
-                sx={{ display: "list-item", paddingX: 0 }}
-              >
-                Law enforcement or regulatory authorities if legally required.
-              </ListItem>
-            </List>
-          </Box>
+      <Section title="8. Your Rights">
+        <Typography paragraph>Under UK GDPR, you have the right to:</Typography>
+        <Bullets
+          items={[
+            "Access the personal data we hold about you.",
+            "Request correction or deletion of inaccurate or outdated data.",
+            "Object to or restrict processing of your data.",
+            "Withdraw consent (where applicable).",
+            "Lodge a complaint with the UK Information Commissioner’s Office (ICO).",
+          ]}
+        />
+      </Section>
 
-          <Box>
-            <Typography variant="h6" sx={{ fontWeight: "600" }}>
-              6. International Transfers
-            </Typography>
-            <Typography>
-              If we transfer your personal data outside the UK, we ensure
-              appropriate safeguards are in place in accordance with UK GDPR
-              requirements.
-            </Typography>
-          </Box>
+      <Section title="9. Security">
+        <Typography paragraph>
+          We implement appropriate technical and organizational measures to
+          safeguard your data against unauthorized access, loss, or disclosure.
+        </Typography>
+      </Section>
 
-          <Box>
-            <Typography variant="h6" sx={{ fontWeight: "600" }}>
-              7. Data Retention
-            </Typography>
-            <Typography>
-              We retain your data only as long as necessary for the purposes set
-              out in this policy or as required by law.
-            </Typography>
-          </Box>
+      <Section title="10. Contact Us">
+        <Typography paragraph>
+          If you have any questions or concerns about this Privacy Policy,
+          please contact us.
+        </Typography>
+        <Typography paragraph>Email: {businessEmail}</Typography>
+        <Typography>Phone: {businessPhone}</Typography>
+      </Section>
+    </Box>
+  );
+}
 
-          <Box>
-            <Typography variant="h6" sx={{ fontWeight: "600" }}>
-              8. Your Rights
-            </Typography>
-            <Typography>Under UK GDPR, you have the right to:</Typography>
-            <List component="ul" sx={{ pl: 2, listStyleType: "disc" }}>
-              <ListItem
-                component="li"
-                sx={{ display: "list-item", paddingX: 0 }}
-              >
-                Access the personal data we hold about you.
-              </ListItem>
-              <ListItem
-                component="li"
-                sx={{ display: "list-item", paddingX: 0 }}
-              >
-                Request correction or deletion of inaccurate or outdated data.
-              </ListItem>
-              <ListItem
-                component="li"
-                sx={{ display: "list-item", paddingX: 0 }}
-              >
-                Object to or restrict processing of your data.
-              </ListItem>
-              <ListItem
-                component="li"
-                sx={{ display: "list-item", paddingX: 0 }}
-              >
-                Withdraw consent (where applicable).
-              </ListItem>
-              <ListItem
-                component="li"
-                sx={{ display: "list-item", paddingX: 0 }}
-              >
-                Lodge a complaint with the UK Information Commissioner’s Office
-                (ICO).
-              </ListItem>
-            </List>
-          </Box>
+function Section(props: { title: string; children: React.ReactNode }) {
+  return (
+    <Box component="section" sx={{ "&:not(:first-of-type)": { mt: 4 } }}>
+      <Typography
+        variant="h2"
+        component="h2"
+        sx={{ fontWeight: 600, fontSize: "20px", mb: 1.5 }}
+      >
+        {props.title}
+      </Typography>
+      {props.children}
+    </Box>
+  );
+}
 
-          <Box>
-            <Typography variant="h6" sx={{ fontWeight: "600" }}>
-              9. Security
-            </Typography>
-            <Typography>
-              We implement appropriate technical and organizational measures to
-              safeguard your data against unauthorized access, loss, or
-              disclosure.
-            </Typography>
-          </Box>
-
-          <Box>
-            <Typography variant="h6" sx={{ fontWeight: "600" }}>
-              10. Contact Us
-            </Typography>
-            <Typography>
-              If you have any questions or concerns about this Privacy Policy,
-              please contact us
-            </Typography>
-            <Typography>Email: {businessEmail}</Typography>
-            <Typography>Phone: {businessPhone}</Typography>
-          </Box>
-        </Box>
-      </Box>
-    </>
+function Bullets(props: { items: string[] }) {
+  return (
+    <List
+      component="ul"
+      disablePadding
+      sx={{
+        pl: 3,
+        listStyleType: "disc",
+        "& .MuiListItem-root": { display: "list-item", px: 0, py: 0.5 },
+      }}
+    >
+      {props.items.map((t, i) => (
+        <ListItem key={i} component="li">
+          {t}
+        </ListItem>
+      ))}
+    </List>
   );
 }
