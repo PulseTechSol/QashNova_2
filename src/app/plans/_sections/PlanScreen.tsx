@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import PlanComponent from "../_components/PlanComponent";
 import { Box, Typography } from "@mui/material";
@@ -9,8 +10,6 @@ import {
 } from "@/app/_utils/themes";
 import Image from "next/image";
 import pngs from "@/_assets/pngs";
-// import Image from "next/image";
-// import pngs from "@/_assets/pngs";
 
 export default function PlanScreen() {
   const plans = [
@@ -54,8 +53,10 @@ export default function PlanScreen() {
       ],
     },
   ];
+
   return (
     <Box
+      component="section" // semantics only (no visual change)
       sx={{
         overflow: "hidden",
         position: "relative",
@@ -71,6 +72,7 @@ export default function PlanScreen() {
           paddingY: sectionPaddingY,
         }}
       >
+        {/* Heading (unchanged look) */}
         <Box
           data-aos="zoom-in"
           data-aos-duration="500"
@@ -91,6 +93,8 @@ export default function PlanScreen() {
           }}
         >
           <Typography
+            component="h1"
+            aria-label="Find Your Perfect Plan" // better semantics; same visuals
             sx={{
               fontSize: localFontSize.h3,
               fontWeight: "600",
@@ -102,7 +106,9 @@ export default function PlanScreen() {
             Find Your
           </Typography>
           <Typography
+            component="span"
             sx={{
+              display: "block",
               fontSize: localFontSize.h3,
               fontWeight: "600",
               textTransform: "capitalize",
@@ -115,17 +121,25 @@ export default function PlanScreen() {
           </Typography>
         </Box>
 
+        {/* Single intro paragraph (replaces duplicate mobile/desktop copies) */}
         <Typography
           data-aos={"fade-left"}
           data-aos-duration="500"
+          paragraph
           sx={{
             width: "100%",
             fontSize: localFontSize.p1,
             fontWeight: 400,
             color: "#FFFFFF80",
-            display: { xs: "none", md: "block" },
             textAlign: "center",
             marginBottom: 10,
+            maxWidth: {
+              xs: maxWidth,
+              md: "900px",
+              xl: "1136px",
+              xxl: "1536px",
+            },
+            mx: "auto",
           }}
         >
           Our plans are designed to give every business the right foundation to
@@ -139,26 +153,6 @@ export default function PlanScreen() {
           website is built to perform and scale.
         </Typography>
 
-        <Typography
-          sx={{
-            fontSize: localFontSize.p1,
-            fontWeight: 400,
-            color: "#FFFFFF80",
-            textAlign: { xs: "center", md: "start" },
-            display: { xs: "block", md: "none" },
-            marginBottom: 10,
-          }}
-        >
-          Our plans are designed to give every business the right foundation to
-          grow online. Whether you need a simple landing page, a professional
-          website for your small business or a fully integrated e-commerce
-          platform, we have an option to suit your goals. Each package includes
-          secure hosting, a custom domain and responsive design as standard.
-          From our affordable Basic plan to our advanced Premium solution, you
-          can choose the level of functionality and support that best matches
-          your needs. Whatever stage your business is at, we make sure your
-          website is built to perform and scale.
-        </Typography>
         <Box
           sx={{
             display: "flex",
@@ -182,7 +176,8 @@ export default function PlanScreen() {
           ))}
         </Box>
       </Box>
-      {/* the positioned images are there */}
+
+      {/* Decorative images (unchanged visuals) */}
       <Box
         sx={{
           width: { xs: "355px", md: "633px" },
@@ -192,12 +187,11 @@ export default function PlanScreen() {
           left: -13,
           top: 2,
           zIndex: 19,
-          // bgcolor: "red",
         }}
       >
         <Image
           src={pngs.howHeplLG}
-          alt="star"
+          alt="" // decorative
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
@@ -209,14 +203,13 @@ export default function PlanScreen() {
           position: "absolute",
           left: -13,
           zIndex: 19,
-
           bottom: { xs: 0, md: 1 },
           transform: "rotate(270deg)",
         }}
       >
         <Image
           src={pngs.howHeplLG}
-          alt="star"
+          alt="" // decorative
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
@@ -228,13 +221,12 @@ export default function PlanScreen() {
           position: "absolute",
           top: 2,
           zIndex: 1,
-          // bgcolor: "red",
           right: 0,
         }}
       >
         <Image
           src={pngs.howHeplLGcolor}
-          alt="star"
+          alt="" // decorative
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
