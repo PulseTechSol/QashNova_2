@@ -26,7 +26,7 @@ const theme = createTheme({
 
 export default theme;
 
-export const maxWidth = "1440px";
+export const maxWidth = "1536px";
 export const maxWidthxxl = "80vw";
 
 export const sectionPadding = {

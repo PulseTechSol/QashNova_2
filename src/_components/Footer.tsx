@@ -22,7 +22,8 @@ export default function Footer() {
   };
 
   const pathname = usePathname();
-  const isAreaHub = pathname.includes("area-hub");
+  const isAreaHub =
+    pathname.includes("area-hub") || pathname.includes("privacy-policy");
 
   return (
     <>
@@ -54,7 +55,7 @@ export default function Footer() {
 
         <Box
           sx={{
-            maxWidth: { xs: maxWidth, xxl: isAreaHub ? "1440px" : maxWidthxxl },
+            maxWidth: { xs: maxWidth, xxl: isAreaHub ? "1536px" : maxWidthxxl },
             margin: "auto",
             display: "flex",
             justifyContent: "space-between",
