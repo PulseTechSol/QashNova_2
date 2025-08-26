@@ -29,6 +29,8 @@ export default function CaseStudyCard({
 
   return (
     <Box
+    //  data-aos="zoom-in"
+    //         data-aos-duration="500"
       sx={{
         width: "100%",
         maxWidth: { xl: "1200px" },
@@ -54,8 +56,10 @@ export default function CaseStudyCard({
         boxShadow: "0px 4px 40px 0px rgba(0, 0, 0, 0.15)",
       }}
     >
-      <Box sx={{ maxWidth: "555px" }}>
+      <Box  sx={{ maxWidth: "555px" }}>
         <Typography
+data-aos="fade-right"
+            data-aos-duration="500"
           sx={{
             fontSize: { xs: "32px", md: "42px", lg: "48px" },
             fontWeight: 500,
@@ -67,6 +71,8 @@ export default function CaseStudyCard({
         </Typography>
 
         <Box
+        data-aos="fade-right"
+            data-aos-duration="500"
           component="ul"
           sx={{
             mt: { xs: "12px", sm: "16px", md: "20px", xl: "28px" },
@@ -117,6 +123,8 @@ export default function CaseStudyCard({
       </Box>
 
       <Box
+       data-aos="fade-left"
+            data-aos-duration="500"
         sx={{
           maxWidth: { xs: "420px", md: "420px", xl: "445px" },
           margin: { xs: "auto", md: "unset" },

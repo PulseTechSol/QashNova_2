@@ -39,6 +39,8 @@ export default function OurServicesGenaricSection({
       >
         {/* heading */}
         <Typography
+        data-aos="fade-right"
+            data-aos-duration="500"
           sx={{
             textAlign: { xs: "center", lg: "left" },
             fontSize: {
@@ -63,6 +65,7 @@ export default function OurServicesGenaricSection({
         >
           {/* left column */}
           <Box
+         
             sx={{
               display: "flex",
               flexDirection: "column",
@@ -76,6 +79,8 @@ export default function OurServicesGenaricSection({
 
           {/* right column */}
           <Box
+           data-aos="fade-left"
+            data-aos-duration="500"
             sx={{
               display: "flex",
               flexDirection: "column",
@@ -125,6 +130,8 @@ export default function OurServicesGenaricSection({
 export function ServiceCard({ text, image }: ServiceCardProps) {
   return (
     <Box
+     data-aos="zoom-in"
+            data-aos-duration="500"
       sx={{
         padding: { xs: "20px 10px", sm: "30px", md: "50px 30px" },
         backgroundImage:

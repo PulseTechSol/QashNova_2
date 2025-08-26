@@ -39,6 +39,8 @@ export default function SeoSupportSection({ data }: SeoSupportSectionProps) {
         {/* heading + description */}
         <Box sx={{ maxWidth: "360px" }}>
           <Typography
+          data-aos="fade-right"
+            data-aos-duration="500"
             sx={{
               textAlign: { xs: "center", md: "left" },
               fontSize: {
@@ -54,6 +56,8 @@ export default function SeoSupportSection({ data }: SeoSupportSectionProps) {
             {data.heading}
           </Typography>
           <Typography
+          data-aos="fade-right"
+            data-aos-duration="500"
             sx={{
               color: "rgba(0, 0, 0, 0.5)",
               fontSize: localFontSize.p3,
@@ -65,6 +69,8 @@ export default function SeoSupportSection({ data }: SeoSupportSectionProps) {
 
         {/* features grid */}
         <Box
+         data-aos="fade-left"
+            data-aos-duration="500"
           sx={{
             display: "flex",
             gap: { xs: "40px", sm: "80px" },
@@ -107,6 +113,8 @@ export function FeatureItem({ image, title, subtitle }: FeatureItemProps) {
         </Box>
         <Box>
           <Typography
+           data-aos="fade-left"
+            data-aos-duration="500"
             sx={{
               color: "rgba(0, 0, 0, 1)",
               fontSize: { xs: "20px", md: "32px" },
@@ -117,6 +125,8 @@ export function FeatureItem({ image, title, subtitle }: FeatureItemProps) {
             {title}
           </Typography>
           <Typography
+           data-aos="fade-left"
+            data-aos-duration="500"
             sx={{
               color: "rgba(0, 0, 0, 0.5)",
               fontSize: { xs: "16px", md: "18px" },

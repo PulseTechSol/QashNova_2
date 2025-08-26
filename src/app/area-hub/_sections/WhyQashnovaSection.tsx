@@ -32,6 +32,8 @@ export default function WhyQashnovaSection({
       >
         {/* heading */}
         <Typography
+         data-aos="fade-right"
+            data-aos-duration="500"
           sx={{
             textAlign: { xs: "center", md: "left" },
             fontSize: {
@@ -50,6 +52,8 @@ export default function WhyQashnovaSection({
         {/* description + image */}
         <Box sx={{ maxWidth: "466px" }}>
           <Typography
+           data-aos="fade-left"
+            data-aos-duration="500"
             sx={{
               color: "rgba(255, 255, 255, 0.5)",
               fontSize: localFontSize.p3,
@@ -57,7 +61,9 @@ export default function WhyQashnovaSection({
           >
             {description}
           </Typography>
-          <Box sx={{ mt: { xs: "20px", md: "60px", lg: "80px" } }}>
+          <Box  data-aos="fade-left"
+            data-aos-duration="500"
+            sx={{ mt: { xs: "20px", md: "60px", lg: "80px" } }}>
             <Image
               style={{ width: "100%", height: "100%", objectFit: "contain" }}
               src={image}

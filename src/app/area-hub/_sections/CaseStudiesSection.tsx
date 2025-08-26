@@ -32,6 +32,8 @@ export default function CaseStudiesSection({ data }: CaseStudiesSectionProps) {
         }}
       >
         <Typography
+         data-aos="zoom-in"
+            data-aos-duration="500"
           sx={{
             fontSize: {
               ...localFontSize.h4,
@@ -58,9 +60,10 @@ export default function CaseStudiesSection({ data }: CaseStudiesSectionProps) {
             flexDirection: "column",
             width: "100%",
           }}
-        >
+          >
           {data.cards.map((card, index) => (
             <CaseStudyCard
+            
               key={index}
               index={index}
               totalCards={data.cards.length}

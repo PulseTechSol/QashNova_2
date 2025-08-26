@@ -79,6 +79,8 @@ export default function OurHubareasCards() {
         }}
       >
         <Typography
+         data-aos="zoom-in"
+            data-aos-duration="500"
           sx={{
             textAlign: "center",
             fontSize: localFontSize.h4,
@@ -139,6 +141,8 @@ export default function OurHubareasCards() {
         </Typography>
 
         <Box
+         data-aos="zoom-in"
+            data-aos-duration="500"
           sx={{
             width: "100%",
             display: { xs: "flex" },
@@ -182,12 +186,12 @@ export function WhatIncludedCard({
 }: WhatIncludedCardProps) {
   return (
     <Box
+     data-aos="zoom-in"
+            data-aos-duration="500"
       onClick={onClick}
       sx={
         {
-          // backgroundColor:"#ccc",
-          // padding: { xs: "40px 20px 30px 20px", sm: "unset" },
-          // width: { xs: "100%", sm: "unset" },
+          
         }
       }
     >
