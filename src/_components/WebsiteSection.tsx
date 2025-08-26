@@ -1,6 +1,5 @@
 "use client";
 
-import pngs from "@/_assets/pngs";
 import {
   maxWidth,
   sectionPaddingX,
@@ -11,6 +10,7 @@ import Image, { StaticImageData } from "next/image";
 import ButtonComponent from "./ButtonComponent";
 import svgs from "@/_assets/svgs";
 import GenericHeadingBox from "./GenericHeadingBox";
+import pngs from "@/_assets/pngs";
 
 interface WebsiteSectionProps {
   destopPara?: string;
@@ -21,6 +21,7 @@ interface WebsiteSectionProps {
   heading2?: string;
   link?: string;
 }
+
 export default function WebsiteSection({
   destopPara,
   heading1,
@@ -30,8 +31,12 @@ export default function WebsiteSection({
   isbool = false,
   link,
 }: WebsiteSectionProps) {
+  const sectionLabel = `${heading1 ?? ""} ${heading2 ?? ""}`.trim();
+
   return (
     <Box
+      component="section" // semantics only
+      aria-label={sectionLabel || "website project"}
       sx={{
         position: "relative",
         background: isbool
@@ -43,7 +48,9 @@ export default function WebsiteSection({
         px: sectionPaddingX,
       }}
     >
+      {/* decorative bg left */}
       <Box
+        aria-hidden // accessibility + no visible text
         sx={{
           width: { xs: "355px", md: "633px" },
           height: { xs: "355px", md: "633px" },
@@ -54,12 +61,14 @@ export default function WebsiteSection({
       >
         <Image
           src={pngs.howHeplLG}
-          alt="star"
+          alt="" // decorative
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
 
+      {/* decorative bg right */}
       <Box
+        aria-hidden
         sx={{
           width: { xs: "300px", md: "790px" },
           height: { xs: "300px", md: "790px" },
@@ -70,17 +79,14 @@ export default function WebsiteSection({
       >
         <Image
           src={pngs.howHeplLGcolor}
-          alt="star"
+          alt="" // decorative
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
 
       <Box
-        // ref={containerRef}
         sx={{
-          // padding: sectionPadding,
           py: sectionPaddingY,
-
           maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
           width: "100%",
           margin: "auto",
@@ -99,12 +105,14 @@ export default function WebsiteSection({
           textWrap: "nowrap",
         }}
       >
+        {/* Heading */}
         <GenericHeadingBox
           isbool={!isbool}
           heading1={heading1}
           heading2={heading2}
         />
 
+        {/* Media + copy */}
         <Box
           sx={{
             width: "100%",
@@ -121,7 +129,6 @@ export default function WebsiteSection({
             data-aos="fade-left"
             data-aos-duration="500"
             sx={{
-              // bgcolor: { xs: "#fff", xl: "#ffffff12" },
               maxWidth: { xs: "100%", lg: "555px", xl: "1000px" },
               width: "100%",
               borderRadius: {
@@ -129,29 +136,24 @@ export default function WebsiteSection({
                 sm: "0 80px 80px 80px",
               },
               height: "auto",
-              // height: { xs: "100%", sm: "100%" },
               overflow: "hidden",
             }}
           >
             <Image
               src={image as StaticImageData}
-              alt="Websites"
-              style={{
-                width: "100%",
-                height: "auto",
-                objectFit: "contain",
-              }}
+              alt="Website preview"
+              style={{ width: "100%", height: "auto", objectFit: "contain" }}
             />
           </Box>
+
+          {/* Intro copy — keeping desktop/mobile variants because content differs */}
           <Box
             data-aos="fade-left"
             data-aos-duration="500"
-            sx={{
-              width: "100%",
-              textAlign: { xs: "end", md: "start" },
-            }}
+            sx={{ width: "100%", textAlign: { xs: "end", md: "start" } }}
           >
             <Typography
+              paragraph
               sx={{
                 maxWidth: { xs: "557px", xl: "1000px" },
                 width: "100%",
@@ -160,34 +162,39 @@ export default function WebsiteSection({
                 color: isbool ? "#00000080" : "#FFFFFF80",
                 textAlign: { xs: "end", md: "start" },
                 display: { xs: "none", md: "block" },
+                m: 0,
               }}
             >
               {destopPara}
             </Typography>
+
             <Typography
+              paragraph
               sx={{
                 fontSize: "18px",
                 fontWeight: 400,
                 color: isbool ? "#00000080" : "#FFFFFF80",
                 textAlign: { xs: "end", md: "start" },
                 display: { xs: "block", md: "none" },
+                m: 0,
               }}
             >
               {mobilePara}
             </Typography>
+
             <Box
               sx={{
                 width: "100%",
                 mt: { xs: "20px", xl: "40px" },
-                display: { xs: "flex" },
+                display: "flex",
                 alignItems: { xs: "end", md: "start" },
                 justifyContent: { xs: "end", md: "start" },
               }}
             >
               <Link
-                style={{ textDecoration: "none" }}
                 href={link}
                 target="_blank"
+                style={{ textDecoration: "none" }}
               >
                 <ButtonComponent
                   label="go to website"
