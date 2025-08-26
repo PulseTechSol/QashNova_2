@@ -75,7 +75,7 @@ export default function SeoSupportSection({ data }: SeoSupportSectionProps) {
          data-aos="fade-left"
             data-aos-duration="500"
           sx={{
-            maxWidth:{xs:"300px" ,sm:"70%",md:"50%" },
+            maxWidth:{xs:"300px" ,sm:"70%",md:"60%" },
             display: "flex",
             gap: { xs: "10px", sm: "40px" },
             flexDirection: "column",           
