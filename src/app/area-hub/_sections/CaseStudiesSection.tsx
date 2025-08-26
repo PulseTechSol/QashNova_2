@@ -1,10 +1,23 @@
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
-import CaseStudyCard from "../_components/CaseStudyCard";
-import pngs from "@/_assets/pngs";
-// import Image, { StaticImageData } from "next/image";
-// import svgs from "@/_assets/svgs";
-export default function CaseStudiesSection() {
+import CaseStudyCard, { BulletItem } from "../_components/CaseStudyCard";
+import { StaticImageData } from "next/image";
+
+type CaseStudy = {
+  title: string;
+  image: StaticImageData;
+  bullets: BulletItem[];
+};
+
+type CaseStudiesData = {
+  sectionHeading: string;
+  cards: CaseStudy[];
+};
+
+type CaseStudiesSectionProps = {
+  data: CaseStudiesData;
+};
+export default function CaseStudiesSection({ data }: CaseStudiesSectionProps) {
   return (
     <Box sx={{ position: "relative", zIndex: 10 }}>
       <Box
@@ -18,7 +31,6 @@ export default function CaseStudiesSection() {
           zIndex: 10,
         }}
       >
-        {/* this is heading  */}
         <Typography
           sx={{
             fontSize: {
@@ -37,29 +49,30 @@ export default function CaseStudiesSection() {
         >
           Recent Rotherham Projects
         </Typography>
-        {/* the card section  */}
-        <Box sx={{}}>
-          <CaseStudyCard
-            index={0}
-            title="Rotherham Bakery — Online Orders Success"
-            image={pngs.rotherhamBakeryOnlineOrdersSuccess}
-            bullets={[
-              {
-                label: "Challenge",
-                text: "Challenge: Outdated site with no online ordering system",
-              },
-              {
-                label: "Solution",
-                text: "New ecommerce site with clear product pages and local delivery options",
-              },
-              {
-                label: "Result",
-                text: "45% increase in online orders within 3 months",
-              },
-            ]}
-          />
+
+        {/* Map Cards */}
+        <Box
+          sx={{
+            display: "flex",
+            gap: { xs: "40px", md: "60px" },
+            flexDirection: "column",
+            width: "100%",
+          }}
+        >
+          {data.cards.map((card, index) => (
+            <CaseStudyCard
+              key={index}
+              index={index}
+              totalCards={data.cards.length}
+              title={card.title}
+              image={card.image}
+              bullets={card.bullets}
+            />
+          ))}
         </Box>
       </Box>
+
+      {/* blur circle (unchanged) */}
       <Box
         sx={{
           maxWidth: { xs: "300px", md: "25vw", lg: "30%", xxl: "20%" },

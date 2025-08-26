@@ -3,30 +3,32 @@
 import { Box, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 
-interface BulletItem {
+export interface BulletItem {
   label: string;
   text: string;
 }
 
-interface CaseStudyCardProps {
+export interface CaseStudyCardProps {
   title: string;
   image: StaticImageData;
   bullets: BulletItem[];
-  index?: number;
-  isLast?: boolean;
+  index: number;
+  totalCards: number;
 }
 
 export default function CaseStudyCard({
   title,
   image,
   bullets,
-  index = 0,
-  isLast = false,
+  index,
+  totalCards,
 }: CaseStudyCardProps) {
   const isFirst = index === 0;
+  const isLast = index === totalCards - 1;
+  const exactlyTwo = totalCards === 2;
+
   return (
     <Box
-      key={index}
       sx={{
         width: "100%",
         maxWidth: { xl: "1200px" },
@@ -36,26 +38,23 @@ export default function CaseStudyCard({
         alignItems: "center",
         gap: { xs: "45px", md: "48px", xl: "64px" },
         bgcolor: "#fff",
-        borderRadius: { xs: "28px", sm: "36px" },
-        borderTopLeftRadius: isFirst
-          ? { xs: 0, sm: 0 }
-          : { xs: "30px", md: "80px" },
-        borderBottomRightRadius: isLast
-          ? { xs: 0, sm: 0 }
-          : { xs: "30px", sm: "80px" },
+        borderRadius: { xs: "30px", md: "80px" },
+        borderTopLeftRadius:
+          exactlyTwo && isFirst
+            ? { xs: "0px !important", sm: "0px !important" }
+            : { xs: "30px", md: "80px" },
+        borderBottomRightRadius:
+          exactlyTwo && isLast
+            ? { xs: "0px !important", sm: "0px !important" }
+            : { xs: "30px", sm: "80px" },
         minHeight: { xs: "fit-content", sm: "750px", md: "543px" },
         position: "static",
-        zIndex: "100",
+        zIndex: 100,
         justifyContent: "space-between",
         boxShadow: "0px 4px 40px 0px rgba(0, 0, 0, 0.15)",
       }}
     >
-      {/* Left Content */}
-      <Box
-        sx={{
-          maxWidth: "555px",
-        }}
-      >
+      <Box sx={{ maxWidth: "555px" }}>
         <Typography
           sx={{
             fontSize: { xs: "32px", md: "42px", lg: "48px" },
@@ -66,7 +65,7 @@ export default function CaseStudyCard({
         >
           {title}
         </Typography>
-        {/* Bullets */}
+
         <Box
           component="ul"
           sx={{
@@ -116,7 +115,6 @@ export default function CaseStudyCard({
         </Box>
       </Box>
 
-      {/* Right Image */}
       <Box
         sx={{
           maxWidth: { xs: "420px", md: "420px", xl: "445px" },
@@ -126,11 +124,7 @@ export default function CaseStudyCard({
         <Image
           src={image}
           alt={`case-study-${index}`}
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "contain",
-          }}
+          style={{ width: "100%", height: "100%", objectFit: "contain" }}
         />
       </Box>
     </Box>

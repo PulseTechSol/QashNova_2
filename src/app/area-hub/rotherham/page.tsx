@@ -45,6 +45,35 @@ function Rotherham() {
         "Yes, we offer monthly support packages including updates, backups, security monitoring, and content changes.",
     },
   ];
+  const caseStudiesData = {
+    sectionHeading: "Recent Rotherham Projects",
+    cards: [
+      {
+        title: "South Yorkshire Manufacturing — B2B Lead Generation",
+        image: pngs.southYorkshireB2bLeads,
+        bullets: [
+          { label: "Challenge", text: "No online presence or ordering system" },
+          {
+            label: "Solution",
+            text: "New website with online ordering and local delivery",
+          },
+          { label: "Result", text: "50% increase in orders within 2 months" },
+        ],
+      },
+      {
+        title: "Sheffield Retailer — Ecommerce Website",
+        image: pngs.southYorkshireB2bLeads,
+        bullets: [
+          { label: "Challenge", text: "Outdated store and poor UX" },
+          {
+            label: "Solution",
+            text: "Modern ecommerce platform with mobile-first design",
+          },
+          { label: "Result", text: "Doubled online sales in 3 months" },
+        ],
+      },
+    ],
+  };
 
   return (
     <>
@@ -77,7 +106,7 @@ function Rotherham() {
           description="Our small-team approach means you'll deal with the same people who build and support your site. Real experience running campaigns that deliver results."
           image={pngs.WhyChooseQashNova}
         />
-        <CaseStudiesSection />
+        <CaseStudiesSection data={caseStudiesData} />
         <SeoSupportSection />
         <FaqAreahub items={faqData} />
         <Footer />
