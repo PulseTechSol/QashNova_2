@@ -27,7 +27,7 @@ export default function LayoutWrapper({
 }) {
   const pathname = usePathname();
   const isLandingPage =
-    pathname === "/sy-landing-page" || pathname === "/area-hub/rotherham";
+    pathname === "/sy-landing-page" || pathname === "/area-hub/rotherham"||pathname==="/area-hub/south-yorkshire" ||pathname==="/area-hub/sheffield";
 
   const normalNavbarPaths = [
     "/",

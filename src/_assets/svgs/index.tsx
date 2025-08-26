@@ -62,15 +62,23 @@ import supportSeo from "./ourServicesGenericSectionIcons/supportSeo.svg";
 import websiteRedesign from "./ourServicesGenericSectionIcons/websiteRedesign.svg";
 import blueTick from "./blueTick.svg";
 import arrowRight from "./arrowRight.svg";
+import b2bmanufacturing from "./b2bmanufacturing.svg";
+import buswebsite from "./buswebsite.svg";
+import ecmstore from "./ecmstore.svg";
+import seosheffield from "./seosheffield.svg";
 
 const svgs = {
   logoFooter,
   logo1,
   mobileLogo,
   locationhub,
+  b2bmanufacturing,
   logos2,
+  buswebsite,
   line,
+  ecmstore,
   logo3,
+  seosheffield,
   logo4,
   logo5,
   logos6,

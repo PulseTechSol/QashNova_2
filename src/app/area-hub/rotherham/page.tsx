@@ -19,7 +19,7 @@ function Rotherham() {
     {
       title: "How long to build a website?",
       content:
-        "Most brochure sites take 2–6 weeks depending on scope; ecommerce can take 6–12 weeks. We'll provide a detailed timeline during consultation.",
+        "Most brochure sites take 2-6 weeks depending on scope; ecommerce can take 6-12 weeks. We'll provide a detailed timeline during consultation.",
     },
     {
       title: "Do you provide hosting?",
@@ -51,33 +51,25 @@ function Rotherham() {
     sectionHeading: "Recent Rotherham Projects",
     cards: [
       {
-        title: "South Yorkshire Manufacturing — B2B Lead Generation",
-        image: pngs.southYorkshireB2bLeads,
+        title: "Rotherham Bakery — Online Orders Success",
+        image: pngs.rotherhamBakeryOnlineOrdersSuccess,
         bullets: [
-          { label: "Challenge", text: "No online presence or ordering system" },
+          { label: "Challenge", text: "Outdated site with no online ordering system" },
           {
             label: "Solution",
-            text: "New website with online ordering and local delivery",
+            text: " New ecommerce site with clear product pages and local delivery options",
           },
-          { label: "Result", text: "50% increase in orders within 2 months" },
+          { label: "Result", text: "45% increase in online orders within 3 months" },
         ],
       },
-      {
-        title: "Sheffield Retailer — Ecommerce Website",
-        image: pngs.southYorkshireB2bLeads,
-        bullets: [
-          { label: "Challenge", text: "Outdated store and poor UX" },
-          {
-            label: "Solution",
-            text: "Modern ecommerce platform with mobile-first design",
-          },
-          { label: "Result", text: "Doubled online sales in 3 months" },
-        ],
-      },
+      
     ],
   };
+
+ 
+
   const seoSupportData: SeoSupportData = {
-    heading: "Local SEO & Support",
+    heading: " Local SEO & Support",
     description:
       "We don't just build attractive sites — we make sure they can be found by Rotherham customers",
     features: [
