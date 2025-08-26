@@ -1,29 +1,35 @@
+"use client";
 import pngs from "@/_assets/pngs";
 import svgs from "@/_assets/svgs";
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function OurHubareasCards() {
+  const router = useRouter();
   const websiteServices = [
     {
       title: "Rotherham",
       image: svgs.locationhub,
       description:
         "We're local and work with South Yorkshire businesses daily. That means fast response times and practical advice tailored to Rotherham customers.",
+      onClick: () => router.push("/area-hub/rotherham"),
     },
     {
       title: "South Yorkshire",
       image: svgs.locationhub,
       description:
         "Our websites are built to be fast, secure and easy to manage, so you can focus on running your business while we bring you more customers.  ",
+      onClick: () => {},
     },
     {
       title: "sheffield",
       image: svgs.locationhub,
       description:
         "Designing bespoke websites that capture the unique spirit of Sheffield, ensuring a seamless and engaging user experience that drive real business growth.",
+      onClick: () => {},
     },
   ];
   return (
@@ -151,6 +157,7 @@ export default function OurHubareasCards() {
               title={items.title}
               description={items.description}
               index={index}
+              onClick={items.onClick}
             />
           ))}
         </Box>
@@ -163,6 +170,7 @@ type WhatIncludedCardProps = {
   title: string;
   description: string;
   index: number;
+  onClick: () => void;
 };
 
 export function WhatIncludedCard({
@@ -170,9 +178,11 @@ export function WhatIncludedCard({
   title,
   description,
   index,
+  onClick,
 }: WhatIncludedCardProps) {
   return (
     <Box
+      onClick={onClick}
       sx={
         {
           // backgroundColor:"#ccc",
