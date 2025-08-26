@@ -16,7 +16,6 @@ import Footer from "@/_components/Footer";
 
 function Rotherham() {
   const faqData = [
-  
     {
       title: "Do you provide hosting and support?",
       content:
@@ -32,7 +31,6 @@ function Rotherham() {
       content:
         "Yes, we can meet Sheffield clients for initial consultations and project discussions when needed. We're local to the area.",
     },
-    
   ];
   const caseStudiesData = {
     sectionHeading: "Sheffield Project Case Studies",
@@ -41,7 +39,6 @@ function Rotherham() {
         title: "Sheffield Café — Online Orders Success",
         image: pngs.sheffieldCafeOrders,
         bullets: [
-    
           { label: "Challenge", text: "No online presence or ordering system" },
           {
             label: "Solution",
@@ -54,7 +51,6 @@ function Rotherham() {
         title: "Sheffield Accountancy — Professional Redesign",
         image: pngs.sheffieldAccountancyRedesign,
         bullets: [
-        
           { label: "Challenge", text: "Outdated site losing credibility." },
           {
             label: "Solution",
@@ -68,7 +64,7 @@ function Rotherham() {
   const seoSupportData: SeoSupportData = {
     heading: "Regional SEO & Support",
     description:
-      "We don't just build attractive sites — we make sure they can be found by Rotherham customers",
+      "We don't just build attractive sites — we make sure they can be found by Sheffield customers",
     features: [
       [
         {
@@ -83,9 +79,6 @@ function Rotherham() {
         },
       ],
       [
-        
-
-
         {
           image: svgs.blueTick,
           title: "Sheffield SEO",
@@ -113,7 +106,7 @@ function Rotherham() {
           breadcrumbLeft="Areas Hub"
           breadcrumbRight="Sheffield"
           heading="Website Design for Sheffield business"
-          description="Crafting bespoke websites in Rotherham. We blend stunning aesthetics with powerful functionality. Our designs are tailored to elevate your brand."
+          description="Professional, mobile-friendly websites for Sheffield businesses that convert visitors into customers."
         />
         <OurServicesGenaricSection
           heading="Services in Sheffield"
@@ -122,7 +115,7 @@ function Rotherham() {
             { text: "Website Redesign", image: svgs.websiteRedesign },
           ]}
           rightColumnCards={[
-            { text: "Business webites", image: svgs.buswebsite },
+            { text: "Business websites", image: svgs.buswebsite },
             { text: "SEO & Maintenance", image: svgs.seosheffield },
           ]}
         />

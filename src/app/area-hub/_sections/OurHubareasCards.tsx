@@ -22,14 +22,14 @@ export default function OurHubareasCards() {
       image: svgs.locationhub,
       description:
         "Our websites are built to be fast, secure and easy to manage, so you can focus on running your business while we bring you more customers.  ",
-      onClick: () => {},
+      onClick: () => router.push("/area-hub/south-yorkshire"),
     },
     {
       title: "sheffield",
       image: svgs.locationhub,
       description:
         "Designing bespoke websites that capture the unique spirit of Sheffield, ensuring a seamless and engaging user experience that drive real business growth.",
-      onClick: () => {},
+      onClick: () => router.push("/area-hub/sheffield"),
     },
   ];
   return (
@@ -79,8 +79,8 @@ export default function OurHubareasCards() {
         }}
       >
         <Typography
-         data-aos="zoom-in"
-            data-aos-duration="500"
+          data-aos="zoom-in"
+          data-aos-duration="500"
           sx={{
             textAlign: "center",
             fontSize: localFontSize.h4,
@@ -141,8 +141,8 @@ export default function OurHubareasCards() {
         </Typography>
 
         <Box
-         data-aos="zoom-in"
-            data-aos-duration="500"
+          data-aos="zoom-in"
+          data-aos-duration="500"
           sx={{
             width: "100%",
             display: { xs: "flex" },
@@ -185,16 +185,7 @@ export function WhatIncludedCard({
   onClick,
 }: WhatIncludedCardProps) {
   return (
-    <Box
-     data-aos="zoom-in"
-            data-aos-duration="500"
-      onClick={onClick}
-      sx={
-        {
-          
-        }
-      }
-    >
+    <Box data-aos="zoom-in" data-aos-duration="500" onClick={onClick} sx={{}}>
       <Box
         key={index}
         sx={{

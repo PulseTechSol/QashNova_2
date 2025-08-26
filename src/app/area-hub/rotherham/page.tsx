@@ -54,19 +54,22 @@ function Rotherham() {
         title: "Rotherham Bakery — Online Orders Success",
         image: pngs.rotherhamBakeryOnlineOrdersSuccess,
         bullets: [
-          { label: "Challenge", text: "Outdated site with no online ordering system" },
+          {
+            label: "Challenge",
+            text: "Outdated site with no online ordering system",
+          },
           {
             label: "Solution",
             text: " New ecommerce site with clear product pages and local delivery options",
           },
-          { label: "Result", text: "45% increase in online orders within 3 months" },
+          {
+            label: "Result",
+            text: "45% increase in online orders within 3 months",
+          },
         ],
       },
-      
     ],
   };
-
- 
 
   const seoSupportData: SeoSupportData = {
     heading: " Local SEO & Support",
