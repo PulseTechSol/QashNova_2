@@ -18,11 +18,12 @@ export default function SectionWithHeadingAndCTA({
   route = "/case-study",
 }: SectionWithHeadingAndCTAProps) {
   const router = useRouter();
+  const sectionLabel = [heading, lastword].filter(Boolean).join(" ").trim();
 
   return (
     <Box
       component="section"
-      aria-label={`${heading ?? ""} ${lastword ?? ""}`.trim()}
+      {...(sectionLabel ? { "aria-label": sectionLabel } : {})}
     >
       <Box
         sx={{
@@ -78,7 +79,7 @@ export default function SectionWithHeadingAndCTA({
               >
                 <Image
                   src={svgs.line}
-                  alt="" /* decorative underline */
+                  alt=""
                   aria-hidden
                   style={{ height: "100%", width: "100%" }}
                 />
@@ -97,6 +98,8 @@ export default function SectionWithHeadingAndCTA({
             }}
           >
             <ButtonComponent
+              type="button"
+              aria-label="View case studies"
               onClick={() => router.push(route)}
               label="Case Studies"
               imgSrc={svgs.whiteArrow}

@@ -82,9 +82,9 @@ export default function HowHelp() {
       image: pngs.image5,
     },
   ];
+
   useEffect(() => {
     if (!containerRef.current) return;
-
     const cards = containerRef.current.querySelectorAll(".gsap-card");
 
     cards.forEach((card, index) => {
@@ -92,11 +92,10 @@ export default function HowHelp() {
         gsap.set(card, { opacity: 1, scale: 1 });
         return;
       }
-
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: card,
+            trigger: card as Element,
             start: "top top",
             end: "bottom top",
             scrub: true,
@@ -105,15 +104,7 @@ export default function HowHelp() {
           },
         })
         .set(card, { opacity: 1, scale: 1 })
-        .to(
-          card,
-          {
-            opacity: 0,
-            scale: 0.6,
-            ease: "none",
-          },
-          0.01
-        );
+        .to(card, { opacity: 0, scale: 0.6, ease: "none" }, 0.01);
     });
 
     return () => {
@@ -123,10 +114,9 @@ export default function HowHelp() {
 
   return (
     <Box
-      sx={{
-        position: "relative",
-        px: sectionPaddingX,
-      }}
+      component="section"
+      aria-label="how we help"
+      sx={{ position: "relative", px: sectionPaddingX }}
     >
       <Box
         ref={containerRef}
@@ -145,6 +135,7 @@ export default function HowHelp() {
           zIndex: 10,
         }}
       >
+        {/* Heading + intro */}
         <Box
           data-aos="fade-right"
           data-aos-duration="500"
@@ -159,6 +150,7 @@ export default function HowHelp() {
         >
           <GenericHeadingBox heading1="How" heading2="we Help" />
           <Box
+            aria-hidden
             sx={{
               width: "2px",
               height: 200,
@@ -169,6 +161,7 @@ export default function HowHelp() {
           <Typography
             data-aos="fade-left"
             data-aos-duration="500"
+            paragraph
             sx={{
               maxWidth: { xs: "490px", xl: "600px", xxl: "700px" },
               width: "100%",
@@ -176,6 +169,7 @@ export default function HowHelp() {
               fontWeight: 400,
               color: "rgba(0, 0, 0, 1)",
               textAlign: { xs: "end", sm: "start" },
+              m: 0,
             }}
           >
             Discover our full range of digital marketing services. From strategy
@@ -184,12 +178,15 @@ export default function HowHelp() {
           </Typography>
         </Box>
 
+        {/* Cards */}
         {websiteServices.map((service, index) => {
           const isFirst = index === 0;
           const isLast = index === websiteServices.length - 1;
           return (
             <Box
               key={index}
+              component="article"
+              aria-label={service.title}
               className="gsap-card"
               sx={{
                 width: "100%",
@@ -221,6 +218,7 @@ export default function HowHelp() {
                 }}
               >
                 <Typography
+                  component="h3"
                   sx={{
                     fontSize: localFontSize.h4,
                     fontWeight: 500,
@@ -239,11 +237,7 @@ export default function HowHelp() {
                     mt: { xs: "10px", sm: "20px", md: "30px", xl: "50px" },
                     height: "auto",
                     width: "100%",
-                    fontSize: {
-                      xs: "12px",
-                      md: "16px",
-                      // xl: "18px",
-                    },
+                    fontSize: { xs: "12px", md: "16px" },
                     display: "flex",
                     flexWrap: "wrap",
                     gap: { xs: "5px", md: "10px", xl: "15px" },
@@ -251,7 +245,7 @@ export default function HowHelp() {
                 >
                   {service.buttons.map((label, i) => (
                     <ButtonComponent
-                      disableHover={true}
+                      disableHover
                       key={i}
                       label={label}
                       sx={{
@@ -268,20 +262,24 @@ export default function HowHelp() {
                     />
                   ))}
                 </Box>
+
                 <Typography
                   data-aos="zoom-in"
                   data-aos-duration="500"
+                  paragraph
                   sx={{
                     mt: { xs: "15px", sm: "30px", md: "60px", xl: "80px" },
                     fontSize: localFontSize.p2,
                     fontWeight: 400,
                     color: "rgba(0, 0, 0, 1)",
                     textAlign: { xs: "start" },
+                    m: 0,
                   }}
                 >
                   {service.description}
                 </Typography>
               </Box>
+
               <Box
                 data-aos="zoom-in"
                 data-aos-duration="500"
@@ -298,7 +296,7 @@ export default function HowHelp() {
               >
                 <Image
                   src={service.image}
-                  alt={`service-${index}`}
+                  alt={`${service.title} illustration`}
                   className={`custom-img ${isFirst ? "first" : ""} ${
                     isLast ? "last" : ""
                   }`}
@@ -313,8 +311,10 @@ export default function HowHelp() {
           );
         })}
       </Box>
-      {/* background */}
+
+      {/* background blurs (decorative) */}
       <Box
+        aria-hidden
         sx={{
           position: "absolute",
           top: 0,
@@ -327,12 +327,14 @@ export default function HowHelp() {
         }}
       />
       <Box
+        aria-hidden
         sx={{
           position: "absolute",
           top: "50%",
           left: "50%",
           width: "50%",
           aspectRatio: "1 / 1",
+          // NOTE: keep original value to avoid visual change; replace with rgba(...) if you want the blue blur visible
           backgroundColor: "background: rgba(60, 101, 255, 0.7)",
           filter: "blur(400px)",
           zIndex: 0,

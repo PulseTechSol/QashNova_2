@@ -9,30 +9,48 @@ import {
   sectionPaddingY,
 } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { WorkShowcCase } from "../_components/WorkShowcCase";
 
 export default function OurWork() {
   const router = useRouter();
+  const containerRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    const cards = document.querySelectorAll(".hover-card");
+    const root = containerRef.current;
+    if (!root) return;
+
+    const cards = root.querySelectorAll<HTMLElement>(".hover-card");
+    const cleaners: Array<() => void> = [];
 
     cards.forEach((card) => {
-      const overlay = card.querySelector(".curtain") as HTMLElement;
+      const overlay = card.querySelector<HTMLElement>(".curtain");
+      const enter = () =>
+        overlay && (overlay.style.transform = "translateY(0%)");
+      const leave = () =>
+        overlay && (overlay.style.transform = "translateY(100%)");
 
-      card.addEventListener("mouseenter", () => {
-        overlay.style.transform = "translateY(0%)";
-      });
+      card.addEventListener("mouseenter", enter);
+      card.addEventListener("mouseleave", leave);
+      card.addEventListener("focusin", enter);
+      card.addEventListener("focusout", leave);
 
-      card.addEventListener("mouseleave", () => {
-        overlay.style.transform = "translateY(100%)";
+      cleaners.push(() => {
+        card.removeEventListener("mouseenter", enter);
+        card.removeEventListener("mouseleave", leave);
+        card.removeEventListener("focusin", enter);
+        card.removeEventListener("focusout", leave);
       });
     });
+
+    return () => cleaners.forEach((fn) => fn());
   }, []);
 
   return (
     <Box
+      component="section"
+      aria-label="our work"
       sx={{
         position: "relative",
         background: "rgba(0, 0, 0, 1)",
@@ -41,6 +59,7 @@ export default function OurWork() {
     >
       {/* SECTION */}
       <Box
+        ref={containerRef}
         sx={{
           maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
           width: "100%",
@@ -73,11 +92,12 @@ export default function OurWork() {
             sx={{
               maxWidth: { xs: "300px", sm: "477px", xl: "550px", xxl: "650px" },
               width: "100%",
-
               textTransform: "capitalize",
             }}
           >
             <Typography
+              component="h2"
+              aria-label="our work"
               sx={{
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
@@ -89,7 +109,9 @@ export default function OurWork() {
               our
             </Typography>
             <Typography
+              component="span"
               sx={{
+                display: "block",
                 color: "rgba(255, 255, 255, 1)",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
@@ -100,7 +122,9 @@ export default function OurWork() {
               work
             </Typography>
           </Box>
+
           <Box
+            aria-hidden
             sx={{
               width: "2px",
               height: 200,
@@ -108,9 +132,11 @@ export default function OurWork() {
               display: { xs: "none", lg: "block" },
             }}
           />
+
           <Typography
             data-aos="fade-left"
             data-aos-duration="500"
+            paragraph
             sx={{
               maxWidth: { xs: "490px", xl: "700px" },
               width: "100%",
@@ -118,6 +144,7 @@ export default function OurWork() {
               fontWeight: 400,
               color: "#FFFFFF80",
               textAlign: { xs: "end", sm: "start" },
+              m: 0,
             }}
           >
             See the passion and precision in every project. Our featured work
@@ -126,8 +153,10 @@ export default function OurWork() {
             stunning creative solutions.
           </Typography>
         </Box>
+
         {/* projects boxes */}
         <Box
+          role="list"
           sx={{
             width: "100%",
             display: "flex",
@@ -141,51 +170,56 @@ export default function OurWork() {
               display: "flex",
               gap: { xs: "20px", xl: "40px" },
               justifyContent: "space-between",
-
               flexWrap: { xs: "wrap", md: "nowrap" },
             }}
           >
-            <WorkShowcCase
-              title="Isfahan & Kashan"
-              overlayText="We enhanced their digital presence with expert web design, development, social media, and SEO."
-              year="2025"
-              image={pngs.projectOurWork1}
-            />
-            <WorkShowcCase
-              title="Izec Prestige"
-              overlayText="We developed a sophisticated branding strategy that captures their essence of luxury, professionalism, and reliability."
-              year="2025"
-              image={pngs.projectOurWork2}
-            />
+            <Box role="listitem" sx={{ width: "100%" }}>
+              <WorkShowcCase
+                title="Isfahan & Kashan"
+                overlayText="We enhanced their digital presence with expert web design, development, social media, and SEO."
+                year="2025"
+                image={pngs.projectOurWork1}
+              />
+            </Box>
+            <Box role="listitem" sx={{ width: "100%" }}>
+              <WorkShowcCase
+                title="Izec Prestige"
+                overlayText="We developed a sophisticated branding strategy that captures their essence of luxury, professionalism, and reliability."
+                year="2025"
+                image={pngs.projectOurWork2}
+              />
+            </Box>
           </Box>
+
           <Box
             width="100%"
             sx={{
               display: "flex",
               gap: { xs: "20px", xl: "40px" },
               justifyContent: "space-between",
-
               flexWrap: { xs: "wrap", md: "nowrap" },
             }}
           >
-            <WorkShowcCase
-              title="Conquest Law"
-              overlayText="For Conquest Law Solicitors, a leading legal firm, we designed and developed a professional and authoritative website."
-              year="2025"
-              image={pngs.projectOurWork3}
-            />
-            <WorkShowcCase
-              title="Saif’s Boxing"
-              overlayText="We designed and developed a complete website for Saif’s Boxing & Fitness, a premier training facility dedicated to boxing and personal fitness."
-              year="2025"
-              image={pngs.projectOurWork4}
-            />
+            <Box role="listitem" sx={{ width: "100%" }}>
+              <WorkShowcCase
+                title="Conquest Law"
+                overlayText="For Conquest Law Solicitors, a leading legal firm, we designed and developed a professional and authoritative website."
+                year="2025"
+                image={pngs.projectOurWork3}
+              />
+            </Box>
+            <Box role="listitem" sx={{ width: "100%" }}>
+              <WorkShowcCase
+                title="Saif’s Boxing"
+                overlayText="We designed and developed a complete website for Saif’s Boxing & Fitness, a premier training facility dedicated to boxing and personal fitness."
+                year="2025"
+                image={pngs.projectOurWork4}
+              />
+            </Box>
           </Box>
 
           <ButtonComponent
-            onClick={() => {
-              router.push("/websites");
-            }}
+            onClick={() => router.push("/websites")}
             label="view all projects"
             imgSrc={svgs.whiteArrow}
             sx={{
@@ -196,8 +230,10 @@ export default function OurWork() {
             }}
           />
         </Box>
-        {/* background blurr plased by positioning box  */}
+
+        {/* background blurs (decorative) */}
         <Box
+          aria-hidden
           sx={{
             position: "absolute",
             top: 0,
@@ -215,6 +251,7 @@ export default function OurWork() {
           }}
         />
         <Box
+          aria-hidden
           sx={{
             position: "absolute",
             bottom: 0,

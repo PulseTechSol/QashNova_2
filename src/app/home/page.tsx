@@ -11,18 +11,23 @@ import DigitalInsights from "./_sections/DigitalInsights";
 export default function HomePage() {
   return (
     <>
-      <HeroHome />
-      <Partness />
-      <HowHelp />
-      <SectionWithHeadingAndCTA
-        heading="Crafting Websites for Your "
-        lastword="Success"
-      />
-      <OurWork />
-      <ClientsStories />
-      <Casestudies />
-      <DigitalInsights />
-      <ContactUs />
+      <header>
+        <HeroHome />
+      </header>
+
+      <main role="main">
+        <Partness />
+        <HowHelp />
+        <SectionWithHeadingAndCTA
+          heading="Crafting Websites for Your "
+          lastword="Success"
+        />
+        <OurWork />
+        <ClientsStories />
+        <Casestudies />
+        <DigitalInsights />
+        <ContactUs />
+      </main>
     </>
   );
 }

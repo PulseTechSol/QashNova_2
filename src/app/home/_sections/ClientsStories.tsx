@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, KeyboardEvent } from "react";
 import {
   localFontSize,
   sectionPaddingY,
@@ -17,7 +17,7 @@ const cardData = [
     image: pngs.clients1,
     name: "Sarah Johnson",
     description:
-      "From the initial consultation to the ongoing social media management, Qashnova has been an absolute pleasure to work with. Their creative branding insights helped us define our  voice",
+      "From the initial consultation to the ongoing social media management, Qashnova has been an absolute pleasure to work with. Their creative branding insights helped us define our voice",
     bgColor: "#3C65FF",
   },
   {
@@ -38,7 +38,7 @@ const cardData = [
 
 export default function ClientsStories() {
   const [hoverNext, setHoverNext] = useState(false);
-  const [hoverPrevoius, setHoverPrevoius] = useState(false);
+  const [hoverPrevoius, setHoverPrevoius] = useState(false); // keeping your var name to avoid any ripple
   const itemsRef = useRef<HTMLDivElement[]>([]);
   const currentIndex = useRef(0);
 
@@ -47,6 +47,7 @@ export default function ClientsStories() {
     const color = gsap.utils.interpolate(["#3C65FF", "#243342"]);
     const map = gsap.utils.mapRange(0, items.length, 0, 1);
     const offset = 15;
+
     gsap.set(items, {
       backgroundColor: (index: number) => color(map(index)),
       x: (index: number) => offset * index,
@@ -55,6 +56,10 @@ export default function ClientsStories() {
     });
 
     updatePositions(currentIndex.current);
+
+    return () => {
+      // nothing to clean here since we don't register global listeners
+    };
   }, []);
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -72,31 +77,27 @@ export default function ClientsStories() {
       });
     }
   };
+
   const items = itemsRef.current;
+
   const handleNext = () => {
     if (items.length === 0) return;
-
-    const first = items.shift(); // remove first
-    if (first) items.push(first); // add it to the end
+    const first = items.shift();
+    if (first) items.push(first);
     updatePositions(0);
   };
 
   const handlePrev = () => {
     if (items.length === 0) return;
-
-    // Remove last and bring it to the front
     const last = items.pop();
     if (last) {
       items.unshift(last);
-
       gsap.set(last, {
         x: 15 * items.length,
         y: -15 * items.length,
         zIndex: 0,
       });
     }
-
-    // Animate all to their new positions
     items.forEach((item, i) => {
       gsap.to(item, {
         x: 15 * i,
@@ -108,8 +109,17 @@ export default function ClientsStories() {
     });
   };
 
+  const onKey = (e: KeyboardEvent, fn: () => void) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      fn();
+    }
+  };
+
   return (
     <Box
+      component="section"
+      aria-label="clients’ stories"
       sx={{
         backgroundColor: "#000 !important",
         position: "relative",
@@ -140,6 +150,8 @@ export default function ClientsStories() {
           }}
         >
           <Typography
+            component="h2"
+            aria-label="clients’ stories"
             sx={{
               width: "100%",
               fontSize: localFontSize.h3,
@@ -151,8 +163,10 @@ export default function ClientsStories() {
             clients’
           </Typography>
           <Typography
+            component="span"
             sx={{
               width: "100%",
+              display: "block",
               color: "#fff",
               fontSize: localFontSize.h3,
               fontWeight: 600,
@@ -162,6 +176,7 @@ export default function ClientsStories() {
             stories
           </Typography>
         </Box>
+
         {/* Right Cards */}
         <Box
           sx={{
@@ -182,7 +197,7 @@ export default function ClientsStories() {
               }}
               sx={{
                 position: "absolute",
-                top: { xs: "", md: "0" },
+                top: { xs: "", md: "0" }, // keeping as-is to avoid visual change
                 bottom: { xs: "0", md: "unset" },
                 borderRadius: { xs: "20px", md: "40px" },
                 left: 0,
@@ -192,20 +207,12 @@ export default function ClientsStories() {
             </Box>
           ))}
 
-          {/* Navigation Buttons */}
-          {/* <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              gap: 2,
-              mt: 3,
-              position: "absolute",
-              bottom: "20px",
-              width: "100%",
-              zIndex: "20",
-            }}
-          > */}
+          {/* Prev */}
           <Box
+            role="button"
+            tabIndex={0}
+            aria-label="Previous testimonial"
+            onKeyDown={(e) => onKey(e, handlePrev)}
             onMouseOver={() => setHoverNext(true)}
             onMouseOut={() => setHoverNext(false)}
             onClick={handlePrev}
@@ -216,6 +223,7 @@ export default function ClientsStories() {
               bottom: "20px",
               left: "20px",
               zIndex: "20",
+              cursor: "pointer",
             }}
           >
             <Image
@@ -226,7 +234,8 @@ export default function ClientsStories() {
                 display: hoverNext ? "inline" : "none",
               }}
               src={svgs.sliderArrow}
-              alt="sliderArrow"
+              alt=""
+              aria-hidden
             />
             <Image
               style={{
@@ -235,10 +244,17 @@ export default function ClientsStories() {
                 display: hoverNext ? "none" : "inline",
               }}
               src={svgs.arrowSliderDisabled}
-              alt="sliderArrow"
+              alt=""
+              aria-hidden
             />
           </Box>
+
+          {/* Next */}
           <Box
+            role="button"
+            tabIndex={0}
+            aria-label="Next testimonial"
+            onKeyDown={(e) => onKey(e, handleNext)}
             onMouseOver={() => setHoverPrevoius(true)}
             onMouseOut={() => setHoverPrevoius(false)}
             onClick={handleNext}
@@ -249,6 +265,7 @@ export default function ClientsStories() {
               bottom: "20px",
               right: "20px",
               zIndex: "20",
+              cursor: "pointer",
             }}
           >
             <Image
@@ -258,8 +275,9 @@ export default function ClientsStories() {
                 display: hoverPrevoius ? "inline" : "none",
               }}
               src={svgs.sliderArrow}
-              alt="sliderArrow"
-            />{" "}
+              alt=""
+              aria-hidden
+            />
             <Image
               style={{
                 width: "100%",
@@ -268,14 +286,16 @@ export default function ClientsStories() {
                 transform: "rotate(180deg)",
               }}
               src={svgs.arrowSliderDisabled}
-              alt="sliderArrow"
+              alt=""
+              aria-hidden
             />
           </Box>
-          {/* </Box> */}
         </Box>
       </Box>
-      {/* Background Blur Effect */}
+
+      {/* Background Blur Effects (decorative) */}
       <Box
+        aria-hidden
         sx={{
           position: "absolute",
           bottom: 0,
@@ -289,6 +309,7 @@ export default function ClientsStories() {
         }}
       />
       <Box
+        aria-hidden
         sx={{
           position: "absolute",
           bottom: 0,
@@ -320,6 +341,8 @@ export function ClientCard({
 }: ClientCardProps) {
   return (
     <Box
+      component="article"
+      aria-label={`Testimonial from ${name}`}
       sx={{
         height: "500px",
         maxWidth: { xs: "320px", sm: "450px", md: "560px" },
@@ -337,23 +360,16 @@ export function ClientCard({
     >
       <Image
         src={image}
-        alt="client"
+        alt={`${name} — client`}
         style={{ width: "80px", height: "80px", objectFit: "contain" }}
       />
       <Typography
-        sx={{
-          fontSize: localFontSize.p2,
-          color: "#FFFFFF80",
-        }}
+        paragraph
+        sx={{ fontSize: localFontSize.p2, color: "#FFFFFF80", m: 0 }}
       >
         {description}
       </Typography>
-      <Typography
-        sx={{
-          fontSize: localFontSize.p1,
-          color: "#ffffff",
-        }}
-      >
+      <Typography sx={{ fontSize: localFontSize.p1, color: "#ffffff" }}>
         {name}
       </Typography>
     </Box>
