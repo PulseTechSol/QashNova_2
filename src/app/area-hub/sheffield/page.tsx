@@ -33,10 +33,10 @@ function Sheffield() {
     },
   ];
   const caseStudiesData = {
-    sectionHeading: "Isfahan & Kashan",
+    sectionHeading: "Sheffield Project Case Studies",
     cards: [
       {
-        title: "Sheffield Café — Online Orders Success",
+        title: "Isfahan & Kashan",
         image: pngs.isfhanAndKashan,
         bullets: [
           {
