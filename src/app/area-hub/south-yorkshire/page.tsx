@@ -42,27 +42,57 @@ function Rotherham() {
 
     cards: [
       {
-        title: "South Yorkshire Manufacturing — B2B Lead Generation",
-        image: pngs.southYorkshireB2bLeads,
+        title: "Sabir’s Grill",
+        image: pngs.sabirsGrill,
         bullets: [
-          { label: "Challenge", text: " Complex services poorly presented." },
+          {
+            label: "Challenge",
+            text: "Standing out in a competitive fast-food market with a limited online presence.",
+          },
           {
             label: "Solution",
-            text: " Clean B2B site with clear service sections.",
+            text: "Designed a modern, appetizing website focused on menu visibility and easy ordering.",
           },
-          { label: "Result", text: "60% increase in qualified leads" },
+          {
+            label: "Result",
+            text: "Increased customer engagement and improved online brand recognition.",
+          },
         ],
       },
       {
-        title: "Doncaster Service Business — Local SEO Success",
-        image: pngs.doncasterLocalSeo,
+        title: "A Class Travel",
+        image: pngs.aClassTravel,
         bullets: [
-          { label: "Challenge", text: "Poor local search visibility" },
+          {
+            label: "Challenge",
+            text: "Communicating luxury and trust to high-end clients through digital presence.",
+          },
           {
             label: "Solution",
-            text: " SEO-optimized site with local targeting",
+            text: "Developed a sleek, professional website highlighting premium services and booking ease.",
           },
-          { label: "Result", text: " First page rankings for key services" },
+          {
+            label: "Result",
+            text: "Enhanced credibility and streamlined client inquiries",
+          },
+        ],
+      },
+      {
+        title: "Savile Row Furniture",
+        image: pngs.savileRowFurnitures,
+        bullets: [
+          {
+            label: "Challenge",
+            text: "Showcasing premium furnished apartments in a way that appeals to international clients.",
+          },
+          {
+            label: "Solution",
+            text: "Created a stylish, image-driven website emphasizing elegance and convenience.",
+          },
+          {
+            label: "Result",
+            text: "Improved client confidence and higher conversion rates from online visitors.",
+          },
         ],
       },
     ],
