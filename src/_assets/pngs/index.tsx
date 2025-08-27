@@ -54,7 +54,17 @@ import rotherhamBakeryOnlineOrdersSuccess from "./CaseStudiesSectionImages/rothe
 import sheffieldAccountancyRedesign from "./CaseStudiesSectionImages/sheffieldAccountancyRedesign.png";
 import sheffieldCafeOrders from "./CaseStudiesSectionImages/sheffieldCafeOrders.png";
 import southYorkshireB2bLeads from "./CaseStudiesSectionImages/southYorkshireB2bLeads.png";
-
+// area hub page images
+// 1. rotherham
+import conquestLaw from "./areahub/conquestLaw.png";
+import izecPrestige from "./areahub/izecPrestige.png";
+import saifBoxing from "./areahub/saifBoxing.png";
+// 2. southyorkshire
+import sabirsGrill from "./areahub/sabirsGrill.png";
+import aClassTravel from "./areahub/aClassTravel.png";
+// 3. sheffield
+import isfhanAndKashan from "./areahub/isfhanAndKashan.png";
+import brightEcoFuture from "./areahub/brightEcoFuture.png";
 const pngs = {
   image1,
   footerbgImg,
@@ -109,5 +119,17 @@ const pngs = {
   sheffieldAccountancyRedesign,
   sheffieldCafeOrders,
   southYorkshireB2bLeads,
+  // real project images for area hub pages
+  // 1. rotherham
+  conquestLaw,
+  izecPrestige,
+  saifBoxing,
+  // 2. southyorkshire
+  sabirsGrill,
+  aClassTravel,
+  //izecPrestige,
+  // 3. sheffield
+  isfhanAndKashan,
+  brightEcoFuture,
 };
 export default pngs;
