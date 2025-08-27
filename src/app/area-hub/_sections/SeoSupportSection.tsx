@@ -112,7 +112,7 @@ export default function SeoSupportSection({ data }: SeoSupportSectionProps) {
 
 export function FeatureItem({ image, title, subtitle }: FeatureItemProps) {
   return (
-    <Box sx={{ maxWidth:{xs:"320px",sm: "325px" ,md:"50%" } ,width:"100%",}}>
+    <Box sx={{ maxWidth:{xs:"320px",sm: "325px" ,md:"50%" ,lg:"317px" } ,width:"100%",}}>
       <Box
         sx={{
           display: "flex",
