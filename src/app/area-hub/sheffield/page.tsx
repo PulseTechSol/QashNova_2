@@ -14,7 +14,7 @@ import svgs from "@/_assets/svgs";
 import pngs from "@/_assets/pngs";
 import Footer from "@/_components/Footer";
 
-function Rotherham() {
+function Sheffield() {
   const faqData = [
     {
       title: "Do you provide hosting and support?",
@@ -33,30 +33,42 @@ function Rotherham() {
     },
   ];
   const caseStudiesData = {
-    sectionHeading: "Sheffield Project Case Studies",
+    sectionHeading: "Isfahan & Kashan",
     cards: [
       {
         title: "Sheffield Café — Online Orders Success",
-        image: pngs.sheffieldCafeOrders,
+        image: pngs.isfhanAndKashan,
         bullets: [
-          { label: "Challenge", text: "No online presence or ordering system" },
+          {
+            label: "Challenge",
+            text: "Needed a premium online presence to reflect the elegance of authentic Persian rugs.",
+          },
           {
             label: "Solution",
-            text: "New website with online ordering and local delivery",
+            text: "Designed a refined, image-focused website with smooth navigation and cultural storytelling.",
           },
-          { label: "Result", text: "50% increase in orders within 2 months" },
+          {
+            label: "Result",
+            text: "Enhanced brand credibility and increased customer engagement online.",
+          },
         ],
       },
       {
-        title: "Sheffield Accountancy — Professional Redesign",
-        image: pngs.sheffieldAccountancyRedesign,
+        title: "Bright Eco Future",
+        image: pngs.brightEcoFuture,
         bullets: [
-          { label: "Challenge", text: "Outdated site losing credibility." },
+          {
+            label: "Challenge",
+            text: "Complex information about government grants was difficult for homeowners to understand.",
+          },
           {
             label: "Solution",
-            text: "Modern professional site with clear services.",
+            text: "Built a clear, user-friendly website with simple content flow and application guidance.",
           },
-          { label: "Result", text: " 40% more client enquiries." },
+          {
+            label: "Result",
+            text: "Improved lead generation and made the grant process easier for eligible homeowners.",
+          },
         ],
       },
     ],
@@ -133,4 +145,4 @@ function Rotherham() {
   );
 }
 
-export default Rotherham;
+export default Sheffield;
