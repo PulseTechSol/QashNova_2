@@ -62,6 +62,7 @@ import saifBoxing from "./areahub/saifBoxing.png";
 // 2. southyorkshire
 import sabirsGrill from "./areahub/sabirsGrill.png";
 import aClassTravel from "./areahub/aClassTravel.png";
+import savileRowFurnitures from "./areahub/savileRowFurnitures.png";
 // 3. sheffield
 import isfhanAndKashan from "./areahub/isfhanAndKashan.png";
 import brightEcoFuture from "./areahub/brightEcoFuture.png";
@@ -127,7 +128,7 @@ const pngs = {
   // 2. southyorkshire
   sabirsGrill,
   aClassTravel,
-  //izecPrestige,
+  savileRowFurnitures,
   // 3. sheffield
   isfhanAndKashan,
   brightEcoFuture,
