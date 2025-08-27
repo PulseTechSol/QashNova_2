@@ -51,20 +51,56 @@ function Rotherham() {
     sectionHeading: "Recent Rotherham Projects",
     cards: [
       {
-        title: "Rotherham Bakery — Online Orders Success",
-        image: pngs.rotherhamBakeryOnlineOrdersSuccess,
+        title: "Conquest Law solicitors",
+        image: pngs.conquestLaw,
         bullets: [
           {
             label: "Challenge",
-            text: "Outdated site with no online ordering system",
+            text: "Their outdated website lacked trust and clarity for potential clients.",
           },
           {
             label: "Solution",
-            text: " New ecommerce site with clear product pages and local delivery options",
+            text: "We designed a modern, professional website that highlights their legal expertise.",
           },
           {
             label: "Result",
-            text: "45% increase in online orders within 3 months",
+            text: " Improved client trust and stronger online lead generation.",
+          },
+        ],
+      },
+      {
+        title: "Izec prestigue",
+        image: pngs.izecPrestige,
+        bullets: [
+          {
+            label: "Challenge",
+            text: "Their old site failed to reflect the premium nature of their services",
+          },
+          {
+            label: "Solution",
+            text: "We created a sleek, luxury-focused design with easy booking features.",
+          },
+          {
+            label: "Result",
+            text: "Enhanced brand image and higher customer engagement.",
+          },
+        ],
+      },
+      {
+        title: "saifs boxing gym & fitness",
+        image: pngs.saifBoxing,
+        bullets: [
+          {
+            label: "Challenge",
+            text: "The gym lacked an online presence to attract new members.",
+          },
+          {
+            label: "Solution",
+            text: " We developed a dynamic website showcasing classes, trainers, and programs.",
+          },
+          {
+            label: "Result",
+            text: "Increased visibility and new member sign-ups.",
           },
         ],
       },
