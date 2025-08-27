@@ -17,13 +17,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Casestudies() {
   const router = useRouter();
   const websiteServices = [
-    // {
-    //   title: "conquest law solicitors",
-    //   description:
-    //     "For Conquest Law, we delivered a clean and authoritative web presence that instills trust and professionalism. The site layout is minimal yet impactful, highlighting their services and expertise with confidence.",
-    //   image: "/bgCase1.png",
-    //   imgMob: "/bgMoblCase1.png",
-    // },
     {
       title: "sabir’s grill",
       description:
@@ -42,19 +35,18 @@ export default function Casestudies() {
 
   return (
     <Box
+      component="section"
+      aria-label="case studies"
       sx={{
         position: "relative",
-        // overflow: "hidden",
         zIndex: 10000,
         px: sectionPaddingX,
       }}
     >
       <Box
-        // ref={containerRef}
         sx={{
           maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
           width: "100%",
-          // padding: sectionPadding,
           py: sectionPaddingY,
           margin: "auto",
           display: "flex",
@@ -65,6 +57,7 @@ export default function Casestudies() {
           gap: { xs: "40px", md: "80px", xl: "100px" },
         }}
       >
+        {/* Heading row */}
         <Box
           sx={{
             maxWidth: { xl: "1800px" },
@@ -86,6 +79,8 @@ export default function Casestudies() {
             }}
           >
             <Typography
+              component="h2"
+              aria-label="case studies"
               sx={{
                 width: "100%",
                 fontSize: localFontSize.h3,
@@ -98,8 +93,10 @@ export default function Casestudies() {
               Case
             </Typography>
             <Typography
+              component="span"
               sx={{
                 width: "100%",
+                display: "block",
                 color: "#000",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
@@ -110,7 +107,9 @@ export default function Casestudies() {
               studies
             </Typography>
           </Box>
+
           <Box
+            aria-hidden
             sx={{
               width: "2px",
               height: 200,
@@ -118,9 +117,11 @@ export default function Casestudies() {
               display: { xs: "none", lg: "block" },
             }}
           />
+
           <Typography
             data-aos="fade-left"
             data-aos-duration="500"
+            paragraph
             sx={{
               maxWidth: { xs: "490px", xl: "800px" },
               width: "100%",
@@ -128,6 +129,7 @@ export default function Casestudies() {
               fontWeight: 400,
               color: "#00000080",
               textAlign: { xs: "end", sm: "start" },
+              m: 0,
             }}
           >
             Explore the pinnacle of creativity with our standout projects that
@@ -136,7 +138,9 @@ export default function Casestudies() {
           </Typography>
         </Box>
 
+        {/* Cards */}
         <Box
+          role="list"
           sx={{
             width: "100%",
             display: "flex",
@@ -146,162 +150,145 @@ export default function Casestudies() {
             gap: { xs: "20px", md: "40px", xl: "60px" },
           }}
         >
-          {websiteServices.map((items, index) => {
-            return (
+          {websiteServices.map((items, index) => (
+            <Box
+              role="listitem"
+              key={index}
+              sx={{
+                width: "100%",
+                height: {
+                  xs: "100%",
+                  md: "220px",
+                  "@media (min-width:1200px)": { height: "290px" },
+                  "@media (min-width:1290px)": { height: "220px" },
+                  "@media (min-width:1440px)": { height: "300px" },
+                },
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+                position: { xs: "relative", md: "relative" },
+                overflow: "hidden",
+                transition: "all 0.4s ease-in-out",
+                "&:hover .bgOverlay": { opacity: 1 },
+                "&:hover .contentBox": { color: { xs: "#fff", md: "#fff" } },
+                "&:hover .descriptionText": {
+                  color: { xs: "#fff", md: "#fff" },
+                },
+                "&:hover .lineBox": { display: { md: "none" } },
+              }}
+            >
+              {/* Background Image + Overlay */}
               <Box
-                key={index}
+                className="bgOverlay"
+                aria-hidden
                 sx={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
                   width: "100%",
-                  height: {
-                    xs: "100%",
-
-                    md: "220px",
-                    "@media (min-width:1200px)": {
-                      height: "290px",
-                    },
-                    "@media (min-width:1290px)": {
-                      height: "220px",
-                    },
-                    "@media (min-width:1440px)": {
-                      height: "300px",
-                    },
+                  height: "100%",
+                  backgroundImage: {
+                    xs: `url(${items.imgMob})`,
+                    md: `url(${items.image})`,
                   },
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-
-                  flexDirection: "column",
-                  position: { xs: "relative", md: "relative" },
-                  overflow: "hidden",
-                  transition: "all 0.4s ease-in-out",
-                  "&:hover .bgOverlay": {
-                    opacity: 1,
-                  },
-                  "&:hover .contentBox": {
-                    color: { xs: "#fff", md: "#fff" },
-                  },
-                  "&:hover .descriptionText": {
-                    color: { xs: "#fff", md: "#fff" },
-                  },
-                  "&:hover .lineBox": {
-                    display: { md: "none" },
-                  },
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  zIndex: 0,
+                  opacity: 0,
+                  borderRadius: { md: "40px" },
+                  transition: "opacity 0.4s ease-in-out",
                 }}
               >
-                {/* Background Image + Overlay */}
                 <Box
-                  className="bgOverlay"
                   sx={{
-                    content: '""',
                     position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    backgroundImage: {
-                      xs: `url(${items.imgMob})`,
-                      md: `url(${items.image})`,
-                    },
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    zIndex: 0,
-                    opacity: 0,
+                    inset: 0,
                     borderRadius: { md: "40px" },
-
-                    transition: "opacity 0.4s ease-in-out",
-                  }}
-                >
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "100%",
-                      borderRadius: { md: "40px" },
-                      backgroundColor: {
-                        xs: "rgba(0, 0, 0, 0.6)",
-
-                        md: "rgba(0, 0, 0, 0.6)",
-                      },
-                    }}
-                  />
-                </Box>
-
-                {/* Content */}
-                <Box
-                  className="contentBox"
-                  sx={{
-                    height: "100%",
-                    position: "relative",
-                    zIndex: 1,
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexDirection: { xs: "column", md: "row" },
-                    p: { xs: " 10px", md: "0 20px", xl: "0 40px" },
-                    gap: { xs: "20px", md: "40px" },
-                    transition: "all 0.4s ease-in-out",
-                  }}
-                >
-                  <Typography
-                    data-aos="fade-right"
-                    data-aos-duration="500"
-                    sx={{
-                      maxWidth: { xs: "458px", xl: "600px", xxl: "700px" },
-                      width: "100%",
-                      fontSize: localFontSize.h4,
-                      fontWeight: 500,
-                      color: "#000",
-                      textAlign: { xs: "center", md: "start" },
-                      textTransform: "capitalize",
-                      transition: "color 0.4s ease-in-out",
-                    }}
-                  >
-                    {items.title}
-                  </Typography>
-                  <Typography
-                    data-aos="fade-left"
-                    data-aos-duration="500"
-                    className="descriptionText"
-                    sx={{
-                      maxWidth: { xs: "554px", xl: "650px", xxl: "750px" },
-                      width: "100%",
-                      fontSize: { xs: "18px", xl: "24px" },
-                      fontWeight: 400,
-                      color: "#00000080",
-                      textAlign: { xs: "center", md: "start" },
-                      transition: "color 0.4s ease-in-out",
-                    }}
-                  >
-                    {items.description}
-                  </Typography>
-                </Box>
-
-                {/* Divider Line */}
-                <Box
-                  data-aos="zoom-in"
-                  data-aos-duration="500"
-                  className="lineBox"
-                  sx={{
-                    m: { xs: "30px 0 0", sm: "40px 0 0", md: "0" },
-                    width: "100%",
-                    height: "3px",
-                    display: { lg: "block" },
-                    background:
-                      "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
-                    zIndex: 0,
-                    position: { md: "relative" },
-                    transition: "all 0.3s ease-in-out",
+                    backgroundColor: {
+                      xs: "rgba(0, 0, 0, 0.6)",
+                      md: "rgba(0, 0, 0, 0.6)",
+                    },
                   }}
                 />
               </Box>
-            );
-          })}
 
-          {/* button */}
+              {/* Content */}
+              <Box
+                className="contentBox"
+                sx={{
+                  height: "100%",
+                  position: "relative",
+                  zIndex: 1,
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: { xs: "column", md: "row" },
+                  p: { xs: "10px", md: "0 20px", xl: "0 40px" },
+                  gap: { xs: "20px", md: "40px" },
+                  transition: "all 0.4s ease-in-out",
+                }}
+              >
+                <Typography
+                  data-aos="fade-right"
+                  data-aos-duration="500"
+                  sx={{
+                    maxWidth: { xs: "458px", xl: "600px", xxl: "700px" },
+                    width: "100%",
+                    fontSize: localFontSize.h4,
+                    fontWeight: 500,
+                    color: "#000",
+                    textAlign: { xs: "center", md: "start" },
+                    textTransform: "capitalize",
+                    transition: "color 0.4s ease-in-out",
+                  }}
+                >
+                  {items.title}
+                </Typography>
+                <Typography
+                  data-aos="fade-left"
+                  data-aos-duration="500"
+                  className="descriptionText"
+                  paragraph
+                  sx={{
+                    maxWidth: { xs: "554px", xl: "650px", xxl: "750px" },
+                    width: "100%",
+                    fontSize: { xs: "18px", xl: "24px" },
+                    fontWeight: 400,
+                    color: "#00000080",
+                    textAlign: { xs: "center", md: "start" },
+                    transition: "color 0.4s ease-in-out",
+                    m: 0,
+                  }}
+                >
+                  {items.description}
+                </Typography>
+              </Box>
+
+              {/* Divider Line */}
+              <Box
+                data-aos="zoom-in"
+                data-aos-duration="500"
+                className="lineBox"
+                aria-hidden
+                sx={{
+                  m: { xs: "30px 0 0", sm: "40px 0 0", md: "0" },
+                  width: "100%",
+                  height: "3px",
+                  display: { lg: "block" },
+                  background:
+                    "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)",
+                  zIndex: 0,
+                  position: { md: "relative" },
+                  transition: "all 0.3s ease-in-out",
+                }}
+              />
+            </Box>
+          ))}
         </Box>
+
+        {/* CTA button */}
         <Box
           data-aos="zoom-in"
           data-aos-duration="500"
@@ -325,7 +312,10 @@ export default function Casestudies() {
           />
         </Box>
       </Box>
+
+      {/* Decorative background blurs */}
       <Box
+        aria-hidden
         sx={{
           position: "absolute",
           top: 0,
@@ -339,6 +329,7 @@ export default function Casestudies() {
         }}
       />
       <Box
+        aria-hidden
         sx={{
           position: "absolute",
           bottom: 0,

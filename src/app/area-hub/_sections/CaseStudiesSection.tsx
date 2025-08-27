@@ -32,12 +32,12 @@ export default function CaseStudiesSection({ data }: CaseStudiesSectionProps) {
         }}
       >
         <Typography
-         data-aos="zoom-in"
-            data-aos-duration="500"
+          data-aos="zoom-in"
+          data-aos-duration="500"
           sx={{
             fontSize: {
-              xs:"32px",
-              md:localFontSize.h4.md,
+              xs: "32px",
+              md: localFontSize.h4.md,
               lg: localFontSize.h4.lg,
               xxl: localFontSize.h4.lg,
             },
@@ -50,7 +50,7 @@ export default function CaseStudiesSection({ data }: CaseStudiesSectionProps) {
             paddingBottom: { xs: "30px", md: "40px", lg: "80px" },
           }}
         >
-          Recent Rotherham Projects
+          {data.sectionHeading}
         </Typography>
 
         {/* Map Cards */}
@@ -61,10 +61,9 @@ export default function CaseStudiesSection({ data }: CaseStudiesSectionProps) {
             flexDirection: "column",
             width: "100%",
           }}
-          >
+        >
           {data.cards.map((card, index) => (
             <CaseStudyCard
-            
               key={index}
               index={index}
               totalCards={data.cards.length}

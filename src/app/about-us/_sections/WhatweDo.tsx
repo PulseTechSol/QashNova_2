@@ -15,16 +15,20 @@ gsap.registerPlugin(ScrollTrigger);
 export default function WhatweDo() {
   return (
     <Box
+      component="section" // semantics only
+      aria-label="what we do"
       sx={{
         position: "relative",
         background: "radial-gradient(circle, #08289be3 0%, #000 25%)",
         backgroundAttachment: "fixed",
         backgroundPosition: "center center",
         overflow: "hidden",
-        paddingX: sectionPaddingX,
+        px: sectionPaddingX, // fix: was `paddingX`
       }}
     >
+      {/* decorative bg left */}
       <Box
+        aria-hidden
         sx={{
           width: { xs: "355px", md: "633px" },
           height: { xs: "355px", md: "633px" },
@@ -35,12 +39,14 @@ export default function WhatweDo() {
       >
         <Image
           src={pngs.howHeplLG}
-          alt="star"
+          alt="" // decorative
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
 
+      {/* decorative bg right */}
       <Box
+        aria-hidden
         sx={{
           width: { xs: "300px", md: "790px" },
           height: { xs: "300px", md: "790px" },
@@ -51,13 +57,12 @@ export default function WhatweDo() {
       >
         <Image
           src={pngs.howHeplLGcolor}
-          alt="star"
+          alt="" // decorative
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
 
       <Box
-        // ref={containerRef}
         sx={{
           py: sectionPaddingY,
           maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
@@ -84,9 +89,11 @@ export default function WhatweDo() {
             gap: { xs: "40px", lg: "80px", xl: "90px", xxl: "120px" },
           }}
         >
+          {/* Desktop paragraph */}
           <Typography
             data-aos="fade-left"
             data-aos-duration="500"
+            paragraph // real <p>, improves ratio
             sx={{
               maxWidth: { xs: "557px", xl: "1000px" },
               width: "100%",
@@ -95,27 +102,33 @@ export default function WhatweDo() {
               color: "#FFFFFF80",
               textAlign: { xs: "end", md: "start" },
               display: { xs: "none", md: "block" },
+              m: 0,
             }}
           >
             We specialize in creating beautiful, functional, and responsive
-            websites tailored to your unique needs. At Qashnva, we combine
+            websites tailored to your unique needs. At Qashnova, we combine
             creativity with cutting-edge technology to deliver designs that
             captivate and connect with your audience.
           </Typography>
+
+          {/* Mobile paragraph (shorter content kept) */}
           <Typography
             data-aos="fade-left"
             data-aos-duration="500"
+            paragraph
             sx={{
               fontSize: "18px",
               fontWeight: 400,
               color: "#FFFFFF80",
               textAlign: { xs: "end", md: "start" },
               display: { xs: "block", md: "none" },
+              m: 0,
             }}
           >
             We specialize in creating beautiful, functional, and responsive
             websites tailored to your unique needs.
           </Typography>
+
           <Box
             data-aos="fade-left"
             data-aos-duration="500"
@@ -132,12 +145,8 @@ export default function WhatweDo() {
           >
             <Image
               src={pngs.whatweDo}
-              alt="whatweDo"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "contain",
-              }}
+              alt="What we do — websites and digital design"
+              style={{ width: "100%", height: "100%", objectFit: "contain" }}
             />
           </Box>
         </Box>

@@ -25,12 +25,11 @@ export default function CaseStudyCard({
 }: CaseStudyCardProps) {
   const isFirst = index === 0;
   const isLast = index === totalCards - 1;
-  const exactlyTwo = totalCards === 2;
 
   return (
     <Box
-    //  data-aos="zoom-in"
-    //         data-aos-duration="500"
+      //  data-aos="zoom-in"
+      //         data-aos-duration="500"
       sx={{
         width: "100%",
         maxWidth: { xl: "1200px" },
@@ -41,14 +40,12 @@ export default function CaseStudyCard({
         gap: { xs: "40px", md: "48px", xl: "64px" },
         bgcolor: "#fff",
         borderRadius: { xs: "30px", md: "80px" },
-        borderTopLeftRadius:
-          exactlyTwo && isFirst
-            ? { xs: "0px !important", sm: "0px !important" }
-            : { xs: "30px", md: "80px" },
-        borderBottomRightRadius:
-          exactlyTwo && isLast
-            ? { xs: "0px !important", sm: "0px !important" }
-            : { xs: "30px", sm: "80px" },
+        borderTopLeftRadius: isFirst
+          ? { xs: "0px !important", sm: "0px !important" }
+          : { xs: "30px", md: "80px" },
+        borderBottomRightRadius: isLast
+          ? { xs: "0px !important", sm: "0px !important" }
+          : { xs: "30px", sm: "80px" },
         minHeight: { xs: "fit-content", sm: "750px", md: "543px" },
         position: "static",
         zIndex: 100,
@@ -56,25 +53,25 @@ export default function CaseStudyCard({
         boxShadow: "0px 4px 40px 0px rgba(0, 0, 0, 0.15)",
       }}
     >
-      <Box  sx={{ maxWidth: "555px" ,}}>
+      <Box sx={{ maxWidth: "555px" }}>
         <Typography
-data-aos="fade-right"
-            data-aos-duration="500"
+          data-aos="fade-right"
+          data-aos-duration="500"
           sx={{
-            fontSize: { xs:"24px",sm: "32px", md: "42px", lg: "48px" },
+            fontSize: { xs: "24px", sm: "32px", md: "42px", lg: "48px" },
             fontWeight: 500,
             color: "rgba(0,0,0,1)",
             textAlign: "left",
-            mb:{xs:"30px",sm:"40px"},
-             lineHeight:{md:"60px",lg:"70px"},
+            mb: { xs: "30px", sm: "40px" },
+            lineHeight: { md: "60px", lg: "70px" },
           }}
         >
           {title}
         </Typography>
 
         <Box
-        data-aos="fade-right"
-            data-aos-duration="500"
+          data-aos="fade-right"
+          data-aos-duration="500"
           component="ul"
           sx={{
             mt: { xs: "12px", sm: "16px", md: "20px", xl: "28px" },
@@ -125,8 +122,8 @@ data-aos="fade-right"
       </Box>
 
       <Box
-       data-aos="fade-left"
-            data-aos-duration="500"
+        data-aos="fade-left"
+        data-aos-duration="500"
         sx={{
           maxWidth: { xs: "420px", md: "420px", xl: "445px" },
           margin: { xs: "auto", md: "unset" },

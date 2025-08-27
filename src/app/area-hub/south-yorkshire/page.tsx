@@ -15,8 +15,6 @@ import pngs from "@/_assets/pngs";
 import Footer from "@/_components/Footer";
 
 function Rotherham() {
-
-
   const faqData = [
     {
       title: "Do you work across all of South Yorkshire?",
@@ -38,12 +36,10 @@ function Rotherham() {
       content:
         "Yes, we can meet clients across South Yorkshire for initial consultations and project discussions when needed.",
     },
-    
-   
   ];
   const caseStudiesData = {
     sectionHeading: "South Yorkshire Case Studies",
-  
+
     cards: [
       {
         title: "South Yorkshire Manufacturing — B2B Lead Generation",
@@ -61,7 +57,6 @@ function Rotherham() {
         title: "Doncaster Service Business — Local SEO Success",
         image: pngs.doncasterLocalSeo,
         bullets: [
-
           { label: "Challenge", text: "Poor local search visibility" },
           {
             label: "Solution",
@@ -73,17 +68,10 @@ function Rotherham() {
     ],
   };
 
-
-
-
-
-
-
-
   const seoSupportData: SeoSupportData = {
     heading: "  Regional SEO & Support",
     description:
-      "We don't just build attractive sites — we make sure they can be found by Rotherham customers",
+      "We don't just build attractive sites — we make sure they can be found by South Yorkshire customers",
     features: [
       [
         {
@@ -97,9 +85,6 @@ function Rotherham() {
           subtitle: "Regional marketing campaigns",
         },
       ],
-     
-
-
 
       [
         {
@@ -126,18 +111,12 @@ function Rotherham() {
       >
         <LandingNavbar />
         <HeroCity
-        
           breadcrumbLeft="Areas Hub"
           breadcrumbRight="South-Yorkshire"
           heading="Website Design in south-yorkshire"
           description="Fast, secure and easy-to-manage websites for businesses across Sheffield"
         />
         <OurServicesGenaricSection
-       
-
-
-
-
           heading="services in south-yorkshire"
           leftColumnCards={[
             { text: " Ecommerce Stores", image: svgs.ecmstore },

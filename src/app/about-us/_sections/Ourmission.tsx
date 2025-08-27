@@ -13,6 +13,8 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Ourmission() {
   return (
     <Box
+      component="section" // semantics only
+      aria-label="our mission"
       sx={{
         position: "relative",
         background: "radial-gradient(circle, #08289be3 0%, #000 25%)",
@@ -21,7 +23,9 @@ export default function Ourmission() {
         overflow: "hidden",
       }}
     >
+      {/* decorative bg left */}
       <Box
+        aria-hidden
         sx={{
           width: { xs: "355px", md: "633px" },
           height: { xs: "355px", md: "633px" },
@@ -32,12 +36,14 @@ export default function Ourmission() {
       >
         <Image
           src={pngs.howHeplLG}
-          alt="star"
+          alt="" // decorative
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
 
+      {/* decorative bg right */}
       <Box
+        aria-hidden
         sx={{
           width: { xs: "300px", md: "790px" },
           height: { xs: "300px", md: "790px" },
@@ -48,17 +54,15 @@ export default function Ourmission() {
       >
         <Image
           src={pngs.howHeplLGcolor}
-          alt="star"
+          alt="" // decorative
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
 
       <Box
-        // ref={containerRef}
         sx={{
           maxWidth: { xs: maxWidth, xl: "1536px", xxl: "80vw" },
           width: "100%",
-
           margin: "auto",
         }}
       >
@@ -91,15 +95,16 @@ export default function Ourmission() {
           <Typography
             data-aos="fade-left"
             data-aos-duration="500"
+            paragraph // real <p>
             sx={{
               display: { xs: "none", md: "block" },
-
               maxWidth: { xs: "490px", xl: "600px", xxl: "800px" },
               width: "100%",
               fontSize: { xs: "18px", xl: "24px" },
               fontWeight: 400,
               color: "#FFFFFF80",
               textAlign: { xs: "end", sm: "start" },
+              m: 0,
             }}
           >
             We&apos;re on a mission to be your trusted guide in the digital
@@ -108,6 +113,7 @@ export default function Ourmission() {
             online objectives forward.
           </Typography>
           <Typography
+            paragraph
             sx={{
               maxWidth: "490px",
               width: "100%",
@@ -116,6 +122,7 @@ export default function Ourmission() {
               color: "#FFFFFF80",
               textAlign: { xs: "end", sm: "start" },
               display: { xs: "block", md: "none" },
+              m: 0,
             }}
           >
             We&apos;re on a mission to be your trusted guide in the digital
@@ -123,6 +130,7 @@ export default function Ourmission() {
             elevate your brand.
           </Typography>
         </Box>
+
         <Box
           data-aos="zoom-in"
           data-aos-duration="500"
@@ -133,12 +141,8 @@ export default function Ourmission() {
         >
           <Image
             src={pngs.ourMission}
-            alt="ourMission"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "contain",
-            }}
+            alt="Our mission illustration"
+            style={{ width: "100%", height: "100%", objectFit: "contain" }}
           />
         </Box>
       </Box>

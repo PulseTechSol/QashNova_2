@@ -52,6 +52,8 @@ export default function DigitalInsights() {
 
   return (
     <Box
+      component="section"
+      aria-label="digital insights"
       sx={{
         position: "relative",
         overflow: "hidden",
@@ -73,7 +75,7 @@ export default function DigitalInsights() {
           gap: { xs: "40px", md: "80px", xl: "100px" },
         }}
       >
-        {/* this is the heading box */}
+        {/* Heading */}
         <Box
           sx={{
             maxWidth: { xl: "1800px" },
@@ -95,6 +97,8 @@ export default function DigitalInsights() {
             }}
           >
             <Typography
+              component="h2"
+              aria-label="digital insights"
               sx={{
                 width: "100%",
                 fontSize: localFontSize.h3,
@@ -107,8 +111,10 @@ export default function DigitalInsights() {
               digital
             </Typography>
             <Typography
+              component="span"
               sx={{
                 width: "100%",
+                display: "block",
                 color: "#000",
                 fontSize: localFontSize.h3,
                 fontWeight: 600,
@@ -119,7 +125,9 @@ export default function DigitalInsights() {
               insights
             </Typography>
           </Box>
+
           <Box
+            aria-hidden
             sx={{
               width: "2px",
               height: 200,
@@ -127,9 +135,11 @@ export default function DigitalInsights() {
               display: { xs: "none", lg: "block" },
             }}
           />
+
           <Typography
             data-aos="fade-left"
             data-aos-duration="500"
+            paragraph
             sx={{
               maxWidth: { xs: "490px", xl: "800px" },
               width: "100%",
@@ -137,6 +147,7 @@ export default function DigitalInsights() {
               fontWeight: 400,
               color: "#00000080",
               textAlign: { xs: "end", sm: "start" },
+              m: 0,
             }}
           >
             Dive into our latest articles, expert analysis, and actionable tips.
@@ -144,8 +155,10 @@ export default function DigitalInsights() {
             strategies to propel your business forward.
           </Typography>
         </Box>
-        {/* this is the parent of cards */}
+
+        {/* Cards */}
         <Box
+          role="list"
           sx={{
             width: "100%",
             display: "flex",
@@ -156,16 +169,17 @@ export default function DigitalInsights() {
             flexWrap: "wrap",
           }}
         >
-          {/* this is the cards */}
           {cardContentList.map((item, index) => (
-            <DigitalInsightCard
-              key={index}
-              heading={item.heading}
-              description={item.description}
-              onClick={() => router.push(item.route)}
-            />
+            <Box role="listitem" key={index}>
+              <DigitalInsightCard
+                heading={item.heading}
+                description={item.description}
+                onClick={() => router.push(item.route)}
+              />
+            </Box>
           ))}
         </Box>
+
         <ButtonComponent
           onClick={() => router.push("/blogs")}
           label="view all"
@@ -179,20 +193,10 @@ export default function DigitalInsights() {
           }}
         />
       </Box>
-      {/* <Box
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          maxWidth: "40%",
-          width: "100%",
-          backgroundColor: "rgba(88, 65, 212, 0.4)",
-          filter: "blur(200px)",
-          zIndex: 0,
-          height: "30%",
-        }}
-      /> */}
+
+      {/* decorative blur */}
       <Box
+        aria-hidden
         sx={{
           position: "absolute",
           bottom: 0,
