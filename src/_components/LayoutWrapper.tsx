@@ -1,18 +1,18 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import { Box } from "@mui/material";
 import { ToastContainer } from "react-toastify";
-import ClientOnly from "@/_components/ClientOnly";
+// import ClientOnly from "@/_components/ClientOnly";
 import Navbar from "@/_components/Navbar";
 import Footer from "./Footer";
 
 // Lazy load components
-const AnimatedBackground = dynamic(
-  () => import("@/_components/AnimatedBackground"),
-  { ssr: false }
-);
+// const AnimatedBackground = dynamic(
+//   () => import("@/_components/AnimatedBackground"),
+//   { ssr: false }
+// );
 
 // const Navbar = dynamic(() => import("@/_components/Navbar"), { ssr: false });
 // const LandingNavbar = dynamic(
@@ -64,9 +64,9 @@ export default function LayoutWrapper({
             overflow: "hidden",
           }}
         >
-          <ClientOnly>
+          {/* <ClientOnly>
             <AnimatedBackground />
-          </ClientOnly>
+          </ClientOnly> */}
         </Box>
       )}
 

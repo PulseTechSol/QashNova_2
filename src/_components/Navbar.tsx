@@ -215,34 +215,39 @@ export default function Navbar() {
         onClick={sidebar}
         sx={{
           display: menu ? "block" : "none",
-          // height: "100svh",
-          // width: "100vw",
           position: "fixed",
           top: "0px",
           left: "0px",
           zIndex: 1000,
         }}
       />
-
       <Box
         sx={{
-          width: { xs: "100vw", sm: "80vw", md: "540px" },
+          maxWidth: { xs: "calc(100vw - 40px)", sm: "50vw", md: "540px" },
+          width: "100%",
+          height: { xs: "385px", md: "546px", lg: "594px" },
           position: "fixed",
-          top: 0,
-          left: { xs: 0, md: "auto" }, // 👈 mobile: left, desktop: right
-          right: { xs: "auto", md: 0 }, // 👈 desktop: right
-          transition: "all 0.4s ease-in-out",
+          top: "20px",
+          left: { xs: "20px", md: "unset" },
+          right: "20px",
+          transition: "all 0.8s ease-in-out",
           transform: {
-            xs: menu ? "translateX(0)" : "translateX(-100%)", // 👈 slide from left on mobile
-            md: menu ? "translateX(0)" : "translateX(100%)", // 👈 slide from right on desktop
+            xs: menu
+              ? "translate(0) scale(1)"
+              : "translate( -152px , -180px) scale(0)",
+            sm: menu
+              ? "translate(0) scale(1)"
+              : "translate( -150px , -180px) scale(0)",
+            md: menu
+              ? "translate(0) scale(1)"
+              : "translate( 24% , -45%) scale(0)",
           },
-          borderRadius: { xs: "0 40px 40px 0", md: "40px 0 0 40px" },
+          borderRadius: "40px",
           zIndex: 1001,
           background: {
             xs: `linear-gradient(180deg, #FFFFFF, #C5C5C5, #999999)`,
             md: "#fff",
           },
-          // height: "100svh",
           overflowY: "auto",
           WebkitOverflowScrolling: "touch",
           overscrollBehavior: "contain",
@@ -313,8 +318,15 @@ export default function Navbar() {
                     (link.route.startsWith("./")
                       ? link.route.substring(1)
                       : link.route)
-                      ? { xs: "50px", sm: "64px" }
-                      : { xs: "36px", md: "30px", lg: "36px" },
+                      ? { xs: "30px", lg: "36px" }
+                      : { xs: "24px", lg: "30px" },
+                  lineHeight:
+                    pathname ===
+                    (link.route.startsWith("./")
+                      ? link.route.substring(1)
+                      : link.route)
+                      ? { xs: "30px", lg: "36px" }
+                      : { xs: "24px", lg: "30px" },
                   background:
                     pathname ===
                     (link.route.startsWith("./")
