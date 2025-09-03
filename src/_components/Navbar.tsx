@@ -230,7 +230,7 @@ export default function Navbar() {
           top: "20px",
           left: { xs: "20px", md: "unset" },
           right: "20px",
-          transition: "all 0.8s ease-in-out",
+          transition: "all 0.5s ease-in-out",
           transform: {
             xs: menu
               ? "translate(0) scale(1)"
