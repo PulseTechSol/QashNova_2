@@ -7,18 +7,16 @@ import { ToastContainer } from "react-toastify";
 import ClientOnly from "@/_components/ClientOnly";
 import Navbar from "@/_components/Navbar";
 import Footer from "./Footer";
+import CookieBanner from "./privacy/CookieBanner";
+import ConsentGate from "./privacy/ConsentGate";
+import AnalyticsGA from "./privacy/AnalyticsGA";
+import MetaPixel from "./privacy/MetaPixel";
 
 // Lazy load components
 const AnimatedBackground = dynamic(
   () => import("@/_components/AnimatedBackground"),
   { ssr: false }
 );
-
-// const Navbar = dynamic(() => import("@/_components/Navbar"), { ssr: false });
-// const LandingNavbar = dynamic(
-//   () => import("../../../qashnova-landing-page/src/_components/Navbar"),
-//   { ssr: false }
-// );
 
 export default function LayoutWrapper({
   children,
@@ -54,6 +52,9 @@ export default function LayoutWrapper({
     "/contact-us",
   ];
 
+  const gaId = process.env.NEXT_PUBLIC_GA_ID || "";
+  const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID || "";
+
   return (
     <>
       {animatedBackgroundPaths.includes(pathname) && (
@@ -76,6 +77,13 @@ export default function LayoutWrapper({
         {children}
         {!isLandingPage && <Footer />}
       </Box>
+
+      <ConsentGate>
+        <AnalyticsGA gaId={gaId} />
+        <MetaPixel pixelId={pixelId} />
+      </ConsentGate>
+
+      <CookieBanner />
 
       <ToastContainer position="top-right" autoClose={3000} />
     </>

@@ -58,3 +58,22 @@ body {
 .custom-dots li.slick-active .custom-dot {
   background-color: rgba(60, 101, 255, 1);
 }
+
+/* Cookie banner styling */
+.ckc-container {
+  z-index: 9999; /* above toasts/nav */
+  border-radius: 12px;
+  max-width: 960px;
+  margin: 0 auto 12px auto; /* centered on bottom */
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
+}
+.ckc-content {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.ckc-accept,
+.ckc-decline {
+  border-radius: 8px !important;
+  padding: 8px 14px !important;
+  font-size: 14px !important;
+}
