@@ -19,7 +19,6 @@ export default function CookieBanner({
   onReject?: () => void;
 }) {
   const notify = (state: ConsentState) => {
-    // Let listeners (ConsentGate) react without a full reload
     window.dispatchEvent(
       new CustomEvent("cookie-consent-changed", { detail: { state } })
     );
@@ -27,8 +26,18 @@ export default function CookieBanner({
 
   return (
     <CookieConsent
-      cookieName="cookie_consent"
+      location="none"
+      containerClasses="ckc-card"
+      contentClasses="ckc-card-content"
+      buttonClasses="ckc-card-accept"
+      declineButtonClasses="ckc-card-decline"
+      buttonText="Accept"
+      declineButtonText="Reject"
       enableDeclineButton
+      cookieName="cookie_consent"
+      cookieSecurity={process.env.NODE_ENV === "production"}
+      sameSite="lax"
+      expires={180}
       onAccept={() => {
         onAccept?.();
         notify("accepted");
@@ -37,18 +46,16 @@ export default function CookieBanner({
         onReject?.();
         notify("rejected");
       }}
-      buttonText="Accept"
-      declineButtonText="Reject"
-      expires={180}
-      sameSite="lax"
-      location="bottom"
-      containerClasses="ckc-container"
-      contentClasses="ckc-content"
-      buttonClasses="ckc-accept"
-      declineButtonClasses="ckc-decline"
     >
-      We use cookies to improve your experience and analyze traffic. Choose
-      Accept to enable non-essential cookies.
+      <div className="ckc-card-title">We use cookies</div>
+      <div className="ckc-card-text">
+        We use cookies to enhance your experience and analyze traffic. By
+        clicking “Accept”, you consent to non-essential cookies.{" "}
+        <a className="ckc-card-link" href="/privacy-policy">
+          Privacy policy
+        </a>
+        .
+      </div>
     </CookieConsent>
   );
 }
