@@ -12,6 +12,7 @@ type MenuDrawerProps = {
   links: NavLink[];
   activePath: string;
   onNavigate: (route: string) => void;
+  onbackdropClick: (e: unknown) => void;
 };
 
 export default function MenuDrawer({
@@ -20,6 +21,7 @@ export default function MenuDrawer({
   links,
   activePath,
   onNavigate,
+  onbackdropClick,
 }: MenuDrawerProps) {
   const openMeta = useRef({ y: 0, t: 0 });
   const [linksVisible, setLinksVisible] = useState(false);
@@ -102,7 +104,7 @@ export default function MenuDrawer({
     <>
       {/* Backdrop always mounted; fade & disable clicks when closed */}
       <Box
-        onClick={open ? handleCloseSequence : undefined}
+        onClick={onbackdropClick}
         sx={{
           position: "fixed",
           inset: 0,

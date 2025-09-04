@@ -228,6 +228,10 @@ export default function Navbar() {
               links={navLinks}
               activePath={pathname}
               onNavigate={(route) => router.push(route)}
+              onbackdropClick={(e: unknown) => {
+                handleClick(e as React.MouseEvent<HTMLDivElement, MouseEvent>);
+                sidebar();
+              }}
             />
           </Box>
         </Box>
