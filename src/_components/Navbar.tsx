@@ -172,7 +172,7 @@ export default function Navbar() {
               color: { xs: "#fff" },
               borderRadius: "50px",
               maxWidth: { xs: "280px", xl: "360px" },
-              display: { xs: "none", md: "block" },
+              display: { xs: "none", md: "flex" },
             }}
           />
           <Box>
