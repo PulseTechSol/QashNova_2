@@ -124,13 +124,13 @@ export default function MenuDrawer({
       <Box
         sx={{
           maxWidth: {
-            xs: open ? "calc(100vw - 40px)" : "0px",
+            xs: open ? "calc(100vw - 20px)" : "0px",
             sm: open ? "50vw" : "0px",
             md: open ? "540px" : "0px",
           },
           width: "100%",
           height: {
-            xs: open ? "385px" : "0px",
+            xs: open ? "417px" : "0px",
             md: open ? "546px" : "0px",
             lg: open ? "594px" : "0px",
           },
@@ -170,7 +170,6 @@ export default function MenuDrawer({
             flexDirection: "column",
             gap: { xs: "10px", md: "20px", lg: "20px" },
             p: { xs: "20px 30px", md: "50px 30px" },
-            // 👇 tiny fade to hide links before panel closes
             opacity: linksVisible ? 1 : 0,
             transition: "opacity 150ms ease-out",
           }}
@@ -209,6 +208,7 @@ export default function MenuDrawer({
                     WebkitBackgroundClip: isActive ? "text" : "unset",
                     WebkitTextFillColor: isActive ? "transparent" : "#000",
                     transition: "all 0.3s ease-in-out",
+                    textAlign: { xs: "right", md: "unset" },
                   }}
                 >
                   {link.text}

@@ -157,7 +157,7 @@ export default function Navbar() {
 
         <Box
           sx={{
-            display: { xs: "none", md: "flex" },
+            display: "flex",
             justifyContent: { xs: "start", md: "center" },
             alignItems: "center",
             gap: "30px",
@@ -172,6 +172,7 @@ export default function Navbar() {
               color: { xs: "#fff" },
               borderRadius: "50px",
               maxWidth: { xs: "280px", xl: "360px" },
+              display: { xs: "none", md: "block" },
             }}
           />
           <Box>
