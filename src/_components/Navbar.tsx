@@ -1,13 +1,14 @@
 "use client";
 
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import svgs from "@/_assets/svgs";
 import ButtonComponent from "./ButtonComponent";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import MenuDrawer from "./MenuDrawer";
 
 export default function Navbar() {
   const [menu, setMenu] = React.useState(false);
@@ -20,7 +21,6 @@ export default function Navbar() {
     AOS.refresh();
   }, []);
 
-  const toggleDrawer = (open: boolean) => setMenu(open);
   function sidebar() {
     setMenu((p) => !p);
   }
@@ -83,13 +83,20 @@ export default function Navbar() {
     { text: "contact", route: "/contact-us" },
   ];
 
+  const [active, setActive] = useState(false);
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    setActive((prev) => !prev);
+  };
+
   return (
     <Box
       sx={{
         top: "0",
         left: "0",
         right: "0",
-        zIndex: 20000,
+        zIndex: 1000,
         backgroundColor: { xs: "rgba(255, 255, 255, 0.4)", sm: "transparent" },
         position: { xs: "fixed", sm: "relative" },
         width: "100%",
@@ -106,9 +113,9 @@ export default function Navbar() {
           gap: { md: "10px", lg: "18px" },
           padding: {
             xs: "20px",
-            sm: "20px 40px",
-            md: "20px 80px",
-            lg: "20px 150px",
+            sm: "20px 30px",
+            md: "20px 40px",
+            lg: "20px 40px",
           },
           margin: "auto",
         }}
@@ -167,206 +174,61 @@ export default function Navbar() {
               maxWidth: { xs: "280px", xl: "360px" },
             }}
           />
-          <Box
-            onClick={sidebar}
-            sx={{
-              textAlign: "end",
-              display: { xs: "block" },
-              cursor: "pointer",
-            }}
-          >
-            <Image
-              src={svgs.hamburger}
-              alt="hamburger"
-              height={50}
-              width={50}
+          <Box>
+            {/* menu button  */}
+            <Box
+              onClick={(e) => {
+                handleClick(e);
+                sidebar();
+              }}
+              sx={{
+                display: "flex",
+                cursor: "pointer",
+                height: 50,
+                width: 50,
+                borderRadius: "50%",
+                justifyContent: "center",
+                alignItems: "center",
+                border: "2px solid #3C65FF",
+                gap: "5px",
+                flexDirection: "column",
+                position: "relative",
+                zIndex: 1002,
+                transition: "transform 0.38s ease-in-out",
+                "& > *": {
+                  width: "60%",
+                  height: "2px",
+                  backgroundColor: "#3C65FF",
+                  transformOrigin: "50% 50%",
+                  willChange: "transform, color, background-color",
+                  transition:
+                    "transform 300ms cubic-bezier(.22,.61,.36,1), background-color 300ms, color 300ms",
+                },
+                "& > *:nth-of-type(1)": {
+                  transform: active
+                    ? "translateY(4px) rotate(45deg)"
+                    : "translateY(0) rotate(0deg)",
+                  backgroundColor: "#3C65FF",
+                },
+                "& > *:nth-of-type(2)": {
+                  transform: active
+                    ? "translateY(-4px) rotate(-45deg)"
+                    : "translateY(0) rotate(0deg)",
+                  backgroundColor: "#3C65FF",
+                },
+              }}
+            >
+              <Box component="div" />
+              <Box component="div" />
+            </Box>
+            <MenuDrawer
+              open={menu}
+              onClose={() => setMenu(false)}
+              links={navLinks}
+              activePath={pathname}
+              onNavigate={(route) => router.push(route)}
             />
           </Box>
-        </Box>
-
-        <Box
-          onClick={sidebar}
-          sx={{ display: { xs: "block", md: "none" }, cursor: "pointer" }}
-        >
-          <Image src={svgs.hamburger} alt="hamburger" height={50} width={50} />
-        </Box>
-      </Box>
-
-      {menu && (
-        <Box
-          onClick={sidebar}
-          sx={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100svh",
-            zIndex: 1000,
-            backdropFilter: "blur(8px)",
-            WebkitBackdropFilter: "blur(8px)",
-            backgroundColor: "rgba(0, 0, 0, 0.2)",
-            touchAction: "none",
-            overscrollBehavior: "none",
-          }}
-        />
-      )}
-
-      <Box
-        onClick={sidebar}
-        sx={{
-          display: menu ? "block" : "none",
-          position: "fixed",
-          top: "0px",
-          left: "0px",
-          zIndex: 1000,
-        }}
-      />
-      <Box
-        sx={{
-          maxWidth: { xs: "calc(100vw - 40px)", sm: "50vw", md: "540px" },
-          width: "100%",
-          height: { xs: "385px", md: "546px", lg: "594px" },
-          position: "fixed",
-          top: "20px",
-          left: { xs: "20px", md: "unset" },
-          right: "20px",
-          transition: "all 0.5s ease-in-out",
-          transform: {
-            xs: menu
-              ? "translate(0) scale(1)"
-              : "translate( -152px , -180px) scale(0)",
-            sm: menu
-              ? "translate(0) scale(1)"
-              : "translate( -150px , -180px) scale(0)",
-            md: menu
-              ? "translate(0) scale(1)"
-              : "translate( 24% , -45%) scale(0)",
-          },
-          borderRadius: "40px",
-          zIndex: 1001,
-          background: {
-            xs: `linear-gradient(180deg, #FFFFFF, #C5C5C5, #999999)`,
-            md: "#fff",
-          },
-          overflowY: "auto",
-          WebkitOverflowScrolling: "touch",
-          overscrollBehavior: "contain",
-          scrollbarWidth: "thin",
-          "&::-webkit-scrollbar": { width: "6px" },
-          "&::-webkit-scrollbar-thumb": {
-            backgroundColor: "#888",
-            borderRadius: "6px",
-          },
-          "&::-webkit-scrollbar-track": { backgroundColor: "#f1f1f1" },
-        }}
-      >
-        <Box
-          sx={{
-            margin: { xs: "10px 20px ", md: "20px " },
-            textAlign: { xs: "left", md: "right" },
-            cursor: "pointer",
-          }}
-        >
-          <Image
-            onClick={sidebar}
-            src={svgs.cross}
-            alt="kashanimgclose"
-            width={40}
-          />
-        </Box>
-
-        <Box
-          sx={{
-            display: { xs: "none", md: "block" },
-            height: "1px",
-            bgcolor: "#00000080",
-            width: "100%",
-          }}
-        />
-
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "column",
-            gap: { xs: "10px", md: "20px", lg: "20px" },
-            padding: { xs: "20px  30px", md: "50px 30px" },
-          }}
-        >
-          {navLinks.map((link, i) => (
-            <Box
-              onClick={() => {
-                toggleDrawer(false);
-                router.push(link.route);
-              }}
-              sx={{ width: { xs: "100%" }, gap: "30px", cursor: "pointer" }}
-              key={i}
-            >
-              <Typography
-                sx={{
-                  textTransform: "capitalize",
-                  fontWeight:
-                    pathname ===
-                    (link.route.startsWith("./")
-                      ? link.route.substring(1)
-                      : link.route)
-                      ? 600
-                      : 400,
-                  fontSize:
-                    pathname ===
-                    (link.route.startsWith("./")
-                      ? link.route.substring(1)
-                      : link.route)
-                      ? { xs: "30px", lg: "36px" }
-                      : { xs: "24px", lg: "30px" },
-                  lineHeight:
-                    pathname ===
-                    (link.route.startsWith("./")
-                      ? link.route.substring(1)
-                      : link.route)
-                      ? { xs: "30px", lg: "36px" }
-                      : { xs: "24px", lg: "30px" },
-                  background:
-                    pathname ===
-                    (link.route.startsWith("./")
-                      ? link.route.substring(1)
-                      : link.route)
-                      ? "linear-gradient(90deg, #3C65FF, #5841D4, #2617B1)"
-                      : "none",
-                  WebkitBackgroundClip:
-                    pathname ===
-                    (link.route.startsWith("./")
-                      ? link.route.substring(1)
-                      : link.route)
-                      ? "text"
-                      : "unset",
-                  WebkitTextFillColor:
-                    pathname ===
-                    (link.route.startsWith("./")
-                      ? link.route.substring(1)
-                      : link.route)
-                      ? "transparent"
-                      : "#000",
-                  transition: "all 0.3s ease-in-out",
-                }}
-              >
-                {link.text}
-              </Typography>
-            </Box>
-          ))}
-          <Box
-            sx={{
-              flexGrow: 1,
-              overflowY: "scroll",
-              "&::-webkit-scrollbar": { width: "6px" },
-              "&::-webkit-scrollbar-thumb": {
-                backgroundColor: "#888",
-                borderRadius: "6px",
-              },
-              "&::-webkit-scrollbar-track": { backgroundColor: "#f1f1f1ff" },
-            }}
-          />
         </Box>
       </Box>
     </Box>
