@@ -182,7 +182,7 @@ body {
     margin: 0 auto;
 
     /* width + rounding */
-    max-width: 420px;
+    max-width: 340px;
     width: auto; /* was 92vw; margin with left/right keeps it fluid */
     border-radius: 16px;
 

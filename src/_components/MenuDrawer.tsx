@@ -26,6 +26,7 @@ export default function MenuDrawer({
   const openMeta = useRef({ y: 0, t: 0 });
   const [linksVisible, setLinksVisible] = useState(false);
   const [aosKey, setAosKey] = useState(0);
+
   const PANEL_TRANSITION_MS = 480;
   const PANEL_DELAY_MS = 300;
   const PANEL_APPEAR_MS = PANEL_TRANSITION_MS + PANEL_DELAY_MS;
@@ -33,8 +34,10 @@ export default function MenuDrawer({
   const ITEM_DURATION_MS = 300;
   const LINKS_EXIT_MS = 150;
 
+  // === Single body scroll lock here ===
   useEffect(() => {
     if (!open) return;
+
     openMeta.current.y = window.scrollY;
     openMeta.current.t = performance.now();
 
@@ -44,28 +47,34 @@ export default function MenuDrawer({
       width: document.body.style.width,
       overflow: document.body.style.overflow,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      touchAction: (document.body.style as any).touchAction,
+      touchAction: (document.body.style as any).touchAction as
+        | string
+        | undefined,
     };
     const startY = window.scrollY;
 
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${startY}px`;
-    document.body.style.width = "100%";
-    document.body.style.overflow = "hidden";
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (document.body.style as any).touchAction = "none";
+    // lock
+    if (document.body.style.position !== "fixed") {
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${startY}px`;
+      document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (document.body.style as any).touchAction = "none";
+    }
 
+    // close on user scroll after short delay
     const handleScroll = () => {
       const dt = performance.now() - openMeta.current.t;
       const dy = Math.abs(window.scrollY - openMeta.current.y);
       if (dt < 150) return;
       if (dy >= 60) handleCloseSequence();
     };
-
     const id = setTimeout(() => {
       window.addEventListener("scroll", handleScroll, { passive: true });
     }, 80);
 
+    // unlock on close/unmount
     return () => {
       clearTimeout(id);
       window.removeEventListener("scroll", handleScroll);
@@ -77,9 +86,9 @@ export default function MenuDrawer({
       (document.body.style as any).touchAction = prev.touchAction;
       window.scrollTo(0, startY);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
+  // Stagger link appearance after panel animates in
   useEffect(() => {
     if (!open) {
       setLinksVisible(false);
@@ -91,8 +100,8 @@ export default function MenuDrawer({
       AOS.refreshHard();
     }, PANEL_APPEAR_MS);
     return () => clearTimeout(t);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
+
   const handleCloseSequence = () => {
     setLinksVisible(false);
     setTimeout(() => {
@@ -102,7 +111,7 @@ export default function MenuDrawer({
 
   return (
     <>
-      {/* Backdrop always mounted; fade & disable clicks when closed */}
+      {/* Backdrop (click to close) */}
       <Box
         onClick={onbackdropClick}
         sx={{
@@ -122,7 +131,7 @@ export default function MenuDrawer({
         }}
       />
 
-      {/* Panel (kept as you provided) */}
+      {/* Panel */}
       <Box
         sx={{
           maxWidth: {
@@ -160,7 +169,6 @@ export default function MenuDrawer({
           },
           "&::-webkit-scrollbar-track": { backgroundColor: "#f1f1f1" },
           overflow: "hidden",
-          // prevent interaction while visually closed
           pointerEvents: open ? "auto" : "none",
         }}
       >
@@ -187,13 +195,12 @@ export default function MenuDrawer({
               <Box
                 key={`${link.route}-${aosKey}`}
                 onClick={() => {
-                  handleCloseSequence(); // hide links first
+                  handleCloseSequence();
                   onNavigate(link.route);
                 }}
                 sx={{ width: "100%", cursor: "pointer" }}
               >
                 <Typography
-                  // Only set AOS props when links are allowed to animate
                   data-aos={linksVisible ? "zoom-in" : undefined}
                   data-aos-duration={ITEM_DURATION_MS}
                   data-aos-delay={PANEL_APPEAR_MS + i * ITEM_STAGGER_MS}

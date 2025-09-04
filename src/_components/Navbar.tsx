@@ -14,7 +14,6 @@ export default function Navbar() {
   const [menu, setMenu] = React.useState(false);
   const router = useRouter();
   const pathname = usePathname();
-  const openMeta = React.useRef({ y: 0, t: 0 });
 
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
@@ -24,53 +23,6 @@ export default function Navbar() {
   function sidebar() {
     setMenu((p) => !p);
   }
-
-  useEffect(() => {
-    if (!menu) return;
-
-    openMeta.current.y = window.scrollY;
-    openMeta.current.t = performance.now();
-
-    const prev = {
-      position: document.body.style.position,
-      top: document.body.style.top,
-      width: document.body.style.width,
-      overflow: document.body.style.overflow,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      touchAction: (document.body.style as any).touchAction,
-    };
-    const startY = window.scrollY;
-
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${startY}px`;
-    document.body.style.width = "100%";
-    document.body.style.overflow = "hidden";
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (document.body.style as any).touchAction = "none";
-
-    const handleScroll = () => {
-      const dt = performance.now() - openMeta.current.t;
-      const dy = Math.abs(window.scrollY - openMeta.current.y);
-      if (dt < 150) return;
-      if (dy >= 60) setMenu(false);
-    };
-
-    const id = setTimeout(() => {
-      window.addEventListener("scroll", handleScroll, { passive: true });
-    }, 80);
-
-    return () => {
-      clearTimeout(id);
-      window.removeEventListener("scroll", handleScroll);
-      document.body.style.position = prev.position;
-      document.body.style.top = prev.top;
-      document.body.style.width = prev.width;
-      document.body.style.overflow = prev.overflow;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (document.body.style as any).touchAction = prev.touchAction;
-      window.scrollTo(0, startY);
-    };
-  }, [menu]);
 
   const navLinks = [
     { text: "home", route: "/" },
