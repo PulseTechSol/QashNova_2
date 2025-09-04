@@ -58,3 +58,157 @@ body {
 .custom-dots li.slick-active .custom-dot {
   background-color: rgba(60, 101, 255, 1);
 }
+
+/* Cookie banner styling */
+/* —— Cookie card (KOTA-style) —— */
+/* Floating cookie card — polished */
+.ckc-card {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  max-width: 360px;
+  width: calc(100vw - 32px);
+  z-index: 10050;
+  border-radius: 18px;
+  background: #171a23; /* dark neutral */
+  color: #fff;
+  padding: 16px 16px 12px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.06); /* subtle inner border */
+  backdrop-filter: blur(8px);
+  transform: translateY(8px);
+  opacity: 0;
+  animation: ckc-in 0.35s ease forwards;
+}
+
+@keyframes ckc-in {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .ckc-card {
+    right: 14px;
+    bottom: 14px;
+    border-radius: 16px;
+    padding: 14px 14px 10px;
+    max-width: 92vw;
+  }
+}
+
+.ckc-card-content {
+  display: grid;
+  gap: 10px;
+}
+
+.ckc-card-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  opacity: 0.95;
+}
+
+.ckc-card-text {
+  font-size: 13px;
+  line-height: 1.55;
+  opacity: 0.92;
+}
+
+.ckc-card-link {
+  color: #7fb0ff; /* matches your blue scheme */
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ckc-card-accept,
+.ckc-card-decline {
+  font-size: 13px !important;
+  border-radius: 999px !important;
+  padding: 8px 14px !important;
+  line-height: 1 !important;
+  transition: transform 0.15s ease, border-color 0.2s ease,
+    background-color 0.2s ease, opacity 0.2s ease;
+  outline: none !important;
+}
+
+/* Use your brand blue for focus ring */
+.ckc-card-accept:focus-visible,
+.ckc-card-decline:focus-visible,
+.ckc-card-link:focus-visible {
+  box-shadow: 0 0 0 3px rgba(58, 131, 255, 0.35) !important;
+  border-color: rgba(58, 131, 255, 0.6) !important;
+}
+
+/* Primary = outline pill, cleaner next to dark card */
+.ckc-card-accept {
+  background: transparent !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.38) !important;
+}
+.ckc-card-accept:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.65) !important;
+}
+.ckc-card-accept:active {
+  transform: translateY(0);
+}
+
+.ckc-card-decline {
+  background: transparent !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  opacity: 0.85;
+  margin-right: 8px !important;
+}
+.ckc-card-decline:hover {
+  transform: translateY(-1px);
+  opacity: 1;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
+.ckc-card-decline:active {
+  transform: translateY(0);
+}
+
+/* Base stays as you have it */
+
+/* --- Mobile fix (<= 640px) --- */
+@media (max-width: 640px) {
+  .ckc-card {
+    /* center horizontally */
+    left: 12px;
+    right: 12px;
+    margin: 0 auto;
+
+    /* width + rounding */
+    max-width: 420px;
+    width: auto; /* was 92vw; margin with left/right keeps it fluid */
+    border-radius: 16px;
+
+    /* keep off the iOS home-indicator */
+    bottom: calc(14px + env(safe-area-inset-bottom));
+
+    /* spacing & subtle scale-in */
+    padding: 14px 14px 10px;
+    transform: translateY(8px); /* only Y so no horizontal shift */
+  }
+
+  .ckc-card-content {
+    gap: 10px;
+  }
+
+  /* Buttons: keep side-by-side and readable */
+  .ckc-card-accept,
+  .ckc-card-decline {
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+  }
+
+  /* If buttons wrap on very small devices, let them stack nicely */
+  .ckc-card-content > div:last-child {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+}
