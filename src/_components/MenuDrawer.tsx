@@ -135,29 +135,25 @@ export default function MenuDrawer({
       <Box
         sx={{
           maxWidth: {
-            xs: open ? "calc(100vw - 20px)" : "0px",
-            sm: open ? "50vw" : "0px",
-            md: open ? "540px" : "0px",
+            xs: open ? "320px" : "0px",
+            sm: open ? "380px" : "0px",
+            md: open ? "440px" : "0px",
           },
           width: "100%",
           height: {
-            xs: open ? "417px" : "0px",
-            md: open ? "546px" : "0px",
-            lg: open ? "594px" : "0px",
+            xs: open ? "337px" : "0px",
+            md: open ? "397px" : "0px",
+            lg: open ? "469px" : "0px",
           },
           position: "fixed",
-          top: { xs: "10px", sm: "15px", md: "20px" },
-          left: { xs: "10px", md: "unset" },
-          right: "20px",
+          top: { xs: "10px", lg: "20px" },
+          right: { xs: "10px", lg: "20px" },
           transition: "all 0.48s ease-in",
           transitionDelay: "0.3s",
           opacity: open ? 1 : 0,
           borderRadius: "40px",
           zIndex: 1001,
-          background: {
-            xs: "linear-gradient(180deg,#FFFFFF,#C5C5C5,#999999)",
-            md: "#fff",
-          },
+          background: "#f1f1f1",
           overflowY: "auto",
           WebkitOverflowScrolling: "touch",
           overscrollBehavior: "contain",
@@ -178,8 +174,8 @@ export default function MenuDrawer({
             alignItems: "center",
             justifyContent: "center",
             flexDirection: "column",
-            gap: { xs: "10px", md: "20px", lg: "20px" },
-            p: { xs: "20px 30px", md: "50px 30px" },
+            gap: "0px",
+            p: { xs: "20px 30px 20px 40px", md: "50px 30px 50px 60px" },
             opacity: linksVisible ? 1 : 0,
             transition: "opacity 150ms ease-out",
           }}
@@ -217,7 +213,6 @@ export default function MenuDrawer({
                     WebkitBackgroundClip: isActive ? "text" : "unset",
                     WebkitTextFillColor: isActive ? "transparent" : "#000",
                     transition: "all 0.3s ease-in-out",
-                    textAlign: { xs: "right", md: "unset" },
                   }}
                 >
                   {link.text}

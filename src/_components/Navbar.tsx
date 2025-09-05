@@ -60,7 +60,7 @@ export default function Navbar() {
         sx={{
           display: "flex",
           alignItems: "center",
-          flexDirection: { xs: "row-reverse", md: "row" },
+          flexDirection: "row",
           justifyContent: "space-between",
           gap: { md: "10px", lg: "18px" },
           padding: {
