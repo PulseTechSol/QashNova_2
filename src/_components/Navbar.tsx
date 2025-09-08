@@ -37,6 +37,11 @@ export default function Navbar() {
 
   const [active, setActive] = useState(false);
 
+  useEffect(() => {
+    setActive(false);
+    setMenu(false);
+  }, [pathname]);
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     setActive((prev) => !prev);
@@ -176,6 +181,8 @@ export default function Navbar() {
             </Box>
             <MenuDrawer
               open={menu}
+              active={active}
+              setActive={setActive}
               onClose={() => setMenu(false)}
               links={navLinks}
               activePath={pathname}

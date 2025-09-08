@@ -1,6 +1,12 @@
 "use client";
 import { Box, Typography } from "@mui/material";
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  Dispatch,
+  SetStateAction,
+} from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -13,6 +19,8 @@ type MenuDrawerProps = {
   activePath: string;
   onNavigate: (route: string) => void;
   onbackdropClick: (e: unknown) => void;
+  active: boolean;
+  setActive: Dispatch<SetStateAction<boolean>>;
 };
 
 export default function MenuDrawer({
@@ -22,6 +30,7 @@ export default function MenuDrawer({
   activePath,
   onNavigate,
   onbackdropClick,
+  setActive,
 }: MenuDrawerProps) {
   const openMeta = useRef({ y: 0, t: 0 });
   const [linksVisible, setLinksVisible] = useState(false);
@@ -113,7 +122,10 @@ export default function MenuDrawer({
     <>
       {/* Backdrop (click to close) */}
       <Box
-        onClick={onbackdropClick}
+        onClick={(e) => {
+          setActive(false); // reset instantly
+          onbackdropClick(e);
+        }}
         sx={{
           position: "fixed",
           inset: 0,
@@ -191,6 +203,7 @@ export default function MenuDrawer({
               <Box
                 key={`${link.route}-${aosKey}`}
                 onClick={() => {
+                  setActive(false); // reset menu button instantly
                   handleCloseSequence();
                   onNavigate(link.route);
                 }}
