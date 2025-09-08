@@ -2,6 +2,14 @@ import React from "react";
 import AreaHero from "./_sections/AreaHero";
 import OurHubareasCards from "./_sections/OurHubareasCards";
 import { Box } from "@mui/material";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Area Hub - Qashnova",
+  description:
+    "Discover our Area Hub for professional website design services in Rotherham, South Yorkshire & Sheffield. Elevate your online presence with Qashnova.",
+  alternates: { canonical: "https://www.qashnova.com/area-hub" },
+};
 
 function page() {
   return (

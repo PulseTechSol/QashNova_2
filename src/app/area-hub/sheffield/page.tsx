@@ -13,7 +13,14 @@ import SeoSupportSection, {
 import svgs from "@/_assets/svgs";
 import pngs from "@/_assets/pngs";
 import Footer from "@/_components/Footer";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Website Design Sheffield - Qashnova",
+  description:
+    "Professional website design services in Sheffield. Elevate your online presence with Qashnova.",
+  alternates: { canonical: "https://www.qashnova.com/area-hub/sheffield" },
+};
 function Sheffield() {
   const faqData = [
     {

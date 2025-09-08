@@ -13,8 +13,18 @@ import SeoSupportSection, {
 import svgs from "@/_assets/svgs";
 import pngs from "@/_assets/pngs";
 import Footer from "@/_components/Footer";
+import { Metadata } from "next";
 
-function Rotherham() {
+export const metadata: Metadata = {
+  title: "Website Design South Yorkshire - Qashnova",
+  description:
+    "Professional website design services in South Yorkshire. Elevate your online presence with Qashnova.",
+  alternates: {
+    canonical: "https://www.qashnova.com/area-hub/south-yorkshire",
+  },
+};
+
+function SouthYorkshire() {
   const faqData = [
     {
       title: "Do you work across all of South Yorkshire?",
@@ -171,4 +181,4 @@ function Rotherham() {
   );
 }
 
-export default Rotherham;
+export default SouthYorkshire;
