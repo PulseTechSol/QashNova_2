@@ -8,9 +8,6 @@ export const metadata: Metadata = {
   title: "Qashnova | Creative Digital Solutions for Brands",
   description:
     "Qashnova builds custom websites, branding, and digital strategies to help businesses grow and stand out online. Tailored solutions for your success.",
-  alternates: {
-    canonical: "https://www.qashnova.com/",
-  },
 };
 
 export default function RootLayout({
