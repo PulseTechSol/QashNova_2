@@ -16,9 +16,9 @@ import Footer from "@/_components/Footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Website Design Rotherham - Qashnova",
+  title: "Website Design in Rotherham",
   description:
-    "Professional website design services in Rotherham. Elevate your online presence with Qashnova.",
+    "Crafting bespoke websites in Rotherham. We blend stunning aesthetics with powerful functionality. Our designs are tailored to elevate your brand",
   alternates: { canonical: "https://www.qashnova.com/area-hub/rotherham" },
 };
 

@@ -16,9 +16,9 @@ import Footer from "@/_components/Footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Website Design Sheffield - Qashnova",
+  title: "Website Design in Sheffield",
   description:
-    "Professional website design services in Sheffield. Elevate your online presence with Qashnova.",
+    "Crafting bespoke websites in Sheffield. We blend stunning aesthetics with powerful functionality. Our designs are tailored to elevate your brand.",
   alternates: { canonical: "https://www.qashnova.com/area-hub/sheffield" },
 };
 function Sheffield() {
