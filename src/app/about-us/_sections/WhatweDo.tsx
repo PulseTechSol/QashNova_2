@@ -12,7 +12,16 @@ import Image from "next/image";
 import GenericHeadingBox from "@/_components/GenericHeadingBox";
 gsap.registerPlugin(ScrollTrigger);
 
-export default function WhatweDo() {
+export default function WhatweDo({
+  whatWeDo,
+}: {
+  whatWeDo: {
+    heading1: string;
+    heading2: string;
+    descriptionMobile: string;
+    descriptionDesktop: string;
+  };
+}) {
   return (
     <Box
       component="section" // semantics only
@@ -76,7 +85,11 @@ export default function WhatweDo() {
           gap: { xs: "40px", md: "80px", xl: "100px", xxl: "150px" },
         }}
       >
-        <GenericHeadingBox isbool={true} heading1="what" heading2="we do" />
+        <GenericHeadingBox
+          isbool={true}
+          heading1={whatWeDo.heading1}
+          heading2={whatWeDo.heading2}
+        />
 
         <Box
           sx={{
@@ -105,10 +118,7 @@ export default function WhatweDo() {
               m: 0,
             }}
           >
-            We specialize in creating beautiful, functional, and responsive
-            websites tailored to your unique needs. At Qashnova, we combine
-            creativity with cutting-edge technology to deliver designs that
-            captivate and connect with your audience.
+            {whatWeDo.descriptionDesktop}
           </Typography>
 
           {/* Mobile paragraph (shorter content kept) */}
@@ -125,8 +135,7 @@ export default function WhatweDo() {
               m: 0,
             }}
           >
-            We specialize in creating beautiful, functional, and responsive
-            websites tailored to your unique needs.
+            {whatWeDo.descriptionMobile}
           </Typography>
 
           <Box

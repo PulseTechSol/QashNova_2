@@ -10,7 +10,16 @@ import GenericHeadingBox from "@/_components/GenericHeadingBox";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Ourmission() {
+export default function Ourmission({
+  mission,
+}: {
+  mission: {
+    heading1: string;
+    heading2: string;
+    descriptionMobile: string;
+    descriptionDesktop: string;
+  };
+}) {
   return (
     <Box
       component="section" // semantics only
@@ -82,7 +91,11 @@ export default function Ourmission() {
             gap: { xs: "30px", sm: "40px" },
           }}
         >
-          <GenericHeadingBox isbool={true} heading1="Our" heading2="mission" />
+          <GenericHeadingBox
+            isbool={true}
+            heading1={mission.heading1}
+            heading2={mission.heading2}
+          />
 
           <Box
             sx={{
@@ -107,10 +120,7 @@ export default function Ourmission() {
               m: 0,
             }}
           >
-            We&apos;re on a mission to be your trusted guide in the digital
-            world. Our commitment lies in crafting bespoke solutions that
-            elevate your brand, expand your reach, and consistently drive your
-            online objectives forward.
+            {mission.descriptionDesktop}
           </Typography>
           <Typography
             paragraph
@@ -125,9 +135,7 @@ export default function Ourmission() {
               m: 0,
             }}
           >
-            We&apos;re on a mission to be your trusted guide in the digital
-            world. Our commitment lies in crafting bespoke solutions that
-            elevate your brand.
+            {mission.descriptionMobile}
           </Typography>
         </Box>
 
