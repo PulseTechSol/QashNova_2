@@ -11,49 +11,26 @@ import {
 import Image from "next/image";
 import pngs from "@/_assets/pngs";
 
-export default function PlanScreen() {
-  const plans = [
-    {
-      plan: "Basic",
-      description: "Ideal for Landing Pages with Basic Form Submission.",
-      price: "£49 /Month",
-      points: [
-        "Custom Domain",
-        "Hosting",
-        "1-Page Responsive Design",
-        "Basic Functionality",
-      ],
-    },
-    {
-      plan: "Standard",
-      description: "The Go-to for most Small/Medium sized Businesses.",
-      price: "£99 /Month",
-      points: [
-        "Custom Domain",
-        "Hosting",
-        "5-Page Responsive Design",
-        "Standard Custom Functionality",
-        "Priority Support",
-        "Advanced Security",
-      ],
-    },
-    {
-      plan: "Premium",
-      description: "For Businesses that Mostly Sell Online.",
-      price: "£249 /Month",
-      points: [
-        "Custom Domain",
-        "Hosting",
-        "10-Page+ Responsive Design",
-        "Advanced Custom Functionality",
-        "Priority Support",
-        "Advanced Security",
-        "E-commerce Integration",
-        "Admin Panel",
-      ],
-    },
-  ];
+interface PlanCard {
+  plan: string;
+  price: string;
+  points: string[];
+  description: string;
+}
 
+interface FindYourPerfectPlan {
+  heading1: string;
+  heading2: string;
+  planCards: PlanCard[];
+  description: string;
+}
+
+export default function PlanScreen({
+  findYourPerfectPlan,
+}: {
+  findYourPerfectPlan: FindYourPerfectPlan;
+}) {
+  console.log(findYourPerfectPlan, "findYourPerfectPlan");
   return (
     <Box
       component="section" // semantics only (no visual change)
@@ -103,7 +80,7 @@ export default function PlanScreen() {
               lineHeight: { xs: "60px", md: "80px", lg: "120px", xl: "150px" },
             }}
           >
-            Find Your
+            {findYourPerfectPlan?.heading1}
           </Typography>
           <Typography
             component="span"
@@ -117,7 +94,7 @@ export default function PlanScreen() {
               lineHeight: { xs: "60px", md: "80px", lg: "120px", xl: "150px" },
             }}
           >
-            Perfect Plan
+            {findYourPerfectPlan?.heading2}
           </Typography>
         </Box>
 
@@ -142,15 +119,7 @@ export default function PlanScreen() {
             mx: "auto",
           }}
         >
-          Our plans are designed to give every business the right foundation to
-          grow online. Whether you need a simple landing page, a professional
-          website for your small business or a fully integrated e-commerce
-          platform, we have an option to suit your goals. Each package includes
-          secure hosting, a custom domain and responsive design as standard.
-          From our affordable Basic plan to our advanced Premium solution, you
-          can choose the level of functionality and support that best matches
-          your needs. Whatever stage your business is at, we make sure your
-          website is built to perform and scale.
+          {findYourPerfectPlan?.description}
         </Typography>
 
         <Box
@@ -165,7 +134,7 @@ export default function PlanScreen() {
             zIndex: 99,
           }}
         >
-          {plans.map((data, i) => (
+          {findYourPerfectPlan?.planCards?.map((data, i) => (
             <PlanComponent
               key={i}
               plan={data.plan}

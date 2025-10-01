@@ -1,31 +1,43 @@
 import { Metadata } from "next";
 import HeroSection from "@/_components/HeroSection";
 import PlanScreen from "./_sections/PlanScreen";
+import { fetchPageData } from "@/lib/strapi";
 
-export const metadata: Metadata = {
-  title: "Affordable Website & Branding Plans | Qashnova",
-  description:
-    "Choose from Qashnova’s tailored website and branding plans designed for startups, small businesses, and growing brands.",
-  alternates: { canonical: "https://www.qashnova.com/plans" },
-};
+// 🔹 Dynamic metadata from Strapi
+export async function generateMetadata(): Promise<Metadata> {
+  const data = await fetchPageData("plan");
 
-export default function Page() {
+  return {
+    title: data?.metaTitle ?? "Affordable Website & Branding Plans | Qashnova",
+    description:
+      data?.metaDescription ??
+      "Choose from Qashnova’s tailored website and branding plans designed for startups, small businesses, and growing brands.",
+    alternates: {
+      canonical: data?.canonicalUrl ?? "https://www.qashnova.com/plans",
+    },
+  };
+}
+
+export default async function Page() {
+  const data = await fetchPageData("plan");
+
+  const hero = data?.textualContent?.heroSection;
+  const findYourPerfectPlan = data?.textualContent?.findYourPerfectPlanSection;
   return (
     <>
       <header>
         <HeroSection
-          line1="Custom"
-          line1Mobile="Solutions"
-          line2Desktop="Plans for"
-          line3Desktop="Proven Boom"
-          line2Mobile="Built for"
-          line3Mobile="Your brand"
-          isbool={true}
+          line1={hero?.desktop?.line1}
+          line1Mobile={hero?.mobile?.line1}
+          line2Desktop={hero?.desktop?.line2}
+          line2Mobile={hero?.mobile?.line2}
+          line3Desktop={hero?.desktop?.line3}
+          line3Mobile={hero?.mobile?.line3}
         />
       </header>
 
       <main role="main">
-        <PlanScreen />
+        <PlanScreen findYourPerfectPlan={findYourPerfectPlan} />
       </main>
     </>
   );
