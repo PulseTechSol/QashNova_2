@@ -3,7 +3,13 @@ import { Box, Typography } from "@mui/material";
 import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
 import ContactUsForm from "./ContactUsForm";
 
-export default function ContactUs() {
+export default function ContactUs({
+  heading,
+  description,
+}: {
+  heading?: string;
+  description?: string[];
+}) {
   return (
     <Box
       component="section"
@@ -38,7 +44,8 @@ export default function ContactUs() {
               lineHeight: 1.2,
             }}
           >
-            get in
+            {heading && heading.split(" ")[0]}{" "}
+            {heading && heading.split(" ")[1]}
           </Typography>
           <Typography
             sx={{
@@ -50,7 +57,7 @@ export default function ContactUs() {
               lineHeight: 1.2,
             }}
           >
-            touch
+            {heading && heading.split(" ")[2]}
           </Typography>
         </Box>
 
@@ -62,37 +69,20 @@ export default function ContactUs() {
             mb: 10,
           }}
         >
-          <Typography
-            paragraph
-            sx={{
-              fontSize: localFontSize.p1,
-              color: "#FFFFFF80",
-              mb: 5,
-              mt: 5,
-            }}
-          >
-            We would love to hear from you. Whether you have a question about
-            our services, need advice on your project or simply want to find out
-            how we can help, our team is here to listen. Every enquiry matters
-            to us and we aim to respond quickly with clear and helpful answers.
-          </Typography>
-          <Typography
-            paragraph
-            sx={{ fontSize: localFontSize.p1, color: "#FFFFFF80", mb: 5 }}
-          >
-            Filling out the form below is the easiest way to get in touch. Just
-            let us know a little about what you are looking for and we will come
-            back to you as soon as possible. If you prefer, you can also reach
-            us directly by phone or email and we will be happy to assist.
-          </Typography>
-          <Typography
-            sx={{ fontSize: localFontSize.p1, color: "#FFFFFF80", mb: 5 }}
-          >
-            Building strong relationships with our clients starts with a
-            conversation, so please do not hesitate to contact us today. We look
-            forward to working with you and helping bring your ideas and goals
-            to life.
-          </Typography>
+          {description?.map((para, idx) => (
+            <Typography
+              key={idx}
+              paragraph
+              sx={{
+                fontSize: localFontSize.p1,
+                color: "#FFFFFF80",
+                mb: 5,
+                mt: idx === 0 ? 5 : 0,
+              }}
+            >
+              {para}
+            </Typography>
+          ))}
         </Box>
 
         <Box
