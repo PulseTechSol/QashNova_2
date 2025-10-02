@@ -57,7 +57,7 @@ export default function LayoutWrapper({
 
   return (
     <>
-      {animatedBackgroundPaths.includes(pathname) && (
+      {/* {animatedBackgroundPaths.includes(pathname) && (
         <Box
           sx={{
             position: "relative",
@@ -69,7 +69,7 @@ export default function LayoutWrapper({
             <AnimatedBackground />
           </ClientOnly>
         </Box>
-      )}
+      )} */}
 
       {normalNavbarPaths.includes(pathname) && <Navbar />}
 

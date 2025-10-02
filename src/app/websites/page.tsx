@@ -2,26 +2,36 @@ import { Metadata } from "next";
 import HeroSection from "@/_components/HeroSection";
 import WebsiteSection from "@/_components/WebsiteSection";
 import pngs from "@/_assets/pngs";
+import { fetchPageData } from "@/lib/strapi";
 
-export const metadata: Metadata = {
-  title: "Custom Website Development Services | Qashnova",
-  description:
-    "Get modern, fast, and responsive websites built by Qashnova. We design websites that not only look great but also perform for your business.",
-  alternates: { canonical: "https://www.qashnova.com/websites" },
-};
+// 🔹 Dynamic metadata from Strapi
+export async function generateMetadata(): Promise<Metadata> {
+  const data = await fetchPageData("website");
 
-export default function WebsitesPage() {
+  return {
+    title: data?.metaTitle ?? "Custom Website Development Services | Qashnova",
+    description:
+      data?.metaDescription ??
+      "Get modern, fast, and responsive websites built by Qashnova. We design websites that not only look great but also perform for your business.",
+    alternates: {
+      canonical: data?.canonicalUrl ?? "https://www.qashnova.com/websites",
+    },
+  };
+}
+export default async function WebsitesPage() {
+  const data = await fetchPageData("website");
+
+  const hero = data?.textualContent?.heroSection;
   return (
     <>
       <header>
         <HeroSection
-          line1="Where"
-          line1Mobile="Where"
-          line2Desktop="Design Meets"
-          line3Desktop="Performance"
-          line2Mobile="Design Meets"
-          line3Mobile="Future"
-          isbool={true}
+          line1={hero?.desktop?.line1}
+          line1Mobile={hero?.mobile?.line1}
+          line2Desktop={hero?.desktop?.line2}
+          line2Mobile={hero?.mobile?.line2}
+          line3Desktop={hero?.desktop?.line3}
+          line3Mobile={hero?.mobile?.line3}
         />
       </header>
 
