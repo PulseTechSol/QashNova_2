@@ -22,7 +22,7 @@ export default async function WebsitesPage() {
   const data = await fetchPageData("website");
 
   const hero = data?.textualContent?.heroSection;
-  const websitesData: WebsiteItem[] = data?.textualContent?.websitesData;
+  const websitesData: WebsiteItem[] = data?.textualContent?.websiteData;
   return (
     <>
       <header>
@@ -36,18 +36,19 @@ export default async function WebsitesPage() {
         />
       </header>
 
-      {websitesData.map((item, idx) => (
-        <WebsiteSection
-          key={idx}
-          heading1={item.heading1}
-          heading2={item.heading2}
-          destopPara={item.destopPara}
-          mobilePara={item.mobilePara}
-          image={item.image}
-          link={item.link}
-          isbool={item.switchSide}
-        />
-      ))}
+      {websitesData &&
+        websitesData.map((item, idx) => (
+          <WebsiteSection
+            key={idx}
+            heading1={item.heading1}
+            heading2={item.heading2}
+            destopPara={item.destopPara}
+            mobilePara={item.mobilePara}
+            image={item.image}
+            link={item.link}
+            isbool={item.switchSide}
+          />
+        ))}
     </>
   );
 }
