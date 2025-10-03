@@ -15,14 +15,6 @@ import ourMission from "./aboutus/ourMission.webp";
 import clients1 from "./clients/client1.webp";
 import clients2 from "./clients/client2.webp";
 import clients3 from "./clients/client3.webp";
-import websites1 from "./websites/website1.png";
-import websites2 from "./websites/sabirs.webp";
-import websites3 from "./websites/website3.png";
-import websites4 from "./websites/website4.png";
-import websites5 from "./websites/website5.png";
-import websites6 from "./websites/website6.png";
-import websites7 from "./websites/website7.png";
-import websites8 from "./websites/website8.png";
 import branding1 from "./branding/branding1.png";
 import branding2 from "./branding/branding2.png";
 import branding3 from "./branding/branding3.png";
@@ -71,22 +63,14 @@ const pngs = {
   footerbgImg,
   caseStudy1,
   caseStudy2,
-  websites1,
   ourMission,
-  websites2,
   heroHome,
   branding1,
-  websites3,
   branding2,
   workimage1,
   branding3,
-  websites4,
   branding4,
   whatweDo,
-  websites5,
-  websites6,
-  websites7,
-  websites8,
   howHeplLGcolor,
   workimage2,
   howHeplLG,

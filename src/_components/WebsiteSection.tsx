@@ -140,9 +140,11 @@ export default function WebsiteSection({
             }}
           >
             <Image
-              src={image as StaticImageData}
+              src={image as string}
               alt="Website preview"
               style={{ width: "100%", height: "auto", objectFit: "contain" }}
+              width={500} // ✅ required
+              height={600} // ✅ required
             />
           </Box>
 

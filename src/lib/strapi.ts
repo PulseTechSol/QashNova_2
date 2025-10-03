@@ -1,4 +1,5 @@
 import axios from "axios";
+import websitesDataFallback from "@/cmsFallbackContent/website.json";
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 const STRAPI_API_TOKEN = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN || "";
