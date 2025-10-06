@@ -19,9 +19,15 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function BrandingPage() {
-  const data = await fetchPageData("about-us");
+  const data = await fetchPageData("branding");
 
   const hero = data?.textualContent?.heroSection;
+  const brandingSection: {
+    heading: string;
+    description: { mobile: string[]; desktop: string[] };
+    showcaseCards: { image: string; title: string }[];
+  } = data?.textualContent?.brandingSection;
+  console.log(brandingSection, "brandingSection");
   return (
     <>
       <HeroSection
@@ -33,7 +39,7 @@ export default async function BrandingPage() {
         line3Mobile={hero?.mobile?.line3}
         isbool={true}
       />
-      <CardBranding />
+      <CardBranding brandingSection={brandingSection} />
     </>
   );
 }

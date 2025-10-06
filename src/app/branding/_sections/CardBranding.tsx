@@ -7,37 +7,18 @@ import {
 } from "@/app/_utils/themes";
 import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
-// import { max } from "three/tsl";
 
-const descriptions: string[] = [
-  `A strong logo is one of the most important parts of any brand. It is
-   often the first thing people notice and the image they remember long
-   after visiting your business. A well designed logo captures your
-   values, sets you apart from competitors and builds trust with your
-   audience.`,
-  `At our studio we create new logos that reflect your brand’s
-   personality and vision. We take time to understand your business,
-   your goals and your customers before developing designs that are
-   clear, versatile and memorable. Whether you are starting fresh or
-   looking to update an existing design, our process is focused on
-   making sure your logo works across print, digital and social media.`,
-  `We also specialise in re-designing logos to give established brands
-   a modern edge while keeping the essence that people recognise. This
-   helps businesses stay relevant and consistent as they grow and
-   evolve.`,
-];
+export default function CardBranding({
+  brandingSection,
+}: {
+  brandingSection: {
+    heading: string;
+    description: { mobile: string[]; desktop: string[] };
+    showcaseCards: { image: string; title: string }[];
+  };
+}) {
+  console.log(brandingSection, "brandingSection");
 
-const showcaseCards: {
-  title: string;
-  image: string;
-}[] = [
-  { title: "sofa & rattan", image: "/branding/branding1.png" },
-  { title: "Isfahan & Kashan", image: "/branding/branding2.png" },
-  { title: "A Class Travel", image: "/branding/branding3.png" },
-  { title: "savile row furniture", image: "/branding/branding4.png" },
-];
-
-export default function CardBranding() {
   return (
     <>
       <Box
@@ -120,7 +101,7 @@ export default function CardBranding() {
               textAlign: "center",
             }}
           >
-            Logo
+            {brandingSection?.heading}
           </Typography>
 
           <Typography
@@ -137,7 +118,7 @@ export default function CardBranding() {
             }}
             component="div" // ✅ so we can render child <p> safely
           >
-            {descriptions.map((desc, i) => (
+            {brandingSection.description.desktop.map((desc, i) => (
               <Box
                 key={i}
                 component="p"
@@ -159,7 +140,7 @@ export default function CardBranding() {
             }}
             component="div"
           >
-            {descriptions.map((desc, i) => (
+            {brandingSection.description.mobile.map((desc, i) => (
               <Box key={i} component="p" sx={{ mb: 3, lineHeight: "26px" }}>
                 {desc}
               </Box>
@@ -176,7 +157,7 @@ export default function CardBranding() {
               height: "100%",
             }}
           >
-            {showcaseCards.map((item, idx) => (
+            {brandingSection.showcaseCards.map((item, idx) => (
               <WorkShowcase key={idx} title={item.title} image={item.image} />
             ))}
           </Grid>
