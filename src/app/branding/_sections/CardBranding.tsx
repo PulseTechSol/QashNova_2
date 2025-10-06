@@ -6,8 +6,36 @@ import {
   sectionPaddingY,
 } from "@/app/_utils/themes";
 import { Box, Grid, Typography } from "@mui/material";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 // import { max } from "three/tsl";
+
+const descriptions: string[] = [
+  `A strong logo is one of the most important parts of any brand. It is
+   often the first thing people notice and the image they remember long
+   after visiting your business. A well designed logo captures your
+   values, sets you apart from competitors and builds trust with your
+   audience.`,
+  `At our studio we create new logos that reflect your brand’s
+   personality and vision. We take time to understand your business,
+   your goals and your customers before developing designs that are
+   clear, versatile and memorable. Whether you are starting fresh or
+   looking to update an existing design, our process is focused on
+   making sure your logo works across print, digital and social media.`,
+  `We also specialise in re-designing logos to give established brands
+   a modern edge while keeping the essence that people recognise. This
+   helps businesses stay relevant and consistent as they grow and
+   evolve.`,
+];
+
+const showcaseCards: {
+  title: string;
+  image: string;
+}[] = [
+  { title: "sofa & rattan", image: "/branding/branding1.png" },
+  { title: "Isfahan & Kashan", image: "/branding/branding2.png" },
+  { title: "A Class Travel", image: "/branding/branding3.png" },
+  { title: "savile row furniture", image: "/branding/branding4.png" },
+];
 
 export default function CardBranding() {
   return (
@@ -107,26 +135,17 @@ export default function CardBranding() {
               textAlign: "center",
               marginBottom: 10,
             }}
+            component="div" // ✅ so we can render child <p> safely
           >
-            A strong logo is one of the most important parts of any brand. It is
-            often the first thing people notice and the image they remember long
-            after visiting your business. A well designed logo captures your
-            values, sets you apart from competitors and builds trust with your
-            audience.
-            <br />
-            <br />
-            At our studio we create new logos that reflect your brand’s
-            personality and vision. We take time to understand your business,
-            your goals and your customers before developing designs that are
-            clear, versatile and memorable. Whether you are starting fresh or
-            looking to update an existing design, our process is focused on
-            making sure your logo works across print, digital and social media.
-            <br />
-            <br />
-            We also specialise in re-designing logos to give established brands
-            a modern edge while keeping the essence that people recognise. This
-            helps businesses stay relevant and consistent as they grow and
-            evolve.
+            {descriptions.map((desc, i) => (
+              <Box
+                key={i}
+                component="p"
+                sx={{ mb: 3, lineHeight: "40px" }} // ✅ spacing between paras
+              >
+                {desc}
+              </Box>
+            ))}
           </Typography>
 
           <Typography
@@ -138,27 +157,15 @@ export default function CardBranding() {
               display: { xs: "block", md: "none" },
               marginBottom: 10,
             }}
+            component="div"
           >
-            A strong logo is one of the most important parts of any brand. It is
-            often the first thing people notice and the image they remember long
-            after visiting your business. A well designed logo captures your
-            values, sets you apart from competitors and builds trust with your
-            audience.
-            <br />
-            <br />
-            At our studio we create new logos that reflect your brand’s
-            personality and vision. We take time to understand your business,
-            your goals and your customers before developing designs that are
-            clear, versatile and memorable. Whether you are starting fresh or
-            looking to update an existing design, our process is focused on
-            making sure your logo works across print, digital and social media.
-            <br />
-            <br />
-            We also specialise in re-designing logos to give established brands
-            a modern edge while keeping the essence that people recognise. This
-            helps businesses stay relevant and consistent as they grow and
-            evolve.
+            {descriptions.map((desc, i) => (
+              <Box key={i} component="p" sx={{ mb: 3, lineHeight: "26px" }}>
+                {desc}
+              </Box>
+            ))}
           </Typography>
+
           <Grid
             container
             spacing={{ xs: 4, sm: 6, md: 8, xl: 10, xxl: 12 }}
@@ -169,10 +176,9 @@ export default function CardBranding() {
               height: "100%",
             }}
           >
-            <WorkShowcase title="sofa & rattan" image={pngs.branding1} />
-            <WorkShowcase title="Isfahan & Kashan" image={pngs.branding2} />
-            <WorkShowcase title="Izec Prestige" image={pngs.branding3} />
-            <WorkShowcase title="savile row furniture" image={pngs.branding4} />
+            {showcaseCards.map((item, idx) => (
+              <WorkShowcase key={idx} title={item.title} image={item.image} />
+            ))}
           </Grid>
         </Box>
       </Box>
@@ -183,7 +189,7 @@ export default function CardBranding() {
 interface WorkShowcaseProps {
   title?: string;
   year?: string;
-  image?: StaticImageData;
+  image: string;
 }
 
 export function WorkShowcase({ title, image }: WorkShowcaseProps) {
@@ -194,13 +200,6 @@ export function WorkShowcase({ title, image }: WorkShowcaseProps) {
       size={{ xs: 12, sm: 6 }}
       sx={{
         width: "100%",
-        // maxWidth: {
-        //   xs: "100%",
-        //   sm: "400px",
-        //   md: "655px",
-        //   xl: "850px",
-        //   xxl: "1200px",
-        // },
       }}
     >
       <Box
@@ -210,8 +209,6 @@ export function WorkShowcase({ title, image }: WorkShowcaseProps) {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-
-          // bgcolor: "rgba(0, 0, 0, 0.3)",
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
         }}
@@ -242,25 +239,19 @@ export function WorkShowcase({ title, image }: WorkShowcaseProps) {
               xl: "800px",
               xxl: "1200px",
             },
-            // maxHeight: {
-            // xs: "280px",
-            // sm: "330px",
-            // md: "360px",
-            // lg: "455px",
-            // xl: "600px",
-            // xxl: "800px",
-            // },
             height: "100%",
           }}
         >
           <Image
-            src={image as StaticImageData}
+            src={image}
             alt="Branding"
             style={{
               width: "100%",
               height: "100%",
               objectFit: "cover",
             }}
+            width={500} // ✅ required
+            height={600} // ✅ required
           />
         </Box>
       </Box>
