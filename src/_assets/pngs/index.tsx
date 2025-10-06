@@ -15,21 +15,13 @@ import ourMission from "./aboutus/ourMission.webp";
 import clients1 from "./clients/client1.webp";
 import clients2 from "./clients/client2.webp";
 import clients3 from "./clients/client3.webp";
-import branding1 from "./branding/branding1.png";
-import branding2 from "./branding/branding2.png";
-import branding3 from "./branding/branding3.png";
-import branding4 from "./branding/branding4.png";
-import caseStudy1 from "./caseStudy/caseStudy1.png";
-import caseStudy2 from "./caseStudy/caseStudy2.png";
+
 import footerbgImg from "./footerbgImg.png";
 import projectOurWork1 from "./ourwork/projectOurWork1.png";
 import projectOurWork2 from "./ourwork/projectOurWork2.png";
 import projectOurWork3 from "./ourwork/projectOurWork3.png";
 import projectOurWork4 from "./ourwork/projectOurWork4.png";
-// imports of landingpage
-// import howHeplLG from "./howHeplLG.webp";
-// import howHeplLGcolor from "./howHeplLGcolor.webp";
-// import heroHome from "./heroHome.webp";
+
 import sabirlogo from "./landingpage/sabirlogo.webp";
 import bgimgecircle from "./landingpage/bgimgecircle.webp";
 import girls from "./landingpage/girls.webp";
@@ -61,15 +53,10 @@ import brightEcoFuture from "./areahub/brightEcoFuture.png";
 const pngs = {
   image1,
   footerbgImg,
-  caseStudy1,
-  caseStudy2,
+
   ourMission,
   heroHome,
-  branding1,
-  branding2,
   workimage1,
-  branding3,
-  branding4,
   whatweDo,
   howHeplLGcolor,
   workimage2,

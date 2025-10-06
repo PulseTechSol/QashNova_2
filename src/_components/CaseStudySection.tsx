@@ -7,14 +7,14 @@ import {
   sectionPaddingY,
 } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import GenericHeadingBox from "./GenericHeadingBox";
 import pngs from "@/_assets/pngs";
 
 interface CaseStudySectionProps {
   destopPara?: string;
   mobilePara?: string;
-  image?: StaticImageData | string;
+  image: string;
   isbool?: boolean;
   heading1?: string;
   heading2?: string;
@@ -129,7 +129,7 @@ export default function CaseStudySection({
             }}
           >
             <Image
-              src={image as StaticImageData}
+              src={image}
               alt={`Case study — ${sectionLabel}`}
               style={{
                 textAlign: "start",
@@ -137,6 +137,8 @@ export default function CaseStudySection({
                 height: "100%",
                 objectFit: "contain",
               }}
+              width={600}
+              height={600}
             />
           </Box>
 
