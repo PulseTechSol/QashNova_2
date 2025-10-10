@@ -15,7 +15,7 @@ export const POST = async (request: Request) => {
 
     const mailOptions = {
       from: "marsad11223@gmail.com",
-      to: "hashamghaffar01@gmail.com",
+      to: "hello@qashnova.com",
       subject: "Contact Form Submission",
       text: message,
       html: `
