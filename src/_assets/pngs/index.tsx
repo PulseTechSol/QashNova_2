@@ -1,26 +1,11 @@
-import image1 from "./heroHelp/image1.webp";
-import image2 from "./heroHelp/image2.webp";
-import image3 from "./heroHelp/image3.webp";
-import image4 from "./heroHelp/image4.webp";
-import image5 from "./heroHelp/image5.webp";
 import heroHome from "./heroHome.webp";
 import howHeplLG from "./heroHelp/howHeplLG.webp";
 import howHeplLGcolor from "./heroHelp/howHeplLGcolor.webp";
-import workimage1 from "./ourwork/working.webp";
-import workimage2 from "./ourwork/workimage2.webp";
-import workimag4 from "./ourwork/workimag4.webp";
-import workimage3 from "./ourwork/workimage3.webp";
+
 import whatweDo from "./aboutus/whatweDo.webp";
 import ourMission from "./aboutus/ourMission.webp";
-import clients1 from "./clients/client1.webp";
-import clients2 from "./clients/client2.webp";
-import clients3 from "./clients/client3.webp";
 
 import footerbgImg from "./footerbgImg.png";
-import projectOurWork1 from "./ourwork/projectOurWork1.png";
-import projectOurWork2 from "./ourwork/projectOurWork2.png";
-import projectOurWork3 from "./ourwork/projectOurWork3.png";
-import projectOurWork4 from "./ourwork/projectOurWork4.png";
 
 import sabirlogo from "./landingpage/sabirlogo.webp";
 import bgimgecircle from "./landingpage/bgimgecircle.webp";
@@ -55,25 +40,10 @@ const pngs = {
 
   ourMission,
   heroHome,
-  workimage1,
   whatweDo,
   howHeplLGcolor,
-  workimage2,
   howHeplLG,
-  workimag4,
-  workimage3,
-  image1,
-  image2,
-  image3,
-  image4,
-  image5,
-  clients1,
-  clients2,
-  clients3,
-  projectOurWork1,
-  projectOurWork2,
-  projectOurWork3,
-  projectOurWork4,
+
   // landing page exports
   sabirlogo,
   bgimgecircle,
