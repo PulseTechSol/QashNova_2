@@ -1,11 +1,11 @@
 "use client";
 
+import svgs from "@/_assets/svgs";
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 export interface FeatureItemProps {
-  image: StaticImageData;
   title: string;
   subtitle: string;
 }
@@ -96,7 +96,6 @@ export default function SeoSupportSection({ data }: SeoSupportSectionProps) {
               {row.map((item, idx) => (
                 <FeatureItem
                   key={idx}
-                  image={item.image}
                   title={item.title}
                   subtitle={item.subtitle}
                 />
@@ -109,9 +108,14 @@ export default function SeoSupportSection({ data }: SeoSupportSectionProps) {
   );
 }
 
-export function FeatureItem({ image, title, subtitle }: FeatureItemProps) {
+export function FeatureItem({ title, subtitle }: FeatureItemProps) {
   return (
-    <Box sx={{ maxWidth:{xs:"320px",sm: "325px" ,md:"50%" ,lg:"317px" } ,width:"100%",}}>
+    <Box
+      sx={{
+        maxWidth: { xs: "320px", sm: "325px", md: "50%", lg: "317px" },
+        width: "100%",
+      }}
+    >
       <Box
         sx={{
           display: "flex",
@@ -119,7 +123,7 @@ export function FeatureItem({ image, title, subtitle }: FeatureItemProps) {
         }}
       >
         <Box sx={{ marginTop: { xs: "3px", sm: "20px" } }}>
-          <Image style={{ width: "27px" }} src={image} alt={title} />
+          <Image style={{ width: "27px" }} src={svgs.blueTick} alt={title} />
         </Box>
         <Box>
           <Typography

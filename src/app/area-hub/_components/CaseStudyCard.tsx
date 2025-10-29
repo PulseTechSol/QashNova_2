@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Typography } from "@mui/material";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 export interface BulletItem {
   label: string;
@@ -10,7 +10,7 @@ export interface BulletItem {
 
 export interface CaseStudyCardProps {
   title: string;
-  image: StaticImageData;
+  image: string;
   bullets: BulletItem[];
   index: number;
   totalCards: number;
@@ -133,6 +133,8 @@ export default function CaseStudyCard({
           src={image}
           alt={`case-study-${index}`}
           style={{ width: "100%", height: "100%", objectFit: "contain" }}
+          width={500}
+          height={500}
         />
       </Box>
     </Box>

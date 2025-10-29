@@ -1,17 +1,16 @@
 import { localFontSize, sectionPadding } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
 import CaseStudyCard, { BulletItem } from "../_components/CaseStudyCard";
-import { StaticImageData } from "next/image";
 
 type CaseStudy = {
   title: string;
-  image: StaticImageData;
+  image: string;
   bullets: BulletItem[];
 };
 
 type CaseStudiesData = {
   sectionHeading: string;
-  cards: CaseStudy[];
+  projects: CaseStudy[];
 };
 
 type CaseStudiesSectionProps = {
@@ -62,14 +61,14 @@ export default function CaseStudiesSection({ data }: CaseStudiesSectionProps) {
             width: "100%",
           }}
         >
-          {data.cards.map((card, index) => (
+          {data.projects.map((project, index) => (
             <CaseStudyCard
               key={index}
               index={index}
-              totalCards={data.cards.length}
-              title={card.title}
-              image={card.image}
-              bullets={card.bullets}
+              totalCards={data.projects.length}
+              title={project.title}
+              image={project.image}
+              bullets={project.bullets}
             />
           ))}
         </Box>
