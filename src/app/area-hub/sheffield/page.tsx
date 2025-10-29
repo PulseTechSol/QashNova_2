@@ -14,103 +14,116 @@ import svgs from "@/_assets/svgs";
 import pngs from "@/_assets/pngs";
 import Footer from "@/_components/Footer";
 import { Metadata } from "next";
+import { fetchPageData } from "@/lib/strapi";
 
-export const metadata: Metadata = {
-  title: "Website Design in Sheffield",
-  description:
-    "Crafting bespoke websites in Sheffield. We blend stunning aesthetics with powerful functionality. Our designs are tailored to elevate your brand.",
-  alternates: { canonical: "https://www.qashnova.com/area-hub/sheffield" },
+const faqData = [
+  {
+    title: "Do you provide hosting and support?",
+    content:
+      "Yes, we offer managed hosting, security updates and maintenance packages for all Sheffield businesses with local support.",
+  },
+  {
+    title: "Can you help with Sheffield SEO?",
+    content:
+      "Absolutely. We optimize for Sheffield local search and help with Google Business Profile setup and local SEO strategies.",
+  },
+  {
+    title: "Do you meet Sheffield clients in person?",
+    content:
+      "Yes, we can meet Sheffield clients for initial consultations and project discussions when needed. We're local to the area.",
+  },
+];
+const caseStudiesData = {
+  sectionHeading: "Sheffield Project Case Studies",
+  projects: [
+    {
+      title: "Isfahan & Kashan",
+      image: "/areahub/isfhanAndKashan.png",
+      bullets: [
+        {
+          label: "Challenge",
+          text: "Needed a premium online presence to reflect the elegance of authentic Persian rugs.",
+        },
+        {
+          label: "Solution",
+          text: "Designed a refined, image-focused website with smooth navigation and cultural storytelling.",
+        },
+        {
+          label: "Result",
+          text: "Enhanced brand credibility and increased customer engagement online.",
+        },
+      ],
+    },
+    {
+      title: "Bright Eco Future",
+      image: "/areahub/brightEcoFuture.png",
+      bullets: [
+        {
+          label: "Challenge",
+          text: "Complex information about government grants was difficult for homeowners to understand.",
+        },
+        {
+          label: "Solution",
+          text: "Built a clear, user-friendly website with simple content flow and application guidance.",
+        },
+        {
+          label: "Result",
+          text: "Improved lead generation and made the grant process easier for eligible homeowners.",
+        },
+      ],
+    },
+  ],
 };
-function Sheffield() {
-  const faqData = [
-    {
-      title: "Do you provide hosting and support?",
-      content:
-        "Yes, we offer managed hosting, security updates and maintenance packages for all Sheffield businesses with local support.",
-    },
-    {
-      title: "Can you help with Sheffield SEO?",
-      content:
-        "Absolutely. We optimize for Sheffield local search and help with Google Business Profile setup and local SEO strategies.",
-    },
-    {
-      title: "Do you meet Sheffield clients in person?",
-      content:
-        "Yes, we can meet Sheffield clients for initial consultations and project discussions when needed. We're local to the area.",
-    },
-  ];
-  const caseStudiesData = {
-    sectionHeading: "Sheffield Project Case Studies",
-    cards: [
+const seoSupportData: SeoSupportData = {
+  heading: "Regional SEO & Support",
+  description:
+    "We don't just build attractive sites — we make sure they can be found by Sheffield customers",
+  features: [
+    [
       {
-        title: "Isfahan & Kashan",
-        image: pngs.isfhanAndKashan,
-        bullets: [
-          {
-            label: "Challenge",
-            text: "Needed a premium online presence to reflect the elegance of authentic Persian rugs.",
-          },
-          {
-            label: "Solution",
-            text: "Designed a refined, image-focused website with smooth navigation and cultural storytelling.",
-          },
-          {
-            label: "Result",
-            text: "Enhanced brand credibility and increased customer engagement online.",
-          },
-        ],
+        title: "Google Business ",
+        subtitle: "Sheffield listing optimization",
       },
       {
-        title: "Bright Eco Future",
-        image: pngs.brightEcoFuture,
-        bullets: [
-          {
-            label: "Challenge",
-            text: "Complex information about government grants was difficult for homeowners to understand.",
-          },
-          {
-            label: "Solution",
-            text: "Built a clear, user-friendly website with simple content flow and application guidance.",
-          },
-          {
-            label: "Result",
-            text: "Improved lead generation and made the grant process easier for eligible homeowners.",
-          },
-        ],
+        title: "Ongoing Support",
+        subtitle: "Sheffield-focused marketing",
       },
     ],
-  };
-  const seoSupportData: SeoSupportData = {
-    heading: "Regional SEO & Support",
+    [
+      {
+        title: "Sheffield SEO",
+        subtitle: "Local keyword targeting for Sheffield",
+      },
+      {
+        title: "Local Citations",
+        subtitle: "Sheffield directory listings",
+      },
+    ],
+  ],
+};
+
+export async function generateMetadata(): Promise<Metadata> {
+  const data = await fetchPageData("sheffield");
+
+  return {
+    title: data?.metaTitle ?? "Website Design in Sheffield",
     description:
-      "We don't just build attractive sites — we make sure they can be found by Sheffield customers",
-    features: [
-      [
-        {
-          image: svgs.blueTick,
-          title: "Google Business ",
-          subtitle: "Sheffield listing optimization",
-        },
-        {
-          image: svgs.blueTick,
-          title: "Ongoing Support",
-          subtitle: "Sheffield-focused marketing",
-        },
-      ],
-      [
-        {
-          image: svgs.blueTick,
-          title: "Sheffield SEO",
-          subtitle: "Local keyword targeting for Sheffield",
-        },
-        {
-          image: svgs.blueTick,
-          title: "Local Citations",
-          subtitle: "Sheffield directory listings",
-        },
-      ],
-    ],
+      data?.metaDescription ??
+      "Crafting bespoke websites in Sheffield. We blend stunning aesthetics with powerful functionality. Our designs are tailored to elevate your brand.",
+    alternates: {
+      canonical: data?.canonicalUrl ?? "https://www.qashnova.com/sheffield",
+    },
   };
+}
+
+async function Sheffield() {
+  const data = await fetchPageData("sheffield");
+
+  const hero = data?.textualContent?.heroSection;
+  const caseStudies = data?.textualContent?.caseStudiesSection;
+  const seoSupport = data?.textualContent?.seoSupportSection;
+  const whyQashnova = data?.textualContent?.whyQashnovaSection;
+  const faqDataByCMS = data?.textualContent?.faqData;
 
   return (
     <>
@@ -124,8 +137,11 @@ function Sheffield() {
         <HeroCity
           breadcrumbLeft="Areas Hub"
           breadcrumbRight="Sheffield"
-          heading="Website Design for Sheffield business"
-          description="Professional, mobile-friendly websites for Sheffield businesses that convert visitors into customers."
+          heading={hero?.heading ?? "Website Design for Sheffield business"}
+          description={
+            hero?.description ??
+            "Professional, mobile-friendly websites for Sheffield businesses that convert visitors into customers."
+          }
         />
         <OurServicesGenaricSection
           heading="Services in Sheffield"
@@ -139,13 +155,16 @@ function Sheffield() {
           ]}
         />
         <WhyQashnovaSection
-          heading="Why Choose QashNova"
-          description="We're local to Sheffield and understand what works for businesses in the Steel City. Fast response times and practical advice tailored to Sheffield customers."
+          heading={whyQashnova?.heading ?? "Why Choose QashNova"}
+          description={
+            whyQashnova?.description ??
+            "We're local to Sheffield and understand what works for businesses in the Steel City. Fast response times and practical advice tailored to Sheffield customers."
+          }
           image={pngs.whyQashnova}
         />
-        <CaseStudiesSection data={caseStudiesData} />
-        <SeoSupportSection data={seoSupportData} />
-        <FaqAreahub items={faqData} />
+        <CaseStudiesSection data={caseStudies ?? caseStudiesData} />
+        <SeoSupportSection data={seoSupport ?? seoSupportData} />
+        <FaqAreahub items={faqDataByCMS ?? faqData} />
         <Footer />
       </Box>
     </>
