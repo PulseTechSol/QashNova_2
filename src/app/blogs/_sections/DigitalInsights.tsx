@@ -9,60 +9,27 @@ import {
   sectionPaddingY,
 } from "@/app/_utils/themes";
 
-export default function DigitalInsights() {
-  const router = useRouter();
-
-  type CardContent = {
-    backgroundImage?: string;
-    heading: string;
-    description: string;
-    route: string;
+type Blog = {
+  backgroundImage?: string;
+  heading: string;
+  description: string;
+  route: string;
+};
+interface DigitalInsightsProps {
+  heading: {
+    line1: string;
+    line2: string;
   };
+  description: string;
+  blogs?: Blog[];
+}
 
-  const cardContentList: CardContent[] = [
-    {
-      heading: "Mastering SEO in 2025: Your Essential Guide",
-      description:
-        "Learn the latest SEO strategies and techniques to boost your search rankings and attract more organic traffic to your website this year.",
-      backgroundImage: "/blogs/blog1.webp",
-      route: "/mastering-seo-in-2025-your-essential-guide",
-    },
-    {
-      heading: "The Power of Visual Storytelling in Branding",
-      description:
-        "Discover how compelling visuals and narratives can transform your brand identity and deeply resonate with your audience on every platform.",
-      backgroundImage: "/blogs/blog2.webp",
-      route: "/the-power-of-visual-storytelling-in-branding",
-    },
-    {
-      heading: "Social Media Trends You Can't Ignore",
-      description:
-        "Stay ahead with insights into the most impactful social media trends, and learn how to leverage them for stronger engagement and community building.",
-      backgroundImage: "/blogs/blog3.webp",
-      route: "/social-media-trends-you-cant-ignore",
-    },
-    {
-      heading: "Website Redesign Checklist: Avoiding Common Pitfalls",
-      description:
-        "Planning a new website? This guide offers crucial tips and a checklist to ensure a smooth redesign process and a successful online launch.",
-      backgroundImage: "/blogs/blog1.webp",
-      route: "/website-redesign-checklist-avoiding-common-pitfalls",
-    },
-    {
-      heading: "Maximizing ROI in Digital Ads",
-      description:
-        "Learn strategies to fine-tune your digital advertising campaigns for better performance and a stronger return on investment.",
-      backgroundImage: "/blogs/blog1.webp",
-      route: "/maximizing-roi-in-digital-ads",
-    },
-    {
-      heading: "The Future of E-commerce: What's Next?",
-      description:
-        "Explore emerging trends and technologies shaping the online retail landscape, from AI-powered personalization to seamless checkout experiences.",
-      backgroundImage: "/blogs/blog1.webp",
-      route: "/the-future-of-e-commerce-whats-next",
-    },
-  ];
+export default function DigitalInsights({
+  heading,
+  description,
+  blogs = [],
+}: DigitalInsightsProps) {
+  const router = useRouter();
 
   return (
     <Box
@@ -161,7 +128,7 @@ export default function DigitalInsights() {
                 component="span"
                 sx={{ display: "block", textAlign: "start" }}
               >
-                Digital
+                {heading?.line1}
               </Box>
               <Box
                 component="span"
@@ -170,7 +137,7 @@ export default function DigitalInsights() {
                   textAlign: { xs: "center", md: "end" },
                 }}
               >
-                Insights
+                {heading?.line2}
               </Box>
             </Typography>
           </Box>
@@ -187,9 +154,7 @@ export default function DigitalInsights() {
               m: 0,
             }}
           >
-            Dive into our latest articles, expert analysis, and actionable tips.
-            Stay informed on the evolving digital landscape and discover
-            strategies to propel your business forward.
+            {description}
           </Typography>
         </Box>
 
@@ -208,7 +173,7 @@ export default function DigitalInsights() {
             zIndex: 1,
           }}
         >
-          {cardContentList.map((item, index) => (
+          {blogs.map((item, index) => (
             <DigitalInsightCard
               key={index}
               heading={item.heading}
