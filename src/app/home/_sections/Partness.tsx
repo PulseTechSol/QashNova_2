@@ -3,13 +3,7 @@ import Marquee from "react-fast-marquee";
 import { Box, Typography } from "@mui/material";
 import { localFontSize } from "@/app/_utils/themes";
 
-export default function LogoMarquee() {
-  const slogans = [
-    "Your Online Companion",
-    "Drive Digital Results",
-    "Power Your Brand",
-  ];
-
+export default function LogoMarquee({ slogans }: { slogans: string[] }) {
   return (
     <Box
       component="section"

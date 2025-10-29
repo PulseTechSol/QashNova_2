@@ -51,7 +51,6 @@ import savileRowFurnitures from "./areahub/savileRowFurnitures.png";
 import isfhanAndKashan from "./areahub/isfhanAndKashan.png";
 import brightEcoFuture from "./areahub/brightEcoFuture.png";
 const pngs = {
-  image1,
   footerbgImg,
 
   ourMission,
@@ -62,8 +61,9 @@ const pngs = {
   workimage2,
   howHeplLG,
   workimag4,
-  image2,
   workimage3,
+  image1,
+  image2,
   image3,
   image4,
   image5,

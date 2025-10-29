@@ -1,5 +1,4 @@
 "use client";
-import pngs from "@/_assets/pngs";
 import svgs from "@/_assets/svgs";
 import ButtonComponent from "@/_components/ButtonComponent";
 import {
@@ -13,7 +12,25 @@ import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { WorkShowcCase } from "../_components/WorkShowcCase";
 
-export default function OurWork() {
+interface OurWorkProps {
+  heading?: {
+    line1: string;
+    line2: string;
+  };
+  description?: string;
+  projects?: {
+    title: string;
+    overlayText: string;
+    year: string;
+    image: string;
+  }[];
+}
+
+export default function OurWork({
+  heading,
+  description,
+  projects = [],
+}: OurWorkProps) {
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -106,7 +123,7 @@ export default function OurWork() {
                 lineHeight: { xs: "50px", md: "110px", xl: "150px" },
               }}
             >
-              our
+              {heading?.line1}
             </Typography>
             <Typography
               component="span"
@@ -119,7 +136,7 @@ export default function OurWork() {
                 lineHeight: { xs: "50px", md: "120px", xl: "150px" },
               }}
             >
-              work
+              {heading?.line2}
             </Typography>
           </Box>
 
@@ -147,10 +164,7 @@ export default function OurWork() {
               m: 0,
             }}
           >
-            See the passion and precision in every project. Our featured work
-            highlights the collaborative journey with our clients, demonstrating
-            how we transform visions into impactful digital experiences and
-            stunning creative solutions.
+            {description}
           </Typography>
         </Box>
 
@@ -164,59 +178,33 @@ export default function OurWork() {
             gap: { xs: "20px", xl: "40px" },
           }}
         >
-          <Box
-            width="100%"
-            sx={{
-              display: "flex",
-              gap: { xs: "20px", xl: "40px" },
-              justifyContent: "space-between",
-              flexWrap: { xs: "wrap", md: "nowrap" },
-            }}
-          >
-            <Box role="listitem" sx={{ width: "100%" }}>
-              <WorkShowcCase
-                title="Isfahan & Kashan"
-                overlayText="We enhanced their digital presence with expert web design, development, social media, and SEO."
-                year="2025"
-                image={pngs.projectOurWork1}
-              />
-            </Box>
-            <Box role="listitem" sx={{ width: "100%" }}>
-              <WorkShowcCase
-                title="Izec Prestige"
-                overlayText="We developed a sophisticated branding strategy that captures their essence of luxury, professionalism, and reliability."
-                year="2025"
-                image={pngs.projectOurWork2}
-              />
-            </Box>
-          </Box>
-
-          <Box
-            width="100%"
-            sx={{
-              display: "flex",
-              gap: { xs: "20px", xl: "40px" },
-              justifyContent: "space-between",
-              flexWrap: { xs: "wrap", md: "nowrap" },
-            }}
-          >
-            <Box role="listitem" sx={{ width: "100%" }}>
-              <WorkShowcCase
-                title="Conquest Law"
-                overlayText="For Conquest Law Solicitors, a leading legal firm, we designed and developed a professional and authoritative website."
-                year="2025"
-                image={pngs.projectOurWork3}
-              />
-            </Box>
-            <Box role="listitem" sx={{ width: "100%" }}>
-              <WorkShowcCase
-                title="Saif’s Boxing"
-                overlayText="We designed and developed a complete website for Saif’s Boxing & Fitness, a premier training facility dedicated to boxing and personal fitness."
-                year="2025"
-                image={pngs.projectOurWork4}
-              />
-            </Box>
-          </Box>
+          {Array.from({ length: Math.ceil(projects.length / 2) }).map(
+            (_, rowIndex) => {
+              const rowItems = projects.slice(rowIndex * 2, rowIndex * 2 + 2);
+              return (
+                <Box
+                  key={rowIndex}
+                  width="100%"
+                  sx={{
+                    display: "flex",
+                    gap: { xs: "20px", xl: "40px" },
+                    justifyContent: "space-between",
+                    flexWrap: { xs: "wrap", md: "nowrap" },
+                  }}
+                >
+                  {rowItems.map((proj, i) => (
+                    <Box
+                      role="listitem"
+                      key={proj.title + i}
+                      sx={{ width: "100%" }}
+                    >
+                      <WorkShowcCase {...proj} />
+                    </Box>
+                  ))}
+                </Box>
+              );
+            }
+          )}
 
           <ButtonComponent
             onClick={() => router.push("/websites")}

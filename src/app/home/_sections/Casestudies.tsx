@@ -14,24 +14,25 @@ import { useRouter } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Casestudies() {
+interface CasestudiesProps {
+  heading?: {
+    line1: string;
+    line2: string;
+  };
+  description?: string;
+  caseStudies?: {
+    title: string;
+    description: string;
+    image: string;
+    imgMob: string;
+  }[];
+}
+export default function Casestudies({
+  heading,
+  description,
+  caseStudies = [],
+}: CasestudiesProps) {
   const router = useRouter();
-  const websiteServices = [
-    {
-      title: "sabir’s grill",
-      description:
-        "We brought the essence of Sabir’s Grill to life online by blending cultural richness with a sleek, modern interface. Our focus was on creating a seamless browsing experience that highlights their diverse food offerings and rich heritage.",
-      image: "/bgCase2.png",
-      imgMob: "/bgMoblCase2.png",
-    },
-    {
-      title: "Homeflair",
-      description:
-        "We designed and developed a responsive e-commerce website for Homeflair, focused on enhancing user experience and showcasing their products. Additionally, we managed targeted social media marketing campaigns to boost traffic and conversions.",
-      image: "/bgCase3.png",
-      imgMob: "/bgMoblCase3.png",
-    },
-  ];
 
   return (
     <Box
@@ -90,7 +91,7 @@ export default function Casestudies() {
                 lineHeight: { xs: "50px", md: "120px", xl: "150px" },
               }}
             >
-              Case
+              {heading?.line1}
             </Typography>
             <Typography
               component="span"
@@ -104,7 +105,7 @@ export default function Casestudies() {
                 lineHeight: { xs: "50px", md: "120px", xl: "150px" },
               }}
             >
-              studies
+              {heading?.line2}
             </Typography>
           </Box>
 
@@ -132,9 +133,7 @@ export default function Casestudies() {
               m: 0,
             }}
           >
-            Explore the pinnacle of creativity with our standout projects that
-            blend strategy, design, and innovation. Each campaign is a testament
-            to our passion for delivering results that captivate and convert.
+            {description}
           </Typography>
         </Box>
 
@@ -150,7 +149,7 @@ export default function Casestudies() {
             gap: { xs: "20px", md: "40px", xl: "60px" },
           }}
         >
-          {websiteServices.map((items, index) => (
+          {caseStudies.map((items, index) => (
             <Box
               role="listitem"
               key={index}

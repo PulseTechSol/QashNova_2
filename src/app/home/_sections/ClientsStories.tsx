@@ -7,36 +7,24 @@ import {
   sectionPaddingX,
 } from "@/app/_utils/themes";
 import { Box, Typography } from "@mui/material";
-import Image, { StaticImageData } from "next/image";
-import pngs from "@/_assets/pngs";
+import Image from "next/image";
 import svgs from "@/_assets/svgs";
 import gsap from "gsap";
 
-const cardData = [
-  {
-    image: pngs.clients1,
-    name: "Sarah Johnson",
-    description:
-      "From the initial consultation to the ongoing social media management, Qashnova has been an absolute pleasure to work with. Their creative branding insights helped us define our voice",
-    bgColor: "#3C65FF",
-  },
-  {
-    image: pngs.clients2,
-    name: "Sarah Chen",
-    description:
-      "Partnering with Qashnova completely transformed our online presence. Their strategic approach to both web development and digital marketing delivered a stunning, high-performing website.",
-    bgColor: "#5841D4",
-  },
-  {
-    image: pngs.clients3,
-    name: "David Miller",
-    description:
-      "Qashnova's expertise in SEO & SEM optimisation is truly unparalleled. Before them, we struggled to rank for key terms, but their diligent work and data-driven campaigns have put us front and center in search results.",
-    bgColor: "#2617B1",
-  },
-];
+interface ClientStory {
+  heading: {
+    line1: string;
+    line2: string;
+  };
+  reviews?: {
+    image: string;
+    name: string;
+    description: string;
+    bgColor: string;
+  }[];
+}
 
-export default function ClientsStories() {
+export default function ClientsStories({ heading, reviews = [] }: ClientStory) {
   const [hoverNext, setHoverNext] = useState(false);
   const [hoverPrevoius, setHoverPrevoius] = useState(false); // keeping your var name to avoid any ripple
   const itemsRef = useRef<HTMLDivElement[]>([]);
@@ -160,7 +148,7 @@ export default function ClientsStories() {
               textAlign: { xs: "start" },
             }}
           >
-            clients’
+            {heading?.line1}
           </Typography>
           <Typography
             component="span"
@@ -173,7 +161,7 @@ export default function ClientsStories() {
               textAlign: { xs: "center" },
             }}
           >
-            stories
+            {heading?.line2}
           </Typography>
         </Box>
 
@@ -187,7 +175,7 @@ export default function ClientsStories() {
             margin: "auto",
           }}
         >
-          {cardData.map((card, index) => (
+          {reviews.map((card, index) => (
             <Box
               data-aos="fade-left"
               data-aos-duration="500"
@@ -327,7 +315,7 @@ export default function ClientsStories() {
 }
 
 type ClientCardProps = {
-  image: StaticImageData;
+  image: string;
   description: string;
   name: string;
   bgColor: string;
@@ -362,6 +350,8 @@ export function ClientCard({
         src={image}
         alt={`${name} — client`}
         style={{ width: "80px", height: "80px", objectFit: "contain" }}
+        width={80}
+        height={80}
       />
       <Typography
         paragraph

@@ -1,7 +1,6 @@
 "use client";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import pngs from "@/_assets/pngs";
 import ButtonComponent from "@/_components/ButtonComponent";
 import {
   localFontSize,
@@ -15,73 +14,26 @@ import { useEffect, useRef } from "react";
 import GenericHeadingBox from "@/_components/GenericHeadingBox";
 gsap.registerPlugin(ScrollTrigger);
 
-export default function HowHelp() {
-  const containerRef = useRef<HTMLDivElement>(null);
+interface HowHelpProps {
+  heading?: {
+    line1: string;
+    line2: string;
+  };
+  description?: string;
+  services?: {
+    title: string;
+    description: string;
+    buttons: string[];
+    image: string;
+  }[];
+}
 
-  const websiteServices = [
-    {
-      title: "Website Development",
-      description:
-        "We craft high-performing, bespoke websites engineered to convert visitors into customers.",
-      buttons: [
-        "Custom Websites",
-        "Responsive Design",
-        "E-commerce",
-        "E-commerce",
-      ],
-      image: pngs.image1,
-    },
-    {
-      title: "Creative Web Designing",
-      description:
-        "We go beyond pretty pixels, crafting visually stunning and strategically designed websites that capture attention and convert.",
-      buttons: [
-        "Web Experiences",
-        "Engaging Design",
-        "Digital Artistry",
-        "Digital Artistry",
-        "User-Centric Aesthetics",
-      ],
-      image: pngs.image2,
-    },
-    {
-      title: "SEO & SEM optimisation",
-      description:
-        "We implement sophisticated SEO techniques and precision-targeted SEM campaigns to ensure your brand is seen by the right audience at the right time",
-      buttons: [
-        "Growth Strategy",
-        "Paid Search Performance",
-        "Ranking Mastery",
-        "Traffic & Conversions",
-      ],
-      image: pngs.image3,
-    },
-    {
-      title: "Social Media Management",
-      description:
-        "From compelling content creation to community nurturing and performance analytics, our comprehensive social media management ensures your brand thrives.",
-      buttons: [
-        "Community Growth",
-        "Platform Performance optimisation",
-        "Content Curation",
-        "Audience Connection",
-      ],
-      image: pngs.image4,
-    },
-    {
-      title: "Creative Branding",
-      description:
-        "Forge an unforgettable identity that resonates. We craft distinctive, strategic branding solutions that go beyond logos, building a powerful narrative and visual language.",
-      buttons: [
-        "Brand Identity",
-        "Storytelling",
-        "Market Differentiation",
-        "Visual Language Design",
-        "Strategic Brand Positioning",
-      ],
-      image: pngs.image5,
-    },
-  ];
+export default function HowHelp({
+  heading,
+  description,
+  services = [],
+}: HowHelpProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -148,7 +100,10 @@ export default function HowHelp() {
             gap: { xs: "30px", sm: "40px", xl: "60px", xxl: "80px" },
           }}
         >
-          <GenericHeadingBox heading1="How" heading2="we Help" />
+          <GenericHeadingBox
+            heading1={heading?.line1}
+            heading2={heading?.line2}
+          />
           <Box
             aria-hidden
             sx={{
@@ -172,16 +127,14 @@ export default function HowHelp() {
               m: 0,
             }}
           >
-            Discover our full range of digital marketing services. From strategy
-            to execution, we&apos;re here to deliver effective solutions that
-            help your brand succeed in today&apos;s competitive landscape.
+            {description}
           </Typography>
         </Box>
 
         {/* Cards */}
-        {websiteServices.map((service, index) => {
+        {services.map((service, index) => {
           const isFirst = index === 0;
-          const isLast = index === websiteServices.length - 1;
+          const isLast = index === services.length - 1;
           return (
             <Box
               key={index}
@@ -305,6 +258,8 @@ export default function HowHelp() {
                     height: "100%",
                     objectFit: "contain",
                   }}
+                  width={500}
+                  height={500}
                 />
               </Box>
             </Box>

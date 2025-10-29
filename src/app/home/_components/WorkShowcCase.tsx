@@ -1,11 +1,11 @@
 "use client";
 import { Box, Typography, SxProps, Theme } from "@mui/material";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 interface WorkShowcCaseProps {
   title?: string;
   year?: string;
-  image?: StaticImageData;
+  image?: string;
   sx?: SxProps<Theme>;
   isboolean?: boolean;
   overlayText?: string;
@@ -85,13 +85,15 @@ export function WorkShowcCase({
         }}
       >
         <Image
-          src={image as StaticImageData}
+          src={image as string}
           alt="workimage"
           style={{
             width: "100%",
             height: "100%",
             objectFit: isboolean ? "contain" : "contain",
           }}
+          width={500}
+          height={500}
         />
         <Box
           className="curtain"
