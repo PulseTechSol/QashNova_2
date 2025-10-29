@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import HeroSection from "@/_components/HeroSection";
 import DigitalInsights from "./_sections/DigitalInsights";
+import { fetchPageData } from "@/lib/strapi";
 
 const blogs = [
   {
@@ -47,35 +48,52 @@ const blogs = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: "Qashnova Blog | Tips on Websites, Branding & Business Growth",
-  description:
-    "Read expert insights from Qashnova on websites, branding, SEO, and digital strategies to grow your business online.",
-  alternates: { canonical: "https://www.qashnova.com/blogs" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const data = await fetchPageData("blog");
 
-export default function Blogs() {
+  return {
+    title:
+      data?.metaTitle ??
+      "Qashnova Blog | Tips on Websites, Branding & Business Growth",
+    description:
+      data?.metaDescription ??
+      "Read expert insights from Qashnova on websites, branding, SEO, and digital strategies to grow your business online.",
+    alternates: {
+      canonical: data?.canonicalUrl ?? "https://www.qashnova.com/blogs",
+    },
+  };
+}
+
+export default async function Blogs() {
+  const data = await fetchPageData("blog");
+
+  const hero = data?.textualContent?.heroSection;
+  const digitalInsights = data?.textualContent?.digitalInsightsSection;
+
   return (
     <>
       <header>
         <HeroSection
-          line1="Navigate"
-          line2Desktop="the Future"
-          line3Desktop="of Digital"
-          line1Mobile="Navigate"
-          line2Mobile="the Future"
-          line3Mobile="of Digital"
+          line1={hero?.desktop?.line1}
+          line1Mobile={hero?.mobile?.line1}
+          line2Desktop={hero?.desktop?.line2}
+          line2Mobile={hero?.mobile?.line2}
+          line3Desktop={hero?.desktop?.line3}
+          line3Mobile={hero?.mobile?.line3}
           isbool={true}
         />
       </header>
 
       <main role="main">
         <DigitalInsights
-          heading={{
-            line1: "Digital",
-            line2: "Insights",
-          }}
+          heading={
+            digitalInsights?.heading ?? {
+              line1: "Digital",
+              line2: "Insights",
+            }
+          }
           description={
+            digitalInsights?.description ??
             "Dive into our latest articles, expert analysis, and actionable tips. Stay informed on the evolving digital landscape and discover strategies to propel your business forward."
           }
           blogs={blogs}
