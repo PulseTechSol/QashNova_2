@@ -6,7 +6,13 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export default function AreaHero() {
+export default function AreaHero({
+  heading,
+  subheading,
+}: {
+  heading?: string;
+  subheading?: string;
+}) {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -48,7 +54,7 @@ export default function AreaHero() {
             textTransform: "uppercase",
           }}
         >
-          Professional Website Design for Rotherham, South Yorkshire & Sheffield
+          {heading}
         </Typography>
         <Typography
           sx={{
@@ -60,9 +66,7 @@ export default function AreaHero() {
             maxWidth: { md: "800px", lg: "864px" },
           }}
         >
-          Crafting bespoke websites in Rotherham, South Yorkshire, and
-          Sheffield, we blend stunning aesthetics with powerful functionality.
-          Our designs are tailored to elevate your brand.
+          {subheading}
         </Typography>
         {/* </Box> */}
       </Box>

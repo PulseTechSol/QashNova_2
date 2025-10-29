@@ -7,31 +7,22 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-export default function OurHubareasCards() {
+interface OurHubareasCardsProps {
+  heading?: string;
+  description?: string;
+  locations?: Array<{
+    title: string;
+    description: string;
+    route: string;
+  }>;
+}
+export default function OurHubareasCards({
+  heading,
+  description,
+  locations = [],
+}: OurHubareasCardsProps) {
   const router = useRouter();
-  const websiteServices = [
-    {
-      title: "Rotherham",
-      image: svgs.locationhub,
-      description:
-        "We're local and work with South Yorkshire businesses daily. That means fast response times and practical advice tailored to Rotherham customers.",
-      onClick: () => router.push("/area-hub/rotherham"),
-    },
-    {
-      title: "South Yorkshire",
-      image: svgs.locationhub,
-      description:
-        "Our websites are built to be fast, secure and easy to manage, so you can focus on running your business while we bring you more customers.  ",
-      onClick: () => router.push("/area-hub/south-yorkshire"),
-    },
-    {
-      title: "sheffield",
-      image: svgs.locationhub,
-      description:
-        "Designing bespoke websites that capture the unique spirit of Sheffield, ensuring a seamless and engaging user experience that drive real business growth.",
-      onClick: () => router.push("/area-hub/sheffield"),
-    },
-  ];
+
   return (
     <Box sx={{ position: "relative", bgcolor: "#000000", overflow: "hidden" }}>
       <Box
@@ -90,7 +81,7 @@ export default function OurHubareasCards() {
             textTransform: "capitalize",
           }}
         >
-          our hub areas
+          {heading}
         </Typography>
 
         <Typography
@@ -106,16 +97,7 @@ export default function OurHubareasCards() {
             marginBottom: 5,
           }}
         >
-          At Qashnova, we have been working with clients across the UK,
-          providing tailored digital solutions that help businesses grow and
-          succeed. Our projects cover a wide range of services including web
-          design, development, branding and digital marketing. We take time to
-          understand the challenges faced in different industries and create
-          strategies that deliver lasting results. From small start-ups to
-          established companies, our focus is always on building strong
-          partnerships and providing measurable value. By combining creativity
-          with technical expertise, we continue to support businesses nationwide
-          and expand our presence across a variety of sectors.
+          {description}
         </Typography>
 
         <Typography
@@ -128,16 +110,7 @@ export default function OurHubareasCards() {
             marginBottom: 5,
           }}
         >
-          At Qashnova, we have been working with clients across the UK,
-          providing tailored digital solutions that help businesses grow and
-          succeed. Our projects cover a wide range of services including web
-          design, development, branding and digital marketing. We take time to
-          understand the challenges faced in different industries and create
-          strategies that deliver lasting results. From small start-ups to
-          established companies, our focus is always on building strong
-          partnerships and providing measurable value. By combining creativity
-          with technical expertise, we continue to support businesses nationwide
-          and expand our presence across a variety of sectors.
+          {description}
         </Typography>
 
         <Box
@@ -154,14 +127,13 @@ export default function OurHubareasCards() {
             gap: { xs: "20px", md: "30px" },
           }}
         >
-          {websiteServices.map((items, index) => (
+          {locations.map((items, index) => (
             <WhatIncludedCard
               key={index}
-              image={items.image}
               title={items.title}
               description={items.description}
               index={index}
-              onClick={items.onClick}
+              onClick={() => router.push(items.route)}
             />
           ))}
         </Box>
@@ -170,7 +142,6 @@ export default function OurHubareasCards() {
   );
 }
 type WhatIncludedCardProps = {
-  image: string;
   title: string;
   description: string;
   index: number;
@@ -178,7 +149,6 @@ type WhatIncludedCardProps = {
 };
 
 export function WhatIncludedCard({
-  image,
   title,
   description,
   index,
@@ -227,7 +197,7 @@ export function WhatIncludedCard({
             }}
           >
             <Image
-              src={image}
+              src={svgs.locationhub}
               alt={title}
               style={{
                 width: "100%",

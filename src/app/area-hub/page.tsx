@@ -3,19 +3,71 @@ import AreaHero from "./_sections/AreaHero";
 import OurHubareasCards from "./_sections/OurHubareasCards";
 import { Box } from "@mui/material";
 import { Metadata } from "next";
+import { fetchPageData } from "@/lib/strapi";
 
-export const metadata: Metadata = {
-  title: "Area Hub - Qashnova",
-  description:
-    "Discover our Area Hub for professional website design services in Rotherham, South Yorkshire & Sheffield. Elevate your online presence with Qashnova.",
-  alternates: { canonical: "https://www.qashnova.com/area-hub" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const data = await fetchPageData("area-hub");
 
-function page() {
+  return {
+    title: data?.metaTitle ?? "Area Hub - Qashnova",
+    description:
+      data?.metaDescription ??
+      "Discover our Area Hub for professional website design services in Rotherham, South Yorkshire & Sheffield. Elevate your online presence with Qashnova.",
+    alternates: {
+      canonical: data?.canonicalUrl ?? "https://www.qashnova.com/area-hub",
+    },
+  };
+}
+
+const locations = [
+  {
+    title: "Rotherham",
+    description:
+      "We're local and work with South Yorkshire businesses daily. That means fast response times and practical advice tailored to Rotherham customers.",
+    route: "/area-hub/rotherham",
+  },
+  {
+    title: "South Yorkshire",
+    description:
+      "Our websites are built to be fast, secure and easy to manage, so you can focus on running your business while we bring you more customers.  ",
+    route: "/area-hub/south-yorkshire",
+  },
+  {
+    title: "sheffield",
+    description:
+      "Designing bespoke websites that capture the unique spirit of Sheffield, ensuring a seamless and engaging user experience that drive real business growth.",
+    route: "/area-hub/sheffield",
+  },
+];
+
+async function page() {
+  const data = await fetchPageData("area-hub");
+
+  const hero = data?.textualContent?.heroSection;
+  const ourHubAreas = data?.textualContent?.ourHubAreasSection;
+
   return (
     <Box sx={{ position: "relative", overflow: "hidden" }}>
-      <AreaHero />
-      <OurHubareasCards />
+      <AreaHero
+        heading={
+          hero?.heading ??
+          "Professional Website Design for Rotherham, South Yorkshire & Sheffield"
+        }
+        subheading={
+          hero?.description ??
+          `Crafting bespoke websites in Rotherham, South Yorkshire, and
+          Sheffield, we blend stunning aesthetics with powerful functionality.
+          Our designs are tailored to elevate your brand.`
+        }
+      />
+      <OurHubareasCards
+        heading={ourHubAreas?.heading ?? "our hub areas"}
+        description={
+          ourHubAreas?.description ??
+          " At Qashnova, we have been working with clients across the UK, providing tailored digital solutions that help businesses grow and succeed. Our projects cover a wide range of services including web design, development, branding and digital marketing. We take time to understand the challenges faced in different industries and create strategies that deliver lasting results. From small start-ups to established companies, our focus is always on building strong partnerships and providing measurable value. By combining creativity with technical expertise, we continue to support businesses nationwide and expand our presence across a variety of sectors."
+        }
+        locations={ourHubAreas?.locations ?? locations}
+      />
 
       <Box
         sx={{
