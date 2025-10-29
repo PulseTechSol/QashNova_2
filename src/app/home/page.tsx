@@ -7,6 +7,8 @@ import ContactUs from "@/_components/ContactUs";
 import SectionWithHeadingAndCTA from "../../_components/SectionWithHeadingAndCTA";
 import ClientsStories from "./_sections/ClientsStories";
 import DigitalInsights from "./_sections/DigitalInsights";
+import { fetchPageData } from "@/lib/strapi";
+import { Metadata } from "next";
 
 const projects = [
   {
@@ -128,7 +130,7 @@ const reviews = [
   },
 ];
 
-const caseStudies = [
+const caseStudiesL = [
   {
     title: "sabir’s grill",
     description:
@@ -172,70 +174,72 @@ const articals = [
   },
 ];
 
-export default function HomePage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const data = await fetchPageData("homepage");
+
+  return {
+    title:
+      data?.metaTitle ?? "Qashnova | Creative Digital Solutions for Brands",
+    description:
+      data?.metaDescription ??
+      "Qashnova builds custom websites, branding, and digital strategies to help businesses grow and stand out online. Tailored solutions for your success.",
+    alternates: {
+      canonical: data?.canonicalUrl ?? "https://www.qashnova.com/",
+    },
+  };
+}
+
+export default async function HomePage() {
+  const data = await fetchPageData("homepage");
+
+  const hero = data?.textualContent?.heroSection;
+  const ourWork = data?.textualContent?.OurWorkSection;
+  const howWeHelp = data?.textualContent?.howWeHelpsection;
+  const clientStories = data?.textualContent?.clientsStoriesSection;
+  const digitalInsights = data?.textualContent?.digitalInsightsSection;
+  const sectionWithCta = data?.textualContent?.sectionWithHeadingAndCTA;
+  const slogans = data?.textualContent?.slogansSection;
+  const caseStudies = data?.textualContent?.caseStudiesSection;
+
   return (
     <>
       <header>
         <HeroHome
-          firstWord={"Design."}
-          secondWord={"Market."}
-          thirdWord={"Grow."}
+          firstWord={hero?.firstWord}
+          secondWord={hero?.secondWord}
+          thirdWord={hero?.thirdWord}
         />
       </header>
 
       <main role="main">
-        <Partness
-          slogans={[
-            "Your Online Companion",
-            "Drive Digital Results",
-            "Power Your Brand",
-          ]}
-        />
+        <Partness slogans={slogans} />
         <HowHelp
-          heading={{
-            line1: "How We ",
-            line2: "help",
-          }}
-          description="Discover our full range of digital marketing services. From strategy
-            to execution, we're here to deliver effective solutions that
-            help your brand succeed in today's competitive landscape."
-          services={services}
+          heading={howWeHelp?.heading}
+          description={howWeHelp?.description}
+          services={howWeHelp?.services || services}
         />
         <SectionWithHeadingAndCTA
-          heading="Crafting Websites for Your "
-          lastword="Success"
+          heading={sectionWithCta?.heading}
+          lastword={sectionWithCta?.lastword}
         />
         <OurWork
-          heading={{
-            line1: "Our",
-            line2: "work",
-          }}
-          description="See the passion and precision in every project. Our featured work
-            highlights the collaborative journey with our clients, demonstrating
-            how we transform visions into impactful digital experiences and
-            stunning creative solutions."
-          projects={projects}
+          heading={ourWork?.heading}
+          description={ourWork?.description}
+          projects={ourWork?.projects || projects}
         />
         <ClientsStories
-          heading={{
-            line1: "clients’",
-            line2: "stories",
-          }}
-          reviews={reviews}
+          heading={clientStories?.heading}
+          reviews={clientStories?.reviews || reviews}
         />
         <Casestudies
-          heading={{ line1: "Case", line2: "Studies" }}
-          description=" Explore the pinnacle of creativity with our standout projects that
-            blend strategy, design, and innovation. Each campaign is a testament
-            to our passion for delivering results that captivate and convert."
-          caseStudies={caseStudies}
+          heading={caseStudies?.heading}
+          description={caseStudies?.description}
+          caseStudies={caseStudies?.caseStudies || caseStudiesL}
         />
         <DigitalInsights
-          heading={{ line1: "digital", line2: "insights" }}
-          description="Dive into our latest articles, expert analysis, and actionable tips.
-            Stay informed on the evolving digital landscape and discover
-            strategies to propel your business forward."
-          articles={articals}
+          heading={digitalInsights?.heading}
+          description={digitalInsights?.description}
+          articles={digitalInsights?.articles || articals}
         />
         <ContactUs />
       </main>
