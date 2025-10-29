@@ -20,7 +20,7 @@ export default function HowHelp() {
         "E-commerce",
         "E-commerce",
       ],
-      image: pngs.image1,
+      image: "/heroHelp/image1.webp",
     },
     {
       title: "Creative Web Designing",
@@ -33,7 +33,7 @@ export default function HowHelp() {
         "Digital Artistry",
         "User-Centric Aesthetics",
       ],
-      image: pngs.image2,
+      image: "/heroHelp/image2.webp",
     },
     {
       title: "SEO & SEM optimisation",
@@ -46,7 +46,7 @@ export default function HowHelp() {
         "Ranking Mastery",
         "Traffic & Conversions",
       ],
-      image: pngs.image3,
+      image: "/heroHelp/image3.webp",
     },
     {
       title: "Social Media Management",
@@ -58,7 +58,7 @@ export default function HowHelp() {
         "Content Curation",
         "Audience Connection",
       ],
-      image: pngs.image4,
+      image: "/heroHelp/image4.webp",
     },
     {
       title: "Creative Branding",
@@ -71,7 +71,7 @@ export default function HowHelp() {
         "Visual Language Design",
         "Strategic Brand Positioning",
       ],
-      image: pngs.image5,
+      image: "/heroHelp/image5.webp",
     },
   ];
 
