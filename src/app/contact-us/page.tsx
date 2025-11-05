@@ -4,6 +4,9 @@ import HeroSection from "@/_components/HeroSection";
 import ContactUs from "@/_components/ContactUs";
 import { fetchPageData } from "@/lib/strapi";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 // 🔹 Dynamic metadata from Strapi
 export async function generateMetadata(): Promise<Metadata> {
   const data = await fetchPageData("contact-us");

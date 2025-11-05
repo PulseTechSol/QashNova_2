@@ -3,6 +3,9 @@ import CardBranding from "./_sections/CardBranding";
 import { Metadata } from "next";
 import { fetchPageData } from "@/lib/strapi";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 // 🔹 Dynamic metadata from Strapi
 export async function generateMetadata(): Promise<Metadata> {
   const data = await fetchPageData("branding");

@@ -4,6 +4,9 @@ import WebsiteSection from "@/_components/WebsiteSection";
 import { fetchPageData } from "@/lib/strapi";
 import { WebsiteItem } from "@/types/website";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 // 🔹 Dynamic metadata from Strapi
 export async function generateMetadata(): Promise<Metadata> {
   const data = await fetchPageData("website");

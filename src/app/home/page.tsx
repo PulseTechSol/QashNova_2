@@ -10,6 +10,9 @@ import DigitalInsights from "./_sections/DigitalInsights";
 import { fetchPageData } from "@/lib/strapi";
 import { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const projects = [
   {
     title: "Isfahan & Kashan",

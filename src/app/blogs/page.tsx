@@ -3,6 +3,9 @@ import HeroSection from "@/_components/HeroSection";
 import DigitalInsights from "./_sections/DigitalInsights";
 import { fetchPageData } from "@/lib/strapi";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const blogs = [
   {
     heading: "Mastering SEO in 2025: Your Essential Guide",

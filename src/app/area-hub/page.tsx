@@ -5,6 +5,9 @@ import { Box } from "@mui/material";
 import { Metadata } from "next";
 import { fetchPageData } from "@/lib/strapi";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export async function generateMetadata(): Promise<Metadata> {
   const data = await fetchPageData("area-hub");
 

@@ -16,6 +16,9 @@ import Footer from "@/_components/Footer";
 import { Metadata } from "next";
 import { fetchPageData } from "@/lib/strapi";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const faqData = [
   {
     title: "Do you work across all of South Yorkshire?",
