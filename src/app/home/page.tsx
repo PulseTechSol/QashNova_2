@@ -8,7 +8,6 @@ import SectionWithHeadingAndCTA from "../../_components/SectionWithHeadingAndCTA
 import ClientsStories from "./_sections/ClientsStories";
 import DigitalInsights from "./_sections/DigitalInsights";
 import { fetchPageData } from "@/lib/strapi";
-import { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -176,21 +175,6 @@ const articals = [
     route: "/website-redesign-checklist-avoiding-common-pitfalls",
   },
 ];
-
-export async function generateMetadata(): Promise<Metadata> {
-  const data = await fetchPageData("homepage");
-
-  return {
-    title:
-      data?.metaTitle ?? "Qashnova | Creative Digital Solutions for Brands",
-    description:
-      data?.metaDescription ??
-      "Qashnova builds custom websites, branding, and digital strategies to help businesses grow and stand out online. Tailored solutions for your success.",
-    alternates: {
-      canonical: data?.canonicalUrl ?? "https://www.qashnova.com/",
-    },
-  };
-}
 
 export default async function HomePage() {
   const data = await fetchPageData("homepage");
