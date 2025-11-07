@@ -33,19 +33,7 @@ export default function HeroSection({
   line3Mobile = "",
 }: HeroSectionProps) {
   return (
-    <Box
-      sx={{
-        // display: "flex",
-        // justifyContent: "center",
-        // alignItems: "center",
-        // minHeight: {
-        //   xs: "393px",
-        //   sm: "unset",
-
-        // },
-        padding: { ...sectionPadding, xxl: "0" },
-      }}
-    >
+    <Box sx={{ padding: { ...sectionPadding, xxl: "0" } }}>
       <Box
         sx={{
           display: "flex",
@@ -69,23 +57,19 @@ export default function HeroSection({
               lg: "1083px",
               xl: "2000px",
             },
-
             width: "100%",
             textTransform: "uppercase",
             textAlign: "center",
           }}
         >
-          {/* Line 1 */}
+          {/* ✅ Line 1 Desktop (Primary H1) */}
           <Typography
+            component="h1"
             variant="h1"
             sx={{
               width: "100%",
               textAlign: "start",
-              maxWidth: {
-                sm: "600px",
-                md: "947px",
-              },
-
+              maxWidth: { sm: "600px", md: "947px" },
               lineHeight: {
                 sm: "60px",
                 md: "90px",
@@ -101,7 +85,10 @@ export default function HeroSection({
           >
             {line1}
           </Typography>
+
+          {/* ✅ Line 1 Mobile (Same Styling But Not H1 for SEO) */}
           <Typography
+            component="p"
             variant="h1"
             sx={{
               mt: "90px",
@@ -116,8 +103,9 @@ export default function HeroSection({
             {line1Mobile}
           </Typography>
 
-          {/* Line 2 (Desktop & Mobile) */}
+          {/* Line 2 (Desktop) */}
           <Typography
+            component="h2"
             variant="h2"
             sx={{
               display: { xs: "none", sm: "block" },
@@ -134,13 +122,15 @@ export default function HeroSection({
           >
             {line2Desktop}
           </Typography>
+
+          {/* Line 2 (Mobile) */}
           {line2Mobile && (
             <Typography
+              component="h2"
               variant="h2"
               sx={{
                 width: "100%",
                 maxWidth: { xs: "500px" },
-                // bgcolor:"#000",
                 display: { xs: "block", sm: "none" },
                 textAlign: isbool ? "end" : "end",
                 lineHeight: { xs: "45px" },
@@ -152,8 +142,9 @@ export default function HeroSection({
             </Typography>
           )}
 
-          {/* Line 3 (Desktop & Mobile) */}
+          {/* Line 3 (Desktop) */}
           <Typography
+            component="h3"
             variant="h3"
             sx={{
               width: "100%",
@@ -171,8 +162,11 @@ export default function HeroSection({
           >
             {line3Desktop}
           </Typography>
+
+          {/* Line 3 (Mobile) */}
           {line3Mobile && (
             <Typography
+              component="h3"
               variant="h3"
               sx={{
                 display: { xs: "block", sm: "none" },
