@@ -21,7 +21,6 @@ export default function HeroCity({
   return (
     <Box>
       <Box
-     
         sx={{
           maxWidth: "1440px",
           width: "100%",
@@ -40,7 +39,7 @@ export default function HeroCity({
           }}
         >
           <Typography
-           data-aos="zoom-in"
+            data-aos="zoom-in"
             data-aos-duration="500"
             sx={{
               fontSize: "18px",
@@ -53,7 +52,7 @@ export default function HeroCity({
           </Typography>
           <Image src={svgs.arrowRight} alt="arrowRight" />
           <Typography
-           data-aos="zoom-in"
+            data-aos="zoom-in"
             data-aos-duration="500"
             sx={{
               fontSize: "18px",
@@ -75,8 +74,9 @@ export default function HeroCity({
           }}
         >
           <Typography
-           data-aos="zoom-in"
+            data-aos="zoom-in"
             data-aos-duration="500"
+            variant="h1"
             sx={{
               textAlign: "center",
               fontSize: localFontSize.h6,
@@ -91,8 +91,9 @@ export default function HeroCity({
             {heading}
           </Typography>
           <Typography
-           data-aos="zoom-in"
+            data-aos="zoom-in"
             data-aos-duration="500"
+            variant="h2"
             sx={{
               fontSize: "18px",
               color: "#00000080",

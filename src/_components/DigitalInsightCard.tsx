@@ -61,6 +61,7 @@ export default function DigitalInsightCard({
     >
       <Box>
         <Typography
+          variant="h3"
           sx={{
             color: backgroundImage ? "#fff" : "#000000",
             fontSize: localFontSize.h5,

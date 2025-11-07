@@ -115,8 +115,8 @@ export default function DigitalInsights({
             }}
           >
             <Typography
-              variant="h1"
-              component="h1"
+              variant="h2"
+              component="h2"
               sx={{
                 fontSize: localFontSize.h3,
                 fontWeight: 600,

@@ -70,7 +70,7 @@ export default function PlanScreen({
           }}
         >
           <Typography
-            component="h1"
+            component="h2"
             aria-label="Find Your Perfect Plan" // better semantics; same visuals
             sx={{
               fontSize: localFontSize.h3,

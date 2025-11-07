@@ -57,6 +57,7 @@ export default function AreaHero({
           {heading}
         </Typography>
         <Typography
+          variant="h2"
           sx={{
             width: "100%",
             fontSize: "18px",

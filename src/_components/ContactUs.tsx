@@ -36,6 +36,7 @@ export default function ContactUs({
         >
           <Typography
             sx={{
+              variant: "h2",
               width: "100%",
               fontSize: localFontSize.h3,
               fontWeight: 600,

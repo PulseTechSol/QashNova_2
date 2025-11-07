@@ -118,7 +118,7 @@ export default function HeroSection({
 
           {/* Line 2 (Desktop & Mobile) */}
           <Typography
-            variant="h1"
+            variant="h2"
             sx={{
               display: { xs: "none", sm: "block" },
               textAlign: "end",
@@ -136,7 +136,7 @@ export default function HeroSection({
           </Typography>
           {line2Mobile && (
             <Typography
-              variant="h1"
+              variant="h2"
               sx={{
                 width: "100%",
                 maxWidth: { xs: "500px" },
@@ -154,7 +154,7 @@ export default function HeroSection({
 
           {/* Line 3 (Desktop & Mobile) */}
           <Typography
-            variant="h1"
+            variant="h3"
             sx={{
               width: "100%",
               display: { xs: "none", sm: "block" },
@@ -173,7 +173,7 @@ export default function HeroSection({
           </Typography>
           {line3Mobile && (
             <Typography
-              variant="h1"
+              variant="h3"
               sx={{
                 display: { xs: "block", sm: "none" },
                 textAlign: "left",

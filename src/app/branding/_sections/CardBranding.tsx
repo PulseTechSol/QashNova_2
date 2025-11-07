@@ -86,6 +86,7 @@ export default function CardBranding({
           }}
         >
           <Typography
+            variant="h2"
             sx={{
               fontSize: localFontSize.h3,
               fontWeight: 600,
