@@ -96,8 +96,6 @@ const FaqAreahub: React.FC<GenericAccordionProps> = ({
               <AccordionSummary
                 sx={{
                   minHeight: { xs: "44px !important", md: "74px !important" },
-                 
-                  
                 }}
                 expandIcon={
                   <IconButton
@@ -127,7 +125,7 @@ const FaqAreahub: React.FC<GenericAccordionProps> = ({
                     fontFamily: "Poppins",
                     fontWeight: 400,
                     fontSize: { xs: "16px", md: "20", lg: "24px" },
-                    lineHeight: {xs:"22px",sm:"100%"},
+                    lineHeight: { xs: "22px", sm: "100%" },
                     color: "#000000",
                     letterSpacing: "0%",
                   }}
