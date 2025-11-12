@@ -31,7 +31,8 @@ export default function GenericHeadingBox({
       }}
     >
       <Typography
-        variant="h1"
+        component="h2"
+        variant="h2"
         sx={{
           fontSize: localFontSize.h3,
           fontWeight: 600,
@@ -50,7 +51,8 @@ export default function GenericHeadingBox({
         {heading1}
       </Typography>
       <Typography
-        variant="h2"
+        component="h3"
+        variant="h3"
         sx={{
           color: isbool ? "#fff" : "rgba(0, 0, 0, 1)",
           fontSize: localFontSize.h3,

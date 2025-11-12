@@ -8,8 +8,9 @@ import {
   sectionPaddingX,
   sectionPaddingY,
 } from "@/app/_utils/themes";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Link as MuiLink } from "@mui/material";
 import Image from "next/image";
+import NextLink from "next/link";
 import { useEffect, useRef } from "react";
 import GenericHeadingBox from "@/_components/GenericHeadingBox";
 gsap.registerPlugin(ScrollTrigger);
@@ -113,22 +114,98 @@ export default function HowHelp({
               display: { xs: "none", lg: "block" },
             }}
           />
-          <Typography
-            data-aos="fade-left"
-            data-aos-duration="500"
-            paragraph
+          <Box
             sx={{
               maxWidth: { xs: "490px", xl: "600px", xxl: "700px" },
               width: "100%",
-              fontSize: { xs: "18px", xl: "24px" },
-              fontWeight: 400,
-              color: "rgba(0, 0, 0, 1)",
-              textAlign: { xs: "end", sm: "start" },
-              m: 0,
+              display: "flex",
+              flexDirection: "column",
+              gap: { xs: "16px", md: "20px" },
             }}
           >
-            {description}
-          </Typography>
+            <Typography
+              data-aos="fade-left"
+              data-aos-duration="500"
+              paragraph
+              sx={{
+                fontSize: { xs: "18px", xl: "24px" },
+                fontWeight: 400,
+                color: "rgba(0, 0, 0, 1)",
+                textAlign: "start",
+                m: 0,
+              }}
+            >
+              {description}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: { xs: "16px", xl: "20px" },
+                fontWeight: 400,
+                color: "rgba(0, 0, 0, 0.75)",
+                textAlign: "start",
+                m: 0,
+              }}
+            >
+              Explore our{" "}
+              <MuiLink
+                component={NextLink}
+                href="/branding"
+                underline="always"
+                sx={{ fontWeight: 600 }}
+              >
+                branding services
+              </MuiLink>
+              ,{" "}
+              <MuiLink
+                component={NextLink}
+                href="/websites"
+                underline="always"
+                sx={{ fontWeight: 600 }}
+              >
+                website portfolio
+              </MuiLink>
+              ,{" "}
+              <MuiLink
+                component={NextLink}
+                href="/plans"
+                underline="always"
+                sx={{ fontWeight: 600 }}
+              >
+                growth plans
+              </MuiLink>{" "}
+              and{" "}
+              <MuiLink
+                component={NextLink}
+                href="/contact-us"
+                underline="always"
+                sx={{ fontWeight: 600 }}
+              >
+                contact our team
+              </MuiLink>{" "}
+              to dive deeper into how we support ambitious brands.
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: { xs: "16px", xl: "20px" },
+                fontWeight: 400,
+                color: "rgba(0, 0, 0, 0.75)",
+                textAlign: "start",
+                m: 0,
+              }}
+            >
+              Looking for trusted guidance on optimisation? Review the{" "}
+              <MuiLink
+                href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+                target="_blank"
+                rel="noopener noreferrer"
+                underline="always"
+                sx={{ fontWeight: 600 }}
+              >
+                Google Search Central SEO starter guide
+              </MuiLink>{" "}
+              for best practices from the source.
+            </Typography>
+          </Box>
         </Box>
 
         {/* Cards */}
