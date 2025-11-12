@@ -6,6 +6,7 @@ import ButtonComponent from "./ButtonComponent";
 import svgs from "@/_assets/svgs";
 import axios from "axios";
 import { toast } from "react-toastify";
+// CSS will be bundled with the lazy-loaded component chunk
 import "react-toastify/dist/ReactToastify.css";
 
 export default function ContactUsForm() {

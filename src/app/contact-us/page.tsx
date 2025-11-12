@@ -1,8 +1,14 @@
 // app/contact-us/page.tsx
 import type { Metadata } from "next";
 import HeroSection from "@/_components/HeroSection";
-import ContactUs from "@/_components/ContactUs";
+import dynamicImport from "next/dynamic";
 import { fetchPageData } from "@/lib/strapi";
+
+// Lazy load ContactUs component since it's below the fold
+const ContactUs = dynamicImport(() => import("@/_components/ContactUs"), {
+  loading: () => <div style={{ minHeight: "400px" }} />,
+  ssr: true,
+});
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -11,13 +17,40 @@ export const revalidate = 0;
 export async function generateMetadata(): Promise<Metadata> {
   const data = await fetchPageData("contact-us");
 
+  const title =
+    data?.metaTitle ?? "Contact Qashnova | Let's Build Something Great";
+  const description =
+    data?.metaDescription ??
+    "Get in touch with Qashnova for website development, branding, or digital strategy. We're here to help you succeed.";
+  const url = data?.canonicalUrl ?? "https://www.qashnova.com/contact-us";
+
   return {
-    title: data?.metaTitle ?? "Contact Qashnova | Let’s Build Something Great",
-    description:
-      data?.metaDescription ??
-      "Get in touch with Qashnova for website development, branding, or digital strategy. We’re here to help you succeed.",
+    title,
+    description,
     alternates: {
-      canonical: data?.canonicalUrl ?? "https://www.qashnova.com/contact-us",
+      canonical: url,
+    },
+    openGraph: {
+      title: title,
+      description: description,
+      url: url,
+      siteName: "Qashnova",
+      images: [
+        {
+          url: "https://www.qashnova.com/logo.svg",
+          width: 1200,
+          height: 630,
+          alt: "Contact Qashnova - Digital Agency for Web Design, Branding & SEO",
+        },
+      ],
+      type: "website",
+      locale: "en_GB",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      images: ["https://www.qashnova.com/logo.svg"],
     },
   };
 }

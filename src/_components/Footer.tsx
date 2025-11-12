@@ -50,6 +50,7 @@ export default function Footer() {
             src={pngs.footerbgImg}
             alt="star"
             style={{ height: "100%", width: "100%" }}
+            loading="lazy"
           />
         </Box>
 
@@ -81,6 +82,7 @@ export default function Footer() {
               style={{ width: "100%", height: "100%" }}
               src={svgs.logoFooter}
               alt="logoFooter"
+              loading="lazy"
             />
           </Box>
           {/* other nevigations */}
@@ -324,7 +326,12 @@ interface SocialMediaItemProps {
 export function SocialMediaItem({ text, image, link }: SocialMediaItemProps) {
   return (
     <Box sx={{ display: "flex", gap: "10px" }}>
-      <Image style={{ width: "20px", height: "auto" }} src={image} alt={text} />
+      <Image
+        style={{ width: "20px", height: "auto" }}
+        src={image}
+        alt={text}
+        loading="lazy"
+      />
       {typeof link === "string" ? (
         <Link style={{ textDecoration: "none" }} href={link} target="_blank">
           <Typography

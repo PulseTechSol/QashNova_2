@@ -1,7 +1,12 @@
 "use client";
 import { Box, Typography } from "@mui/material";
 import { localFontSize, maxWidth, sectionPadding } from "@/app/_utils/themes";
-import ContactUsForm from "./ContactUsForm";
+import dynamic from "next/dynamic";
+
+// Lazy load ContactUsForm to reduce initial bundle size
+const ContactUsForm = dynamic(() => import("./ContactUsForm"), {
+  ssr: true,
+});
 
 export default function ContactUs({
   heading,
