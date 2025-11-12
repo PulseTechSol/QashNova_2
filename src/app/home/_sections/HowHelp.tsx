@@ -337,6 +337,8 @@ export default function HowHelp({
                   }}
                   width={500}
                   height={500}
+                  loading={isFirst ? "eager" : "lazy"}
+                  priority={isFirst}
                 />
               </Box>
             </Box>

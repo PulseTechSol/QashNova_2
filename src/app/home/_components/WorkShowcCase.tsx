@@ -94,6 +94,7 @@ export function WorkShowcCase({
           }}
           width={500}
           height={500}
+          loading="lazy"
         />
         <Box
           className="curtain"

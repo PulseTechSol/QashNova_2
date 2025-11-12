@@ -352,6 +352,7 @@ export function ClientCard({
         style={{ width: "80px", height: "80px", objectFit: "contain" }}
         width={80}
         height={80}
+        loading="lazy"
       />
       <Typography
         paragraph

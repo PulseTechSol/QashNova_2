@@ -1,13 +1,35 @@
 import HeroHome from "./_sections/HeroHome";
 import Partness from "./_sections/Partness";
 import HowHelp from "./_sections/HowHelp";
-import OurWork from "./_sections/OurWork";
-import Casestudies from "./_sections/Casestudies";
-import ContactUs from "@/_components/ContactUs";
 import SectionWithHeadingAndCTA from "../../_components/SectionWithHeadingAndCTA";
-import ClientsStories from "./_sections/ClientsStories";
-import DigitalInsights from "./_sections/DigitalInsights";
+import dynamicImport from "next/dynamic";
 import { fetchPageData } from "@/lib/strapi";
+
+// Lazy load below-the-fold components to reduce initial bundle size
+const OurWork = dynamicImport(() => import("./_sections/OurWork"), {
+  loading: () => <div style={{ minHeight: "400px" }} />,
+  ssr: true,
+});
+
+const ClientsStories = dynamicImport(() => import("./_sections/ClientsStories"), {
+  loading: () => <div style={{ minHeight: "400px" }} />,
+  ssr: true,
+});
+
+const Casestudies = dynamicImport(() => import("./_sections/Casestudies"), {
+  loading: () => <div style={{ minHeight: "400px" }} />,
+  ssr: true,
+});
+
+const DigitalInsights = dynamicImport(() => import("./_sections/DigitalInsights"), {
+  loading: () => <div style={{ minHeight: "400px" }} />,
+  ssr: true,
+});
+
+const ContactUs = dynamicImport(() => import("@/_components/ContactUs"), {
+  loading: () => <div style={{ minHeight: "200px" }} />,
+  ssr: true,
+});
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
