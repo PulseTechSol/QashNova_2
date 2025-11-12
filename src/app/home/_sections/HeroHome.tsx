@@ -12,6 +12,11 @@ export default function HeroHome({
   secondWord: string;
   thirdWord: string;
 }) {
+  // Combine all words for SEO-friendly H1 (5-70 characters recommended)
+  const fullHeading =
+    `${firstWord || ""} ${secondWord || ""} ${thirdWord || ""}`.trim() ||
+    "Qashnova Premier Digital Agency Website Design Branding SEO Services";
+
   return (
     <Box
       sx={{
@@ -29,27 +34,29 @@ export default function HeroHome({
       }}
     >
       <Box
+        component="h1"
         sx={{
           width: "100%",
           position: "relative",
           zIndex: 140,
-          "& > h1": {
-            fontWeight: 600,
-            textTransform: "uppercase",
-            color: "#000",
-            fontSize: localFontSize.h1,
-            lineHeight: {
-              xs: "70px",
-              sm: "76px",
-              md: "115px",
-              lg: "130px",
-              xl: "160px",
-              xxl: "200px",
-            },
-            textAlign: "left",
+          margin: 0,
+          fontWeight: 600,
+          textTransform: "uppercase",
+          color: "#000",
+          fontSize: localFontSize.h1,
+          lineHeight: {
+            xs: "70px",
+            sm: "76px",
+            md: "115px",
+            lg: "130px",
+            xl: "160px",
+            xxl: "200px",
           },
+          textAlign: "left",
         }}
+        aria-label={fullHeading}
       >
+        {/* Visual animated text - all text inside H1 for SEO */}
         <AnimatedText text={firstWord} />
         <Box
           sx={{

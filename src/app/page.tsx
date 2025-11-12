@@ -5,10 +5,9 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title:
-    "Qashnova | Premier Digital Agency | Website Design, Branding & SEO Services in UK",
+  title: "Qashnova | Digital Agency for Web Design, Branding & SEO",
   description:
-    "Qashnova is a leading digital agency specializing in custom website development, creative branding, SEO optimization, social media management, and e-commerce solutions. We help businesses across the UK grow their online presence with bespoke digital strategies tailored to your success. Expert web design, development, and digital marketing services.",
+    "Qashnova delivers bespoke web design, branding, SEO, SEM, and social media strategies that help UK businesses grow online.",
   keywords: [
     "digital agency",
     "website design",
@@ -33,10 +32,9 @@ export const metadata: Metadata = {
     canonical: "https://www.qashnova.com/",
   },
   openGraph: {
-    title:
-      "Qashnova | Premier Digital Agency | Website Design, Branding & SEO Services in UK",
+    title: "Qashnova | Digital Agency for Web Design, Branding & SEO",
     description:
-      "Leading digital agency offering custom website development, creative branding, SEO optimization, and social media management. Transform your online presence with expert digital solutions tailored to your business success.",
+      "Bespoke web design, branding, SEO, SEM, and social media strategies for UK businesses seeking measurable digital growth.",
     url: "https://www.qashnova.com/",
     siteName: "Qashnova",
     images: [
@@ -44,7 +42,7 @@ export const metadata: Metadata = {
         url: "https://www.qashnova.com/logo.svg",
         width: 1200,
         height: 630,
-        alt: "Qashnova - Premier Digital Agency for Website Design, Branding & SEO Services",
+        alt: "Qashnova digital agency delivering web design, branding, and SEO services",
       },
     ],
     type: "website",
@@ -52,10 +50,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Qashnova | Premier Digital Agency | Website Design, Branding & SEO Services",
+    title: "Qashnova | Digital Agency for Web Design, Branding & SEO",
     description:
-      "Leading digital agency offering custom website development, creative branding, SEO optimization, and social media management. Transform your online presence with expert digital solutions.",
+      "Bespoke web design, branding, SEO, SEM, and social media strategies for UK businesses seeking measurable digital growth.",
     images: ["https://www.qashnova.com/logo.svg"],
   },
   robots: {
