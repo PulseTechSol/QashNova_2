@@ -11,20 +11,26 @@ const OurWork = dynamicImport(() => import("./_sections/OurWork"), {
   ssr: true,
 });
 
-const ClientsStories = dynamicImport(() => import("./_sections/ClientsStories"), {
-  loading: () => <div style={{ minHeight: "400px" }} />,
-  ssr: true,
-});
+const ClientsStories = dynamicImport(
+  () => import("./_sections/ClientsStories"),
+  {
+    loading: () => <div style={{ minHeight: "400px" }} />,
+    ssr: true,
+  }
+);
 
 const Casestudies = dynamicImport(() => import("./_sections/Casestudies"), {
   loading: () => <div style={{ minHeight: "400px" }} />,
   ssr: true,
 });
 
-const DigitalInsights = dynamicImport(() => import("./_sections/DigitalInsights"), {
-  loading: () => <div style={{ minHeight: "400px" }} />,
-  ssr: true,
-});
+const DigitalInsights = dynamicImport(
+  () => import("./_sections/DigitalInsights"),
+  {
+    loading: () => <div style={{ minHeight: "400px" }} />,
+    ssr: true,
+  }
+);
 
 const ContactUs = dynamicImport(() => import("@/_components/ContactUs"), {
   loading: () => <div style={{ minHeight: "200px" }} />,
