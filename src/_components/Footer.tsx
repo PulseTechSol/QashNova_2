@@ -48,7 +48,8 @@ export default function Footer() {
         >
           <Image
             src={pngs.footerbgImg}
-            alt="star"
+            alt=""
+            aria-hidden="true"
             style={{ height: "100%", width: "100%" }}
             loading="lazy"
           />
@@ -81,7 +82,7 @@ export default function Footer() {
             <Image
               style={{ width: "100%", height: "100%" }}
               src={svgs.logoFooter}
-              alt="logoFooter"
+              alt="Qashnova digital agency footer logo"
               loading="lazy"
             />
           </Box>

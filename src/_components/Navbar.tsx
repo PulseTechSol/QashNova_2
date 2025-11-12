@@ -92,7 +92,7 @@ export default function Navbar() {
               cursor: "pointer",
             }}
             src={svgs.mobileLogo}
-            alt="logo"
+            alt="Qashnova digital agency logo - mobile navigation"
           />
         </Box>
 
@@ -108,7 +108,7 @@ export default function Navbar() {
               cursor: "pointer",
             }}
             src={svgs.logo}
-            alt="logo"
+            alt="Qashnova digital agency logo - website design, branding and SEO services"
           />
         </Box>
 

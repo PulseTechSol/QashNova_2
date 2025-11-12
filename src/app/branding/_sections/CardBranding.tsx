@@ -40,7 +40,8 @@ export default function CardBranding({
         >
           <Image
             src={pngs.howHeplLG}
-            alt="star"
+            alt=""
+            aria-hidden="true"
             style={{ height: "100%", width: "100%" }}
           />
         </Box>
@@ -58,7 +59,8 @@ export default function CardBranding({
         >
           <Image
             src={pngs.howHeplLG}
-            alt="star"
+            alt=""
+            aria-hidden="true"
             style={{ height: "100%", width: "100%" }}
           />
         </Box>
@@ -73,7 +75,8 @@ export default function CardBranding({
         >
           <Image
             src={pngs.howHeplLGcolor}
-            alt="star"
+            alt=""
+            aria-hidden="true"
             style={{ height: "100%", width: "100%" }}
           />
         </Box>
@@ -226,7 +229,7 @@ export function WorkShowcase({ title, image }: WorkShowcaseProps) {
         >
           <Image
             src={image}
-            alt="Branding"
+            alt={`${title || "Branding"} project showcase by Qashnova digital agency`}
             style={{
               width: "100%",
               height: "100%",

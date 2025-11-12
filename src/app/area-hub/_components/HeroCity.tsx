@@ -50,7 +50,7 @@ export default function HeroCity({
           >
             {breadcrumbLeft}
           </Typography>
-          <Image src={svgs.arrowRight} alt="arrowRight" />
+          <Image src={svgs.arrowRight} alt="breadcrumb navigation arrow" />
           <Typography
             data-aos="zoom-in"
             data-aos-duration="500"

@@ -30,7 +30,8 @@ export default function MetaPixel({ pixelId }: { pixelId: string }) {
           width="1"
           style={{ display: "none" }}
           src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`}
-          alt="meta"
+          alt=""
+          aria-hidden="true"
         />
       </noscript>
     </>

@@ -58,7 +58,7 @@ export default function LandingNavbar() {
               cursor: "pointer",
             }}
             src={svgs.mobileLogo}
-            alt="logo"
+            alt="Qashnova digital agency logo - mobile navigation"
           />
         </Box>
         {/* logo for md */}
@@ -76,7 +76,7 @@ export default function LandingNavbar() {
               cursor: "pointer",
             }}
             src={svgs.logo}
-            alt="logo"
+            alt="Qashnova digital agency logo - website design, branding and SEO services"
           />
         </Box>
 

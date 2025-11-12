@@ -86,7 +86,7 @@ export function WorkShowcCase({
       >
         <Image
           src={image as string}
-          alt="workimage"
+          alt={`${title} - ${year} project showcase by Qashnova digital agency`}
           style={{
             width: "100%",
             height: "100%",

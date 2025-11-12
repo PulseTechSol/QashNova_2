@@ -92,7 +92,7 @@ export default function ButtonComponent({
             <Image
               loading="lazy"
               src={hovered ? svgs.arrow2 : imgSrc}
-              alt="icon"
+              alt={`${label} button arrow icon`}
               style={{
                 width: hovered ? "20px" : "15px",
                 transition: "all 0.35s ease-in-out",

@@ -222,8 +222,8 @@ export default function ClientsStories({ heading, reviews = [] }: ClientStory) {
                 display: hoverNext ? "inline" : "none",
               }}
               src={svgs.sliderArrow}
-              alt="icon"
-              aria-hidden
+              alt=""
+              aria-hidden="true"
             />
             <Image
               style={{
@@ -232,8 +232,8 @@ export default function ClientsStories({ heading, reviews = [] }: ClientStory) {
                 display: hoverNext ? "none" : "inline",
               }}
               src={svgs.arrowSliderDisabled}
-              alt="icon"
-              aria-hidden
+              alt=""
+              aria-hidden="true"
             />
           </Box>
 
@@ -263,8 +263,8 @@ export default function ClientsStories({ heading, reviews = [] }: ClientStory) {
                 display: hoverPrevoius ? "inline" : "none",
               }}
               src={svgs.sliderArrow}
-              alt="icon"
-              aria-hidden
+              alt=""
+              aria-hidden="true"
             />
             <Image
               style={{
@@ -274,8 +274,8 @@ export default function ClientsStories({ heading, reviews = [] }: ClientStory) {
                 transform: "rotate(180deg)",
               }}
               src={svgs.arrowSliderDisabled}
-              alt="icon"
-              aria-hidden
+              alt=""
+              aria-hidden="true"
             />
           </Box>
         </Box>

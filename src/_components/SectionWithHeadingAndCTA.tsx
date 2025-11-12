@@ -79,8 +79,8 @@ export default function SectionWithHeadingAndCTA({
               >
                 <Image
                   src={svgs.line}
-                  alt="line"
-                  aria-hidden
+                  alt=""
+                  aria-hidden="true"
                   style={{ height: "100%", width: "100%" }}
                 />
               </Box>
