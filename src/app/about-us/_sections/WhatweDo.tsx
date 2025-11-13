@@ -48,8 +48,7 @@ export default function WhatweDo({
       >
         <Image
           src={pngs.howHeplLG}
-          alt=""
-          aria-hidden="true"
+          alt="Decorative circular gradient background pattern - what we do section left side"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
@@ -67,8 +66,7 @@ export default function WhatweDo({
       >
         <Image
           src={pngs.howHeplLGcolor}
-          alt=""
-          aria-hidden="true"
+          alt="Decorative circular gradient background pattern - what we do section right side"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>

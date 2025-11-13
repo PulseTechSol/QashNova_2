@@ -131,7 +131,7 @@ export default function CaseStudyCard({
       >
         <Image
           src={image}
-          alt={`case-study-${index}`}
+          alt={`${title} case study project showcase by Qashnova digital agency`}
           style={{ width: "100%", height: "100%", objectFit: "contain" }}
           width={500}
           height={500}

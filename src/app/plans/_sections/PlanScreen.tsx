@@ -160,8 +160,7 @@ export default function PlanScreen({
       >
         <Image
           src={pngs.howHeplLG}
-          alt=""
-          aria-hidden="true"
+          alt="Decorative circular gradient background pattern - plans section top left"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
@@ -179,8 +178,7 @@ export default function PlanScreen({
       >
         <Image
           src={pngs.howHeplLG}
-          alt=""
-          aria-hidden="true"
+          alt="Decorative circular gradient background pattern - plans section bottom left rotated"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
@@ -197,8 +195,7 @@ export default function PlanScreen({
       >
         <Image
           src={pngs.howHeplLGcolor}
-          alt=""
-          aria-hidden="true"
+          alt="Decorative circular gradient background pattern - plans section top right"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>

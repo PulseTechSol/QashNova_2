@@ -61,8 +61,7 @@ export default function WebsiteSection({
       >
         <Image
           src={pngs.howHeplLG}
-          alt=""
-          aria-hidden="true"
+          alt="Decorative circular gradient background pattern - website section left side"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
@@ -80,8 +79,7 @@ export default function WebsiteSection({
       >
         <Image
           src={pngs.howHeplLGcolor}
-          alt=""
-          aria-hidden="true"
+          alt="Decorative circular gradient background pattern - website section right side"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>

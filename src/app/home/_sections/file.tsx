@@ -124,8 +124,7 @@ export default function HowHelp() {
       >
         <Image
           src={pngs.howHeplLG}
-          alt=""
-          aria-hidden="true"
+          alt="Decorative circular gradient background pattern - left side"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
@@ -142,8 +141,7 @@ export default function HowHelp() {
       >
         <Image
           src={pngs.howHeplLGcolor}
-          alt=""
-          aria-hidden="true"
+          alt="Decorative circular gradient background pattern - right side"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
@@ -314,7 +312,13 @@ export default function HowHelp() {
               >
                 <Image
                   src={service.image}
-                  alt={`service-${index}`}
+                  alt={`${
+                    service.title
+                  } digital service illustration by Qashnova - ${service.description
+                    .split(".")
+                    .slice(0, 1)
+                    .join(".")
+                    .substring(0, 60)}`}
                   style={{
                     width: "100%",
                     height: "100%",
@@ -322,6 +326,9 @@ export default function HowHelp() {
                     borderTopLeftRadius: isFirst ? 0 : "80px",
                     borderBottomRightRadius: isLast ? 0 : "80px",
                   }}
+                  width={500}
+                  height={500}
+                  loading={isFirst ? "eager" : "lazy"}
                 />
               </Box>
             </Box>

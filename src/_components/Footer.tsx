@@ -48,8 +48,7 @@ export default function Footer() {
         >
           <Image
             src={pngs.footerbgImg}
-            alt=""
-            aria-hidden="true"
+            alt="Decorative footer background pattern"
             style={{ height: "100%", width: "100%" }}
             loading="lazy"
           />

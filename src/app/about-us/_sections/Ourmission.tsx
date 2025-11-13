@@ -45,8 +45,7 @@ export default function Ourmission({
       >
         <Image
           src={pngs.howHeplLG}
-          alt=""
-          aria-hidden="true"
+          alt="Decorative circular gradient background pattern - our mission section left side"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
@@ -64,8 +63,7 @@ export default function Ourmission({
       >
         <Image
           src={pngs.howHeplLGcolor}
-          alt=""
-          aria-hidden="true"
+          alt="Decorative circular gradient background pattern - our mission section right side"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
