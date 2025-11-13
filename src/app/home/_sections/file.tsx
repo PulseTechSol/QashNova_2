@@ -124,7 +124,8 @@ export default function HowHelp() {
       >
         <Image
           src={pngs.howHeplLG}
-          alt="star"
+          alt=""
+          aria-hidden="true"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
@@ -141,7 +142,8 @@ export default function HowHelp() {
       >
         <Image
           src={pngs.howHeplLGcolor}
-          alt="star"
+          alt=""
+          aria-hidden="true"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>

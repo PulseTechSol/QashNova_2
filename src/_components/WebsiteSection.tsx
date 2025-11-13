@@ -61,7 +61,8 @@ export default function WebsiteSection({
       >
         <Image
           src={pngs.howHeplLG}
-          alt="howHeplLG" // decorative
+          alt=""
+          aria-hidden="true"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
@@ -79,7 +80,8 @@ export default function WebsiteSection({
       >
         <Image
           src={pngs.howHeplLGcolor}
-          alt="howHeplLG" // decorative
+          alt=""
+          aria-hidden="true"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
@@ -141,7 +143,7 @@ export default function WebsiteSection({
           >
             <Image
               src={image as string}
-              alt="Website preview"
+              alt={sectionLabel ? `${sectionLabel} website preview by Qashnova digital agency` : "Custom website design and development preview by Qashnova digital agency"}
               style={{ width: "100%", height: "auto", objectFit: "contain" }}
               width={500} // ✅ required
               height={600} // ✅ required

@@ -90,7 +90,7 @@ export function WhatIncludedCard({
           >
             <Image
               src={image}
-              alt={title}
+              alt={`${title} service icon - South Yorkshire digital marketing package by Qashnova`}
               style={{
                 width: "100%",
                 height: "100%",

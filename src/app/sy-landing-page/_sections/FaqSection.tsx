@@ -138,7 +138,8 @@ export default function FaqSection() {
       >
         <Image
           src={pngs.bgcolorBlue}
-          alt="star"
+          alt=""
+          aria-hidden="true"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
@@ -157,7 +158,8 @@ export default function FaqSection() {
       >
         <Image
           src={pngs.bgcolorBlue}
-          alt="star"
+          alt=""
+          aria-hidden="true"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>

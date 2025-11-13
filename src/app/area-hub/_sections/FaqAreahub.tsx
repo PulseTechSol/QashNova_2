@@ -113,9 +113,15 @@ const FaqAreahub: React.FC<GenericAccordionProps> = ({
                     }}
                   >
                     {expanded === index ? (
-                      <Image src={svgs.closeIcon} alt="Close FAQ section" />
+                      <Image
+                        src={svgs.closeIcon}
+                        alt={`Close area hub FAQ item ${index + 1}`}
+                      />
                     ) : (
-                      <Image src={svgs.addIcon} alt="Expand FAQ section" />
+                      <Image
+                        src={svgs.addIcon}
+                        alt={`Expand area hub FAQ item ${index + 1}`}
+                      />
                     )}
                   </IconButton>
                 }

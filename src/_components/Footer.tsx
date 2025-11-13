@@ -325,12 +325,17 @@ interface SocialMediaItemProps {
 }
 
 export function SocialMediaItem({ text, image, link }: SocialMediaItemProps) {
+  // Create unique alt text for social media icons
+  const altText = link 
+    ? `${text} social media icon - follow Qashnova on ${text}`
+    : `${text} contact icon - Qashnova ${text}`;
+  
   return (
     <Box sx={{ display: "flex", gap: "10px" }}>
       <Image
         style={{ width: "20px", height: "auto" }}
         src={image}
-        alt={text}
+        alt={altText}
         loading="lazy"
       />
       {typeof link === "string" ? (

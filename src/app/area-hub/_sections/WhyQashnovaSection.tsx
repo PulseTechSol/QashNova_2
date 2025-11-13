@@ -73,7 +73,7 @@ export default function WhyQashnovaSection({
             <Image
               style={{ width: "100%", height: "100%", objectFit: "contain" }}
               src={image}
-              alt={heading}
+              alt={`${heading} illustration - ${description.substring(0, 60)}...`}
             />
           </Box>
         </Box>

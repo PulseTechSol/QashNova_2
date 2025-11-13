@@ -13,6 +13,10 @@ export default function GenericHeadingBox({
   heading2,
   isbool = false,
 }: GenericHeadingBoxProps) {
+  // Prevent duplicate headings: if heading1 and heading2 are the same, combine into one h2
+  const isDuplicate = heading1?.trim().toLowerCase() === heading2?.trim().toLowerCase();
+  const combinedHeading = isDuplicate && heading1 ? heading1 : null;
+
   return (
     <Box
       data-aos="zoom-in"
@@ -30,51 +34,80 @@ export default function GenericHeadingBox({
         textTransform: "capitalize",
       }}
     >
-      <Typography
-        component="h2"
-        variant="h2"
-        sx={{
-          fontSize: localFontSize.h3,
-          fontWeight: 600,
-          color: isbool ? "#fff" : "rgba(0, 0, 0, 1)",
-          textAlign: isbool ? "center" : "left",
-          lineHeight: {
-            xs: "50px",
-            md: "80px",
-            lg: "100px",
-            xl: "120px",
-            xxl: "150px",
-          },
-          textWrap: "inherit",
-        }}
-      >
-        {heading1}
-      </Typography>
-      <Typography
-        component="h3"
-        variant="h3"
-        sx={{
-          color: isbool ? "#fff" : "rgba(0, 0, 0, 1)",
-          fontSize: localFontSize.h3,
-          fontWeight: 600,
-          // ml:{xs:"10px",}
-          lineHeight: {
-            xs: "50px",
-            md: "80px",
-            lg: "100px",
-            xl: "120px",
-            xxl: "150px",
-          },
-          textAlign: {
-            xs: isbool ? "end" : "center",
-            md: isbool ? "end" : "center",
-            lg: "end",
-          },
-          textWrap: "inherit",
-        }}
-      >
-        {heading2}
-      </Typography>
+      {combinedHeading ? (
+        // If headings are duplicate, render as single h2
+        <Typography
+          component="h2"
+          variant="h2"
+          sx={{
+            fontSize: localFontSize.h3,
+            fontWeight: 600,
+            color: isbool ? "#fff" : "rgba(0, 0, 0, 1)",
+            textAlign: isbool ? "center" : "left",
+            lineHeight: {
+              xs: "50px",
+              md: "80px",
+              lg: "100px",
+              xl: "120px",
+              xxl: "150px",
+            },
+            textWrap: "inherit",
+          }}
+        >
+          {combinedHeading}
+        </Typography>
+      ) : (
+        // If headings are different, render h2 and h3
+        <>
+          <Typography
+            component="h2"
+            variant="h2"
+            sx={{
+              fontSize: localFontSize.h3,
+              fontWeight: 600,
+              color: isbool ? "#fff" : "rgba(0, 0, 0, 1)",
+              textAlign: isbool ? "center" : "left",
+              lineHeight: {
+                xs: "50px",
+                md: "80px",
+                lg: "100px",
+                xl: "120px",
+                xxl: "150px",
+              },
+              textWrap: "inherit",
+            }}
+          >
+            {heading1}
+          </Typography>
+          {heading2 && (
+            <Typography
+              component="h3"
+              variant="h3"
+              sx={{
+                color: isbool ? "#fff" : "rgba(0, 0, 0, 1)",
+                fontSize: localFontSize.h3,
+                fontWeight: 600,
+                // ml:{xs:"10px",}
+                lineHeight: {
+                  xs: "50px",
+                  md: "80px",
+                  lg: "100px",
+                  xl: "120px",
+                  xxl: "150px",
+                },
+                textAlign: {
+                  xs: isbool ? "end" : "center",
+                  md: isbool ? "end" : "center",
+                  lg: "end",
+                },
+                textWrap: "inherit",
+              }}
+            >
+              {heading2}
+            </Typography>
+          )}
+        </>
+      )}
     </Box>
   );
 }

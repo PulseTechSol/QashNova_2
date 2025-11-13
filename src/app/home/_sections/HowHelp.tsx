@@ -248,7 +248,7 @@ export default function HowHelp({
                 }}
               >
                 <Typography
-                  component="h3"
+                  component="h4"
                   sx={{
                     fontSize: localFontSize.h4,
                     fontWeight: 500,
@@ -326,7 +326,13 @@ export default function HowHelp({
               >
                 <Image
                   src={service.image}
-                  alt={`${service.title} illustration`}
+                  alt={`${
+                    service.title
+                  } digital service illustration by Qashnova - ${service.description
+                    .split(".")
+                    .slice(0, 1)
+                    .join(".")
+                    .substring(0, 60)}`}
                   className={`custom-img ${isFirst ? "first" : ""} ${
                     isLast ? "last" : ""
                   }`}

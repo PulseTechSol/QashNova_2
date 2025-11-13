@@ -160,7 +160,8 @@ export default function PlanScreen({
       >
         <Image
           src={pngs.howHeplLG}
-          alt="howHeplLG" // decorative
+          alt=""
+          aria-hidden="true"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
@@ -178,7 +179,8 @@ export default function PlanScreen({
       >
         <Image
           src={pngs.howHeplLG}
-          alt="howHeplLG" // decorative
+          alt=""
+          aria-hidden="true"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
@@ -195,7 +197,8 @@ export default function PlanScreen({
       >
         <Image
           src={pngs.howHeplLGcolor}
-          alt="howHeplLG" // decorative
+          alt=""
+          aria-hidden="true"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>

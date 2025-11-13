@@ -158,7 +158,7 @@ export function ServiceCard({ text, image }: ServiceCardProps) {
       >
         <Image
           src={image}
-          alt={text}
+          alt={`${text} service icon - local digital marketing and SEO services`}
           style={{ width: "100%", height: "100%", objectFit: "contain" }}
         />
       </Box>

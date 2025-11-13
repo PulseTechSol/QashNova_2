@@ -58,9 +58,15 @@ const FaqItem: React.FC<FaqItemProps> = ({
             }}
           >
             {isExpanded ? (
-              <Image src={svgs.closeIcon} alt="Close FAQ section" />
+              <Image
+                src={svgs.closeIcon}
+                alt="Close South Yorkshire landing page FAQ section"
+              />
             ) : (
-              <Image src={svgs.addIcon} alt="Expand FAQ section" />
+              <Image
+                src={svgs.addIcon}
+                alt="Expand South Yorkshire landing page FAQ section"
+              />
             )}
           </IconButton>
         }

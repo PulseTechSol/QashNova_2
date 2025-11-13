@@ -105,11 +105,7 @@ export default function WhatIncluded() {
           display: { xs: "none", sm: "block" },
         }}
       >
-        {/* <Image
-          src={pngs.bgimgecircle}
-          alt="star"
-          style={{ height: "100%", width: "100%" }}
-        /> */}
+        {/* Decorative background - removed Image, using CSS Box */}
         <Box
           sx={{
             width: "100%",
@@ -134,11 +130,7 @@ export default function WhatIncluded() {
           display: { xs: "none", sm: "block" },
         }}
       >
-        {/* <Image
-          src={pngs.bgimgecircle}
-          alt="star"
-          style={{ height: "100%", width: "100%" }}
-        /> */}
+        {/* Decorative background - removed Image, using CSS Box */}
         <Box
           sx={{
             width: "100%",

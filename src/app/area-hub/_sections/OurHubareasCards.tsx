@@ -35,7 +35,8 @@ export default function OurHubareasCards({
       >
         <Image
           src={pngs.howHeplLG}
-          alt="star"
+          alt=""
+          aria-hidden="true"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
@@ -52,7 +53,8 @@ export default function OurHubareasCards({
       >
         <Image
           src={pngs.howHeplLGcolor}
-          alt="star"
+          alt=""
+          aria-hidden="true"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
@@ -198,7 +200,7 @@ export function WhatIncludedCard({
           >
             <Image
               src={svgs.locationhub}
-              alt={title}
+              alt={`${title} area hub location icon - Qashnova local SEO and digital marketing services`}
               style={{
                 width: "100%",
                 height: "100%",

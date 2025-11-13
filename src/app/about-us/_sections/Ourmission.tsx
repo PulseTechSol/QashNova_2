@@ -45,7 +45,8 @@ export default function Ourmission({
       >
         <Image
           src={pngs.howHeplLG}
-          alt="howHeplLG" // decorative
+          alt=""
+          aria-hidden="true"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
@@ -63,7 +64,8 @@ export default function Ourmission({
       >
         <Image
           src={pngs.howHeplLGcolor}
-          alt="howHeplLGcolor" // decorative
+          alt=""
+          aria-hidden="true"
           style={{ height: "100%", width: "100%" }}
         />
       </Box>
