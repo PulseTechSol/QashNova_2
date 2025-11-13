@@ -1,20 +1,44 @@
 import React from "react";
 import HeroCity from "../_components/HeroCity";
 import LandingNavbar from "@/_components/LandingNavbar";
-import OurServicesGenaricSection from "../_sections/OurServicesGenaricSection";
+import dynamicImport from "next/dynamic";
 import { Box } from "@mui/material";
-import WhyQashnovaSection from "../_sections/WhyQashnovaSection";
-import CaseStudiesSection from "../_sections/CaseStudiesSection";
-import FaqAreahub from "../_sections/FaqAreahub";
-
-import SeoSupportSection, {
-  SeoSupportData,
-} from "../_sections/SeoSupportSection";
 import svgs from "@/_assets/svgs";
 import pngs from "@/_assets/pngs";
-import Footer from "@/_components/Footer";
 import { Metadata } from "next";
 import { fetchPageData } from "@/lib/strapi";
+import type { SeoSupportData } from "../_sections/SeoSupportSection";
+
+// Lazy load below-the-fold components to reduce initial bundle size
+const OurServicesGenaricSection = dynamicImport(() => import("../_sections/OurServicesGenaricSection"), {
+  loading: () => <div style={{ minHeight: "400px" }} />,
+  ssr: true,
+});
+
+const WhyQashnovaSection = dynamicImport(() => import("../_sections/WhyQashnovaSection"), {
+  loading: () => <div style={{ minHeight: "400px" }} />,
+  ssr: true,
+});
+
+const CaseStudiesSection = dynamicImport(() => import("../_sections/CaseStudiesSection"), {
+  loading: () => <div style={{ minHeight: "400px" }} />,
+  ssr: true,
+});
+
+const SeoSupportSection = dynamicImport(() => import("../_sections/SeoSupportSection"), {
+  loading: () => <div style={{ minHeight: "200px" }} />,
+  ssr: true,
+});
+
+const FaqAreahub = dynamicImport(() => import("../_sections/FaqAreahub"), {
+  loading: () => <div style={{ minHeight: "200px" }} />,
+  ssr: true,
+});
+
+const Footer = dynamicImport(() => import("@/_components/Footer"), {
+  loading: () => <div style={{ minHeight: "200px" }} />,
+  ssr: true,
+});
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;

@@ -1,7 +1,13 @@
 import { Metadata } from "next";
 import HeroSection from "@/_components/HeroSection";
-import PlanScreen from "./_sections/PlanScreen";
+import dynamicImport from "next/dynamic";
 import { fetchPageData } from "@/lib/strapi";
+
+// Lazy load PlanScreen component to reduce initial bundle size
+const PlanScreen = dynamicImport(() => import("./_sections/PlanScreen"), {
+  loading: () => <div style={{ minHeight: "400px" }} />,
+  ssr: true,
+});
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -10,7 +16,8 @@ export const revalidate = 0;
 export async function generateMetadata(): Promise<Metadata> {
   const data = await fetchPageData("plan");
 
-  const title = data?.metaTitle ?? "Affordable Website & Branding Plans | Qashnova";
+  const title =
+    data?.metaTitle ?? "Affordable Website & Branding Plans | Qashnova";
   const description =
     data?.metaDescription ??
     "Choose from Qashnova's tailored website and branding plans designed for startups, small businesses, and growing brands.";

@@ -1,9 +1,26 @@
 import { Metadata } from "next";
 import HeroSection from "@/_components/HeroSection";
-import WhatweDo from "./_sections/WhatweDo";
-import SectionWithHeadingAndCTA from "@/_components/SectionWithHeadingAndCTA";
-import Ourmission from "./_sections/Ourmission";
+import dynamicImport from "next/dynamic";
 import { fetchPageData } from "@/lib/strapi";
+
+// Lazy load below-the-fold components to reduce initial bundle size
+const WhatweDo = dynamicImport(() => import("./_sections/WhatweDo"), {
+  loading: () => <div style={{ minHeight: "400px" }} />,
+  ssr: true,
+});
+
+const SectionWithHeadingAndCTA = dynamicImport(
+  () => import("@/_components/SectionWithHeadingAndCTA"),
+  {
+    loading: () => <div style={{ minHeight: "200px" }} />,
+    ssr: true,
+  }
+);
+
+const Ourmission = dynamicImport(() => import("./_sections/Ourmission"), {
+  loading: () => <div style={{ minHeight: "400px" }} />,
+  ssr: true,
+});
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;

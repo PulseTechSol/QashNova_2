@@ -59,6 +59,7 @@ export default function CaseStudySection({
           src={pngs.howHeplLG}
           alt="Decorative circular gradient background pattern - case study section left side"
           style={{ height: "100%", width: "100%" }}
+          loading="lazy"
         />
       </Box>
 
@@ -77,6 +78,7 @@ export default function CaseStudySection({
           src={pngs.howHeplLGcolor}
           alt="Decorative circular gradient background pattern - case study section right side"
           style={{ height: "100%", width: "100%" }}
+          loading="lazy"
         />
       </Box>
 
@@ -139,6 +141,7 @@ export default function CaseStudySection({
               }}
               width={600}
               height={600}
+              loading="lazy"
             />
           </Box>
 

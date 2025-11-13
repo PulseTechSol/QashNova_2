@@ -1,7 +1,13 @@
 import HeroSection from "@/_components/HeroSection";
-import CardBranding from "./_sections/CardBranding";
+import dynamicImport from "next/dynamic";
 import { Metadata } from "next";
 import { fetchPageData } from "@/lib/strapi";
+
+// Lazy load CardBranding component to reduce initial bundle size
+const CardBranding = dynamicImport(() => import("./_sections/CardBranding"), {
+  loading: () => <div style={{ minHeight: "400px" }} />,
+  ssr: true,
+});
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;

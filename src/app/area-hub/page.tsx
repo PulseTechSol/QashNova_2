@@ -1,9 +1,18 @@
 import React from "react";
 import AreaHero from "./_sections/AreaHero";
-import OurHubareasCards from "./_sections/OurHubareasCards";
+import dynamicImport from "next/dynamic";
 import { Box } from "@mui/material";
 import { Metadata } from "next";
 import { fetchPageData } from "@/lib/strapi";
+
+// Lazy load OurHubareasCards component to reduce initial bundle size
+const OurHubareasCards = dynamicImport(
+  () => import("./_sections/OurHubareasCards"),
+  {
+    loading: () => <div style={{ minHeight: "400px" }} />,
+    ssr: true,
+  }
+);
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;

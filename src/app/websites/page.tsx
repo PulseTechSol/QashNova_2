@@ -1,8 +1,17 @@
 import { Metadata } from "next";
 import HeroSection from "@/_components/HeroSection";
-import WebsiteSection from "@/_components/WebsiteSection";
+import dynamicImport from "next/dynamic";
 import { fetchPageData } from "@/lib/strapi";
 import { WebsiteItem } from "@/types/website";
+
+// Lazy load WebsiteSection component to reduce initial bundle size
+const WebsiteSection = dynamicImport(
+  () => import("@/_components/WebsiteSection"),
+  {
+    loading: () => <div style={{ minHeight: "400px" }} />,
+    ssr: true,
+  }
+);
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -11,7 +20,8 @@ export const revalidate = 0;
 export async function generateMetadata(): Promise<Metadata> {
   const data = await fetchPageData("website");
 
-  const title = data?.metaTitle ?? "Custom Website Development Services | Qashnova";
+  const title =
+    data?.metaTitle ?? "Custom Website Development Services | Qashnova";
   const description =
     data?.metaDescription ??
     "Get modern, fast, and responsive websites built by Qashnova. We design websites that not only look great but also perform for your business.";

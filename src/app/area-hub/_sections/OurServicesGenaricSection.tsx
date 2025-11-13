@@ -34,23 +34,23 @@ export default function OurServicesGenaricSection({
           padding: sectionPadding,
           margin: "auto",
           flexDirection: { xs: "column", xl: "row" },
-         gap: { xs: "40px", md: "60px", lg: "80px" },
+          gap: { xs: "40px", md: "60px", lg: "80px" },
         }}
       >
         {/* heading */}
         <Typography
-        data-aos="fade-right"
-            data-aos-duration="500"
+          data-aos="fade-right"
+          data-aos-duration="500"
           sx={{
             textAlign: { xs: "center", lg: "left" },
-           fontSize: {
-              xs:"32px",
-              md:localFontSize.h4.md,
+            fontSize: {
+              xs: "32px",
+              md: localFontSize.h4.md,
               lg: localFontSize.h4.lg,
               xxl: localFontSize.h4.lg,
             },
             fontWeight: 500,
-            lineHeight:{sm:"60px",lg:"70px"},
+            lineHeight: { sm: "60px", lg: "70px" },
             color: "#000",
             textTransform: "capitalize",
           }}
@@ -67,7 +67,6 @@ export default function OurServicesGenaricSection({
         >
           {/* left column */}
           <Box
-         
             sx={{
               display: "flex",
               flexDirection: "column",
@@ -81,7 +80,7 @@ export default function OurServicesGenaricSection({
 
           {/* right column */}
           <Box
-           data-aos="fade-left"
+            data-aos="fade-left"
             data-aos-duration="500"
             sx={{
               display: "flex",
@@ -133,18 +132,23 @@ export default function OurServicesGenaricSection({
 export function ServiceCard({ text, image }: ServiceCardProps) {
   return (
     <Box
-     data-aos="zoom-in"
-            data-aos-duration="500"
+      data-aos="zoom-in"
+      data-aos-duration="500"
       sx={{
         // textAlign:"center",
-       
-        padding: { xs: "20px 10px", sm: "30px 15px", md: "30px 15px" , xl:"30px 20px "},
+
+        padding: {
+          xs: "20px 10px",
+          sm: "30px 15px",
+          md: "30px 15px",
+          xl: "30px 20px ",
+        },
         // p:"20px 15px",
         backgroundImage:
           "linear-gradient(180deg, #3C65FF 0%, #5841D4 50%, #2617B1 100%)",
         borderRadius: { xs: "20px", md: "40px" },
-        width: { xs: "175px", sm: "200px", md: "275px" ,xl:"290px"},
-        height: { xs: "175px", sm: "200px", md: "275px",xl:290 },
+        width: { xs: "175px", sm: "200px", md: "275px", xl: "290px" },
+        height: { xs: "175px", sm: "200px", md: "275px", xl: 290 },
         aspectRatio: "1/1",
       }}
     >
@@ -152,7 +156,7 @@ export function ServiceCard({ text, image }: ServiceCardProps) {
         sx={{
           height: "60px",
           width: "60px",
-          marginBottom: { xs: "10px", sm: "20px", md:"40px ",lg:"20px"},
+          marginBottom: { xs: "10px", sm: "20px", md: "40px ", lg: "20px" },
           margin: "auto",
         }}
       >
@@ -160,19 +164,19 @@ export function ServiceCard({ text, image }: ServiceCardProps) {
           src={image}
           alt={`${text} service icon - local digital marketing and SEO services`}
           style={{ width: "100%", height: "100%", objectFit: "contain" }}
+          loading="lazy"
         />
       </Box>
       <Typography
         sx={{
-         
           textTransform: "capitalize",
           fontSize: {
             ...localFontSize.h5,
             xl: localFontSize.h5.lg,
             xs: "20px",
-              whiteSpace: "normal",  
-    wordBreak: "break-word", 
-    overflowWrap: "break-word", 
+            whiteSpace: "normal",
+            wordBreak: "break-word",
+            overflowWrap: "break-word",
           },
           lineHeight: {
             xs: `calc(${localFontSize.h5.xs} + 5px)`,
@@ -183,7 +187,6 @@ export function ServiceCard({ text, image }: ServiceCardProps) {
           fontWeight: 500,
           color: "#fff",
           textAlign: "center",
-
         }}
       >
         {text}

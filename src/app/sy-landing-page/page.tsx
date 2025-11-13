@@ -1,12 +1,33 @@
 import HeroHome from "./_sections/Hero";
-import WhatIncluded from "./_sections/WhatIncluded";
-import SabirSection from "./_sections/SabirSection";
-import FaqSection from "./_sections/FaqSection";
-import ServiceSection from "./_sections/ServiceSection";
+import dynamicImport from "next/dynamic";
 import { Box } from "@mui/material";
 import { Metadata } from "next";
 // import Image from "next/image";
 // import pngs from "@/_assets/pngs";
+
+// Lazy load below-the-fold components to reduce initial bundle size
+const WhatIncluded = dynamicImport(() => import("./_sections/WhatIncluded"), {
+  loading: () => <div style={{ minHeight: "400px" }} />,
+  ssr: true,
+});
+
+const SabirSection = dynamicImport(() => import("./_sections/SabirSection"), {
+  loading: () => <div style={{ minHeight: "400px" }} />,
+  ssr: true,
+});
+
+const ServiceSection = dynamicImport(
+  () => import("./_sections/ServiceSection"),
+  {
+    loading: () => <div style={{ minHeight: "400px" }} />,
+    ssr: true,
+  }
+);
+
+const FaqSection = dynamicImport(() => import("./_sections/FaqSection"), {
+  loading: () => <div style={{ minHeight: "200px" }} />,
+  ssr: true,
+});
 
 export const metadata: Metadata = {
   title: "South Yorkshire Digital Marketing Package | Qashnova",

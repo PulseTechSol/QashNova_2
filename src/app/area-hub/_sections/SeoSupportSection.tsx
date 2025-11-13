@@ -123,11 +123,12 @@ export function FeatureItem({ title, subtitle }: FeatureItemProps) {
         }}
       >
         <Box sx={{ marginTop: { xs: "3px", sm: "20px" } }}>
-          <Image 
-            style={{ width: "27px" }} 
-            src={svgs.blueTick} 
+          <Image
+            style={{ width: "27px" }}
+            src={svgs.blueTick}
             alt={`${title} - ${subtitle} feature available`}
             aria-hidden="false"
+            loading="lazy"
           />
         </Box>
         <Box>

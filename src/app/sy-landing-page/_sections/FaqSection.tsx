@@ -140,6 +140,7 @@ export default function FaqSection() {
           src={pngs.bgcolorBlue}
           alt="Decorative blue gradient background pattern - South Yorkshire FAQ section bottom left"
           style={{ height: "100%", width: "100%" }}
+          loading="lazy"
         />
       </Box>
 
@@ -159,6 +160,7 @@ export default function FaqSection() {
           src={pngs.bgcolorBlue}
           alt="Decorative blue gradient background pattern - South Yorkshire FAQ section top right"
           style={{ height: "100%", width: "100%" }}
+          loading="lazy"
         />
       </Box>
     </Box>

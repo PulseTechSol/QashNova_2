@@ -1,7 +1,13 @@
 import { Metadata } from "next";
 import HeroSection from "@/_components/HeroSection";
-import DigitalInsights from "./_sections/DigitalInsights";
+import dynamicImport from "next/dynamic";
 import { fetchPageData } from "@/lib/strapi";
+
+// Lazy load DigitalInsights component to reduce initial bundle size
+const DigitalInsights = dynamicImport(() => import("./_sections/DigitalInsights"), {
+  loading: () => <div style={{ minHeight: "400px" }} />,
+  ssr: true,
+});
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;

@@ -1,7 +1,13 @@
 import { Metadata } from "next";
 import HeroSection from "@/_components/HeroSection";
-import CaseStudySection from "@/_components/CaseStudySection";
+import dynamicImport from "next/dynamic";
 import { fetchPageData } from "@/lib/strapi";
+
+// Lazy load CaseStudySection component to reduce initial bundle size
+const CaseStudySection = dynamicImport(() => import("@/_components/CaseStudySection"), {
+  loading: () => <div style={{ minHeight: "400px" }} />,
+  ssr: true,
+});
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;

@@ -50,6 +50,7 @@ export default function WhatweDo({
           src={pngs.howHeplLG}
           alt="Decorative circular gradient background pattern - what we do section left side"
           style={{ height: "100%", width: "100%" }}
+          loading="lazy"
         />
       </Box>
 
@@ -68,6 +69,7 @@ export default function WhatweDo({
           src={pngs.howHeplLGcolor}
           alt="Decorative circular gradient background pattern - what we do section right side"
           style={{ height: "100%", width: "100%" }}
+          loading="lazy"
         />
       </Box>
 
@@ -156,6 +158,7 @@ export default function WhatweDo({
               src={pngs.whatweDo}
               alt="What we do — websites and digital design"
               style={{ width: "100%", height: "100%", objectFit: "contain" }}
+              loading="lazy"
             />
           </Box>
         </Box>

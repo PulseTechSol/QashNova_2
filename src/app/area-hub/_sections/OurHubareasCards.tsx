@@ -37,6 +37,7 @@ export default function OurHubareasCards({
           src={pngs.howHeplLG}
           alt="Decorative circular gradient background pattern - area hub section left side"
           style={{ height: "100%", width: "100%" }}
+          loading="lazy"
         />
       </Box>
 
@@ -54,6 +55,7 @@ export default function OurHubareasCards({
           src={pngs.howHeplLGcolor}
           alt="Decorative circular gradient background pattern - area hub section right side"
           style={{ height: "100%", width: "100%" }}
+          loading="lazy"
         />
       </Box>
       <Box
@@ -204,6 +206,7 @@ export function WhatIncludedCard({
                 height: "100%",
                 objectFit: "contain",
               }}
+              loading="lazy"
             />
           </Box>
           <Typography

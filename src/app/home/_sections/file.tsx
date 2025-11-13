@@ -126,6 +126,7 @@ export default function HowHelp() {
           src={pngs.howHeplLG}
           alt="Decorative circular gradient background pattern - left side"
           style={{ height: "100%", width: "100%" }}
+          loading="lazy"
         />
       </Box>
 
@@ -143,6 +144,7 @@ export default function HowHelp() {
           src={pngs.howHeplLGcolor}
           alt="Decorative circular gradient background pattern - right side"
           style={{ height: "100%", width: "100%" }}
+          loading="lazy"
         />
       </Box>
 

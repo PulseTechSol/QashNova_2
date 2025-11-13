@@ -63,6 +63,7 @@ export default function WebsiteSection({
           src={pngs.howHeplLG}
           alt="Decorative circular gradient background pattern - website section left side"
           style={{ height: "100%", width: "100%" }}
+          loading="lazy"
         />
       </Box>
 
@@ -81,6 +82,7 @@ export default function WebsiteSection({
           src={pngs.howHeplLGcolor}
           alt="Decorative circular gradient background pattern - website section right side"
           style={{ height: "100%", width: "100%" }}
+          loading="lazy"
         />
       </Box>
 
@@ -141,10 +143,15 @@ export default function WebsiteSection({
           >
             <Image
               src={image as string}
-              alt={sectionLabel ? `${sectionLabel} website preview by Qashnova digital agency` : "Custom website design and development preview by Qashnova digital agency"}
+              alt={
+                sectionLabel
+                  ? `${sectionLabel} website preview by Qashnova digital agency`
+                  : "Custom website design and development preview by Qashnova digital agency"
+              }
               style={{ width: "100%", height: "auto", objectFit: "contain" }}
               width={500} // ✅ required
               height={600} // ✅ required
+              loading="lazy"
             />
           </Box>
 

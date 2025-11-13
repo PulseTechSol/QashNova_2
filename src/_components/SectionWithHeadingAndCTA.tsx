@@ -81,6 +81,7 @@ export default function SectionWithHeadingAndCTA({
                   src={svgs.line}
                   alt="Decorative underline accent for section heading"
                   style={{ height: "100%", width: "100%" }}
+                  loading="lazy"
                 />
               </Box>
             </Box>

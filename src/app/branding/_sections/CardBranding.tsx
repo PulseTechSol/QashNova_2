@@ -42,6 +42,7 @@ export default function CardBranding({
             src={pngs.howHeplLG}
             alt="Decorative circular gradient background pattern - branding section left side"
             style={{ height: "100%", width: "100%" }}
+            loading="lazy"
           />
         </Box>
         <Box
@@ -60,6 +61,7 @@ export default function CardBranding({
             src={pngs.howHeplLG}
             alt="Decorative circular gradient background pattern - branding section bottom left rotated"
             style={{ height: "100%", width: "100%" }}
+            loading="lazy"
           />
         </Box>
         <Box
@@ -75,6 +77,7 @@ export default function CardBranding({
             src={pngs.howHeplLGcolor}
             alt="Decorative circular gradient background pattern - branding section right side"
             style={{ height: "100%", width: "100%" }}
+            loading="lazy"
           />
         </Box>
         <Box
@@ -234,6 +237,7 @@ export function WorkShowcase({ title, image }: WorkShowcaseProps) {
             }}
             width={500} // ✅ required
             height={600} // ✅ required
+            loading="lazy"
           />
         </Box>
       </Box>

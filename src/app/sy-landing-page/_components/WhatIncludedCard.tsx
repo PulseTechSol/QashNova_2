@@ -96,6 +96,7 @@ export function WhatIncludedCard({
                 height: "100%",
                 objectFit: "contain",
               }}
+              loading="lazy"
             />
           </Box>
           <Typography

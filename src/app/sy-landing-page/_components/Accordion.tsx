@@ -61,11 +61,13 @@ const FaqItem: React.FC<FaqItemProps> = ({
               <Image
                 src={svgs.closeIcon}
                 alt="Close South Yorkshire landing page FAQ section"
+                loading="lazy"
               />
             ) : (
               <Image
                 src={svgs.addIcon}
                 alt="Expand South Yorkshire landing page FAQ section"
+                loading="lazy"
               />
             )}
           </IconButton>

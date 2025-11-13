@@ -116,11 +116,13 @@ const FaqAreahub: React.FC<GenericAccordionProps> = ({
                       <Image
                         src={svgs.closeIcon}
                         alt={`Close area hub FAQ item ${index + 1}`}
+                        loading="lazy"
                       />
                     ) : (
                       <Image
                         src={svgs.addIcon}
                         alt={`Expand area hub FAQ item ${index + 1}`}
+                        loading="lazy"
                       />
                     )}
                   </IconButton>
