@@ -3,6 +3,40 @@ import { Box } from "@mui/material";
 import BlogHeading from "../_components/BlogHeading";
 import BlogParagraph from "../_components/BlogParagraph";
 import { sectionPadding, blogScreenGap, maxWidth } from "@/app/_utils/themes";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "The Future of E-commerce: What's Next? | Qashnova Blog",
+  description:
+    "Explore emerging trends and technologies shaping the online retail landscape, from AI-powered personalization to seamless checkout experiences.",
+  alternates: {
+    canonical: "https://www.qashnova.com/the-future-of-e-commerce-whats-next",
+  },
+  openGraph: {
+    title: "The Future of E-commerce: What's Next? | Qashnova Blog",
+    description:
+      "Explore emerging trends and technologies shaping the online retail landscape, from AI-powered personalization to seamless checkout experiences.",
+    url: "https://www.qashnova.com/the-future-of-e-commerce-whats-next",
+    siteName: "Qashnova",
+    images: [
+      {
+        url: "https://www.qashnova.com/blogs/blog6.webp",
+        width: 1200,
+        height: 630,
+        alt: "The future of e-commerce - emerging trends and technologies shaping online retail",
+      },
+    ],
+    type: "article",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Future of E-commerce: What's Next? | Qashnova Blog",
+    description:
+      "Explore emerging trends and technologies shaping the online retail landscape, from AI-powered personalization to seamless checkout experiences.",
+    images: ["https://www.qashnova.com/blogs/blog6.webp"],
+  },
+};
 
 export default function EcommerceFuturePage() {
   return (

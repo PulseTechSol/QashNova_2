@@ -11,13 +11,39 @@ export const revalidate = 0;
 export async function generateMetadata(): Promise<Metadata> {
   const data = await fetchPageData("area-hub");
 
+  const title = data?.metaTitle ?? "Area Hub - Qashnova";
+  const description =
+    data?.metaDescription ??
+    "Discover our Area Hub for professional website design services in Rotherham, South Yorkshire & Sheffield. Elevate your online presence with Qashnova.";
+  const url = data?.canonicalUrl ?? "https://www.qashnova.com/area-hub";
+
   return {
-    title: data?.metaTitle ?? "Area Hub - Qashnova",
-    description:
-      data?.metaDescription ??
-      "Discover our Area Hub for professional website design services in Rotherham, South Yorkshire & Sheffield. Elevate your online presence with Qashnova.",
+    title,
+    description,
     alternates: {
-      canonical: data?.canonicalUrl ?? "https://www.qashnova.com/area-hub",
+      canonical: url,
+    },
+    openGraph: {
+      title: title,
+      description: description,
+      url: url,
+      siteName: "Qashnova",
+      images: [
+        {
+          url: "https://www.qashnova.com/logo.svg",
+          width: 1200,
+          height: 630,
+          alt: "Qashnova area hub - professional website design services in Rotherham, South Yorkshire and Sheffield",
+        },
+      ],
+      type: "website",
+      locale: "en_GB",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      images: ["https://www.qashnova.com/logo.svg"],
     },
   };
 }

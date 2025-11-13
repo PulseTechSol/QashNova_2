@@ -10,13 +10,39 @@ export const revalidate = 0;
 export async function generateMetadata(): Promise<Metadata> {
   const data = await fetchPageData("case-study");
 
+  const title = data?.metaTitle ?? "Case Studies | Qashnova Success Stories";
+  const description =
+    data?.metaDescription ??
+    "Explore real case studies of businesses that grew with Qashnova's websites, branding, and marketing strategies.";
+  const url = data?.canonicalUrl ?? "https://www.qashnova.com/case-study";
+
   return {
-    title: data?.metaTitle ?? "Case Studies | Qashnova Success Stories",
-    description:
-      data?.metaDescription ??
-      "Explore real case studies of businesses that grew with Qashnova’s websites, branding, and marketing strategies.",
+    title,
+    description,
     alternates: {
-      canonical: data?.canonicalUrl ?? "https://www.qashnova.com/case-study",
+      canonical: url,
+    },
+    openGraph: {
+      title: title,
+      description: description,
+      url: url,
+      siteName: "Qashnova",
+      images: [
+        {
+          url: "https://www.qashnova.com/logo.svg",
+          width: 1200,
+          height: 630,
+          alt: "Qashnova case studies - success stories of businesses that grew with our services",
+        },
+      ],
+      type: "website",
+      locale: "en_GB",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      images: ["https://www.qashnova.com/logo.svg"],
     },
   };
 }

@@ -10,13 +10,39 @@ export const revalidate = 0;
 export async function generateMetadata(): Promise<Metadata> {
   const data = await fetchPageData("branding");
 
+  const title = data?.metaTitle ?? "Branding & Identity Design Services | Qashnova";
+  const description =
+    data?.metaDescription ??
+    "Qashnova offers complete branding solutions including logo design, brand identity, and visuals that make your business unforgettable.";
+  const url = data?.canonicalUrl ?? "https://www.qashnova.com/branding";
+
   return {
-    title: data?.metaTitle ?? "Branding & Identity Design Services | Qashnova",
-    description:
-      data?.metaDescription ??
-      "Qashnova offers complete branding solutions including logo design, brand identity, and visuals that make your business unforgettable.",
+    title,
+    description,
     alternates: {
-      canonical: data?.canonicalUrl ?? "https://www.qashnova.com/branding",
+      canonical: url,
+    },
+    openGraph: {
+      title: title,
+      description: description,
+      url: url,
+      siteName: "Qashnova",
+      images: [
+        {
+          url: "https://www.qashnova.com/logo.svg",
+          width: 1200,
+          height: 630,
+          alt: "Qashnova branding and identity design services - logo design and brand identity",
+        },
+      ],
+      type: "website",
+      locale: "en_GB",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      images: ["https://www.qashnova.com/logo.svg"],
     },
   };
 }

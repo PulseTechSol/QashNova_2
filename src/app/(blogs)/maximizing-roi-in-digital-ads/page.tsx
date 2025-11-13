@@ -3,6 +3,40 @@ import { Box } from "@mui/material";
 import BlogHeading from "../_components/BlogHeading";
 import BlogParagraph from "../_components/BlogParagraph";
 import { sectionPadding, blogScreenGap, maxWidth } from "@/app/_utils/themes";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Maximizing ROI in Digital Ads | Qashnova Blog",
+  description:
+    "Learn strategies to fine-tune your digital advertising campaigns for better performance and a stronger return on investment.",
+  alternates: {
+    canonical: "https://www.qashnova.com/maximizing-roi-in-digital-ads",
+  },
+  openGraph: {
+    title: "Maximizing ROI in Digital Ads | Qashnova Blog",
+    description:
+      "Learn strategies to fine-tune your digital advertising campaigns for better performance and a stronger return on investment.",
+    url: "https://www.qashnova.com/maximizing-roi-in-digital-ads",
+    siteName: "Qashnova",
+    images: [
+      {
+        url: "https://www.qashnova.com/blogs/blog5.webp",
+        width: 1200,
+        height: 630,
+        alt: "Maximizing ROI in digital ads - strategies for better performance and stronger return on investment",
+      },
+    ],
+    type: "article",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Maximizing ROI in Digital Ads | Qashnova Blog",
+    description:
+      "Learn strategies to fine-tune your digital advertising campaigns for better performance and a stronger return on investment.",
+    images: ["https://www.qashnova.com/blogs/blog5.webp"],
+  },
+};
 
 export default function MaximizingROIBlogPage() {
   return (

@@ -134,14 +134,40 @@ const seoSupportData: SeoSupportData = {
 export async function generateMetadata(): Promise<Metadata> {
   const data = await fetchPageData("south-yorkshire");
 
+  const title = data?.metaTitle ?? "Website Design in South Yorkshire";
+  const description =
+    data?.metaDescription ??
+    "Crafting bespoke websites in South Yorkshire. We blend stunning aesthetics with powerful functionality. Our designs are tailored to elevate your brand.";
+  const url =
+    data?.canonicalUrl ?? "https://www.qashnova.com/area-hub/south-yorkshire";
+
   return {
-    title: data?.metaTitle ?? "Website Design in South Yorkshire",
-    description:
-      data?.metaDescription ??
-      "Crafting bespoke websites in South Yorkshire. We blend stunning aesthetics with powerful functionality. Our designs are tailored to elevate your brand.",
+    title,
+    description,
     alternates: {
-      canonical:
-        data?.canonicalUrl ?? "https://www.qashnova.com/south-yorkshire",
+      canonical: url,
+    },
+    openGraph: {
+      title: title,
+      description: description,
+      url: url,
+      siteName: "Qashnova",
+      images: [
+        {
+          url: "https://www.qashnova.com/logo.svg",
+          width: 1200,
+          height: 630,
+          alt: "Website design in South Yorkshire by Qashnova - bespoke websites with stunning aesthetics",
+        },
+      ],
+      type: "website",
+      locale: "en_GB",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      images: ["https://www.qashnova.com/logo.svg"],
     },
   };
 }

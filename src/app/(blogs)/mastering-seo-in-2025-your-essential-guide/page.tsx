@@ -4,6 +4,40 @@ import BlogHeading from "../_components/BlogHeading";
 import BlogParagraph from "../_components/BlogParagraph";
 import BlogList from "../_components/BlogList";
 import { sectionPadding, blogScreenGap, maxWidth } from "@/app/_utils/themes";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mastering SEO in 2025: Your Essential Guide | Qashnova Blog",
+  description:
+    "Learn the latest SEO strategies and techniques to boost your search rankings and attract more organic traffic to your website this year.",
+  alternates: {
+    canonical: "https://www.qashnova.com/mastering-seo-in-2025-your-essential-guide",
+  },
+  openGraph: {
+    title: "Mastering SEO in 2025: Your Essential Guide | Qashnova Blog",
+    description:
+      "Learn the latest SEO strategies and techniques to boost your search rankings and attract more organic traffic to your website this year.",
+    url: "https://www.qashnova.com/mastering-seo-in-2025-your-essential-guide",
+    siteName: "Qashnova",
+    images: [
+      {
+        url: "https://www.qashnova.com/blogs/blog1.webp",
+        width: 1200,
+        height: 630,
+        alt: "Mastering SEO in 2025 - essential guide for search engine optimization",
+      },
+    ],
+    type: "article",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mastering SEO in 2025: Your Essential Guide | Qashnova Blog",
+    description:
+      "Learn the latest SEO strategies and techniques to boost your search rankings and attract more organic traffic to your website this year.",
+    images: ["https://www.qashnova.com/blogs/blog1.webp"],
+  },
+};
 
 export default function MasteringSEOPage() {
   return (

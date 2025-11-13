@@ -54,15 +54,41 @@ const blogs = [
 export async function generateMetadata(): Promise<Metadata> {
   const data = await fetchPageData("blog");
 
+  const title =
+    data?.metaTitle ??
+    "Qashnova Blog | Tips on Websites, Branding & Business Growth";
+  const description =
+    data?.metaDescription ??
+    "Read expert insights from Qashnova on websites, branding, SEO, and digital strategies to grow your business online.";
+  const url = data?.canonicalUrl ?? "https://www.qashnova.com/blogs";
+
   return {
-    title:
-      data?.metaTitle ??
-      "Qashnova Blog | Tips on Websites, Branding & Business Growth",
-    description:
-      data?.metaDescription ??
-      "Read expert insights from Qashnova on websites, branding, SEO, and digital strategies to grow your business online.",
+    title,
+    description,
     alternates: {
-      canonical: data?.canonicalUrl ?? "https://www.qashnova.com/blogs",
+      canonical: url,
+    },
+    openGraph: {
+      title: title,
+      description: description,
+      url: url,
+      siteName: "Qashnova",
+      images: [
+        {
+          url: "https://www.qashnova.com/logo.svg",
+          width: 1200,
+          height: 630,
+          alt: "Qashnova blog - expert insights on websites, branding, SEO, and digital strategies",
+        },
+      ],
+      type: "website",
+      locale: "en_GB",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      images: ["https://www.qashnova.com/logo.svg"],
     },
   };
 }

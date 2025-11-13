@@ -4,8 +4,42 @@ import SabirSection from "./_sections/SabirSection";
 import FaqSection from "./_sections/FaqSection";
 import ServiceSection from "./_sections/ServiceSection";
 import { Box } from "@mui/material";
+import { Metadata } from "next";
 // import Image from "next/image";
 // import pngs from "@/_assets/pngs";
+
+export const metadata: Metadata = {
+  title: "South Yorkshire Digital Marketing Package | Qashnova",
+  description:
+    "All-in-One Online Presence for Just £200/month. Get professional website design, SEO, and digital marketing services for South Yorkshire businesses.",
+  alternates: {
+    canonical: "https://www.qashnova.com/sy-landing-page",
+  },
+  openGraph: {
+    title: "South Yorkshire Digital Marketing Package | Qashnova",
+    description:
+      "All-in-One Online Presence for Just £200/month. Get professional website design, SEO, and digital marketing services for South Yorkshire businesses.",
+    url: "https://www.qashnova.com/sy-landing-page",
+    siteName: "Qashnova",
+    images: [
+      {
+        url: "https://www.qashnova.com/logo.svg",
+        width: 1200,
+        height: 630,
+        alt: "South Yorkshire digital marketing package - all-in-one online presence for £200/month",
+      },
+    ],
+    type: "website",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "South Yorkshire Digital Marketing Package | Qashnova",
+    description:
+      "All-in-One Online Presence for Just £200/month. Get professional website design, SEO, and digital marketing services for South Yorkshire businesses.",
+    images: ["https://www.qashnova.com/logo.svg"],
+  },
+};
 
 export default function Home() {
   return (

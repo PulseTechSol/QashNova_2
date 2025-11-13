@@ -142,13 +142,39 @@ const seoSupportData: SeoSupportData = {
 export async function generateMetadata(): Promise<Metadata> {
   const data = await fetchPageData("rotherham");
 
+  const title = data?.metaTitle ?? "Website Design in Rotherham";
+  const description =
+    data?.metaDescription ??
+    "Crafting bespoke websites in Rotherham. We blend stunning aesthetics with powerful functionality. Our designs are tailored to elevate your brand";
+  const url = data?.canonicalUrl ?? "https://www.qashnova.com/area-hub/rotherham";
+
   return {
-    title: data?.metaTitle ?? "Website Design in Rotherham",
-    description:
-      data?.metaDescription ??
-      "Crafting bespoke websites in Rotherham. We blend stunning aesthetics with powerful functionality. Our designs are tailored to elevate your brand",
+    title,
+    description,
     alternates: {
-      canonical: data?.canonicalUrl ?? "https://www.qashnova.com/rotherham",
+      canonical: url,
+    },
+    openGraph: {
+      title: title,
+      description: description,
+      url: url,
+      siteName: "Qashnova",
+      images: [
+        {
+          url: "https://www.qashnova.com/logo.svg",
+          width: 1200,
+          height: 630,
+          alt: "Website design in Rotherham by Qashnova - bespoke websites with stunning aesthetics",
+        },
+      ],
+      type: "website",
+      locale: "en_GB",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      images: ["https://www.qashnova.com/logo.svg"],
     },
   };
 }

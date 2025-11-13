@@ -12,13 +12,39 @@ export const revalidate = 0;
 export async function generateMetadata(): Promise<Metadata> {
   const data = await fetchPageData("about-us");
 
+  const title = data?.metaTitle ?? "About Qashnova | Who We Are & What We Do";
+  const description =
+    data?.metaDescription ??
+    "Learn about Qashnova, a creative digital agency focused on websites, branding, and growth strategies that empower businesses worldwide.";
+  const url = data?.canonicalUrl ?? "https://www.qashnova.com/about-us";
+
   return {
-    title: data?.metaTitle ?? "About Qashnova | Who We Are & What We Do",
-    description:
-      data?.metaDescription ??
-      "Learn about Qashnova, a creative digital agency focused on websites, branding, and growth strategies that empower businesses worldwide.",
+    title,
+    description,
     alternates: {
-      canonical: data?.canonicalUrl ?? "https://www.qashnova.com/about-us",
+      canonical: url,
+    },
+    openGraph: {
+      title: title,
+      description: description,
+      url: url,
+      siteName: "Qashnova",
+      images: [
+        {
+          url: "https://www.qashnova.com/logo.svg",
+          width: 1200,
+          height: 630,
+          alt: "About Qashnova - creative digital agency for websites, branding, and growth strategies",
+        },
+      ],
+      type: "website",
+      locale: "en_GB",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      images: ["https://www.qashnova.com/logo.svg"],
     },
   };
 }

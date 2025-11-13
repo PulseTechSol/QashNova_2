@@ -4,6 +4,40 @@ import BlogHeading from "../_components/BlogHeading";
 import BlogParagraph from "../_components/BlogParagraph";
 import BlogList from "../_components/BlogList";
 import { sectionPadding, blogScreenGap, maxWidth } from "@/app/_utils/themes";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Website Redesign Checklist: Avoiding Common Pitfalls | Qashnova Blog",
+  description:
+    "Planning a new website? This guide offers crucial tips and a checklist to ensure a smooth redesign process and a successful online launch.",
+  alternates: {
+    canonical: "https://www.qashnova.com/website-redesign-checklist-avoiding-common-pitfalls",
+  },
+  openGraph: {
+    title: "Website Redesign Checklist: Avoiding Common Pitfalls | Qashnova Blog",
+    description:
+      "Planning a new website? This guide offers crucial tips and a checklist to ensure a smooth redesign process and a successful online launch.",
+    url: "https://www.qashnova.com/website-redesign-checklist-avoiding-common-pitfalls",
+    siteName: "Qashnova",
+    images: [
+      {
+        url: "https://www.qashnova.com/blogs/blog4.webp",
+        width: 1200,
+        height: 630,
+        alt: "Website redesign checklist - avoiding common pitfalls for a successful online launch",
+      },
+    ],
+    type: "article",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Website Redesign Checklist: Avoiding Common Pitfalls | Qashnova Blog",
+    description:
+      "Planning a new website? This guide offers crucial tips and a checklist to ensure a smooth redesign process and a successful online launch.",
+    images: ["https://www.qashnova.com/blogs/blog4.webp"],
+  },
+};
 
 export default function WebsiteRedesignChecklistPage() {
   return (

@@ -4,6 +4,40 @@ import BlogHeading from "../_components/BlogHeading";
 import BlogParagraph from "../_components/BlogParagraph";
 import BlogList from "../_components/BlogList";
 import { sectionPadding, blogScreenGap, maxWidth } from "@/app/_utils/themes";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "The Power of Visual Storytelling in Branding | Qashnova Blog",
+  description:
+    "Discover how compelling visuals and narratives can transform your brand identity and deeply resonate with your audience on every platform.",
+  alternates: {
+    canonical: "https://www.qashnova.com/the-power-of-visual-storytelling-in-branding",
+  },
+  openGraph: {
+    title: "The Power of Visual Storytelling in Branding | Qashnova Blog",
+    description:
+      "Discover how compelling visuals and narratives can transform your brand identity and deeply resonate with your audience on every platform.",
+    url: "https://www.qashnova.com/the-power-of-visual-storytelling-in-branding",
+    siteName: "Qashnova",
+    images: [
+      {
+        url: "https://www.qashnova.com/blogs/blog2.webp",
+        width: 1200,
+        height: 630,
+        alt: "The power of visual storytelling in branding - transform your brand identity with compelling visuals",
+      },
+    ],
+    type: "article",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Power of Visual Storytelling in Branding | Qashnova Blog",
+    description:
+      "Discover how compelling visuals and narratives can transform your brand identity and deeply resonate with your audience on every platform.",
+    images: ["https://www.qashnova.com/blogs/blog2.webp"],
+  },
+};
 
 export default function VisualStorytellingPage() {
   return (

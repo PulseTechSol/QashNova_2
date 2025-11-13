@@ -4,6 +4,40 @@ import BlogHeading from "../_components/BlogHeading";
 import BlogParagraph from "../_components/BlogParagraph";
 import BlogList from "../_components/BlogList";
 import { sectionPadding, blogScreenGap, maxWidth } from "@/app/_utils/themes";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Social Media Trends You Can't Ignore | Qashnova Blog",
+  description:
+    "Stay ahead with insights into the most impactful social media trends, and learn how to leverage them for stronger engagement and community building.",
+  alternates: {
+    canonical: "https://www.qashnova.com/social-media-trends-you-cant-ignore",
+  },
+  openGraph: {
+    title: "Social Media Trends You Can't Ignore | Qashnova Blog",
+    description:
+      "Stay ahead with insights into the most impactful social media trends, and learn how to leverage them for stronger engagement and community building.",
+    url: "https://www.qashnova.com/social-media-trends-you-cant-ignore",
+    siteName: "Qashnova",
+    images: [
+      {
+        url: "https://www.qashnova.com/blogs/blog3.webp",
+        width: 1200,
+        height: 630,
+        alt: "Social media trends you can't ignore - impactful trends for stronger engagement and community building",
+      },
+    ],
+    type: "article",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Social Media Trends You Can't Ignore | Qashnova Blog",
+    description:
+      "Stay ahead with insights into the most impactful social media trends, and learn how to leverage them for stronger engagement and community building.",
+    images: ["https://www.qashnova.com/blogs/blog3.webp"],
+  },
+};
 
 export default function SocialMediaTrendsPage() {
   return (
