@@ -16,6 +16,92 @@ const WebsiteSection = dynamicImport(
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
+const websiteData = [
+  {
+    link: "https://www.savilerowfurniture.com/",
+    image: "/websites/website1.png",
+    isbool: true,
+    heading1: "savile row",
+    heading2: "furniture",
+    destopPara:
+      "We designed and developed a modern, responsive website for Savile Row Furniture, a company specializing in high-end furnished apartments. Our goal was to reflect their luxury living experience through a clean, elegant design that highlights their attention to detail and premium furnishings.",
+    mobilePara:
+      "We designed and developed a modern, responsive website for Savile Row Furniture, a company specializing in high-end furnished apartments.",
+  },
+  {
+    link: "https://www.sabirs.co.uk/",
+    image: "/websites/sabirs.webp",
+    heading1: "Sabir's",
+    heading2: "Grill",
+    destopPara:
+      "We transformed Sabir's Grill's online presence by creating a sleek, culturally rich website that blends modern design with intuitive navigation and mobile optimization. The goal was a seamless Browse experience to highlight their diverse offerings and drive online reservations, resulting in a flavorful digital experience mirroring their cuisine's quality and warmth.",
+    mobilePara:
+      "We transformed Sabir's Grill's online presence by creating a sleek, culturally rich website that blends modern design with intuitive navigation and mobile optimization.",
+  },
+  {
+    link: "https://www.saifsboxing.com/",
+    image: "/websites/website3.png",
+    isbool: true,
+    heading1: "Saif’s",
+    heading2: "Boxing",
+    destopPara:
+      "Saif's Boxing needed a bold online identity to match its energetic gym and community. We delivered a high-impact, mobile-responsive website showcasing training programs, transformations, and class schedules with strength and clarity. Optimized for local search, the site now helps potential clients easily discover and join, reflecting the gym's power and discipline.",
+    mobilePara:
+      "Saif's Boxing needed a bold online identity to match its energetic gym and community. We delivered a high-impact, mobile-responsive website showcasing training programs, transformations, and class schedules with strength and clarity.",
+  },
+  {
+    link: "https://www.a-class-travel.co.uk/",
+    image: "/websites/website4.png",
+    heading1: "a class",
+    heading2: "travels",
+    destopPara:
+      "For A Class Travels, we delivered a professional and responsive website encompassing expert web design and development. Our work focused on creating an intuitive platform that effectively showcases their premium chauffeur services, ensuring a seamless user experience for booking and inquiries.",
+    mobilePara:
+      "For A Class Travels, we delivered a professional and responsive website encompassing expert web design and development. Our work focused on creating an intuitive platform that effectively showcases their premium chauffeur services.",
+  },
+  {
+    link: "https://www.izecprestige.co.uk/",
+    image: "/websites/website5.png",
+    isbool: true,
+    heading1: "izec",
+    heading2: "prestige",
+    destopPara:
+      "For Izec Prestige Cars, an executive chauffeur service, we designed and developed a sophisticated and user-friendly website. This platform effectively showcases their premium services, from airport transfers to event travel, ensuring a seamless online experience that reflects their commitment to comfort, professionalism, and luxury.",
+    mobilePara:
+      "For Izec Prestige Cars, an executive chauffeur service, we designed and developed a sophisticated and user-friendly website. This platform effectively showcases their premium services, from airport transfers to event travel.",
+  },
+  {
+    link: "https://www.conquestlaw.co.uk/",
+    image: "/websites/website6.png",
+    heading1: "Conquest",
+    heading2: "law",
+    destopPara:
+      "For Conquest Law Solicitors, a leading legal firm, we designed and developed a professional and authoritative website. This platform effectively presents their diverse legal services for individuals and businesses, fostering trust and clarity while serving as a crucial online hub for client outreach and information.",
+    mobilePara:
+      "For Conquest Law Solicitors, a leading legal firm, we designed and developed a professional and authoritative website.",
+  },
+  {
+    link: "https://www.isfahanandkashan.com",
+    image: "/websites/website7.png",
+    isbool: true,
+    heading1: "isfahan &",
+    heading2: "kashan",
+    destopPara:
+      "We designed and developed a responsive website for Isfahan & Kashan, showcasing their premium Persian and rugged carpets. The site blends traditional elegance with a modern layout to highlight their craftsmanship and enhance the customer experience.",
+    mobilePara:
+      "We designed and developed a responsive website for Isfahan & Kashan, showcasing their premium Persian and rugged carpets.",
+  },
+  {
+    link: "https://www.sofaandrattan.co.uk/",
+    image: "/websites/website8.png",
+    heading1: "Sofa and",
+    heading2: "rattan",
+    destopPara:
+      "We designed and developed the official website for Sofa & Rattan, a premium furniture brand specializing in stylish sofas and rattan collections. Our work focused on creating a modern, user-friendly e-commerce experience that reflects the brand’s elegance and quality craftsmanship.",
+    mobilePara:
+      "We designed and developed the official website for Sofa & Rattan, a premium furniture brand specializing in stylish sofas and rattan collections.",
+  },
+];
 // 🔹 Dynamic metadata from Strapi
 export async function generateMetadata(): Promise<Metadata> {
   const data = await fetchPageData("website");
@@ -61,17 +147,19 @@ export default async function WebsitesPage() {
   const data = await fetchPageData("website");
 
   const hero = data?.textualContent?.heroSection;
-  const websitesData: WebsiteItem[] = data?.textualContent?.websiteData;
+  const websitesData: WebsiteItem[] =
+    data?.textualContent?.websiteData ?? websiteData;
   return (
     <>
       <header>
         <HeroSection
-          line1={hero?.desktop?.line1}
-          line1Mobile={hero?.mobile?.line1}
-          line2Desktop={hero?.desktop?.line2}
-          line2Mobile={hero?.mobile?.line2}
-          line3Desktop={hero?.desktop?.line3}
-          line3Mobile={hero?.mobile?.line3}
+          line1={hero?.desktop?.line1 ?? "Where"}
+          line1Mobile={hero?.mobile?.line1 ?? "Where"}
+          line2Desktop={hero?.desktop?.line2 ?? "Design Meets"}
+          line2Mobile={hero?.mobile?.line2 ?? "Design Meets"}
+          line3Desktop={hero?.desktop?.line3 ?? "Performance"}
+          line3Mobile={hero?.mobile?.line3 ?? "Future"}
+          isbool={true}
         />
       </header>
 
