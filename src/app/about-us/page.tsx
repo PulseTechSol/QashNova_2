@@ -78,23 +78,54 @@ export default async function AboutUsPage() {
     <>
       <header>
         <HeroSection
-          line1={hero?.desktop?.line1}
-          line1Mobile={hero?.mobile?.line1}
-          line2Desktop={hero?.desktop?.line2}
-          line2Mobile={hero?.mobile?.line2}
-          line3Desktop={hero?.desktop?.line3}
-          line3Mobile={hero?.mobile?.line3}
+          line1={hero?.desktop?.line1 ?? "designing"}
+          line1Mobile={hero?.mobile?.line1 ?? "designing"}
+          line2Desktop={hero?.desktop?.line2 ?? "your Digital"}
+          line2Mobile={hero?.mobile?.line2 ?? "Digital"}
+          line3Desktop={hero?.desktop?.line3 ?? "Future today"}
+          line3Mobile={hero?.mobile?.line3 ?? "Future"}
         />
       </header>
 
       <main role="main">
-        <WhatweDo whatWeDo={whatWeDo} />
+        <WhatweDo
+          whatWeDo={
+            whatWeDo ?? {
+              heading1: "What",
+              heading2: "we do",
+              descriptionMobile:
+                "We specialize in creating beautiful, functional, and responsive" +
+                "websites tailored to your unique needs.",
+              descriptionDesktop:
+                "We specialize in creating beautiful, functional, and responsive" +
+                "websites tailored to your unique needs. At Qashnova, we combine" +
+                "creativity with cutting-edge technology to deliver designs that" +
+                "captivate and connect with your audience.",
+            }
+          }
+        />
         <SectionWithHeadingAndCTA
           heading={brand?.heading ?? "brighten your brand with "}
           lastword={brand?.lastword ?? "qashnova"}
           route={brand?.route ?? "/case-study"}
         />
-        <Ourmission mission={mission} />
+        <Ourmission
+          mission={
+            mission ?? {
+              heading1: "Our",
+              heading2: "mission",
+              descriptionMobile:
+                "We're on a mission to be your trusted guide in the digital" +
+                "world. Our commitment lies in crafting bespoke solutions that" +
+                "elevate your brand.",
+              descriptionDesktop:
+                "We're on a mission to be your trusted guide in the digital" +
+                "world. Our commitment lies in crafting bespoke solutions that" +
+                "elevate your brand, expand your reach, and consistently drive" +
+                "your online objectives forward.",
+            }
+          }
+        />
       </main>
     </>
   );

@@ -89,8 +89,8 @@ export default function WhatweDo({
       >
         <GenericHeadingBox
           isbool={true}
-          heading1={whatWeDo.heading1}
-          heading2={whatWeDo.heading2}
+          heading1={whatWeDo?.heading1}
+          heading2={whatWeDo?.heading2}
         />
 
         <Box
@@ -120,7 +120,7 @@ export default function WhatweDo({
               m: 0,
             }}
           >
-            {whatWeDo.descriptionDesktop}
+            {whatWeDo?.descriptionDesktop}
           </Typography>
 
           {/* Mobile paragraph (shorter content kept) */}
@@ -137,7 +137,7 @@ export default function WhatweDo({
               m: 0,
             }}
           >
-            {whatWeDo.descriptionMobile}
+            {whatWeDo?.descriptionMobile}
           </Typography>
 
           <Box
