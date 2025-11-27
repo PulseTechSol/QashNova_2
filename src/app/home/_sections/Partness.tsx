@@ -14,7 +14,7 @@ export default function LogoMarquee({ slogans }: { slogans: string[] }) {
       }}
     >
       <Marquee speed={100} gradient={false} autoFill aria-hidden>
-        {slogans.map((item, index) => (
+        {slogans?.map((item, index) => (
           <Typography
             key={index}
             component="span"

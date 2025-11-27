@@ -220,40 +220,94 @@ export default async function HomePage() {
     <>
       <header>
         <HeroHome
-          firstWord={hero?.firstWord}
-          secondWord={hero?.secondWord}
-          thirdWord={hero?.thirdWord}
+          firstWord={hero?.firstWord ?? "Design."}
+          secondWord={hero?.secondWord ?? "Market."}
+          thirdWord={hero?.thirdWord ?? "Grow."}
         />
       </header>
 
       <main role="main">
-        <Partness slogans={slogans} />
+        <Partness
+          slogans={
+            slogans ?? [
+              "Your Online Companion",
+              "Drive Digital Results",
+              "Power Your Brand",
+            ]
+          }
+        />
         <HowHelp
-          heading={howWeHelp?.heading}
-          description={howWeHelp?.description}
+          heading={
+            howWeHelp?.heading ?? {
+              line1: "How  ",
+              line2: "We help",
+            }
+          }
+          description={
+            howWeHelp?.description ??
+            "Discover our full range of digital marketing services. From strategy to execution, we're here to deliver effective solutions that help your brand succeed in today's competitive landscape."
+          }
           services={howWeHelp?.services || services}
         />
         <SectionWithHeadingAndCTA
-          heading={sectionWithCta?.heading}
-          lastword={sectionWithCta?.lastword}
+          heading={sectionWithCta?.heading ?? "Crafting Websites for Your "}
+          lastword={sectionWithCta?.lastword ?? "Success"}
         />
         <OurWork
-          heading={ourWork?.heading}
-          description={ourWork?.description}
+          heading={
+            ourWork?.heading ?? {
+              line1: "Our ",
+              line2: "Work",
+            }
+          }
+          description={
+            ourWork?.description ??
+            `
+            See the passion and precision in every project. Our featured work
+            highlights the collaborative journey with our clients, demonstrating
+            how we transform visions into impactful digital experiences and
+            stunning creative solutions.`
+          }
           projects={ourWork?.projects || projects}
         />
+
         <ClientsStories
-          heading={clientStories?.heading}
+          heading={
+            clientStories?.heading ?? {
+              line1: "clients’",
+              line2: "stories",
+            }
+          }
           reviews={clientStories?.reviews || reviews}
         />
         <Casestudies
-          heading={caseStudies?.heading}
-          description={caseStudies?.description}
+          heading={
+            caseStudies?.heading ?? {
+              line1: "Case",
+              line2: "Studies",
+            }
+          }
+          description={
+            caseStudies?.description ??
+            " Explore the pinnacle of creativity with our standout projects that" +
+              "blend strategy, design, and innovation. Each campaign is a testament" +
+              "to our passion for delivering results that captivate and convert."
+          }
           caseStudies={caseStudies?.caseStudies || caseStudiesL}
         />
         <DigitalInsights
-          heading={digitalInsights?.heading}
-          description={digitalInsights?.description}
+          heading={
+            digitalInsights?.heading ?? {
+              line1: "digital",
+              line2: "insights",
+            }
+          }
+          description={
+            digitalInsights?.description ??
+            "Dive into our latest articles, expert analysis, and actionable tips." +
+              "Stay informed on the evolving digital landscape and discover" +
+              "strategies to propel your business forward."
+          }
           articles={digitalInsights?.articles || articals}
         />
         <ContactUs />

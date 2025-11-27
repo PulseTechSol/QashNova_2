@@ -54,9 +54,9 @@ export default function AnimatedText({ text }: { text: string }) {
         textAlign: "left",
       }}
     >
-      {text.split(" ").map((word, wordIndex) => (
+      {text?.split(" ")?.map((word, wordIndex) => (
         <Box key={wordIndex} sx={{ display: "flex" }}>
-          {word.split("").map((char, charIndex) => (
+          {word?.split("")?.map((char, charIndex) => (
             <motion.span
               key={`${wordIndex}-${charIndex}`}
               initial={{ opacity: 0, y: 20 }}
