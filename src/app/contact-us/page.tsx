@@ -66,19 +66,34 @@ export default async function Page() {
     <>
       <header>
         <HeroSection
-          line1={hero?.desktop?.line1}
-          line1Mobile={hero?.mobile?.line1}
-          line2Desktop={hero?.desktop?.line2}
-          line2Mobile={hero?.mobile?.line2}
-          line3Desktop={hero?.desktop?.line3}
-          line3Mobile={hero?.mobile?.line3}
+          line1={hero?.desktop?.line1 ?? "Ready To"}
+          line1Mobile={hero?.mobile?.line1 ?? "Solutions"}
+          line2Desktop={hero?.desktop?.line2 ?? "Start Your"}
+          line2Mobile={hero?.mobile?.line2 ?? "Built For"}
+          line3Desktop={hero?.desktop?.line3 ?? "Project"}
+          line3Mobile={hero?.mobile?.line3 ?? "Your Brand"}
         />
       </header>
 
       <main role="main">
         <ContactUs
-          heading={contact?.heading}
-          description={contact?.description}
+          heading={contact?.heading ?? "Get In Touch"}
+          description={
+            contact?.description ?? [
+              "We would love to hear from you. Whether you have a question about" +
+                "our services, need advice on your project or simply want to find out" +
+                "how we can help, our team is here to listen. Every enquiry matters" +
+                "to us and we aim to respond quickly with clear and helpful answers.",
+              "Filling out the form below is the easiest way to get in touch. Just" +
+                "let us know a little about what you are looking for and we will come" +
+                "back to you as soon as possible. If you prefer, you can also reach" +
+                "us directly by phone or email and we will be happy to assist.",
+              "Building strong relationships with our clients starts with a" +
+                "conversation, so please do not hesitate to contact us today. We look" +
+                "forward to working with you and helping bring your ideas and goals" +
+                "to life.",
+            ]
+          }
         />
       </main>
     </>
