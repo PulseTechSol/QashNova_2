@@ -1,8 +1,8 @@
 import HomePage from "./home/page";
 import type { Metadata } from "next";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+// Revalidate every hour (3600 seconds) to prevent hitting API limits
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Qashnova | Digital Agency for Web Design, Branding & SEO",

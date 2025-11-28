@@ -37,8 +37,8 @@ const ContactUs = dynamicImport(() => import("@/_components/ContactUs"), {
   ssr: true,
 });
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+// Revalidate every hour (3600 seconds) to prevent hitting API limits
+export const revalidate = 3600;
 
 const projects = [
   {

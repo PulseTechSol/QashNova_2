@@ -12,8 +12,8 @@ const CaseStudySection = dynamicImport(
   }
 );
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+// Revalidate every hour (3600 seconds) to prevent hitting API limits
+export const revalidate = 3600;
 
 // 🔹 Dynamic metadata from Strapi
 export async function generateMetadata(): Promise<Metadata> {
