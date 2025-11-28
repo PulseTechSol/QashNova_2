@@ -122,7 +122,7 @@ export default function CardBranding({
             }}
             component="div" // ✅ so we can render child <p> safely
           >
-            {brandingSection.description.desktop.map((desc, i) => (
+            {brandingSection?.description?.desktop?.map((desc, i) => (
               <Box
                 key={i}
                 component="p"
@@ -144,7 +144,7 @@ export default function CardBranding({
             }}
             component="div"
           >
-            {brandingSection.description.mobile.map((desc, i) => (
+            {brandingSection?.description?.mobile?.map((desc, i) => (
               <Box key={i} component="p" sx={{ mb: 3, lineHeight: "26px" }}>
                 {desc}
               </Box>
@@ -161,7 +161,7 @@ export default function CardBranding({
               height: "100%",
             }}
           >
-            {brandingSection.showcaseCards.map((item, idx) => (
+            {brandingSection?.showcaseCards?.map((item, idx) => (
               <WorkShowcase key={idx} title={item.title} image={item.image} />
             ))}
           </Grid>
@@ -229,7 +229,9 @@ export function WorkShowcase({ title, image }: WorkShowcaseProps) {
         >
           <Image
             src={image}
-            alt={`${title || "Branding"} project showcase by Qashnova digital agency`}
+            alt={`${
+              title || "Branding"
+            } project showcase by Qashnova digital agency`}
             style={{
               width: "100%",
               height: "100%",
