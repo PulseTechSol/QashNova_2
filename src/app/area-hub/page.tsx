@@ -20,11 +20,9 @@ export const revalidate = 3600;
 export async function generateMetadata(): Promise<Metadata> {
   const data = await fetchPageData("area-hub");
 
-  const title = data?.metaTitle ?? "Area Hub - Qashnova";
-  const description =
-    data?.metaDescription ??
-    "Discover our Area Hub for professional website design services in Rotherham, South Yorkshire & Sheffield. Elevate your online presence with Qashnova.";
-  const url = data?.canonicalUrl ?? "https://www.qashnova.com/area-hub";
+  const title = data?.metaTitle;
+  const description = data?.metaDescription;
+  const url = data?.canonicalUrl;
 
   return {
     title,

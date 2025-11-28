@@ -1,21 +1,25 @@
 {
-  "heroSection": {
-    "mobile": {
-      "line1": "Where",
-      "line2": "Design Meets",
-      "line3": "Future"
+  "metaTitle": "Custom Website Development Services | Qashnova",
+  "metaDescription": "Get modern, fast, and responsive websites built by Qashnova. We design websites that not only look great but also perform for your business.",
+  "canonicalUrl": "https://www.qashnova.com/websites",
+  "textualContent": {
+    "heroSection": {
+      "mobile": {
+        "line1": "Where",
+        "line2": "Design Meets",
+        "line3": "Future"
+      },
+      "desktop": {
+        "line1": "Where",
+        "line2": "Design Meets",
+        "line3": "Performance"
+      }
     },
-    "desktop": {
-      "line1": "Where",
-      "line2": "Design Meets",
-      "line3": "Performance"
-    }
-  },
-  "websiteData": [
+    "websiteData": [
     {
       "link": "https://www.savilerowfurniture.com/",
       "image": "/websites/website1.png",
-      "isbool": true,
+      "switchSide": true,
       "heading1": "savile row",
       "heading2": "furniture",
       "destopPara": "We designed and developed a modern, responsive website for Savile Row Furniture, a company specializing in high-end furnished apartments. Our goal was to reflect their luxury living experience through a clean, elegant design that highlights their attention to detail and premium furnishings.",
@@ -32,7 +36,7 @@
     {
       "link": "https://www.saifsboxing.com/",
       "image": "/websites/website3.png",
-      "isbool": true,
+      "switchSide": true,
       "heading1": "Saif’s",
       "heading2": "Boxing",
       "destopPara": "Saif's Boxing needed a bold online identity to match its energetic gym and community. We delivered a high-impact, mobile-responsive website showcasing training programs, transformations, and class schedules with strength and clarity. Optimized for local search, the site now helps potential clients easily discover and join, reflecting the gym's power and discipline.",
@@ -49,7 +53,7 @@
     {
       "link": "https://www.izecprestige.co.uk/",
       "image": "/websites/website5.png",
-      "isbool": true,
+      "switchSide": true,
       "heading1": "izec",
       "heading2": "prestige",
       "destopPara": "For Izec Prestige Cars, an executive chauffeur service, we designed and developed a sophisticated and user-friendly website. This platform effectively showcases their premium services, from airport transfers to event travel, ensuring a seamless online experience that reflects their commitment to comfort, professionalism, and luxury.",
@@ -66,7 +70,7 @@
     {
       "link": "https://www.isfahanandkashan.com",
       "image": "/websites/website7.png",
-      "isbool": true,
+      "switchSide": true,
       "heading1": "isfahan &",
       "heading2": "kashan",
       "destopPara": "We designed and developed a responsive website for Isfahan & Kashan, showcasing their premium Persian and rugged carpets. The site blends traditional elegance with a modern layout to highlight their craftsmanship and enhance the customer experience.",
@@ -80,5 +84,6 @@
       "destopPara": "We designed and developed the official website for Sofa & Rattan, a premium furniture brand specializing in stylish sofas and rattan collections. Our work focused on creating a modern, user-friendly e-commerce experience that reflects the brand’s elegance and quality craftsmanship.",
       "mobilePara": "We designed and developed the official website for Sofa & Rattan, a premium furniture brand specializing in stylish sofas and rattan collections."
     }
-  ]
+    ]
+  }
 }

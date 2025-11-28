@@ -1,0 +1,37 @@
+{
+  "metaTitle": "About Qashnova | Who We Are & What We Do",
+  "metaDescription": "Learn about Qashnova, a creative digital agency focused on websites, branding, and growth strategies that empower businesses worldwide.",
+  "canonicalUrl": "https://www.qashnova.com/about-us",
+  "textualContent": {
+    "heroSection": {
+      "mobile": {
+        "line1": "designing",
+        "line2": "Digital",
+        "line3": "Future"
+      },
+      "desktop": {
+        "line1": "designing",
+        "line2": "your Digital",
+        "line3": "Future today"
+      }
+    },
+    "whatWeDoSection": {
+      "heading1": "What",
+      "heading2": "we do",
+      "descriptionMobile": "We specialize in creating beautiful, functional, and responsive websites tailored to your unique needs.",
+      "descriptionDesktop": "We specialize in creating beautiful, functional, and responsive websites tailored to your unique needs. At Qashnova, we combine creativity with cutting-edge technology to deliver designs that captivate and connect with your audience."
+    },
+    "brightenYourBrandSection": {
+      "heading": "brighten your brand with ",
+      "lastword": "qashnova",
+      "route": "/case-study"
+    },
+    "ourMissionSection": {
+      "heading1": "Our",
+      "heading2": "mission",
+      "descriptionMobile": "We're on a mission to be your trusted guide in the digital world. Our commitment lies in crafting bespoke solutions that elevate your brand.",
+      "descriptionDesktop": "We're on a mission to be your trusted guide in the digital world. Our commitment lies in crafting bespoke solutions that elevate your brand, expand your reach, and consistently drive your online objectives forward."
+    }
+  }
+}
+

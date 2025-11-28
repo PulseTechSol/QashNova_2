@@ -1,4 +1,6 @@
 import axios from "axios";
+import fs from "fs";
+import path from "path";
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 const STRAPI_API_TOKEN = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN || "";
@@ -48,14 +50,51 @@ export async function fetchFromStrapi(
   }
 }
 
+// ✅ Load fallback JSON data from local files when CMS API fails
+async function loadFallbackData(page: string) {
+  try {
+    const fallbackPath = path.join(
+      process.cwd(),
+      "src",
+      "cmsFallbackContent",
+      `${page}.json`
+    );
+
+    // Check if file exists
+    if (fs.existsSync(fallbackPath)) {
+      const fileContent = fs.readFileSync(fallbackPath, "utf-8");
+      const fallbackData = JSON.parse(fileContent);
+      console.log(`[Fallback] Loaded fallback data for page: ${page}`);
+      return fallbackData;
+    } else {
+      console.warn(
+        `[Fallback] No fallback JSON file found for page: ${page} at ${fallbackPath}`
+      );
+      return null;
+    }
+  } catch (error) {
+    console.error(`[Fallback] Error loading fallback data for ${page}:`, error);
+    return null;
+  }
+}
+
 // ✅ Generic page fetcher - Next.js caches responses and revalidates based on page revalidate setting
+// Falls back to local JSON files if CMS API fails
 export async function fetchPageData(page: string) {
-  const json = await fetchFromStrapi(`/api/${page}`, { populate: "*" });
+  try {
+    const json = await fetchFromStrapi(`/api/${page}`, { populate: "*" });
 
-  if (!json) return null;
-  if (json?.data) return json.data;
+    if (json && json?.data) {
+      return json.data;
+    }
+  } catch (error) {
+    console.error(`[CMS] API call failed for page: ${page}`, error);
+  }
 
-  return null;
+  // If CMS API fails or returns null, load fallback JSON
+  console.log(`[CMS] Loading fallback data for page: ${page}`);
+  const fallbackData = await loadFallbackData(page);
+  return fallbackData;
 }
 
 // ✅ Blogs fetcher - Next.js caches responses and revalidates based on page revalidate setting

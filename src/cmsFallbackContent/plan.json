@@ -1,0 +1,66 @@
+{
+  "metaTitle": "Affordable Website & Branding Plans | Qashnova",
+  "metaDescription": "Choose from Qashnova's tailored website and branding plans designed for startups, small businesses, and growing brands.",
+  "canonicalUrl": "https://www.qashnova.com/plans",
+  "textualContent": {
+    "heroSection": {
+      "mobile": {
+        "line1": "Solutions",
+        "line2": "Built for",
+        "line3": "Your brand"
+      },
+      "desktop": {
+        "line1": "Custom",
+        "line2": "Plans for",
+        "line3": "Proven Boom"
+      }
+    },
+    "findYourPerfectPlanSection": {
+      "heading1": "Find Your",
+      "heading2": "Perfect Plan",
+      "description": "Our plans are designed to give every business the right foundation to grow online. Whether you need a simple landing page, a professional website for your small business or a fully integrated e-commerce platform, we have an option to suit your goals. Each package includes secure hosting, a custom domain and responsive design as standard. From our affordable Basic plan to our advanced Premium solution, you can choose the level of functionality and support that best matches your needs. Whatever stage your business is at, we make sure your website is built to perform and scale.",
+      "planCards": [
+        {
+          "plan": "Basic",
+          "description": "Ideal for Landing Pages with Basic Form Submission.",
+          "price": "£49 /Month",
+          "points": [
+            "Custom Domain",
+            "Hosting",
+            "1-Page Responsive Design",
+            "Basic Functionality"
+          ]
+        },
+        {
+          "plan": "Standard",
+          "description": "The Go-to for most Small/Medium sized Businesses.",
+          "price": "£99 /Month",
+          "points": [
+            "Custom Domain",
+            "Hosting",
+            "5-Page Responsive Design",
+            "Standard Custom Functionality",
+            "Priority Support",
+            "Advanced Security"
+          ]
+        },
+        {
+          "plan": "Premium",
+          "description": "For Businesses that Mostly Sell Online.",
+          "price": "£249 /Month",
+          "points": [
+            "Custom Domain",
+            "Hosting",
+            "10-Page+ Responsive Design",
+            "Advanced Custom Functionality",
+            "Priority Support",
+            "Advanced Security",
+            "E-commerce Integration",
+            "Admin Panel"
+          ]
+        }
+      ]
+    }
+  }
+}
+

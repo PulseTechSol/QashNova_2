@@ -1,0 +1,97 @@
+{
+  "metaTitle": "Website Design in Sheffield",
+  "metaDescription": "Crafting bespoke websites in Sheffield. We blend stunning aesthetics with powerful functionality. Our designs are tailored to elevate your brand.",
+  "canonicalUrl": "https://www.qashnova.com/area-hub/sheffield",
+  "textualContent": {
+    "heroSection": {
+      "heading": "Website Design for Sheffield business",
+      "description": "Professional, mobile-friendly websites for Sheffield businesses that convert visitors into customers."
+    },
+    "whyQashnovaSection": {
+      "heading": "Why Choose QashNova",
+      "description": "We're local to Sheffield and understand what works for businesses in the Steel City. Fast response times and practical advice tailored to Sheffield customers."
+    },
+    "caseStudiesSection": {
+      "sectionHeading": "Sheffield Project Case Studies",
+      "projects": [
+        {
+          "title": "Isfahan & Kashan",
+          "image": "/areahub/isfhanAndKashan.png",
+          "bullets": [
+            {
+              "label": "Challenge",
+              "text": "Needed a premium online presence to reflect the elegance of authentic Persian rugs."
+            },
+            {
+              "label": "Solution",
+              "text": "Designed a refined, image-focused website with smooth navigation and cultural storytelling."
+            },
+            {
+              "label": "Result",
+              "text": "Enhanced brand credibility and increased customer engagement online."
+            }
+          ]
+        },
+        {
+          "title": "Bright Eco Future",
+          "image": "/areahub/brightEcoFuture.png",
+          "bullets": [
+            {
+              "label": "Challenge",
+              "text": "Complex information about government grants was difficult for homeowners to understand."
+            },
+            {
+              "label": "Solution",
+              "text": "Built a clear, user-friendly website with simple content flow and application guidance."
+            },
+            {
+              "label": "Result",
+              "text": "Improved lead generation and made the grant process easier for eligible homeowners."
+            }
+          ]
+        }
+      ]
+    },
+    "seoSupportSection": {
+      "heading": "Regional SEO & Support",
+      "description": "We don't just build attractive sites — we make sure they can be found by Sheffield customers",
+      "features": [
+        [
+          {
+            "title": "Google Business ",
+            "subtitle": "Sheffield listing optimization"
+          },
+          {
+            "title": "Ongoing Support",
+            "subtitle": "Sheffield-focused marketing"
+          }
+        ],
+        [
+          {
+            "title": "Sheffield SEO",
+            "subtitle": "Local keyword targeting for Sheffield"
+          },
+          {
+            "title": "Local Citations",
+            "subtitle": "Sheffield directory listings"
+          }
+        ]
+      ]
+    },
+    "faqData": [
+      {
+        "title": "Do you provide hosting and support?",
+        "content": "Yes, we offer managed hosting, security updates and maintenance packages for all Sheffield businesses with local support."
+      },
+      {
+        "title": "Can you help with Sheffield SEO?",
+        "content": "Absolutely. We optimize for Sheffield local search and help with Google Business Profile setup and local SEO strategies."
+      },
+      {
+        "title": "Do you meet Sheffield clients in person?",
+        "content": "Yes, we can meet Sheffield clients for initial consultations and project discussions when needed. We're local to the area."
+      }
+    ]
+  }
+}
+
