@@ -4,10 +4,13 @@ import dynamicImport from "next/dynamic";
 import { fetchPageData } from "@/lib/strapi";
 
 // Lazy load DigitalInsights component to reduce initial bundle size
-const DigitalInsights = dynamicImport(() => import("./_sections/DigitalInsights"), {
-  loading: () => <div style={{ minHeight: "400px" }} />,
-  ssr: true,
-});
+const DigitalInsights = dynamicImport(
+  () => import("./_sections/DigitalInsights"),
+  {
+    loading: () => <div style={{ minHeight: "400px" }} />,
+    ssr: true,
+  }
+);
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -109,12 +112,12 @@ export default async function Blogs() {
     <>
       <header>
         <HeroSection
-          line1={hero?.desktop?.line1}
-          line1Mobile={hero?.mobile?.line1}
-          line2Desktop={hero?.desktop?.line2}
-          line2Mobile={hero?.mobile?.line2}
-          line3Desktop={hero?.desktop?.line3}
-          line3Mobile={hero?.mobile?.line3}
+          line1={hero?.desktop?.line1 ?? "Navigate"}
+          line1Mobile={hero?.mobile?.line1 ?? "Navigate"}
+          line2Desktop={hero?.desktop?.line2 ?? "the Future"}
+          line2Mobile={hero?.mobile?.line2 ?? "the Future"}
+          line3Desktop={hero?.desktop?.line3 ?? "of Digital"}
+          line3Mobile={hero?.mobile?.line3 ?? "of Digital"}
           isbool={true}
         />
       </header>
