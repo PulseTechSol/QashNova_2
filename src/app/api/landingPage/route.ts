@@ -8,13 +8,13 @@ export const POST = async (request: Request) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "marsad11223@gmail.com",
-        pass: "qwaa gpky fuxl fzqp",
+        user: "qashnova123@gmail.com",
+        pass: "jzgn dbey uppw ppjj",
       },
     });
 
     const mailOptions = {
-      from: "marsad11223@gmail.com",
+      from: "hello@qashnova.com",
       to: "hello@qashnova.com",
       subject: "Contact Form Submission",
       html: `
@@ -28,7 +28,7 @@ export const POST = async (request: Request) => {
       console.warn("⚠️ Email not accepted by recipient server.");
       return NextResponse.json(
         { error: "Email was not accepted by the recipient server." },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
