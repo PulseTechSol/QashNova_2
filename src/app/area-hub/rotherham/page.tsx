@@ -109,8 +109,8 @@ const caseStudiesData = {
       ],
     },
     {
-      title: "Izec prestigue",
-      image: "/areahub/sabirsGrillpng",
+      title: "Sabirs Grill",
+      image: "/areahub/sabirsGrill.png",
       bullets: [
         {
           label: "Challenge",
@@ -127,7 +127,7 @@ const caseStudiesData = {
       ],
     },
     {
-      title: "saifs boxing gym & fitness",
+      title: "Saifs Boxing & Fitness",
       image: "/areahub/saifBoxing.png",
       bullets: [
         {
