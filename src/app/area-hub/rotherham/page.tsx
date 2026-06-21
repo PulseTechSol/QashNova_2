@@ -110,15 +110,15 @@ const caseStudiesData = {
     },
     {
       title: "Izec prestigue",
-      image: "/areahub/conquestLaw.png",
+      image: "/areahub/sabirsGrillpng",
       bullets: [
         {
           label: "Challenge",
-          text: "Their old site failed to reflect the premium nature of their services",
+          text: "Their old site failed to reflect the premium nature of their offerings",
         },
         {
           label: "Solution",
-          text: "We created a sleek, luxury-focused design with easy booking features.",
+          text: "We created a sleek, user-focused design with easy online ordering.",
         },
         {
           label: "Result",
